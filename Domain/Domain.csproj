@@ -30,13 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Education\Ocena.cs" />
@@ -53,8 +46,8 @@
     <Compile Include="Practice\PrijavaStudentCollection.cs" />
     <Compile Include="Practice\PrijavaTehnologii.cs" />
     <Compile Include="Practice\PrijavaTehnologiiCollections.cs" />
-    <Compile Include="Practice\Prijavi.cs" />
-    <Compile Include="Practice\PrijaviCollection.cs" />
+    <Compile Include="Practice\Prijava.cs" />
+    <Compile Include="Practice\PrijavaCollection.cs" />
     <Compile Include="Practice\Tehnologija.cs" />
     <Compile Include="Practice\TehnologijaCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace LearnByPractice.Domain.Security
 {
-    class KorisnikCollection: ICollection<Korisnik>
+    public class KorisnikCollection : Collection<Korisnik>
     {
-        public KorisnikCollection()
-        { }
-
+        public KorisnikCollection() { }
+        public KorisnikCollection(IList<Korisnik> list) { }
     }
 }

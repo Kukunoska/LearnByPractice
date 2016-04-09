@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
 
 namespace LearnByPractice.Domain.Practice
 {
-    class PrijavaTehnologiiCollections:Collection<PrijavaTehnologii>
+    public class PrijavaTehnologiiCollections : Collection<PrijavaTehnologii>
     {
-        public PrijavaTehnologiiCollections()
-        { }
-
+        public PrijavaTehnologiiCollections() { }
+        public PrijavaTehnologiiCollections(IList<PrijavaTehnologii> list) { }
     }
 }

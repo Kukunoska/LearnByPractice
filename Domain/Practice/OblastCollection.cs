@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace LearnByPractice.Domain.Practice
 {
-    class OblastCollection:Collection<Oblast>
+    public class OblastCollection : Collection<Oblast>
     {
         public OblastCollection() { }
+        public OblastCollection(IList<Oblast> list) { }
     }
 }

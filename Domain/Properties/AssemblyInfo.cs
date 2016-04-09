@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Domain")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("LearnByPractice Domain Object Model")]
+[assembly: AssemblyDescription("Библиотека со класи за domain object моделот")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Domain")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
+
+[assembly: AssemblyCompany("Факултет за информатички и комуникациски технологии - Битола")]
+[assembly: AssemblyProduct("LearnByPractice")]
+[assembly: AssemblyCopyright("Copyright © ФИКТ, 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
