@@ -2,12 +2,21 @@
 
 namespace LearnByPractice.Domain.Practice
 {
+    /// <summary>Класа за технологија.</summary>
     public class Tehnologija
     {
+        /// <summary>Шифра.</summary>
+        /// <value>Ја зема/поставува шифрата на технологијата.</value>
         public int Id { get; set; }
-        public String Ime { get; set; }
-        public String Oblast { get; set; }
 
+        /// <summary>Име.</summary>
+        /// <value>Го зема/поставува името на технологијата.</value>
+        public String Ime { get; set; }
+
+        /// <summary>Објект од класата <c>Oblast</c>.</summary>
+        Oblast oblast = new Oblast();
+
+        /// <summary> Конструктор на класата <c>Tehnologija</c>, без параметри.</summary>
         public Tehnologija() { }
     }
 }

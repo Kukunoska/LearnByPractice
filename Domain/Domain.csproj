@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Domain.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,8 +45,8 @@
     <Compile Include="Practice\OblastCollection.cs" />
     <Compile Include="Practice\PrijavaStudent.cs" />
     <Compile Include="Practice\PrijavaStudentCollection.cs" />
-    <Compile Include="Practice\PrijavaTehnologii.cs" />
-    <Compile Include="Practice\PrijavaTehnologiiCollections.cs" />
+    <Compile Include="Practice\PrijavaTehnologija.cs" />
+    <Compile Include="Practice\PrijavaTehnologijaCollection.cs" />
     <Compile Include="Practice\Prijava.cs" />
     <Compile Include="Practice\PrijavaCollection.cs" />
     <Compile Include="Practice\Tehnologija.cs" />
