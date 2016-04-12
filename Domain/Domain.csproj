@@ -33,12 +33,6 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ProductInfo.cs">
-      <Link>ProductInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\VersionInfo.cs">
-      <Link>VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="Education\Ocena.cs" />
     <Compile Include="Education\OcenaCollection.cs" />
     <Compile Include="Education\Predmet.cs" />
