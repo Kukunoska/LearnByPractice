@@ -6,8 +6,15 @@ namespace LearnByPractice.Domain.Practice
     /// <summary>Класа за област.</summary>
     public class Oblast
     {
-       
-        private readonly TehnologijaCollection tehnologii;
+        private TehnologijaCollection tehnologii;
+
+        /// <summary>Колекција од објекти од класата <c>Tehnologija</c></summary>
+        /// <value>Ја зема  колекцијата од објекти</value>
+        public TehnologijaCollection Tehnologii
+        {
+            get {return tehnologii;}
+            private set { tehnologii=value;}
+        }
 
         /// <summary>Шифра.</summary>
         /// <value>Ја зема/поставува шифрата на областа.</value>
@@ -24,7 +31,7 @@ namespace LearnByPractice.Domain.Practice
         /// <param name="t">објект од класата <c>TehnologijaCollection</c></param>
         public Oblast(TehnologijaCollection t)
         {
-            tehnologii = t;
+            Tehnologii = t;
         }
     }
 }
