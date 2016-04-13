@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace LearnByPractice.Domain.Security
 {
-    class KorisnikCollection: ICollection<Korisnik>
+    /// <summary> Класа за колекција на објекти од класата <c>Korisnik</c>.</summary>
+    public class KorisnikCollection : Collection<Korisnik>
     {
-        public KorisnikCollection()
-        { }
+        /// <summary>Конструктор на класата <c>KorisnikCollection</c>, без параметри.</summary>
+        public KorisnikCollection() : base() { }
 
+        /// <summary> Конструктор на класата <c>KorisnikCollection</c>, со параметри.</summary>
+        /// <param name="list">Листа со објекти од класа <c>Korisnik</c>.</param>
+        public KorisnikCollection(IList<Korisnik> list) : base(list) { }
     }
 }
