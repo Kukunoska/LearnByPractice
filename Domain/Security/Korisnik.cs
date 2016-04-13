@@ -3,7 +3,9 @@
 namespace LearnByPractice.Domain.Security
 {
     /// <summary>Пол на корисникот</summary>
-    public enum Pol { 
+    public enum POL {
+        /// <summary>дифолт вредност</summary>
+        Nepoznat,
         /// <summary>машки род</summary>
         Mashki, 
         /// <summary>женски род</summary>
@@ -32,6 +34,10 @@ namespace LearnByPractice.Domain.Security
         /// <value>Го зема/поставува презиме на корисникот</value>
         public String Prezime { get; set; }
 
+        /// <summary>Пол</summary>
+        /// <value>Ја зема/поставува вредноста на пол за корисникот</value>
+        public String PolK { get; set;}
+
         /// <summary>Студиска програма</summary>
         /// <value>Ја зема/поставува студиската програма на корисникот</value>
         public String StudiskaPrograma { get; set; }
@@ -44,7 +50,11 @@ namespace LearnByPractice.Domain.Security
         /// <value>Го зема/поставува телефонскиот број на корисникот</value>
         public String Mobilen { get; set; }
 
+
         /// <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
-        public Korisnik() { }
+        public Korisnik() {
+        String p= (POL.Nepoznat).ToString();
+        p = PolK;
+        }
     }
 }

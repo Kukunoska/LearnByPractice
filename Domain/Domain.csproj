@@ -41,6 +41,7 @@
     <Compile Include="Education\StudiskaProgramaCollection.cs" />
     <Compile Include="Organizational\Kompanija.cs" />
     <Compile Include="Organizational\KompanijaCollection.cs" />
+    <Compile Include="Organizational\VersionInfo.cs" />
     <Compile Include="Practice\Oblast.cs" />
     <Compile Include="Practice\OblastCollection.cs" />
     <Compile Include="Practice\PrijavaStudent.cs" />
