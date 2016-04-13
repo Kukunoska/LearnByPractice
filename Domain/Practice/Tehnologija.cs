@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.Domain.Practice
 {
-    class Tehnologija
+    /// <summary>Класа за технологија.</summary>
+    public class Tehnologija
     {
+        /// <summary>Шифра.</summary>
+        /// <value>Ја зема/поставува шифрата на технологијата.</value>
         public int Id { get; set; }
-        public String Ime { get; set;}
-        public String Oblast { get; set; }
-        public Tehnologija(int idT,String imeT,String oblastT)
-        {
-            Id = idT;
-            Ime = imeT;
-            Oblast = oblastT;
-        }
-        public Tehnologija()
-        { }
 
+        /// <summary>Име.</summary>
+        /// <value>Го зема/поставува името на технологијата.</value>
+        public String Ime { get; set; }
+
+        /// <summary>Објект од класата <c>Oblast</c>.</summary>
+        Oblast oblast = new Oblast();
+
+        /// <summary> Конструктор на класата <c>Tehnologija</c>, без параметри.</summary>
+        public Tehnologija() { }
     }
 }

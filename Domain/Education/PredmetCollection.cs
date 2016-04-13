@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace LearnByPractice.Domain.Education
 {
-    class PredmetCollection:Collection<Predmet>
+    /// <summary> Класа за колекција на објекти од класата <c>Predmet</c>.</summary>
+    public class PredmetCollection : Collection<Predmet>
     {
-        public PredmetCollection()
-        {}
+        /// <summary>Конструктор на класата <c>PredmetCollection</c>, без параметри.</summary>
+        public PredmetCollection() : base() { }
+
+        /// <summary> Конструктор на класата <c>PredmetCollection</c>, со параметри.</summary>
+        /// <param name="list">Листа со објекти од класа <c>Predmet</c>.</param>
+        public PredmetCollection(IList<Predmet> list) : base(list) { }
     }
 }

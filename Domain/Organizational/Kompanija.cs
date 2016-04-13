@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.Domain.Organizational
 {
+    /// <summary>Класа за компанијата.</summary>
     public class Kompanija
     {
-        public Kompanija()
-        {
+        /// <summary>Шифра </summary>
+        /// <value>Ја зема/поставува шифрата на компанијата</value>
+        public int Id { get; set; }
 
-        }
-        public Kompanija(int idKompanija, String ime)
-        {
-            IdKompanija = idKompanija;
-            ImeKompanija = ime;
-        }
-        public int IdKompanija
-        { get; set; }
-        public String ImeKompanija
-        { get; set; }
+        /// <summary>Име </summary>
+        /// <value>Го зема/поставува името на компанијата</value>
+        public String Ime { get; set; }
 
+        /// <summary> Конструктор на класата <c>Kompanija</c>, без параметри. </summary>
+        public Kompanija() { }
     }
 }

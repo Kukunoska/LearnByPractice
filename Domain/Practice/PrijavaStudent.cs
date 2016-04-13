@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.Domain.Practice
 {
-    class PrijavaStudent
+    /// <summary>Класа за поврзување на студентот и пријавата.</summary>
+    public class PrijavaStudent
     {
-        public PrijavaStudent()
-        { }
-        public PrijavaStudent(int idStudent, int idPrijava)
-        {
-            IdPrijava = idPrijava;
-            IdStudent = idStudent;
+        /// <summary>Шифра на студентот </summary>
+        /// <value>Ја зема/поставува шифрата на студентот</value>
+        public int IdStudent { get; set; }
 
-        }
-        public int IdStudent
-        { get; set; }
-        public int IdPrijava
-        { get; set; }
+        /// <summary>Шифра на пријавата </summary>
+        /// <value>Ја зема/поставува шифрата на пријавата</value>
+        public int IdPrijava { get; set; }
+
+        /// <summary> Конструктор на класата <c>PrijavaStudent</c>, без параметри. </summary>
+        public PrijavaStudent() { }
     }
 }

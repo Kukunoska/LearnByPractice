@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.Domain.Education
 {
-    class StudiskaPrograma
+    /// <summary>Класа за студиска програма.</summary>
+    public class StudiskaPrograma
     {
-        public StudiskaPrograma()
-        {  }
-        public StudiskaPrograma(int idSP, String imeSP)
-        {
-            Id = idSP;
-            Ime = imeSP;
-        }
-        public int Id
-        { get; set; }
-        public String Ime
-        { get; set; }
+        /// <summary>Шифра </summary>
+        /// <value>Ја зема/поставува шифрата на студиската програма</value>
+        public int Id { get; set; }
+
+        /// <summary>Име</summary>
+        /// <value>Го зема/поставува името на студиската програма</value>
+        public String Ime { get; set; }
+
+        /// <summary> Конструктор на класата <c>StudiskaPrograma</c>, без параметри. </summary>
+        public StudiskaPrograma() { }
     }
 }

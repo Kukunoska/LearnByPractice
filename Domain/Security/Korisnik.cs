@@ -1,44 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.Domain.Security
 {
-    public enum Pol { Mashki, Zhenski};
-    class Korisnik
-    {
-        public Korisnik()
-        { }
-        public Korisnik(int idKorisnik, String username, String pass, String ime, String prezime, String studiskaP, String email, String mobilen)
-        {
-            IdKorisnik = idKorisnik;
-            Username = username;
-            Password = pass;
-            Ime = ime;
-            Prezime = prezime;
-            StudiskaPrograma = studiskaP;
-            Email = email;
-            Mobilen = mobilen;
-        }
-        public int IdKorisnik
-        { get; set; }
-        public String Username
-        { get; set; }
-        public String Password
-        { get; set; }
-        public String Ime
-        { get; set; }
-        public String Prezime
-        { get; set; }
-        public String StudiskaPrograma
-        { get; set; }
-        public String Email
-        { get; set; }
-        public String Mobilen
-        { get; set; }
-        
+    /// <summary>Пол на корисникот</summary>
+    public enum Pol { 
+        /// <summary>машки род</summary>
+        Mashki, 
+        /// <summary>женски род</summary>
+        Zhenski };
 
+/// <summary>Класа за корисник. </summary>
+    public class Korisnik
+    {
+        /// <summary>Шифра</summary>
+        /// <value>Ја зема/поставува шифрата на корисникот</value>
+        public int IdKorisnik { get; set; }
+
+        /// <summary>Корисничко име</summary>
+        /// <value>Го зема/поставува корисничкото име на корисникот</value>
+        public String Username { get; set; }
+
+        /// <summary>Лозинка</summary>
+        /// <value>Ја зема/поставува лозинката на корисникот</value>
+        public String Password { get; set; }
+
+        /// <summary>Име</summary>
+        /// <value>Го зема/поставува името на корисникот</value>
+        public String Ime { get; set; }
+
+        /// <summary>Презиме</summary>
+        /// <value>Го зема/поставува презиме на корисникот</value>
+        public String Prezime { get; set; }
+
+        /// <summary>Студиска програма</summary>
+        /// <value>Ја зема/поставува студиската програма на корисникот</value>
+        public String StudiskaPrograma { get; set; }
+
+        /// <summary>Електронска пошта</summary>
+        /// <value>Ја зема/поставува електронската пошта на корисникот</value>
+        public String Email { get; set; }
+
+        /// <summary>Телефонски број</summary>
+        /// <value>Го зема/поставува телефонскиот број на корисникот</value>
+        public String Mobilen { get; set; }
+
+        /// <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
+        public Korisnik() { }
     }
 }
