@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Oblast] (
-    [ID]  INT           NOT NULL,
+    [ID]  INT           IDENTITY (1, 1) NOT NULL,
     [Ime] NVARCHAR (50) NOT NULL,
     CONSTRAINT [PK_Oblast] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [UK_Oblast_Ime] UNIQUE NONCLUSTERED ([Ime] ASC)

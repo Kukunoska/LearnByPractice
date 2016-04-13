@@ -7,7 +7,7 @@
     <Name>Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{1f491868-d933-4d35-a4a6-eef343a99e16}</ProjectGuid>
+    <ProjectGuid>{19c94bb1-efea-4902-b6fe-281ec0bfcc93}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -70,7 +70,6 @@
     <Recovery>SIMPLE</Recovery>
     <EnableFullTextSearch>True</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <CreateProjectFromDatabaseCompleted>True</CreateProjectFromDatabaseCompleted>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -107,15 +106,9 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
-    <Folder Include="Scripts" />
-    <Folder Include="Scripts\Post-Deployment Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Korisnik.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\Predmet.sql">
+    <Build Include="dbo\Tables\Oblast.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
@@ -131,19 +124,11 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\Prijava.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
     <Build Include="dbo\Tables\Prijava_Tehnologija.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\Tehnologija.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\Oblast.sql">
+    <Build Include="dbo\Tables\Korinik.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
@@ -151,7 +136,19 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="dbo\Tables\Predmet.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\Tehnologija.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
     <Build Include="dbo\Tables\Vid_Organizacija.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\Prijava.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>

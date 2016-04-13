@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LearnByPractice" Class="LearnByPracticeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KIKA-PC\SQLEXPRESS;AttachDbFilename=&quot;C:\Program Files (x86)\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\LearnByPractice.mdf&quot;;Integrated Security=True" SettingsObjectName="DAL.Models.Properties.Settings" SettingsPropertyName="LearnByPracticeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Korinik" Member="Korisniks">
+    <Type Name="Korisnik">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Korisnichko_Ime" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Lozinka" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Pol" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Studiska_Programa_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Organizacija_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefonski_Broj" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="Administrator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Student" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mentor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Korinik_Ocenka" Member="Ocenkas" ThisKey="ID" OtherKey="Korisnik_ID" Type="Ocenka" />
+      <Association Name="Korinik_Prijava_Korisnik" Member="Prijava_Korisniks" ThisKey="ID" OtherKey="Korisnik_ID" Type="Prijava_Korisnik" Cardinality="One" />
+      <Association Name="Studiska_Programa_Korinik" Member="Studiska_Programa" ThisKey="Studiska_Programa_ID" OtherKey="ID" Type="Studiska_Programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vid_Organizacija" Member="Vid_Organizacijas">
+    <Type Name="Vid_Organizacija">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Vid_Organizacija_Organizacija" Member="Organizacijas" ThisKey="ID" OtherKey="Vid_Organizacija_ID" Type="Organizacija" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Oblast" Member="Oblasts">
+    <Type Name="Oblast">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Oblast_Tehnologija" Member="Tehnologijas" ThisKey="ID" OtherKey="Oblast_ID" Type="Tehnologija" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ocenka" Member="Ocenkas">
+    <Type Name="Ocenka">
+      <Column Name="Korisnik_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Predmet_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ocenka" Member="Ocenka1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Korinik_Ocenka" Member="Korisnik" Storage="_Korinik" ThisKey="Korisnik_ID" OtherKey="ID" Type="Korisnik" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Predmet_Ocenka" Member="Predmet" ThisKey="Predmet_ID" OtherKey="ID" Type="Predmet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Organizacija" Member="Organizacijas">
+    <Type Name="Organizacija">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Kontakt_Telefon" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="Veb_Strana" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vid_Organizacija_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Organizacija_Prijava" Member="Prijavas" ThisKey="ID" OtherKey="Organizacija_ID" Type="Prijava" />
+      <Association Name="Vid_Organizacija_Organizacija" Member="Vid_Organizacija" ThisKey="Vid_Organizacija_ID" OtherKey="ID" Type="Vid_Organizacija" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Predmet" Member="Predmets">
+    <Type Name="Predmet">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Predmet_Ocenka" Member="Ocenkas" ThisKey="ID" OtherKey="Predmet_ID" Type="Ocenka" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prijava" Member="Prijavas">
+    <Type Name="Prijava">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Organizacija_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum_Na_Prijavuvanje" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Prijava_Prijava_Korisnik" Member="Prijava_Korisniks" ThisKey="ID" OtherKey="Prijava_ID" Type="Prijava_Korisnik" />
+      <Association Name="Prijava_Prijava_Tehnologija" Member="Prijava_Tehnologijas" ThisKey="ID" OtherKey="Prijava_ID" Type="Prijava_Tehnologija" />
+      <Association Name="Organizacija_Prijava" Member="Organizacija" ThisKey="Organizacija_ID" OtherKey="ID" Type="Organizacija" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prijava_Korisnik" Member="Prijava_Korisniks">
+    <Type Name="Prijava_Korisnik">
+      <Column Name="Prijava_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Korisnik_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Prijava_Prijava_Korisnik" Member="Prijava" ThisKey="Prijava_ID" OtherKey="ID" Type="Prijava" IsForeignKey="true" />
+      <Association Name="Korinik_Prijava_Korisnik" Member="Korisnik" ThisKey="Korisnik_ID" OtherKey="ID" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prijava_Tehnologija" Member="Prijava_Tehnologijas">
+    <Type Name="Prijava_Tehnologija">
+      <Column Name="Prijava_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tehnologija_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Prijava_Prijava_Tehnologija" Member="Prijava" ThisKey="Prijava_ID" OtherKey="ID" Type="Prijava" IsForeignKey="true" />
+      <Association Name="Tehnologija_Prijava_Tehnologija" Member="Tehnologija" ThisKey="Tehnologija_ID" OtherKey="ID" Type="Tehnologija" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Studiska_Programa" Member="Studiska_Programas">
+    <Type Name="Studiska_Programa">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Studiska_Programa_Korinik" Member="Korisniks" Storage="_Koriniks" ThisKey="ID" OtherKey="Studiska_Programa_ID" Type="Korisnik" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tehnologija" Member="Tehnologijas">
+    <Type Name="Tehnologija">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Oblast_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tehnologija_Prijava_Tehnologija" Member="Prijava_Tehnologijas" ThisKey="ID" OtherKey="Tehnologija_ID" Type="Prijava_Tehnologija" />
+      <Association Name="Oblast_Tehnologija" Member="Oblast" ThisKey="Oblast_ID" OtherKey="ID" Type="Oblast" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
