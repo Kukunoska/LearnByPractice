@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LearnByPractice.Domain.Education;
+using LearnByPractice.Domain.Organizational;
+using System;
 
 namespace LearnByPractice.Domain.Security
 {
@@ -11,7 +13,7 @@ namespace LearnByPractice.Domain.Security
         /// <summary>женски род</summary>
         Zhenski };
 
-/// <summary>Класа за корисник. </summary>
+    /// <summary>Класа за корисник. </summary>
     public class Korisnik
     {
         /// <summary>Шифра</summary>
@@ -38,9 +40,11 @@ namespace LearnByPractice.Domain.Security
         /// <value>Ја зема/поставува вредноста на пол за корисникот</value>
         public String PolK { get; set;}
 
-        /// <summary>Студиска програма</summary>
-        /// <value>Ја зема/поставува студиската програма на корисникот</value>
-        public String StudiskaPrograma { get; set; }
+        /// <summary>Објект од класа <c>StudiskaPrograma</c></summary>
+        StudiskaPrograma studiskaPrograma = new StudiskaPrograma();
+        
+        /// <summary>Објект од класа <c>Kompanija</c></summary>
+        Kompanija organizacija = new Kompanija();
 
         /// <summary>Електронска пошта</summary>
         /// <value>Ја зема/поставува електронската пошта на корисникот</value>
@@ -50,11 +54,22 @@ namespace LearnByPractice.Domain.Security
         /// <value>Го зема/поставува телефонскиот број на корисникот</value>
         public String Mobilen { get; set; }
 
+        /// <summary>Корисник Администратор</summary>
+        /// <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Администратор" </value>
+        public Boolean Administrator { get; set; }
+
+        /// <summary>Корисник Ментор</summary>
+        /// <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Ментор" </value>
+        public Boolean Mentor { get; set; }
+
+        /// <summary>Корисник Студент</summary>
+        /// <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Студент" </value>
+        public Boolean Student { get; set; }
 
         /// <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
         public Korisnik() {
         String p= (POL.Nepoznat).ToString();
-        p = PolK;
+        PolK=p;
         }
     }
 }
