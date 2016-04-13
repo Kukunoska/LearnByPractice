@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repositories.Practice
 {
@@ -14,64 +12,64 @@ namespace DAL.Repositories.Practice
         public PrijavaTehnologijaRepository()
         {
         }
-        public domain.PrijavaTehnologiiCollections GetAll()
+        public domain.PrijavaTehnologijaCollection GetAll()
         {
             model.LearnByPracticeDataContext context = CreateContext();
             IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas;
-            domain.PrijavaTehnologiiCollections result = new domain.PrijavaTehnologiiCollections();
+            domain.PrijavaTehnologijaCollection result = new domain.PrijavaTehnologijaCollection();
             foreach (model.Prijava_Tehnologija modelObject in query)
             {
-                domain.PrijavaTehnologii domainObject = new domain.PrijavaTehnologii();
+                domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
                 domainObject.IdPrijava = modelObject.Prijava_ID;
-                domainObject.IdTehnologii = modelObject.Tehnologija_ID;
+                domainObject.IdTehnologija = modelObject.Tehnologija_ID;
                 result.Add(domainObject);
             }
 
             return result;
         }
-        public domain.PrijavaTehnologii Get(int id)
+        public domain.PrijavaTehnologija Get(int id)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(c => c.Prijava_ID == id);
 
-                domain.PrijavaTehnologii domainObject = ToDomain(query.Single());
+                domain.PrijavaTehnologija domainObject = ToDomain(query.Single());
 
                 return domainObject;
             }
         }
 
-        public domain.PrijavaTehnologiiCollections GetByTehnologijaId(int TehId)
+        public domain.PrijavaTehnologijaCollection GetByTehnologijaId(int TehId)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(c => c.Tehnologija_ID == TehId);
-                domain.PrijavaTehnologiiCollections domainObjects = ToDomainObjects(query.ToList());
+                domain.PrijavaTehnologijaCollection domainObjects = ToDomainObjects(query.ToList());
 
                 return domainObjects;
             }
         }
 
-        private domain.PrijavaTehnologiiCollections ToDomainObjects(List<model.Prijava_Tehnologija> list)
+        private domain.PrijavaTehnologijaCollection ToDomainObjects(List<model.Prijava_Tehnologija> list)
         {
             throw new NotImplementedException();
         }
 
-        private domain.PrijavaTehnologii ToDomain(model.Prijava_Tehnologija prijava_Tehnologija)
+        private domain.PrijavaTehnologija ToDomain(model.Prijava_Tehnologija prijava_Tehnologija)
         {
             throw new NotImplementedException();
         }
 
 
-        public domain.PrijavaTehnologii Insert(domain.PrijavaTehnologii domainObject)
+        public domain.PrijavaTehnologija Insert(domain.PrijavaTehnologija domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Tehnologija modelObject = new model.Prijava_Tehnologija();
-                domainObject.IdTehnologii = modelObject.Tehnologija_ID;
+                domainObject.IdTehnologija = modelObject.Tehnologija_ID;
                 context.Prijava_Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
-                domain.PrijavaTehnologii result = ToDomain(modelObject);
+                domain.PrijavaTehnologija result = ToDomain(modelObject);
 
                 return result;
 

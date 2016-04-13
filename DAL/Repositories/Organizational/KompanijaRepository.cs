@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repositories.Organizational
 {
@@ -23,8 +20,8 @@ namespace DAL.Repositories.Organizational
             foreach (model.Organizacija modelObject in query)
             {
                 domain.Kompanija domainObject = new domain.Kompanija();
-                domainObject.IdKompanija = modelObject.ID;
-                domainObject.ImeKompanija = modelObject.Ime;
+                domainObject.Id = modelObject.ID;
+                domainObject.Ime = modelObject.Ime;
                 //domainObject = modelObject;
               result.Add(domainObject);
             }
@@ -50,7 +47,7 @@ namespace DAL.Repositories.Organizational
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Organizacija modelObject = new model.Organizacija();
-                domainObject.ImeKompanija = modelObject.Ime;
+                domainObject.Ime = modelObject.Ime;
                 context.Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Kompanija result = ToDomain(modelObject);

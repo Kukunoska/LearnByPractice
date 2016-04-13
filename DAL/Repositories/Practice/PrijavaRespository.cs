@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repositories.Practice
 {
@@ -22,7 +19,7 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava modelObject in query)
             {
                 domain.Prijava domainObject = new domain.Prijava();
-                domainObject.IdPrijava = modelObject.ID;
+                domainObject.Id = modelObject.ID;
                 domainObject.IdKompanija = modelObject.Organizacija_ID;
                 result.Add(domainObject);
             }
