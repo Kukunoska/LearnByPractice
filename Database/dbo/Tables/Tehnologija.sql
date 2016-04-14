@@ -12,7 +12,11 @@
 
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [IX_Tehnologija_Oblast_ID]
-    ON [dbo].[Tehnologija]([ID] ASC);
+    ON [dbo].[Tehnologija]([Oblast_ID] ASC);
+
+
 
