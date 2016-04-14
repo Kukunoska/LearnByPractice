@@ -4,8 +4,10 @@
     [Oblast_ID] INT           NOT NULL,
     CONSTRAINT [PK_Tehnologija] PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FK_Tehnologija_Oblast] FOREIGN KEY ([Oblast_ID]) REFERENCES [dbo].[Oblast] ([ID]),
-    CONSTRAINT [UK_Tehnologija_Ime] UNIQUE NONCLUSTERED ([ID] ASC)
+    CONSTRAINT [UK_Tehnologija_Ime] UNIQUE NONCLUSTERED ([Ime] ASC)
 );
+
+
 
 
 
