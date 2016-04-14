@@ -55,7 +55,7 @@
     <Compile Include="RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\LearnByPractice2\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
       <Name>Domain</Name>
     </ProjectReference>
