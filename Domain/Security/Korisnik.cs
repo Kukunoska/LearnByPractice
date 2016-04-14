@@ -5,7 +5,7 @@ using System;
 namespace LearnByPractice.Domain.Security
 {
     /// <summary>Пол на корисникот</summary>
-    public enum POL {
+    public enum PolEnum {
         /// <summary>дифолт вредност</summary>
         Nepoznat,
         /// <summary>машки род</summary>
@@ -38,7 +38,7 @@ namespace LearnByPractice.Domain.Security
 
         /// <summary>Пол</summary>
         /// <value>Ја зема/поставува вредноста на пол за корисникот</value>
-        public String PolK { get; set;}
+        public PolEnum Pol { get; set;}
 
         /// <summary>Објект од класа <c>StudiskaPrograma</c></summary>
         StudiskaPrograma studiskaPrograma = new StudiskaPrograma();
@@ -68,8 +68,7 @@ namespace LearnByPractice.Domain.Security
 
         /// <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
         public Korisnik() {
-        String p= (POL.Nepoznat).ToString();
-        PolK=p;
+            Pol = PolEnum.Nepoznat;
         }
     }
 }
