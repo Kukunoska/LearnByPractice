@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Domain</name>
+    </assembly>
+    <members>
+        <member name="T:LearnByPractice.Domain.Education.Ocena">
+            <summary>Класа за оцената на студент по одреден предмет.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.Ocena.#ctor">
+            <summary> Конструктор на класата <c>Ocena</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.Ocena.StudentId">
+            <summary> Шифрата на студентот.</summary>
+            <value>Ја зема/поставува вредноста на шифрата на студентот.</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.Ocena.PredmetId">
+            <summary> Шифрата на предметот.</summary>
+            <value>Ја зема/поставува вредноста на шифрата на предметот.</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.Ocena.Ocenka">
+            <summary>Оцена на студентот со шифра <c>StudentID</c>, по предметот со шифра <c>PredmetID</c>.</summary>
+            <value>Ја зема/поставува вредноста на оцената. </value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Education.OcenaCollection">
+            <summary> Класа за колекција на објекти од класата <c>Ocena</c></summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.OcenaCollection.#ctor">
+            <summary>Конструктор на класата <c>OcenaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.OcenaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Education.Ocena})">
+            <summary> Конструктор на класата <c>OcenaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Ocena</c></param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Education.Predmet">
+            <summary>Класа за предмет кој го слуша студентот</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.Predmet.#ctor">
+            <summary> Конструктор на класата <c>Predmet</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.Predmet.Id">
+            <summary>Шифра </summary>
+            <value>Ја зема/поставува шифрата на предметот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.Predmet.Ime">
+            <summary>Име</summary>
+            <value>Го зема/поставува името на предметот</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Education.PredmetCollection">
+            <summary> Класа за колекција на објекти од класата <c>Predmet</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.PredmetCollection.#ctor">
+            <summary>Конструктор на класата <c>PredmetCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.PredmetCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Education.Predmet})">
+            <summary> Конструктор на класата <c>PredmetCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Predmet</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Education.StudiskaPrograma">
+            <summary>Класа за студиска програма.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.StudiskaPrograma.#ctor">
+            <summary> Конструктор на класата <c>StudiskaPrograma</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.StudiskaPrograma.Id">
+            <summary>Шифра </summary>
+            <value>Ја зема/поставува шифрата на студиската програма</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Education.StudiskaPrograma.Ime">
+            <summary>Име</summary>
+            <value>Го зема/поставува името на студиската програма</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Education.StudiskaProgramaCollection">
+            <summary> Класа за колекција на објекти од класата <c>StudiskaPrograma</c></summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.StudiskaProgramaCollection.#ctor">
+            <summary>Конструктор на класата <c>StudiskaProgramaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Education.StudiskaProgramaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Education.StudiskaPrograma})">
+            <summary> Конструктор на класата <c>StudiskaProgramaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>StudiskaPrograma</c></param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Organizational.Kompanija">
+            <summary>Класа за компанијата.</summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Organizational.Kompanija.vidOrganizacija">
+            <summary>Објект од класата <c>VidOrganizacija</c></summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.Kompanija.#ctor">
+            <summary> Конструктор на класата <c>Kompanija</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.Kompanija.Id">
+            <summary>Шифра </summary>
+            <value>Ја зема/поставува шифрата на компанијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.Kompanija.Ime">
+            <summary>Име </summary>
+            <value>Го зема/поставува името на компанијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.Kompanija.Adresa">
+            <summary>Адреса</summary>
+            <value>Ја зема/поставува адресата на компанијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.Kompanija.KontaktTelefon">
+            <summary>Контакт телефон</summary>
+            <value>Го зема/поставува контакт телефонот на компанијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.Kompanija.VebStrana">
+            <summary>Веб страна</summary>
+            <value>Го зема/поставува линкот на веб страната на компанијата</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Organizational.KompanijaCollection">
+            <summary> Класа за колекција на објекти од класата <c>Kompanija</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.KompanijaCollection.#ctor">
+            <summary>Конструктор на класата <c>KompanijaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.KompanijaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Organizational.Kompanija})">
+            <summary> Конструктор на класата <c>KompanijaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Kompanija</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Organizational.VidOrganizacija">
+            <summary>Класа за видот на организацијата</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.VidOrganizacija.#ctor">
+            <summary> Конструктор на класата <c>VidOrganizacija</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.VidOrganizacija.Id">
+            <summary>Шифра </summary>
+            <value>Ја зема/поставува шифрата на видот на организацијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Organizational.VidOrganizacija.Ime">
+            <summary>Име</summary>
+            <value>Го зема/поставува името на видот на организацијата</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Organizational.VidOrganizacijaCollection">
+            <summary> Класа за колекција на објекти од класата <c>VidOrganizacija</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.VidOrganizacijaCollection.#ctor">
+            <summary>Конструктор на класата <c>VidOrganizacijaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Organizational.VidOrganizacijaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Organizational.VidOrganizacija})">
+            <summary> Конструктор на класата <c>VidOrganizacijaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>VidOrganizacija</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.Oblast">
+            <summary>Класа за област.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.Oblast.#ctor">
+            <summary> Конструктор на класата <c>Oblast</c>, без параметри. </summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.Oblast.#ctor(LearnByPractice.Domain.Practice.TehnologijaCollection)">
+            <summary>Конструктор на класата <c>Oblast</c>, со параметри.</summary>
+            <param name="t">објект од класата <c>TehnologijaCollection</c></param>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Oblast.Tehnologii">
+            <summary>Колекција од објекти од класата <c>Tehnologija</c></summary>
+            <value>Ја зема  колекцијата од објекти</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Oblast.Id">
+            <summary>Шифра.</summary>
+            <value>Ја зема/поставува шифрата на областа.</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Oblast.Ime">
+            <summary>Име. </summary>
+            <value>Го зема/поставува името на областа.</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.OblastCollection">
+            <summary> Класа за колекција на објекти од класата <c>Oblast</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.OblastCollection.#ctor">
+            <summary>Конструктор на класата <c>OblastCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.OblastCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Practice.Oblast})">
+            <summary> Конструктор на класата <c>OblastCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Oblast</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.PrijavaStudent">
+            <summary>Класа за поврзување на студентот и пријавата.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaStudent.#ctor">
+            <summary> Конструктор на класата <c>PrijavaStudent</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.PrijavaStudent.IdStudent">
+            <summary>Шифра на студентот </summary>
+            <value>Ја зема/поставува шифрата на студентот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.PrijavaStudent.IdPrijava">
+            <summary>Шифра на пријавата </summary>
+            <value>Ја зема/поставува шифрата на пријавата</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.PrijavaStudentCollection">
+            <summary> Класа за колекција на објекти од класата <c>PrijavaStudent</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaStudentCollection.#ctor">
+            <summary>Конструктор на класата <c>PrijavaStudentCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaStudentCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Practice.PrijavaStudent})">
+            <summary> Конструктор на класата <c>PrijavaStudent</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>PrijavaStudent</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.PrijavaTehnologija">
+            <summary>Класа за поврзување на пријавата и технологијата.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaTehnologija.#ctor">
+            <summary> Конструктор на класата <c>PrijavaTehnologija</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.PrijavaTehnologija.IdPrijava">
+            <summary>Шифра на пријавата </summary>
+            <value>Ја зема/поставува шифрата на пријавата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.PrijavaTehnologija.IdTehnologija">
+            <summary>Шифра на технологијата </summary>
+            <value>Ја зема/поставува шифрата на технологијата</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.PrijavaTehnologijaCollection">
+            <summary> Класа за колекција на објекти од класата <c>PrijavaTehnologija</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaTehnologijaCollection.#ctor">
+            <summary>Конструктор на класата <c>PrijavaTehnologijaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaTehnologijaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Practice.PrijavaTehnologija})">
+            <summary> Конструктор на класата <c>PrijavaTehnologija</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>PrijavaTehnologija</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.Prijava">
+            <summary>Класа за пријава.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.Prijava.#ctor">
+            <summary> Конструктор на класата <c>Prijava</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Prijava.Id">
+            <summary>Шифра </summary>
+            <value>Ја зема/поставува шифрата на пријавата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Prijava.IdKompanija">
+            <summary>Шифра на комапнијата </summary>
+            <value>Ја зема/поставува шифрата на компанијата</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Prijava.Datum">
+            <summary>Датум на пријавата</summary>
+            <value>Го зема/поставува датумот на пријавата</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.PrijavaCollection">
+            <summary> Класа за колекција на објекти од класата <c>Prijava</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaCollection.#ctor">
+            <summary>Конструктор на класата <c>PrijavaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.PrijavaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Practice.Prijava})">
+            <summary> Конструктор на класата <c>PrijavaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Prijava</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.Tehnologija">
+            <summary>Класа за технологија.</summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Practice.Tehnologija.oblast">
+            <summary>Објект од класата <c>Oblast</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.Tehnologija.#ctor">
+            <summary> Конструктор на класата <c>Tehnologija</c>, без параметри.</summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Tehnologija.Id">
+            <summary>Шифра.</summary>
+            <value>Ја зема/поставува шифрата на технологијата.</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Practice.Tehnologija.Ime">
+            <summary>Име.</summary>
+            <value>Го зема/поставува името на технологијата.</value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Practice.TehnologijaCollection">
+            <summary> Класа за колекција на објекти од класата <c>Tehnologija</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.TehnologijaCollection.#ctor">
+            <summary>Конструктор на класата <c>TehnologijaCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Practice.TehnologijaCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Practice.Tehnologija})">
+            <summary> Конструктор на класата <c>TehnologijaCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Tehnologija</c>.</param>
+        </member>
+        <member name="T:LearnByPractice.Domain.Security.PolEnum">
+            <summary>Пол на корисникот</summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Security.PolEnum.Nepoznat">
+            <summary>дифолт вредност</summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Security.PolEnum.Mashki">
+            <summary>машки род</summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Security.PolEnum.Zhenski">
+            <summary>женски род</summary>
+        </member>
+        <member name="T:LearnByPractice.Domain.Security.Korisnik">
+            <summary>Класа за корисник. </summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Security.Korisnik.studiskaPrograma">
+            <summary>Објект од класа <c>StudiskaPrograma</c></summary>
+        </member>
+        <member name="F:LearnByPractice.Domain.Security.Korisnik.organizacija">
+            <summary>Објект од класа <c>Kompanija</c></summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Security.Korisnik.#ctor">
+            <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.IdKorisnik">
+            <summary>Шифра</summary>
+            <value>Ја зема/поставува шифрата на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Username">
+            <summary>Корисничко име</summary>
+            <value>Го зема/поставува корисничкото име на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Password">
+            <summary>Лозинка</summary>
+            <value>Ја зема/поставува лозинката на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Ime">
+            <summary>Име</summary>
+            <value>Го зема/поставува името на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Prezime">
+            <summary>Презиме</summary>
+            <value>Го зема/поставува презиме на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Pol">
+            <summary>Пол</summary>
+            <value>Ја зема/поставува вредноста на пол за корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Email">
+            <summary>Електронска пошта</summary>
+            <value>Ја зема/поставува електронската пошта на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Mobilen">
+            <summary>Телефонски број</summary>
+            <value>Го зема/поставува телефонскиот број на корисникот</value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Administrator">
+            <summary>Корисник Администратор</summary>
+            <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Администратор" </value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Mentor">
+            <summary>Корисник Ментор</summary>
+            <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Ментор" </value>
+        </member>
+        <member name="P:LearnByPractice.Domain.Security.Korisnik.Student">
+            <summary>Корисник Студент</summary>
+            <value>Ја зема/поставува вистинитоста на исказот "Корисникот е Студент" </value>
+        </member>
+        <member name="T:LearnByPractice.Domain.Security.KorisnikCollection">
+            <summary> Класа за колекција на објекти од класата <c>Korisnik</c>.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Security.KorisnikCollection.#ctor">
+            <summary>Конструктор на класата <c>KorisnikCollection</c>, без параметри.</summary>
+        </member>
+        <member name="M:LearnByPractice.Domain.Security.KorisnikCollection.#ctor(System.Collections.Generic.IList{LearnByPractice.Domain.Security.Korisnik})">
+            <summary> Конструктор на класата <c>KorisnikCollection</c>, со параметри.</summary>
+            <param name="list">Листа со објекти од класа <c>Korisnik</c>.</param>
+        </member>
+    </members>
+</doc>
