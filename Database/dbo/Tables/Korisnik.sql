@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Korinik] (
+﻿CREATE TABLE [dbo].[Korisnik] (
     [ID]                   INT             IDENTITY (1, 1) NOT NULL,
     [Korisnichko_Ime]      NVARCHAR (20)   NOT NULL,
     [Lozinka]              VARBINARY (MAX) NOT NULL,
