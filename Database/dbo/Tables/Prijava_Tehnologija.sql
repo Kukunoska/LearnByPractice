@@ -7,7 +7,11 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [IX_Prijava_Tehnologija_Tehnologija_ID]
-    ON [dbo].[Prijava_Tehnologija]([Prijava_ID] ASC);
+    ON [dbo].[Prijava_Tehnologija]([Tehnologija_ID] ASC);
+
+
 
