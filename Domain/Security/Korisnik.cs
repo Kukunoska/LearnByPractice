@@ -41,10 +41,10 @@ namespace LearnByPractice.Domain.Security
         public PolEnum Pol { get; set;}
 
         /// <summary>Објект од класа <c>StudiskaPrograma</c></summary>
-        StudiskaPrograma studiskaPrograma = new StudiskaPrograma();
+        public StudiskaPrograma studiskaPrograma = new StudiskaPrograma();
         
         /// <summary>Објект од класа <c>Kompanija</c></summary>
-        Kompanija organizacija = new Kompanija();
+        public Kompanija organizacija = new Kompanija();
 
         /// <summary>Електронска пошта</summary>
         /// <value>Ја зема/поставува електронската пошта на корисникот</value>

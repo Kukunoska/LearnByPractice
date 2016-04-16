@@ -11,7 +11,7 @@ namespace LearnByPractice.Domain.Organizational
 
         /// <summary>Име</summary>
         /// <value>Го зема/поставува името на видот на организацијата</value>
-        public int Ime { get; set; }
+        public String Ime { get; set; }
 
         /// <summary> Конструктор на класата <c>VidOrganizacija</c>, без параметри. </summary>
         public VidOrganizacija() { }
