@@ -34,5 +34,16 @@ namespace DAL.Models.Properties {
                 return ((string)(this["LearnByPracticeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KIKA-PC\\SQLEXPRESS;Initial Catalog=LearnByPractice;Integrated Securit" +
+            "y=True")]
+        public string LearnByPracticeConnectionString1 {
+            get {
+                return ((string)(this["LearnByPracticeConnectionString1"]));
+            }
+        }
     }
 }
