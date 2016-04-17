@@ -46,6 +46,7 @@
     <Compile Include="Repositories\Education\PredmetRepository.cs" />
     <Compile Include="Repositories\Education\StudiskaProgramaRepository.cs" />
     <Compile Include="Repositories\Organizational\KompanijaRepository.cs" />
+    <Compile Include="Repositories\Organizational\VidOrganizacijaRespository.cs" />
     <Compile Include="Repositories\Practice\OblastRepository.cs" />
     <Compile Include="Repositories\Practice\PrijavaRespository.cs" />
     <Compile Include="Repositories\Practice\PrijavaStudentRepository.cs" />
@@ -63,9 +64,6 @@
       <Project>{df2de748-c5a1-46df-8e77-6e29b6bb29c7}</Project>
       <Name>DAL.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

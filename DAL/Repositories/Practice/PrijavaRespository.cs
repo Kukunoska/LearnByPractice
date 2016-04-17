@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Practice;
 
 namespace DAL.Repositories.Practice
 {
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Practice;
 
-    class PrijavaRepository : RepositoryBase
+    public class PrijavaRepository : RepositoryBase
     {
         public PrijavaRepository()
         {
@@ -44,7 +44,7 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava modelObject = new model.Prijava();
-                domainObject.IdKompanija = modelObject.Organizacija_ID;
+                modelObject.Organizacija_ID = domainObject.IdKompanija;
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
 

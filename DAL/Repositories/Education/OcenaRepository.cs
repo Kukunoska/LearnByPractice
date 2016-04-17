@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Education;
 namespace DAL.Repositories.Education
 {
 
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Education;
 
-    class OcenaRepository : RepositoryBase
+    public class OcenaRepository : RepositoryBase
     {
          public OcenaRepository()
         {
@@ -62,9 +61,9 @@ namespace DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Ocenka modelObject = new model.Ocenka();
-                domainObject.StudentId = modelObject.Korisnik_ID;
-                domainObject.PredmetId = modelObject.Predmet_ID;
-                domainObject.Ocenka = modelObject.Ocenka1;
+                modelObject.Korisnik_ID = domainObject.StudentId;
+                modelObject.Predmet_ID = domainObject.PredmetId;
+                modelObject.Ocenka1 = domainObject.Ocenka;
                 context.Ocenkas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Ocena result = ToDomain(modelObject);

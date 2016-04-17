@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Education;
 
 namespace DAL.Repositories.Education
 {
-
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Education;
-
-    class PredmetRepository : RepositoryBase
+   public class PredmetRepository : RepositoryBase
     {
          public PredmetRepository()
         {
@@ -46,7 +44,7 @@ namespace DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Predmet modelObject = new model.Predmet();
-                domainObject.Ime = modelObject.Ime;
+                modelObject.Ime = domainObject.Ime;
                 context.Predmets.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Predmet result = ToDomain(modelObject);
