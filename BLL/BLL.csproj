@@ -38,6 +38,7 @@
     <Compile Include="Managers\Education\StudiskaProgramaManager.cs" />
     <Compile Include="Managers\Manager.cs" />
     <Compile Include="Managers\Organizational\KompanijaManager.cs" />
+    <Compile Include="Managers\Organizational\VidOrganizacijaManager.cs" />
     <Compile Include="Managers\Practice\OblastManager.cs" />
     <Compile Include="Managers\Practice\PrijavaManager.cs" />
     <Compile Include="Managers\Practice\PrijavaStudentManager.cs" />
@@ -59,6 +60,9 @@
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
