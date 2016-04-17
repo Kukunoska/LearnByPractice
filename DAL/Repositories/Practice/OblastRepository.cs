@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Linq;
-
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Practice;
 
 namespace DAL.Repositories.Practice
 {
 
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Practice;
-
-    class OblastRepository : RepositoryBase
+   public class OblastRepository : RepositoryBase
     {
             public OblastRepository()
         {
@@ -47,7 +45,7 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Oblast modelObject = new model.Oblast();
-                domainObject.Ime = modelObject.Ime;
+                modelObject.Ime = domainObject.Ime;
                 context.Oblasts.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Oblast result = ToDomain(modelObject);

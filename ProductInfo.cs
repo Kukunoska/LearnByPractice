@@ -5,3 +5,5 @@
 [assembly: AssemblyCopyright("Copyright © ФИКТ, 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Organizational;
 
 namespace DAL.Repositories.Organizational
 {
 
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Organizational;
-
-    class KompanijaRepository : RepositoryBase
+   public class KompanijaRepository : RepositoryBase
     {
          public KompanijaRepository()
         {
@@ -22,8 +21,11 @@ namespace DAL.Repositories.Organizational
                 domain.Kompanija domainObject = new domain.Kompanija();
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
-                //domainObject = modelObject;
-              result.Add(domainObject);
+                domainObject.Adresa = modelObject.Adresa;
+                domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
+                domainObject.VebStrana = modelObject.Veb_Strana;
+                domainObject.vidOrganizacija.Ime = modelObject.Vid_Organizacija.Ime;
+                result.Add(domainObject);
             }
 
             return result;
@@ -47,12 +49,17 @@ namespace DAL.Repositories.Organizational
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Organizacija modelObject = new model.Organizacija();
-                domainObject.Ime = modelObject.Ime;
+                modelObject.Ime = domainObject.Ime;
+                modelObject.Adresa = domainObject.Adresa;
+                modelObject.Kontakt_Telefon = domainObject.KontaktTelefon;
+                modelObject.Veb_Strana = domainObject.VebStrana;
+                modelObject.Vid_Organizacija.Ime = domainObject.vidOrganizacija.Ime;
                 context.Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Kompanija result = ToDomain(modelObject);
 
                 return result;
+                
 
             }
         }

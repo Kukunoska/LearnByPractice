@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Practice;
 
 namespace DAL.Repositories.Practice
 {
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Practice;
 
-    class PrijavaTehnologijaRepository : RepositoryBase
+    public class PrijavaTehnologijaRepository : RepositoryBase
     {
         public PrijavaTehnologijaRepository()
         {
@@ -66,7 +66,8 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Tehnologija modelObject = new model.Prijava_Tehnologija();
-                domainObject.IdTehnologija = modelObject.Tehnologija_ID;
+                modelObject.Tehnologija_ID = domainObject.IdTehnologija;
+                modelObject.Prijava_ID = domainObject.IdPrijava;
                 context.Prijava_Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);

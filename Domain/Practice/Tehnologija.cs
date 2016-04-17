@@ -14,7 +14,7 @@ namespace LearnByPractice.Domain.Practice
         public String Ime { get; set; }
 
         /// <summary>Објект од класата <c>Oblast</c>.</summary>
-        Oblast oblast = new Oblast();
+        public Oblast oblast = new Oblast();
 
         /// <summary> Конструктор на класата <c>Tehnologija</c>, без параметри.</summary>
         public Tehnologija() { }

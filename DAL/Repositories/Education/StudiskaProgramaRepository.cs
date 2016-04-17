@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Education;
 
 namespace DAL.Repositories.Education
 {
-
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Education;
-
-    class StudiskaProgramaRepository : RepositoryBase
+    public class StudiskaProgramaRepository : RepositoryBase
     {
           public StudiskaProgramaRepository()
         {
@@ -46,7 +44,7 @@ namespace DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Studiska_Programa modelObject = new model.Studiska_Programa();
-                domainObject.Ime = modelObject.Ime;
+                modelObject.Ime = domainObject.Ime;
                 context.Studiska_Programas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.StudiskaPrograma result = ToDomain(modelObject);

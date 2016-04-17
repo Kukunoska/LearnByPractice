@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using model = DAL.Models;
+using domain = LearnByPractice.Domain.Practice;
 
 namespace DAL.Repositories.Practice
 {
 
-    using model = DAL.Models;
-    using domain = LearnByPractice.Domain.Practice;
-
-    class PrijavaStudentRepository : RepositoryBase
+    public class PrijavaStudentRepository : RepositoryBase
     {
         public PrijavaStudentRepository()
         {
@@ -62,7 +61,8 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                domainObject.IdStudent = modelObject.Korisnik_ID;
+                modelObject.Korisnik_ID = domainObject.IdStudent;
+                modelObject.Prijava_ID = domainObject.IdPrijava;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
