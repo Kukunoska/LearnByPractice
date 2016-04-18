@@ -1,44 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.BLL.Managers.Practice
 {
     using LearnByPractice.Domain.Practice;
-    using DAL.Repositories.Practice; 
+    using DAL.Repositories.Practice;
 
-      public class OblastManager
+    public class OblastManager : ManagerBase
     {
         public OblastManager()
-    {
+        {
 
+        }
+
+        public OblastCollection GetAll()
+        {
+            OblastManager repository = new OblastManager();
+            OblastCollection siteOblasti = repository.GetAll();
+
+            return siteOblasti;
+        }
+
+        public OblastCollection Insert()
+        {
+            OblastManager repository = new OblastManager();
+            OblastCollection siteOblasti = repository.Insert();
+
+            return siteOblasti;
+        }
+
+        /* public OblastCollection Update() 
+     {
+          OblastManager repository = new OblastManager();
+          OblastCollection siteOblasti = repository.Update();
+
+          return siteOblasti;
+    }*/
     }
-          public OblastCollection GetAll() 
-      {
-           OblastManager repository = new OblastManager();
-           OblastCollection siteOblasti = repository.GetAll();
-
-           return siteOblasti;
-     }
-    
-          public OblastCollection Insert() 
-      {
-           OblastManager repository = new OblastManager();
-           OblastCollection siteOblasti = repository.Insert();
-
-           return siteOblasti;
-     }
-    
-         /* public OblastCollection Update() 
-      {
-           OblastManager repository = new OblastManager();
-           OblastCollection siteOblasti = repository.Update();
-
-           return siteOblasti;
-     }*/
-     }
-  
-    
 }

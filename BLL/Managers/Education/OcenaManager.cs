@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 namespace LearnByPractice.BLL.Managers.Education
 {
     using LearnByPractice.Domain.Education;
-    using DAL.Repositories.Education;
-    
 
-   public class OcenaManager
+    public class OcenaManager : ManagerBase
     {
         public OcenaManager()
-    {
+        {
 
-    }
+        }
 
         public OcenaCollection GetAll()
         {
@@ -27,25 +19,22 @@ namespace LearnByPractice.BLL.Managers.Education
             return siteOceni;
         }
 
-
         public OcenaCollection Insert()
         {
             OcenaManager repository = new OcenaManager();
             OcenaCollection siteOceni = repository.Insert();
-           // public domain.Ocena Insert(domain.Ocena domainObject)
+            // public domain.Ocena Insert(domain.Ocena domainObject)
 
             return siteOceni;
         }
 
-       /* public OcenaCollection Update()
-        {
-            OcenaManager repository = new OcenaManager();
-            OcenaCollection siteOceni = repository.Update();
+        /* public OcenaCollection Update()
+         {
+             OcenaManager repository = new OcenaManager();
+             OcenaCollection siteOceni = repository.Update();
 
-            return siteOceni;
-        }*/
+             return siteOceni;
+         }*/
     }
-      
-      
 }
-    
+

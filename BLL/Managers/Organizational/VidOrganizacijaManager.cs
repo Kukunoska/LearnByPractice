@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.BLL.Managers.Organizational
 {
     using LearnByPractice.Domain.Organizational;
     using DAL.Repositories.Organizational;
 
-    public class VidOrganizacijaManager
+    public class VidOrganizacijaManager : ManagerBase
     {
         public VidOrganizacijaManager()
         {
@@ -38,9 +34,6 @@ namespace LearnByPractice.BLL.Managers.Organizational
           VidOrganizacijaCollection siteVidOrganizacii = repository.Update();
 
           return siteVidOrganizacii;
-     }
-     
-  
-   */
+     }*/
     }
 }

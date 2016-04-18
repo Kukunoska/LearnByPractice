@@ -1,44 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnByPractice.BLL.Managers.Practice
 {
     using LearnByPractice.Domain.Practice;
-    using DAL.Repositories.Practice; 
+    using DAL.Repositories.Practice;
 
-     public class PrijavaStudentManager
+    public class PrijavaStudentManager : ManagerBase
     {
         public PrijavaStudentManager()
+        {
+
+        }
+
+        public PrijavaStudentCollection GetAll()
+        {
+            PrijavaStudentManager repository = new PrijavaStudentManager();
+            PrijavaStudentCollection sitePrijavaStudent = repository.GetAll();
+
+            return sitePrijavaStudent;
+        }
+
+        public PrijavaStudentCollection Insert()
+        {
+            PrijavaStudentManager repository = new PrijavaStudentManager();
+            PrijavaStudentCollection sitePrijavaStudent = repository.Insert();
+
+            return sitePrijavaStudent;
+        }
+
+        /*public PrijavaStudentCollection Update() 
     {
+       PrijavaStudentManager repository = new PrijavaStudentManager();
+         PrijavaStudentCollection sitePrijavaStudent = repository.Update();
 
+         return sitePrijavaStudent;
+   }*/
     }
-          public PrijavaStudentCollection GetAll() 
-      {
-         PrijavaStudentManager repository = new PrijavaStudentManager();
-           PrijavaStudentCollection sitePrijavaStudent = repository.GetAll();
-
-           return sitePrijavaStudent;
-  }
-    
-          public PrijavaStudentCollection Insert() 
-      {
-         PrijavaStudentManager repository = new PrijavaStudentManager();
-           PrijavaStudentCollection sitePrijavaStudent = repository.Insert();
-
-           return sitePrijavaStudent;
-  }
-    
-          /*public PrijavaStudentCollection Update() 
-      {
-         PrijavaStudentManager repository = new PrijavaStudentManager();
-           PrijavaStudentCollection sitePrijavaStudent = repository.Update();
-
-           return sitePrijavaStudent;
-     }*/
-     }
-  
-    
 }
