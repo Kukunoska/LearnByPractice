@@ -15,65 +15,59 @@ namespace DAL.Repositories.Security
         {
         }
 
-        protected domain.PolEnum ToDomain(char modelPol)
+        protected domain.PolEnum ToDomain(char Pol)
         {
-            switch (modelPol)
+            switch (Pol)
             {
-                case 'M':
+                case 'М':
                     return domain.PolEnum.Mashki;
 
-                case 'Z':
+                case 'Ж':
                     return domain.PolEnum.Zhenski;
 
-                case 'N':
-                    return domain.PolEnum.Nepoznat;
-
-                default: throw new ArgumentOutOfRangeException("modelPol", "Неочекувана вредноста на Pol е прочитана од базата на податоци.");
+                default: throw new ArgumentOutOfRangeException("Pol", "Неочекувана вредноста на Pol е прочитана од базата на податоци.");
             }
         }
 
-        protected char ToModel(domain.PolEnum domainPol)
+        protected char ToModel(domain.PolEnum Pol)
         {
 
-            switch (domainPol)
+            switch (Pol)
             {
                 case domain.PolEnum.Mashki:
-                    return 'M';
+                    return 'М';
 
                 case domain.PolEnum.Zhenski:
-                    return 'Z';
-
-                case domain.PolEnum.Nepoznat:
-                    return 'N';
+                    return 'Ж';
 
                 default:
-                    throw new ArgumentOutOfRangeException("domainPol", "Обид за запишување на неочекувана вредноста на Pol во базата на податоци.");
+                    throw new ArgumentOutOfRangeException("Pol", "Обид за запишување на неочекувана вредноста на Pol во базата на податоци.");
             }
         }
-        public domain.KorisnikCollection GetAll() 
-    {
-        model.LearnByPracticeDataContext context = CreateContext();
-        IQueryable<model.Korisnik> query = context.Korisniks;
-                domain.KorisnikCollection result = new domain.KorisnikCollection();
-                foreach (model.Korisnik modelObject in query)
-                {
-                    domain.Korisnik domainObject = new domain.Korisnik();
-                    domainObject.IdKorisnik = modelObject.ID;
-                    domainObject.Username = modelObject.Korisnichko_Ime;
-                    //domainObject.Password = modelObject.Lozinka;
-                    domainObject.Ime = modelObject.Ime;
-                    domainObject.Prezime = modelObject.Prezime;
-                    domainObject.Pol = ToDomain(modelObject.Pol);
-                    domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
-                    domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
-                    domainObject.Email = modelObject.Email;
-                    domainObject.Mobilen = modelObject.Telefonski_Broj;
+        public domain.KorisnikCollection GetAll()
+        {
+            model.LearnByPracticeDataContext context = CreateContext();
+            IQueryable<model.Korisnik> query = context.Korisniks;
+            domain.KorisnikCollection result = new domain.KorisnikCollection();
+            foreach (model.Korisnik modelObject in query)
+            {
+                domain.Korisnik domainObject = new domain.Korisnik();
+                domainObject.IdKorisnik = modelObject.ID;
+                domainObject.Username = modelObject.Korisnichko_Ime;
+                //domainObject.Password = modelObject.Lozinka;
+                domainObject.Ime = modelObject.Ime;
+                domainObject.Prezime = modelObject.Prezime;
+                domainObject.Pol = ToDomain(modelObject.Pol);
+                domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
+                domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+                domainObject.Email = modelObject.Email;
+                domainObject.Mobilen = modelObject.Telefonski_Broj;
 
-                    result.Add(domainObject);
-                }
+                result.Add(domainObject);
+            }
 
-                return result;
-    }
+            return result;
+        }
 
         private domain.PolEnum ToDomain(string p)
         {
@@ -86,7 +80,7 @@ namespace DAL.Repositories.Security
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Korisnik> query = context.Korisniks.Where(c => c.ID == id);
-               
+
                 domain.Korisnik domainObject = ToDomain(query.Single());
 
                 return domainObject;
@@ -109,7 +103,7 @@ namespace DAL.Repositories.Security
             throw new NotImplementedException();
         }
 
-        public domain.Korisnik Insert (domain.Korisnik domainObject)
+        public domain.Korisnik Insert(domain.Korisnik domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
@@ -118,7 +112,7 @@ namespace DAL.Repositories.Security
                 //modelObject.Lozinka = domainObject.Password;
                 modelObject.Ime = domainObject.Ime;
                 modelObject.Prezime = domainObject.Prezime;
-                //modelObject.Pol = ToModel(domainObject.Pol);
+                modelObject.Pol = ToModel(domainObject.Pol);
                 modelObject.Studiska_Programa.Ime = domainObject.studiskaPrograma.Ime;
                 modelObject.Organizacija.Ime = domainObject.organizacija.Ime;
                 modelObject.Email = domainObject.Email;
@@ -129,6 +123,28 @@ namespace DAL.Repositories.Security
                 return result;
             }
         }
+
+        public domain.Korisnik Update(domain.Korisnik domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Korisnik> query = context.Korisniks.Where(p => p.ID == domainObject.IdKorisnik);
+                model.Korisnik modelObject = query.Single();
+                modelObject.Korisnichko_Ime = domainObject.Username;
+                //modelObject.Lozinka = domainObject.Password;
+                modelObject.Ime = domainObject.Ime;
+                modelObject.Prezime = domainObject.Prezime;
+                modelObject.Pol = ToModel(domainObject.Pol);
+                modelObject.Studiska_Programa.Ime = domainObject.studiskaPrograma.Ime;
+                modelObject.Organizacija.Ime = domainObject.organizacija.Ime;
+                modelObject.Email = domainObject.Email;
+                modelObject.Telefonski_Broj = domainObject.Mobilen;
+                context.SubmitChanges();
+                domain.Korisnik result = ToDomain(modelObject);
+                return result;
+            }
+        }
+
 
         private domain.Korisnik ToDomain(model.Korisnik korisnik)
         {

@@ -57,9 +57,6 @@ namespace DAL.Models
     partial void InsertPrijava_Korisnik(Prijava_Korisnik instance);
     partial void UpdatePrijava_Korisnik(Prijava_Korisnik instance);
     partial void DeletePrijava_Korisnik(Prijava_Korisnik instance);
-    partial void InsertPrijava_Tehnologija1(Prijava_Tehnologija1 instance);
-    partial void UpdatePrijava_Tehnologija1(Prijava_Tehnologija1 instance);
-    partial void DeletePrijava_Tehnologija1(Prijava_Tehnologija1 instance);
     partial void InsertStudiska_Programa(Studiska_Programa instance);
     partial void UpdateStudiska_Programa(Studiska_Programa instance);
     partial void DeleteStudiska_Programa(Studiska_Programa instance);
@@ -167,14 +164,6 @@ namespace DAL.Models
 			get
 			{
 				return this.GetTable<Prijava_Korisnik>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Prijava_Tehnologija1> Prijava_Tehnologija1s
-		{
-			get
-			{
-				return this.GetTable<Prijava_Tehnologija1>();
 			}
 		}
 		
@@ -379,7 +368,7 @@ namespace DAL.Models
 		
 		private string _Prezime;
 		
-		private string _Pol;
+		private char _Pol;
 		
 		private System.Nullable<int> _Studiska_Programa_ID;
 		
@@ -417,7 +406,7 @@ namespace DAL.Models
     partial void OnImeChanged();
     partial void OnPrezimeChanging(string value);
     partial void OnPrezimeChanged();
-    partial void OnPolChanging(string value);
+    partial void OnPolChanging(char value);
     partial void OnPolChanged();
     partial void OnStudiska_Programa_IDChanging(System.Nullable<int> value);
     partial void OnStudiska_Programa_IDChanged();
@@ -544,8 +533,8 @@ namespace DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pol", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
-		public string Pol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pol", DbType="NVarChar(1) NOT NULL")]
+		public char Pol
 		{
 			get
 			{
@@ -1680,8 +1669,6 @@ namespace DAL.Models
 		
 		private EntitySet<Prijava_Korisnik> _Prijava_Korisniks;
 		
-		private EntitySet<Prijava_Tehnologija1> _Prijava_Tehnologija1s;
-		
 		private EntityRef<Organizacija> _Organizacija;
 		
     #region Extensibility Method Definitions
@@ -1700,7 +1687,6 @@ namespace DAL.Models
 		{
 			this._Prijava_Tehnologijas = new EntitySet<Prijava_Tehnologija>(new Action<Prijava_Tehnologija>(this.attach_Prijava_Tehnologijas), new Action<Prijava_Tehnologija>(this.detach_Prijava_Tehnologijas));
 			this._Prijava_Korisniks = new EntitySet<Prijava_Korisnik>(new Action<Prijava_Korisnik>(this.attach_Prijava_Korisniks), new Action<Prijava_Korisnik>(this.detach_Prijava_Korisniks));
-			this._Prijava_Tehnologija1s = new EntitySet<Prijava_Tehnologija1>(new Action<Prijava_Tehnologija1>(this.attach_Prijava_Tehnologija1s), new Action<Prijava_Tehnologija1>(this.detach_Prijava_Tehnologija1s));
 			this._Organizacija = default(EntityRef<Organizacija>);
 			OnCreated();
 		}
@@ -1795,19 +1781,6 @@ namespace DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Prijava_Prijava_Tehnologija1", Storage="_Prijava_Tehnologija1s", ThisKey="ID", OtherKey="Prijava_ID")]
-		public EntitySet<Prijava_Tehnologija1> Prijava_Tehnologija1s
-		{
-			get
-			{
-				return this._Prijava_Tehnologija1s;
-			}
-			set
-			{
-				this._Prijava_Tehnologija1s.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Organizacija_Prijava", Storage="_Organizacija", ThisKey="Organizacija_ID", OtherKey="ID", IsForeignKey=true)]
 		public Organizacija Organizacija
 		{
@@ -1881,18 +1854,6 @@ namespace DAL.Models
 		}
 		
 		private void detach_Prijava_Korisniks(Prijava_Korisnik entity)
-		{
-			this.SendPropertyChanging();
-			entity.Prijava = null;
-		}
-		
-		private void attach_Prijava_Tehnologija1s(Prijava_Tehnologija1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Prijava = this;
-		}
-		
-		private void detach_Prijava_Tehnologija1s(Prijava_Tehnologija1 entity)
 		{
 			this.SendPropertyChanging();
 			entity.Prijava = null;
@@ -2067,174 +2028,6 @@ namespace DAL.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Prijava_Tehnologija")]
-	public partial class Prijava_Tehnologija1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Prijava_ID;
-		
-		private int _Tehnologija_ID;
-		
-		private EntityRef<Prijava> _Prijava;
-		
-		private EntityRef<Tehnologija> _Tehnologija;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPrijava_IDChanging(int value);
-    partial void OnPrijava_IDChanged();
-    partial void OnTehnologija_IDChanging(int value);
-    partial void OnTehnologija_IDChanged();
-    #endregion
-		
-		public Prijava_Tehnologija1()
-		{
-			this._Prijava = default(EntityRef<Prijava>);
-			this._Tehnologija = default(EntityRef<Tehnologija>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Prijava_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Prijava_ID
-		{
-			get
-			{
-				return this._Prijava_ID;
-			}
-			set
-			{
-				if ((this._Prijava_ID != value))
-				{
-					if (this._Prijava.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPrijava_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Prijava_ID = value;
-					this.SendPropertyChanged("Prijava_ID");
-					this.OnPrijava_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tehnologija_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Tehnologija_ID
-		{
-			get
-			{
-				return this._Tehnologija_ID;
-			}
-			set
-			{
-				if ((this._Tehnologija_ID != value))
-				{
-					if (this._Tehnologija.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTehnologija_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Tehnologija_ID = value;
-					this.SendPropertyChanged("Tehnologija_ID");
-					this.OnTehnologija_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Prijava_Prijava_Tehnologija1", Storage="_Prijava", ThisKey="Prijava_ID", OtherKey="ID", IsForeignKey=true)]
-		public Prijava Prijava
-		{
-			get
-			{
-				return this._Prijava.Entity;
-			}
-			set
-			{
-				Prijava previousValue = this._Prijava.Entity;
-				if (((previousValue != value) 
-							|| (this._Prijava.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Prijava.Entity = null;
-						previousValue.Prijava_Tehnologija1s.Remove(this);
-					}
-					this._Prijava.Entity = value;
-					if ((value != null))
-					{
-						value.Prijava_Tehnologija1s.Add(this);
-						this._Prijava_ID = value.ID;
-					}
-					else
-					{
-						this._Prijava_ID = default(int);
-					}
-					this.SendPropertyChanged("Prijava");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tehnologija_Prijava_Tehnologija1", Storage="_Tehnologija", ThisKey="Tehnologija_ID", OtherKey="ID", IsForeignKey=true)]
-		public Tehnologija Tehnologija
-		{
-			get
-			{
-				return this._Tehnologija.Entity;
-			}
-			set
-			{
-				Tehnologija previousValue = this._Tehnologija.Entity;
-				if (((previousValue != value) 
-							|| (this._Tehnologija.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tehnologija.Entity = null;
-						previousValue.Prijava_Tehnologija1s.Remove(this);
-					}
-					this._Tehnologija.Entity = value;
-					if ((value != null))
-					{
-						value.Prijava_Tehnologija1s.Add(this);
-						this._Tehnologija_ID = value.ID;
-					}
-					else
-					{
-						this._Tehnologija_ID = default(int);
-					}
-					this.SendPropertyChanged("Tehnologija");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Studiska_Programa")]
 	public partial class Studiska_Programa : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2363,8 +2156,6 @@ namespace DAL.Models
 		
 		private EntitySet<Prijava_Tehnologija> _Prijava_Tehnologijas;
 		
-		private EntitySet<Prijava_Tehnologija1> _Prijava_Tehnologija1s;
-		
 		private EntityRef<Oblast> _Oblast;
 		
     #region Extensibility Method Definitions
@@ -2382,7 +2173,6 @@ namespace DAL.Models
 		public Tehnologija()
 		{
 			this._Prijava_Tehnologijas = new EntitySet<Prijava_Tehnologija>(new Action<Prijava_Tehnologija>(this.attach_Prijava_Tehnologijas), new Action<Prijava_Tehnologija>(this.detach_Prijava_Tehnologijas));
-			this._Prijava_Tehnologija1s = new EntitySet<Prijava_Tehnologija1>(new Action<Prijava_Tehnologija1>(this.attach_Prijava_Tehnologija1s), new Action<Prijava_Tehnologija1>(this.detach_Prijava_Tehnologija1s));
 			this._Oblast = default(EntityRef<Oblast>);
 			OnCreated();
 		}
@@ -2464,19 +2254,6 @@ namespace DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tehnologija_Prijava_Tehnologija1", Storage="_Prijava_Tehnologija1s", ThisKey="ID", OtherKey="Tehnologija_ID")]
-		public EntitySet<Prijava_Tehnologija1> Prijava_Tehnologija1s
-		{
-			get
-			{
-				return this._Prijava_Tehnologija1s;
-			}
-			set
-			{
-				this._Prijava_Tehnologija1s.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Oblast_Tehnologija", Storage="_Oblast", ThisKey="Oblast_ID", OtherKey="ID", IsForeignKey=true)]
 		public Oblast Oblast
 		{
@@ -2538,18 +2315,6 @@ namespace DAL.Models
 		}
 		
 		private void detach_Prijava_Tehnologijas(Prijava_Tehnologija entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tehnologija = null;
-		}
-		
-		private void attach_Prijava_Tehnologija1s(Prijava_Tehnologija1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tehnologija = this;
-		}
-		
-		private void detach_Prijava_Tehnologija1s(Prijava_Tehnologija1 entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tehnologija = null;

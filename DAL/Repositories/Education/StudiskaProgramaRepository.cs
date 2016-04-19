@@ -7,7 +7,7 @@ namespace DAL.Repositories.Education
 {
     public class StudiskaProgramaRepository : RepositoryBase
     {
-          public StudiskaProgramaRepository()
+        public StudiskaProgramaRepository()
         {
         }
         public domain.StudiskaProgramaCollection GetAll()
@@ -20,7 +20,7 @@ namespace DAL.Repositories.Education
                 domain.StudiskaPrograma domainObject = new domain.StudiskaPrograma();
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
-              result.Add(domainObject);
+                result.Add(domainObject);
             }
 
             return result;
@@ -59,5 +59,5 @@ namespace DAL.Repositories.Education
             throw new NotImplementedException();
         }
     }
-    }
+}
 

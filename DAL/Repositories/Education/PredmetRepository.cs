@@ -5,9 +5,9 @@ using domain = LearnByPractice.Domain.Education;
 
 namespace DAL.Repositories.Education
 {
-   public class PredmetRepository : RepositoryBase
+    public class PredmetRepository : RepositoryBase
     {
-         public PredmetRepository()
+        public PredmetRepository()
         {
         }
         public domain.PredmetCollection GetAll()
@@ -20,7 +20,7 @@ namespace DAL.Repositories.Education
                 domain.Predmet domainObject = new domain.Predmet();
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
-              result.Add(domainObject);
+                result.Add(domainObject);
             }
 
             return result;
@@ -59,5 +59,5 @@ namespace DAL.Repositories.Education
             throw new NotImplementedException();
         }
     }
-    }
+}
 

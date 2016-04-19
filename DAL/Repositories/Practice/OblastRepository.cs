@@ -6,9 +6,9 @@ using domain = LearnByPractice.Domain.Practice;
 namespace DAL.Repositories.Practice
 {
 
-   public class OblastRepository : RepositoryBase
+    public class OblastRepository : RepositoryBase
     {
-            public OblastRepository()
+        public OblastRepository()
         {
         }
         public domain.OblastCollection GetAll()
@@ -21,7 +21,7 @@ namespace DAL.Repositories.Practice
                 domain.Oblast domainObject = new domain.Oblast();
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
-              result.Add(domainObject);
+                result.Add(domainObject);
             }
 
             return result;
@@ -54,12 +54,24 @@ namespace DAL.Repositories.Practice
 
             }
         }
+        public domain.Oblast Update(domain.Oblast domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Oblast> query = context.Oblasts.Where(p => p.ID == domainObject.Id);
+                model.Oblast modelObject = query.Single();
+                modelObject.Ime = domainObject.Ime;
+                context.SubmitChanges();
+                domain.Oblast result = ToDomain(modelObject);
+                return result;
+            }
+        }
 
         private domain.Oblast ToDomain(model.Oblast modelObject)
         {
             throw new NotImplementedException();
         }
     }
-        }
-    
+}
+
 

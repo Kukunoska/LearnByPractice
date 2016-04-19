@@ -7,7 +7,7 @@ namespace DAL.Repositories.Practice
 {
     public class TehnologijaRepository : RepositoryBase
     {
-         public TehnologijaRepository()
+        public TehnologijaRepository()
         {
         }
         public domain.TehnologijaCollection GetAll()
@@ -60,6 +60,19 @@ namespace DAL.Repositories.Practice
 
             }
         }
+        public domain.Tehnologija Update(domain.Tehnologija domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Tehnologija> query = context.Tehnologijas.Where(p => p.ID == domainObject.Id);
+                model.Tehnologija modelObject = query.Single();
+                modelObject.Ime = domainObject.Ime;
+                modelObject.Oblast.Ime = domainObject.oblast.Ime;
+                context.SubmitChanges();
+                domain.Tehnologija result = ToDomain(modelObject);
+                return result;
+            }
+        }
     }
-    }
+}
 

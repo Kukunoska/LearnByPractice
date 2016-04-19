@@ -15,7 +15,7 @@
       <Column Name="Lozinka" Type="System.Data.Linq.Binary" DbType="VarBinary(255) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="Ime" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Prezime" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="Pol" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Pol" Type="System.Char" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Studiska_Programa_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Organizacija_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
@@ -79,7 +79,6 @@
       <Column Name="Datum_Na_Prijavuvanje" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Prijava_Prijava_Tehnologija" Member="Prijava_Tehnologijas" ThisKey="ID" OtherKey="Prijava_ID" Type="Prijava_Tehnologija" />
       <Association Name="Prijava_Prijava_Korisnik" Member="Prijava_Korisniks" ThisKey="ID" OtherKey="Prijava_ID" Type="Prijava_Korisnik" />
-      <Association Name="Prijava_Prijava_Tehnologija1" Member="Prijava_Tehnologija1s" ThisKey="ID" OtherKey="Prijava_ID" Type="Prijava_Tehnologija1" />
       <Association Name="Organizacija_Prijava" Member="Organizacija" ThisKey="Organizacija_ID" OtherKey="ID" Type="Organizacija" IsForeignKey="true" />
     </Type>
   </Table>
@@ -89,14 +88,6 @@
       <Column Name="Korisnik_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Korisnik_Prijava_Korisnik" Member="Korisnik" ThisKey="Korisnik_ID" OtherKey="ID" Type="Korisnik" IsForeignKey="true" />
       <Association Name="Prijava_Prijava_Korisnik" Member="Prijava" ThisKey="Prijava_ID" OtherKey="ID" Type="Prijava" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Prijava_Tehnologija" Member="Prijava_Tehnologija1s">
-    <Type Name="Prijava_Tehnologija1">
-      <Column Name="Prijava_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Tehnologija_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Prijava_Prijava_Tehnologija1" Member="Prijava" ThisKey="Prijava_ID" OtherKey="ID" Type="Prijava" IsForeignKey="true" />
-      <Association Name="Tehnologija_Prijava_Tehnologija1" Member="Tehnologija" ThisKey="Tehnologija_ID" OtherKey="ID" Type="Tehnologija" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Studiska_Programa" Member="Studiska_Programas">
@@ -112,7 +103,6 @@
       <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Oblast_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Tehnologija_Prijava_Tehnologija" Member="Prijava_Tehnologijas" ThisKey="ID" OtherKey="Tehnologija_ID" Type="Prijava_Tehnologija" />
-      <Association Name="Tehnologija_Prijava_Tehnologija1" Member="Prijava_Tehnologija1s" ThisKey="ID" OtherKey="Tehnologija_ID" Type="Prijava_Tehnologija1" />
       <Association Name="Oblast_Tehnologija" Member="Oblast" ThisKey="Oblast_ID" OtherKey="ID" Type="Oblast" IsForeignKey="true" />
     </Type>
   </Table>

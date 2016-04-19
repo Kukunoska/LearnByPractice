@@ -56,12 +56,6 @@
         <elementListCompartment Id="0c24a240-55dc-42ba-af24-f483c3983233" absoluteBounds="12.015, 6.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="dc2660d4-a878-43ac-95e0-5948165ca945" absoluteBounds="9, 1.375, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/LearnByPracticeDataContext/Prijava_Tehnologija1" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5730087e-7604-4eb6-8576-a69196c611fd" absoluteBounds="9.015, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="a11a818e-802e-4f11-80c2-798267a4b7b2" absoluteBounds="6.5, 6.875, 2, 1.1939925130208327">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Studiska_Programa" />
       <nestedChildShapes>
@@ -74,91 +68,77 @@
         <elementListCompartment Id="390bcebb-dace-46f4-905e-51be7972645c" absoluteBounds="6.265, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.25 : 8.40465413411458); (12 : 8.40465413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 8.40465413411458); (12 : 8.40465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Korisnik/Korisnik_Ocenka" />
       <nodes>
         <classShapeMoniker Id="4c35076c-29a0-4a20-9af8-e889504fd639" />
         <classShapeMoniker Id="91675e42-4cdf-4fdb-9d22-a2340ad89b9a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.33099609375); (5.79166666666667 : 5.33099609375 : JumpStart); (5.95833333333333 : 5.33099609375 : JumpEnd); (10.25 : 5.33099609375); (10.25 : 5.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.33099609375); (10.25 : 5.33099609375); (10.25 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Organizacija/Organizacija_Korisnik" />
       <nodes>
         <classShapeMoniker Id="b7a1f443-f0d2-4903-87c7-6ec3ba3aad92" />
         <classShapeMoniker Id="4c35076c-29a0-4a20-9af8-e889504fd639" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.47199625651042); (3.5 : 4.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.47199625651042); (3.5 : 4.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Vid_Organizacija/Vid_Organizacija_Organizacija" />
       <nodes>
         <classShapeMoniker Id="6599b6fb-6779-4fe4-80e3-2a6a59773733" />
         <classShapeMoniker Id="b7a1f443-f0d2-4903-87c7-6ec3ba3aad92" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 11.4719962565104); (13 : 11.4719962565104); (13 : 9.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 11.4719962565104); (13 : 11.4719962565104); (13 : 9.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Predmet/Predmet_Ocenka" />
       <nodes>
         <classShapeMoniker Id="bf0f223e-dbce-4be0-88c4-0f71133d9eed" />
         <classShapeMoniker Id="91675e42-4cdf-4fdb-9d22-a2340ad89b9a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 3.75); (8.625 : 3.375); (8.625 : 1.34699625651042); (9 : 1.34699625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.08094723632813); (10 : 4.08094723632813); (10 : 1.94399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Prijava/Prijava_Prijava_Tehnologija" />
       <nodes>
         <classShapeMoniker Id="f7a33862-6dc4-446e-9ae8-eea3185be6ce" />
         <classShapeMoniker Id="cf1c938f-a480-48ad-a54b-2ec6829bcb2d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.44314697265625); (5.79166666666667 : 4.44314697265625 : JumpStart); (5.95833333333333 : 4.44314697265625 : JumpEnd); (6.25 : 4.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.44314697265625); (6.25 : 4.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Organizacija/Organizacija_Prijava" />
       <nodes>
         <classShapeMoniker Id="b7a1f443-f0d2-4903-87c7-6ec3ba3aad92" />
         <classShapeMoniker Id="f7a33862-6dc4-446e-9ae8-eea3185be6ce" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 6.47199625651042); (12 : 6.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 6.47199625651042); (12 : 6.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Korisnik/Korisnik_Prijava_Korisnik" />
       <nodes>
         <classShapeMoniker Id="4c35076c-29a0-4a20-9af8-e889504fd639" />
         <classShapeMoniker Id="de8b38be-710d-4d6e-8748-48dc54eb2b1b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.47439947265625); (13 : 4.47439947265625); (13 : 5.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.47439947265625); (13 : 4.47439947265625); (13 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Prijava/Prijava_Prijava_Korisnik" />
       <nodes>
         <classShapeMoniker Id="f7a33862-6dc4-446e-9ae8-eea3185be6ce" />
         <classShapeMoniker Id="de8b38be-710d-4d6e-8748-48dc54eb2b1b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.11219973632812); (10 : 4.11219973632812); (10 : 2.56899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LearnByPracticeDataContext/Prijava/Prijava_Prijava_Tehnologija1" />
-      <nodes>
-        <classShapeMoniker Id="f7a33862-6dc4-446e-9ae8-eea3185be6ce" />
-        <classShapeMoniker Id="dc2660d4-a878-43ac-95e0-5948165ca945" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 7.47199625651042); (9.25 : 7.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 7.47199625651042); (9.25 : 7.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Studiska_Programa/Studiska_Programa_Korisnik" />
       <nodes>
         <classShapeMoniker Id="a11a818e-802e-4f11-80c2-798267a4b7b2" />
         <classShapeMoniker Id="4c35076c-29a0-4a20-9af8-e889504fd639" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 0.985998128255208); (9 : 0.985998128255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 0.985998128255208); (9 : 0.985998128255208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Tehnologija/Tehnologija_Prijava_Tehnologija" />
       <nodes>
         <classShapeMoniker Id="35482695-45c6-4638-8128-7c7a1e6fc037" />
         <classShapeMoniker Id="cf1c938f-a480-48ad-a54b-2ec6829bcb2d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 1.75564697265625); (8.54166666666667 : 1.75564697265625 : JumpStart); (8.70833333333333 : 1.75564697265625 : JumpEnd); (9 : 1.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LearnByPracticeDataContext/Tehnologija/Tehnologija_Prijava_Tehnologija1" />
-      <nodes>
-        <classShapeMoniker Id="35482695-45c6-4638-8128-7c7a1e6fc037" />
-        <classShapeMoniker Id="dc2660d4-a878-43ac-95e0-5948165ca945" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.25); (5.875 : 5.875); (5.875 : 1.44314697265625); (6.25 : 1.44314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.25); (5.875 : 5.875); (5.875 : 1.44314697265625); (6.25 : 1.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Oblast/Oblast_Tehnologija" />
       <nodes>
         <classShapeMoniker Id="b48ea04e-bac0-4765-b982-b505888c768f" />
