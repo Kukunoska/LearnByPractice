@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Education
     using LearnByPractice.Domain.Education;
     using DAL.Repositories.Education;
 
-    public class StudiskaProgramaManager : ManagerBase
+    public class StudiskaProgramaManager 
     {
         public StudiskaProgramaManager()
         {

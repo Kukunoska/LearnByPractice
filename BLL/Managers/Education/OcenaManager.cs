@@ -4,7 +4,7 @@ namespace LearnByPractice.BLL.Managers.Education
 {
     using LearnByPractice.Domain.Education;
 
-    public class OcenaManager : ManagerBase
+    public class OcenaManager 
     {
         public OcenaManager()
         {

@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Education
     using LearnByPractice.Domain.Education;
     using DAL.Repositories.Education;
 
-    public class PredmetManager : ManagerBase
+    public class PredmetManager 
     {
         public PredmetManager()
         {

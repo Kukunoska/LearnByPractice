@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Organizational
     using LearnByPractice.Domain.Organizational;
     using DAL.Repositories.Organizational;
 
-    public class VidOrganizacijaManager : ManagerBase
+    public class VidOrganizacijaManager 
     {
         public VidOrganizacijaManager()
         {

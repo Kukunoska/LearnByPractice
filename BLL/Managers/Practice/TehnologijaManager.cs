@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class TehnologijaManager : ManagerBase
+    public class TehnologijaManager 
     {
         public TehnologijaManager()
         {

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Product Business Logic Layer")]
+[assembly: AssemblyTitle("LearnByPractice Business Logic Layer")]
 [assembly: AssemblyDescription("Библиотека со класи за бизнис логиката")]
 [assembly: AssemblyConfiguration("")]
 

@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class PrijavaStudentManager : ManagerBase
+    public class PrijavaStudentManager 
     {
         public PrijavaStudentManager()
         {

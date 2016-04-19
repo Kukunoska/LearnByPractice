@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Security
     using LearnByPractice.Domain.Security;
     using DAL.Repositories.Security;
 
-    public class KorisnikManager : ManagerBase
+    public class KorisnikManager 
     {
         public KorisnikManager()
         {
