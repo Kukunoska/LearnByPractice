@@ -106,6 +106,8 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Oblast.sql">
@@ -152,5 +154,22 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <None Include="Scripts\Post-Deployment\dbo.Korisnik.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Oblast.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Ocenka.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Organizacija.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Predmet.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Prijava.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Prijava_Korisnik.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Prijava_Tehnologija.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Studiska_Programa.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Tehnologija.Table.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.Vid_Organizacija.Table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment-Main.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.publish.xml" />
   </ItemGroup>
 </Project>
