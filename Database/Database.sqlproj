@@ -167,7 +167,7 @@
     <None Include="Scripts\Post-Deployment\dbo.Vid_Organizacija.Table.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment-Main.sql" />
+    <PostDeploy Include="Scripts\Post-Deployment\Script.MainPostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
