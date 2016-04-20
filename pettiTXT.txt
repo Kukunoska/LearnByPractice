@@ -1,2 +1,0 @@
-Petti file
-Koj se naogja vo poseben folder, vo lokalniot repositorium
