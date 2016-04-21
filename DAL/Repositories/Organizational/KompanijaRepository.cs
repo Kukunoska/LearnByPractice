@@ -6,9 +6,9 @@ using domain = LearnByPractice.Domain.Organizational;
 namespace DAL.Repositories.Organizational
 {
 
-   public class KompanijaRepository : RepositoryBase
+    public class KompanijaRepository : RepositoryBase
     {
-         public KompanijaRepository()
+        public KompanijaRepository()
         {
         }
         public domain.KompanijaCollection GetAll()
@@ -59,7 +59,7 @@ namespace DAL.Repositories.Organizational
                 domain.Kompanija result = ToDomain(modelObject);
 
                 return result;
-                
+
 
             }
         }
@@ -70,5 +70,5 @@ namespace DAL.Repositories.Organizational
         }
 
     }
-    }
+}
 

@@ -76,5 +76,19 @@ namespace DAL.Repositories.Practice
 
             }
         }
+
+        public domain.PrijavaTehnologija Update(domain.PrijavaTehnologija domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(p => p.Prijava_ID == domainObject.IdPrijava);
+                model.Prijava_Tehnologija modelObject = query.Single();
+                modelObject.Tehnologija_ID = domainObject.IdTehnologija;
+                modelObject.Prijava_ID = domainObject.IdPrijava;
+                context.SubmitChanges();
+                domain.PrijavaTehnologija result = ToDomain(modelObject);
+                return result;
+            }
+        }
     }
 }

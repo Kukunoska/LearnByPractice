@@ -22,7 +22,7 @@ namespace DAL.Repositories.Practice
                 domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
                 domainObject.IdStudent = modelObject.Korisnik_ID;
                 domainObject.IdPrijava = modelObject.Prijava_ID;
-              result.Add(domainObject);
+                result.Add(domainObject);
             }
 
             return result;
@@ -43,12 +43,12 @@ namespace DAL.Repositories.Practice
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(c => c.Korisnik_ID== KorisnikId);
+                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(c => c.Korisnik_ID == KorisnikId);
                 domain.PrijavaStudentCollection domainObjects = ToDomainObjects(query.ToList());
 
                 return domainObjects;
             }
-        
+
         }
 
         private domain.PrijavaStudentCollection ToDomainObjects(List<model.Prijava_Korisnik> list)
@@ -71,6 +71,19 @@ namespace DAL.Repositories.Practice
 
             }
         }
+        public domain.PrijavaStudent Update(domain.PrijavaStudent domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.IdStudent);
+                model.Prijava_Korisnik modelObject = query.Single();
+                modelObject.Korisnik_ID = domainObject.IdStudent;
+                modelObject.Prijava_ID = domainObject.IdPrijava;
+                context.SubmitChanges();
+                domain.PrijavaStudent result = ToDomain(modelObject);
+                return result;
+            }
+        }
 
         private domain.PrijavaStudent ToDomain(model.Prijava_Korisnik modelObject)
         {
@@ -78,4 +91,4 @@ namespace DAL.Repositories.Practice
         }
     }
 
-    }
+}

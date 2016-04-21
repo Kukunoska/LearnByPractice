@@ -7,7 +7,7 @@ namespace DAL
 
     public abstract class RepositoryBase
     {
-        
+
         protected RepositoryBase()
         {
         }

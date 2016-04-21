@@ -9,7 +9,7 @@ namespace DAL.Repositories.Education
 
     public class OcenaRepository : RepositoryBase
     {
-         public OcenaRepository()
+        public OcenaRepository()
         {
         }
         public domain.OcenaCollection GetAll()
@@ -23,7 +23,7 @@ namespace DAL.Repositories.Education
                 domainObject.StudentId = modelObject.Korisnik_ID;
                 domainObject.PredmetId = modelObject.Predmet_ID;
                 domainObject.Ocenka = modelObject.Ocenka1;
-              result.Add(domainObject);
+                result.Add(domainObject);
             }
 
             return result;
@@ -70,6 +70,19 @@ namespace DAL.Repositories.Education
 
                 return result;
 
+            }
+        }
+
+        public domain.Ocena Update(domain.Ocena domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Ocenka> query = context.Ocenkas.Where(p => p.Korisnik_ID == domainObject.StudentId && p.Predmet_ID == domainObject.PredmetId);
+                model.Ocenka modelObject = query.Single();
+                modelObject.Ocenka1 = domainObject.Ocenka;
+                context.SubmitChanges();
+                domain.Ocena result = ToDomain(modelObject);
+                return result;
             }
         }
 

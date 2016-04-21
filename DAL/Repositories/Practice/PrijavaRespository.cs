@@ -19,8 +19,8 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava modelObject in query)
             {
                 domain.Prijava domainObject = new domain.Prijava();
-                domainObject.Id = modelObject.ID;
                 domainObject.IdKompanija = modelObject.Organizacija_ID;
+                domainObject.Datum = modelObject.Datum_Na_Prijavuvanje;
                 result.Add(domainObject);
             }
 
@@ -45,11 +45,24 @@ namespace DAL.Repositories.Practice
             {
                 model.Prijava modelObject = new model.Prijava();
                 modelObject.Organizacija_ID = domainObject.IdKompanija;
+                modelObject.Datum_Na_Prijavuvanje = domainObject.Datum;
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
 
                 return result;
 
+            }
+        }
+        public domain.Prijava Update(domain.Prijava domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Prijava> query = context.Prijavas.Where(p => p.ID == domainObject.Id);
+                model.Prijava modelObject = query.Single();
+                modelObject.Organizacija_ID = domainObject.IdKompanija;
+                context.SubmitChanges();
+                domain.Prijava result = ToDomain(modelObject);
+                return result;
             }
         }
 
