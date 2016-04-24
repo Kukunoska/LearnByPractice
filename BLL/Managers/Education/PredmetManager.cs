@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Education
     using LearnByPractice.Domain.Education;
     using DAL.Repositories.Education;
 
-    public class PredmetManager 
+    public class PredmetManager : ManagerBase
     {
         public PredmetManager()
         {
@@ -14,27 +14,27 @@ namespace LearnByPractice.BLL.Managers.Education
 
         public PredmetCollection GetAll()
         {
-            PredmetManager repository = new PredmetManager();
+            PredmetRepository repository = new PredmetRepository();
             PredmetCollection sitePredmeti = repository.GetAll();
 
             return sitePredmeti;
         }
 
-        public PredmetCollection Insert()
+        public Predmet Insert(Domain.Education.Predmet domainObject)
         {
-            PredmetManager repository = new PredmetManager();
-            PredmetCollection sitePredmeti = repository.Insert();
+            PredmetRepository repository = new PredmetRepository();
+            Predmet sitePredmeti = repository.Insert(domainObject);
 
             return sitePredmeti;
         }
 
-        /*  public PredmetCollection Update() 
-      {
-           PredmetManager repository = new PredmetManager();
-           PredmetCollection sitePredmeti = repository.Update();
+      /*  public Predmet Update(Domain.Education.Predmet domainObject)
+        {
+            PredmetRepository repository = new PredmetRepository();
+            Predmet siteOceni = repository.Update(domainObject);
 
-           return sitePredmeti;
-     }*/
+            return siteOceni;
+        }*/
     }
 }
 

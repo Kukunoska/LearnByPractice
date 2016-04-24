@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class TehnologijaManager 
+    public class TehnologijaManager : ManagerBase
     {
         public TehnologijaManager()
         {
@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public TehnologijaCollection GetAll()
         {
-            TehnologijaManager repository = new TehnologijaManager();
+            TehnologijaRepository repository = new TehnologijaRepository();
             TehnologijaCollection siteTehnologii = repository.GetAll();
 
             return siteTehnologii;
         }
 
-        public TehnologijaCollection Insert()
+        public Tehnologija Insert(Domain.Practice.Tehnologija domainObject)
         {
-            TehnologijaManager repository = new TehnologijaManager();
-            TehnologijaCollection siteTehnologii = repository.Insert();
+            TehnologijaRepository repository = new TehnologijaRepository();
+            Tehnologija siteTehnologii = repository.Insert(domainObject);
 
             return siteTehnologii;
         }
 
-        /*public TehnologijaCollection Update() 
-    {
-         TehnologijaManager repository = new TehnologijaManager();
-         TehnologijaCollection siteTehnologii = repository.Update();
+        public Tehnologija Update(Domain.Practice.Tehnologija domainObject)
+        {
+            TehnologijaRepository repository = new TehnologijaRepository();
+            Tehnologija siteTehnologii = repository.Update(domainObject);
 
-         return siteTehnologii;
-   }*/
+            return siteTehnologii;
+        }
     }
 }

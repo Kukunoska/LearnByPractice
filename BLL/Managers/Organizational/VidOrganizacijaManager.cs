@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Organizational
     using LearnByPractice.Domain.Organizational;
     using DAL.Repositories.Organizational;
 
-    public class VidOrganizacijaManager 
+    public class VidOrganizacijaManager : ManagerBase
     {
         public VidOrganizacijaManager()
         {
@@ -14,23 +14,23 @@ namespace LearnByPractice.BLL.Managers.Organizational
 
         public VidOrganizacijaCollection GetAll()
         {
-            VidOrganizacijaManager repository = new VidOrganizacijaManager();
+            VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
             VidOrganizacijaCollection siteVidOrganizacii = repository.GetAll();
 
             return siteVidOrganizacii;
         }
 
-        public VidOrganizacijaCollection Insert()
+        public VidOrganizacija Insert(Domain.Organizational.VidOrganizacija domainObject)
         {
-            VidOrganizacijaManager repository = new VidOrganizacijaManager();
-            VidOrganizacijaCollection siteVidOrganizacii = repository.Insert();
+            VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
+            VidOrganizacija siteVidOrganizacii = repository.Insert(domainObject);
 
             return siteVidOrganizacii;
         }
 
         /* public VidOrganizacijaCollection Update() 
      {
-        VidOrganizacijaManager repository = new VidOrganizacijaManager();
+        VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
           VidOrganizacijaCollection siteVidOrganizacii = repository.Update();
 
           return siteVidOrganizacii;

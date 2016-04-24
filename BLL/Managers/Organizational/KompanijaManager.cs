@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Organizational
     using LearnByPractice.Domain.Organizational;
     using DAL.Repositories.Organizational;
 
-    public class KompanijaManager 
+    public class KompanijaManager : ManagerBase
     {
         public KompanijaManager()
         {
@@ -14,23 +14,23 @@ namespace LearnByPractice.BLL.Managers.Organizational
 
         public KompanijaCollection GetAll()
         {
-            KompanijaManager repository = new KompanijaManager();
+            KompanijaRepository repository = new KompanijaRepository();
             KompanijaCollection siteKompanii = repository.GetAll();
 
             return siteKompanii;
         }
 
-        public KompanijaCollection Insert()
+        public Kompanija Insert(Domain.Organizational.Kompanija domainObject)
         {
-            KompanijaManager repository = new KompanijaManager();
-            KompanijaCollection siteKompanii = repository.Insert();
+            KompanijaRepository repository = new KompanijaRepository();
+            Kompanija siteKompanii = repository.Insert(domainObject);
 
             return siteKompanii;
         }
 
         /* public KompanijaCollection Update() 
      {
-        KompanijaManager repository = new KompanijaManager();
+        KompanijaRepository repository = new KompanijaRepository();
           KompanijaCollection siteKompanii = repository.Update();
 
           return siteKompanii;

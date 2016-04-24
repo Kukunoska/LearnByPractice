@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class OblastManager 
+    public class OblastManager : ManagerBase
     {
         public OblastManager()
         {
@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public OblastCollection GetAll()
         {
-            OblastManager repository = new OblastManager();
+            OblastRepository repository = new OblastRepository();
             OblastCollection siteOblasti = repository.GetAll();
 
             return siteOblasti;
         }
 
-        public OblastCollection Insert()
+        public Oblast Insert(Domain.Practice.Oblast domainObject)
         {
-            OblastManager repository = new OblastManager();
-            OblastCollection siteOblasti = repository.Insert();
+            OblastRepository repository = new OblastRepository();
+            Oblast siteOblasti = repository.Insert(domainObject);
 
             return siteOblasti;
         }
 
-        /* public OblastCollection Update() 
+         public Oblast Update(Domain.Practice.Oblast domainObject) 
      {
-          OblastManager repository = new OblastManager();
-          OblastCollection siteOblasti = repository.Update();
+          OblastRepository repository = new OblastRepository();
+          Oblast siteOblasti = repository.Update(domainObject);
 
           return siteOblasti;
-    }*/
+    }
     }
 }

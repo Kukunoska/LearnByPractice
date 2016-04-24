@@ -3,8 +3,9 @@
 namespace LearnByPractice.BLL.Managers.Education
 {
     using LearnByPractice.Domain.Education;
+    using DAL.Repositories.Education;
 
-    public class OcenaManager 
+    public class OcenaManager : ManagerBase
     {
         public OcenaManager()
         {
@@ -13,28 +14,28 @@ namespace LearnByPractice.BLL.Managers.Education
 
         public OcenaCollection GetAll()
         {
-            OcenaManager repository = new OcenaManager();
+            OcenaRepository repository = new OcenaRepository();
             OcenaCollection siteOceni = repository.GetAll();
 
             return siteOceni;
         }
 
-        public OcenaCollection Insert()
+        public Ocena Insert(Domain.Education.Ocena domainObject)
         {
-            OcenaManager repository = new OcenaManager();
-            OcenaCollection siteOceni = repository.Insert();
-            // public domain.Ocena Insert(domain.Ocena domainObject)
 
+            OcenaRepository repository = new OcenaRepository();
+            Ocena siteOceni = repository.Insert(domainObject);
             return siteOceni;
-        }
 
-        /* public OcenaCollection Update()
+        }
+         public Ocena Update( Domain.Education.Ocena domainObject)
          {
-             OcenaManager repository = new OcenaManager();
-             OcenaCollection siteOceni = repository.Update();
+             OcenaRepository repository = new OcenaRepository();
+             Ocena siteOceni = repository.Update(domainObject);
 
              return siteOceni;
-         }*/
+         }
     }
+
 }
 
