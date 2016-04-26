@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class PrijavaStudentManager 
+    public class PrijavaStudentManager : ManagerBase
     {
         public PrijavaStudentManager()
         {
@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public PrijavaStudentCollection GetAll()
         {
-            PrijavaStudentManager repository = new PrijavaStudentManager();
+            PrijavaStudentRepository repository = new PrijavaStudentRepository();
             PrijavaStudentCollection sitePrijavaStudent = repository.GetAll();
 
             return sitePrijavaStudent;
         }
 
-        public PrijavaStudentCollection Insert()
+        public PrijavaStudent Insert(Domain.Practice.PrijavaStudent domainObject)
         {
-            PrijavaStudentManager repository = new PrijavaStudentManager();
-            PrijavaStudentCollection sitePrijavaStudent = repository.Insert();
+            PrijavaStudentRepository repository = new PrijavaStudentRepository();
+            PrijavaStudent sitePrijavaStudent = repository.Insert(domainObject);
 
             return sitePrijavaStudent;
         }
 
-        /*public PrijavaStudentCollection Update() 
-    {
-       PrijavaStudentManager repository = new PrijavaStudentManager();
-         PrijavaStudentCollection sitePrijavaStudent = repository.Update();
+        public PrijavaStudent Update(Domain.Practice.PrijavaStudent domainObject)
+        {
+            PrijavaStudentRepository repository = new PrijavaStudentRepository();
+            PrijavaStudent sitePrijavaStudent = repository.Update(domainObject);
 
-         return sitePrijavaStudent;
-   }*/
+            return sitePrijavaStudent;
+        }
     }
 }

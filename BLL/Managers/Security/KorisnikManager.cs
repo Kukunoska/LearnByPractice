@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Security
     using LearnByPractice.Domain.Security;
     using DAL.Repositories.Security;
 
-    public class KorisnikManager 
+    public class KorisnikManager : ManagerBase
     {
         public KorisnikManager()
         {
@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Security
 
         public KorisnikCollection GetAll()
         {
-            KorisnikManager repository = new KorisnikManager();
+            KorisnikRepository repository = new KorisnikRepository();
             KorisnikCollection siteKorisnici = repository.GetAll();
 
             return siteKorisnici;
         }
 
-        public KorisnikCollection Insert()
+        public Korisnik Insert(Domain.Security.Korisnik domainObject)
         {
-            KorisnikManager repository = new KorisnikManager();
-            KorisnikCollection siteKorisnici = repository.Insert();
+            KorisnikRepository repository = new KorisnikRepository();
+            Korisnik siteKorisnici = repository.Insert(domainObject);
 
             return siteKorisnici;
         }
 
-        /* public KorisnikCollection Update() 
-     {
-        KorisnikManager repository = new KorisnikManager();
-          KorisnikCollection siteKorisnici = repository.Update();
+        public Korisnik Update(Domain.Security.Korisnik domainObject)
+        {
+            KorisnikRepository repository = new KorisnikRepository();
+            Korisnik siteKorisnici = repository.Update(domainObject);
 
-          return siteKorisnici;
-    }*/
+            return siteKorisnici;
+        }
     }
 }

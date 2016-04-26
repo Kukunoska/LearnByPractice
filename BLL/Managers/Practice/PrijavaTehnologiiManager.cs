@@ -5,7 +5,7 @@ namespace LearnByPractice.BLL.Managers.Practice
     using LearnByPractice.Domain.Practice;
     using DAL.Repositories.Practice;
 
-    public class PrijavaTehnologijaManager 
+    public class PrijavaTehnologijaManager : ManagerBase
     {
         public PrijavaTehnologijaManager()
         {
@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public PrijavaTehnologijaCollection GetAll()
         {
-            PrijavaTehnologijaManager repository = new PrijavaTehnologijaManager();
+            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
             PrijavaTehnologijaCollection sitePrijavaTehnologii = repository.GetAll();
 
             return sitePrijavaTehnologii;
         }
 
-        public PrijavaTehnologijaCollection Insert()
+        public PrijavaTehnologija Insert(Domain.Practice.PrijavaTehnologija domainObject)
         {
-            PrijavaTehnologijaManager repository = new PrijavaTehnologijaManager();
-            PrijavaTehnologijaCollection sitePrijavaTehnologii = repository.Insert();
+            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
+            PrijavaTehnologija sitePrijavaTehnologii = repository.Insert(domainObject);
 
             return sitePrijavaTehnologii;
         }
 
-        /* public PrijavaTehnologijaCollection Update() 
-     {
-        PrijavaTehnologiiManager repository = new PrijavaTehnologiiManager();
-          PrijavaTehnologiiCollection sitePrijavaTehnologii = repository.Update();
+        public PrijavaTehnologija Update(Domain.Practice.PrijavaTehnologija domainObject)
+        {
+            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
+            PrijavaTehnologija sitePrijavaTehnologii = repository.Update(domainObject);
 
-          return sitePrijavaTehnologii;
-    }*/
+            return sitePrijavaTehnologii;
+        }
     }
 }
