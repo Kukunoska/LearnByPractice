@@ -1,0 +1,107 @@
+﻿body {
+    font-family:Arial,Verdana, Geneva, Tahoma, sans-serif;
+    margin:auto;
+    background-color:#f2f2f2;
+}
+#lbp-container{
+    padding-top:10px;
+    width:100%;
+    margin: auto;
+}
+#header{
+    width:100%;
+    margin:auto;
+    height: 30px; 
+    color:#cccccc;
+    border-bottom:1px solid lightgray;
+    font-size:15px;
+}
+#fikt{
+    width:60%;
+    float:left;
+    text-align:left;
+    padding-left:20px;
+    font-style:italic;
+}
+#clen{
+    width:18%;
+    float:left;
+    text-align:right;  
+}
+#login{
+   float:left;
+   width:20%;
+   text-align:center;
+   color:black;
+}
+#meni{
+    width: 100%;
+    margin:auto;
+    height:50px;
+    border-bottom:1px solid lightgray;
+}
+#logoImg{
+    padding-top:15px;
+    width: 29%;
+    float: left;
+    text-align:center;
+}
+h3{
+    display: inline;
+    color:gray;
+    font-style:italic;
+}
+.lbp {
+    color: #00e6ac;
+}
+#lista{
+    width:70%;
+    float: left;
+}
+ul li{
+    width:18%;
+    display: inline-block;
+    text-align:center;
+    float:left;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+}
+#zaedno{
+    width:90%;
+    margin:auto;
+    clear:left;
+}
+
+#levo{
+    width:20%;
+    height:800px;
+    float:left;
+    background-color:#f2f2f2;
+    margin: auto;
+    padding-top:20px;
+}
+
+#lbp-main-area {
+    width: 80%;
+    background-color: #ffffff;
+    height: 800px;
+    float: left;
+    margin:auto;
+}
+#footer{
+    border-top: 1px solid #00e6ac;
+    padding:10px;
+    text-align:center;
+    width:98%;
+    clear:left;
+    background-color:#f2f2f2;
+    font-style:italic;
+    font-size:12px;
+    margin:auto;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color:#262626;
+}
+
+

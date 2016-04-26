@@ -1,20 +1,65 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebSite.master.cs" Inherits="UI.Web.WebSite" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebSite.master.cs" Inherits="LearnByPractice.UI.Web.WebSite" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link runat="server" id="MasterCssLink" rel="stylesheet" media="all" href="~/Styles/master.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <div id="lbp-container">
+        <div id="header">
+            <div id="fikt">Факултет за информатички и комуникациски технологии</div>
+            <div id="clen">Дали си член?</div>
+            <div id="login">
+                <a href="">Регистрирај се </a>/  <a href="">Најави се </a>
+            </div>
+        </div>
+        <div id="meni">
+            <div id="logoImg">
+                <h3 class="lbp">L</h3>
+                <h3>EARN </h3>
+                <h3 class="lbp">B</h3>
+                <h3>Y </h3>
+                <h3 class="lbp">P</h3>
+                <h3>RACTICE </h3>
+            </div>
+            <div id="lista">
+                <ul>
+                    <li>
+                        <asp:HyperLink runat="server" ID="Pocetna" NavigateUrl="~/PublicPages/Home.aspx" Text="Почетна" />
+                    </li>
+                    <li style="width: 23%">
+                        <asp:HyperLink runat="server" ID="Administrator" NavigateUrl="~/User/Admnistrator.aspx" Text="Администратор" />
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="Mentor" NavigateUrl="~/User/Mentor.aspx" Text="Ментор" />
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="Student" NavigateUrl="~/User/Student.aspx" Text="Студент" />
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" ID="proekti" NavigateUrl="~/PublicPages/Proekti.aspx" Text="Проекти" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="zaedno">
+            <div id="levo">
+                Slajder so logoa od firmi
+            </div>
+            <form id="form1" runat="server">
+                <div id="lbp-main-area">
+                    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </div>
+        <div id="footer">Learn By Practice &reg; Copyright &copy; ФИКТ, 2016</div>
     </div>
-    </form>
 </body>
 </html>
