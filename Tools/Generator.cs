@@ -71,7 +71,7 @@ namespace Tools
             List<Korisnik> korisnici = new List<Korisnik>();
             for (int i = 0; i < a; i++)
             {
-                for (int j = 0; i < (a - b); i++)
+                for (int j = 0; j < (a - b); j++)
                 {
 
                     Korisnik korisnikM = new Korisnik();
