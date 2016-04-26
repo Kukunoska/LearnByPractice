@@ -21,5 +21,11 @@ namespace Tools
         {
             Application.Exit();
         }
+
+        private void mnuGenerira_Click(object sender, EventArgs e)
+        {
+            Generator generator = new Generator();
+            generator.Show();
+        }
     }
 }

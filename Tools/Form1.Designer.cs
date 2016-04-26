@@ -59,6 +59,7 @@
             this.mnuGenerira.Name = "mnuGenerira";
             this.mnuGenerira.Size = new System.Drawing.Size(258, 22);
             this.mnuGenerira.Text = "Генерирање на рандом податоци";
+            this.mnuGenerira.Click += new System.EventHandler(this.mnuGenerira_Click);
             // 
             // mnuExit
             // 
