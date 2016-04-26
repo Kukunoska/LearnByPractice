@@ -60,7 +60,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Korisnik.cs" />
     <Compile Include="Security\KorisnikCollection.cs" />
-    <Compile Include="Security\KorisnikListi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
