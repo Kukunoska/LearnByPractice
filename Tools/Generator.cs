@@ -71,7 +71,7 @@ namespace Tools
             List<Korisnik> korisnici = new List<Korisnik>();
             for (int i = 0; i < a; i++)
             {
-                for (int j = 0; j < (a - b); j++)
+                for (int j = 0; j < c; j++)
                 {
 
                     Korisnik korisnikM = new Korisnik();
@@ -79,11 +79,13 @@ namespace Tools
                     korisnikM.Prezime = mashkiPreziminjaList[randoM.Next(0, (mashkiPreziminjaList.Count - 1))];
                     korisnici.Add(korisnikM);
                 }
-
-                Korisnik korisnikZ = new Korisnik();
-                korisnikZ.Ime = zenskiIminjaList[randoM.Next(0, (zenskiIminjaList.Count - 1))];
-                korisnikZ.Prezime = zenskiPreziminjaList[randoM.Next(0, (zenskiPreziminjaList.Count - 1))];
-                korisnici.Add(korisnikZ);
+                for (int j = 0; j < b; j++)
+                {
+                    Korisnik korisnikZ = new Korisnik();
+                    korisnikZ.Ime = zenskiIminjaList[randoM.Next(0, (zenskiIminjaList.Count - 1))];
+                    korisnikZ.Prezime = zenskiPreziminjaList[randoM.Next(0, (zenskiPreziminjaList.Count - 1))];
+                    korisnici.Add(korisnikZ);
+                }
             }
         }
     }
