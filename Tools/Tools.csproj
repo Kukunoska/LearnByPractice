@@ -100,10 +100,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MashkiIminja.txt" />
-    <Content Include="MashkiPreziminja.txt" />
-    <Content Include="ZenskiIminja.txt" />
-    <Content Include="ZenskiPreziminja.txt" />
+    <Content Include="MashkiIminja.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MashkiPreziminja.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ZenskiIminja.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ZenskiPreziminja.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
