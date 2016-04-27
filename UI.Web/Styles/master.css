@@ -5,12 +5,10 @@
 }
 #lbp-container{
     padding-top:10px;
-    width:100%;
-    margin: auto;
+    width:100%; 
 }
 #header{
     width:100%;
-    margin:auto;
     height: 30px; 
     color:#cccccc;
     border-bottom:1px solid lightgray;
@@ -36,7 +34,6 @@
 }
 #meni{
     width: 100%;
-    margin:auto;
     height:50px;
     border-bottom:1px solid lightgray;
 }
@@ -67,26 +64,27 @@ ul li{
     border-right:1px solid lightgray;
 }
 #zaedno{
-    width:90%;
-    margin:auto;
+    width:93%;
+    height:900px;
     clear:left;
+    padding-top:-20px;
+    padding-bottom:-20px;
+    margin:auto;
 }
 
-#levo{
+#slider{
     width:20%;
-    height:800px;
+    height:900px;
     float:left;
-    background-color:#f2f2f2;
-    margin: auto;
-    padding-top:20px;
+    margin:auto;
 }
 
 #lbp-main-area {
     width: 80%;
+    height:900px;
     background-color: #ffffff;
-    height: 800px;
     float: left;
-    margin:auto;
+
 }
 #footer{
     border-top: 1px solid #00e6ac;
@@ -97,11 +95,99 @@ ul li{
     background-color:#f2f2f2;
     font-style:italic;
     font-size:12px;
-    margin:auto;
 }
 a:link, a:visited {
     text-decoration: none;
     color:#262626;
 }
+#Nbds{
+    animation-name: anbds;
+    animation-duration:30s;
+    overflow: visible;
+    position:relative;
+    animation-iteration-count:infinite;
+}
+@keyframes anbds{
+   0%   { top:0px;}
+    20%  {top:173px;}
+    40%  {top:346px;}
+    60%  {top:519px;}
+    80% {top:692px;}
+     100%{top:0px;}
+}
+#Seavus{
+    animation-name: aseavus;
+    animation-duration:30s;
+    overflow: visible;
+    position:relative;
+    animation-iteration-count:infinite;
+}
+@keyframes aseavus{ 
+    0%   { top:0px;}
+    20%  {top:173px;}
+    40%  {top:346px;}
+    60%  {top:519px;}
+  80%{top:-173px;}
+    100%{top:0px;} 
+     
+}
+#x3mLabs{
+    animation-name: ax3m;
+    animation-duration:30s;
+    overflow: visible;
+    position:relative;
+    animation-iteration-count:infinite;
+
+}
+@keyframes ax3m{
+
+    0%{ top:0px;}
+    20% {top:173px;}
+    40%{top:346px;}
+    60%{top:-346px}
+    80%{top:-173px;}
+     100%{top:0px;} 
+         
+   }
+#iSource{
+    animation-name: aiSource;
+    animation-duration:30s;
+    overflow: visible;
+    position:relative;
+    animation-iteration-count:infinite;
+}
+@keyframes aiSource{
+   
+   0%   { top:0px;}
+   20%  {top:173px;}
+    40%{top:-519px}
+    60%{top:-346px}
+    80%{top:-173px;} 
+     100%{top:0px;}
+   }
+
+
+#Cosmicdev{
+    animation-name: acd;
+    animation-duration:30s;
+    overflow: visible;
+    position:relative;
+    animation-iteration-count:infinite;
+
+}
+@keyframes acd{
+   0%{ top:0px;}
+   20%{top:-692px}
+   40%{top:-519px}
+   60%{top:-346px}
+    80%{top:-173px;}
+    100%{top:0px;}
+   }
+
+
+
+
+
+
 
 

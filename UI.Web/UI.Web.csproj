@@ -83,8 +83,21 @@
     </None>
     <Content Include="PublicPages\Home.aspx" />
     <Content Include="PublicPages\Proekti.aspx" />
-    <Content Include="Styles\Images\seavus.jpg" />
-    <Content Include="Styles\Images\x3mlabs.jpg" />
+    <Content Include="Styles\Images\cosmicdev.png">
+      <BrowseToURL>Styles/Images/cosmicdev.png</BrowseToURL>
+    </Content>
+    <Content Include="Styles\Images\isource.png">
+      <BrowseToURL>Styles/Images/isource.png</BrowseToURL>
+    </Content>
+    <Content Include="Styles\Images\nbds.png">
+      <BrowseToURL>Styles/Images/nbds.png</BrowseToURL>
+    </Content>
+    <Content Include="Styles\Images\seavus.jpg">
+      <BrowseToURL>Styles/Images/seavus.jpg</BrowseToURL>
+    </Content>
+    <Content Include="Styles\Images\x3mlabs.jpg">
+      <BrowseToURL>Styles/Images/x3mlabs.jpg</BrowseToURL>
+    </Content>
     <Content Include="Styles\master.css" />
     <Content Include="User\Admnistrator.aspx" />
     <Content Include="User\Mentor.aspx" />
