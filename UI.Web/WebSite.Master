@@ -4,25 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Learn By Practice</title>
     <link runat="server" id="MasterCssLink" rel="stylesheet" media="all" href="~/Styles/master.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <div id="lbp-container">
-        <div id="header">
+        <div id="header">    
             <div id="fikt">Факултет за информатички и комуникациски технологии</div>
             <div id="clen">Дали си член?</div>
             <div id="login">
-                <a href="">Регистрирај се </a>/  <a href="">Најави се </a>
+                <asp:HyperLink ID="registriajSe" runat="server">Регистрирај се</asp:HyperLink> / <asp:HyperLink ID="najaviSe" runat="server">Најави се</asp:HyperLink> 
             </div>
         </div>
         <div id="meni">
             <div id="logoImg">
                 <h3 class="lbp">L</h3>
-                <h3>EARN </h3>
+                <h3>EARN  </h3>
                 <h3 class="lbp">B</h3>
                 <h3>Y </h3>
                 <h3 class="lbp">P</h3>
@@ -49,8 +50,12 @@
             </div>
         </div>
         <div id="zaedno">
-            <div id="levo">
-                Slajder so logoa od firmi
+            <div id="slider">
+                <asp:Image id="Nbds" runat="server"  AlternateText="logo za Nbds" ImageUrl="Styles/Images/nbds.png"  Width="170px" Height="170px"/>
+                <asp:Image id="Seavus" runat="server"  AlternateText="logo za Seavus" ImageUrl="Styles/Images/seavus.jpg"  Width="170px" Height="170px"/>
+                <asp:Image id="x3mLabs" runat="server"  AlternateText="logo za x3m Labs" ImageUrl="Styles/Images/x3mlabs.jpg" Width="170px" Height="170px"/>
+                <asp:Image id="iSource" runat="server"  AlternateText="logo za iSource" ImageUrl="Styles/Images/isource.png"  Width="170px" Height="170px"/>
+                <asp:Image id="Cosmicdev" runat="server"  AlternateText="logo za Cosmic Developement" ImageUrl="Styles/Images/cosmicdev.png"  Width="170px" Height="170px"/>
             </div>
             <form id="form1" runat="server">
                 <div id="lbp-main-area">
