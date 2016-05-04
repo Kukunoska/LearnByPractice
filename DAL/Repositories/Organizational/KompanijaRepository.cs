@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Organizational;
 
-namespace DAL.Repositories.Organizational
+namespace LearnByPractice.DAL.Repositories.Organizational
 {
 
     public class KompanijaRepository : RepositoryBase

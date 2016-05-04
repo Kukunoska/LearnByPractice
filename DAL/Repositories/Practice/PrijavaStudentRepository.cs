@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
 
-namespace DAL.Repositories.Practice
+namespace LearnByPractice.DAL.Repositories.Practice
 {
 
     public class PrijavaStudentRepository : RepositoryBase
