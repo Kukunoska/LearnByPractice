@@ -20,4 +20,3 @@ GO
 GO
 
 print 'Done deploying data'
-
