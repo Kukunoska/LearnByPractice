@@ -103,7 +103,7 @@
         <classShapeMoniker Id="cf1c938f-a480-48ad-a54b-2ec6829bcb2d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.44314697265625); (6.25 : 4.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.44314697265625); (5.79166666666667 : 4.44314697265625 : JumpStart); (5.95833333333333 : 4.44314697265625 : JumpEnd); (6.25 : 4.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Organizacija/Organizacija_Prijava" />
       <nodes>
         <classShapeMoniker Id="b7a1f443-f0d2-4903-87c7-6ec3ba3aad92" />
