@@ -59,6 +59,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="BLL\Organizational\VidOrganizacijaManagerTest.cs" />
     <Compile Include="Domain\Education\OcenaCollectionTest.cs" />
     <Compile Include="Domain\Education\OcenaTest.cs" />
     <Compile Include="Domain\Education\PredmetCollectionTest.cs" />
@@ -84,6 +85,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{3a036d65-afa8-49c6-a12a-539c1bfa8b6d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
       <Name>Domain</Name>
