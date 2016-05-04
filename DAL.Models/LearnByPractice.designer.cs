@@ -65,8 +65,8 @@ namespace LearnByPractice.DAL.Models
     partial void DeleteTehnologija(Tehnologija instance);
     #endregion
 		
-		public LearnByPracticeDataContext() : 
-				base(global::DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString, mappingSource)
+		public LearnByPracticeDataContext() :
+        base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
