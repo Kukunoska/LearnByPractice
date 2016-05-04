@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using domain = LearnByPractice.Domain.Organizational;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 
-namespace DAL.Repositories.Organizational
+namespace LearnByPractice.DAL.Repositories.Organizational
 {
     public class VidOrganizacijaRespository : RepositoryBase
     {
