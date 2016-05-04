@@ -11,8 +11,8 @@ namespace LearnByPractice.Tests.Domain.Practice
         public void PrijavaTehnologijaConstructorTest()
         {
             PrijavaTehnologija pt = new PrijavaTehnologija();
-            Assert.AreEqual(0, pt.IdPrijava);
-            Assert.AreEqual(0, pt.IdTehnologija);
+            Assert.AreEqual(0, pt.prijava.Id);
+            Assert.AreEqual(0, pt.tehnologija.Id);
         }
     }
 }

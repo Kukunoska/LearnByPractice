@@ -14,7 +14,7 @@
     <RootNamespace>LearnByPractice.UI.Web</RootNamespace>
     <AssemblyName>UI.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -89,9 +89,6 @@
     <Content Include="Styles\Images\isource.png">
       <BrowseToURL>Styles/Images/isource.png</BrowseToURL>
     </Content>
-    <Content Include="Styles\Images\nbds.png">
-      <BrowseToURL>Styles/Images/nbds.png</BrowseToURL>
-    </Content>
     <Content Include="Styles\Images\seavus.jpg">
       <BrowseToURL>Styles/Images/seavus.jpg</BrowseToURL>
     </Content>
@@ -105,7 +102,9 @@
     <Content Include="WebSite.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductInfo.cs">
@@ -184,7 +183,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1275</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1275/</IISUrl>
+          <IISUrl>http://learnbypractice.fikt.edu.mk.local/web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

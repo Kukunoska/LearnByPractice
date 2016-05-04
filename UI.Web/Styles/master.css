@@ -65,26 +65,22 @@ ul li{
 }
 #zaedno{
     width:93%;
-    height:900px;
+    height:auto;
     clear:left;
     padding-top:-20px;
     padding-bottom:-20px;
     margin:auto;
 }
-
 #slider{
-    width:20%;
-    height:900px;
+    padding-top:5px;
+    width:18%;
     float:left;
     margin:auto;
 }
-
 #lbp-main-area {
-    width: 80%;
-    height:900px;
-    background-color: #ffffff;
+    width: 82%;
     float: left;
-
+    padding-top:20px;
 }
 #footer{
     border-top: 1px solid #00e6ac;
@@ -100,89 +96,10 @@ a:link, a:visited {
     text-decoration: none;
     color:#262626;
 }
-#Nbds{
-    animation-name: anbds;
-    animation-duration:30s;
-    overflow: visible;
-    position:relative;
-    animation-iteration-count:infinite;
+.slika{
+    border: 1px solid #00e6ac;
+    border-radius: 50%;
 }
-@keyframes anbds{
-   0%   { top:0px;}
-    20%  {top:173px;}
-    40%  {top:346px;}
-    60%  {top:519px;}
-    80% {top:692px;}
-     100%{top:0px;}
-}
-#Seavus{
-    animation-name: aseavus;
-    animation-duration:30s;
-    overflow: visible;
-    position:relative;
-    animation-iteration-count:infinite;
-}
-@keyframes aseavus{ 
-    0%   { top:0px;}
-    20%  {top:173px;}
-    40%  {top:346px;}
-    60%  {top:519px;}
-  80%{top:-173px;}
-    100%{top:0px;} 
-     
-}
-#x3mLabs{
-    animation-name: ax3m;
-    animation-duration:30s;
-    overflow: visible;
-    position:relative;
-    animation-iteration-count:infinite;
-
-}
-@keyframes ax3m{
-
-    0%{ top:0px;}
-    20% {top:173px;}
-    40%{top:346px;}
-    60%{top:-346px}
-    80%{top:-173px;}
-     100%{top:0px;} 
-         
-   }
-#iSource{
-    animation-name: aiSource;
-    animation-duration:30s;
-    overflow: visible;
-    position:relative;
-    animation-iteration-count:infinite;
-}
-@keyframes aiSource{
-   
-   0%   { top:0px;}
-   20%  {top:173px;}
-    40%{top:-519px}
-    60%{top:-346px}
-    80%{top:-173px;} 
-     100%{top:0px;}
-   }
-
-
-#Cosmicdev{
-    animation-name: acd;
-    animation-duration:30s;
-    overflow: visible;
-    position:relative;
-    animation-iteration-count:infinite;
-
-}
-@keyframes acd{
-   0%{ top:0px;}
-   20%{top:-692px}
-   40%{top:-519px}
-   60%{top:-346px}
-    80%{top:-173px;}
-    100%{top:0px;}
-   }
 
 
 

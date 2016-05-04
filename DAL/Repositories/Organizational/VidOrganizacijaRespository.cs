@@ -56,10 +56,11 @@ namespace DAL.Repositories.Organizational
 
         private domain.VidOrganizacija ToDomain(model.Vid_Organizacija vid_Organizacija)
         {
-            throw new NotImplementedException();
+            domain.VidOrganizacija domainObject = new domain.VidOrganizacija();
+            domainObject.Id = vid_Organizacija.ID;
+            domainObject.Ime = vid_Organizacija.Ime;
+            return domainObject;
         }
-
     }
-
 }
 

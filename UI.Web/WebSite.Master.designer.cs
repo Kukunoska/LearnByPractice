@@ -94,22 +94,13 @@ namespace LearnByPractice.UI.Web {
         protected global::System.Web.UI.WebControls.HyperLink proekti;
         
         /// <summary>
-        /// Nbds control.
+        /// iSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Nbds;
-        
-        /// <summary>
-        /// Seavus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Seavus;
+        protected global::System.Web.UI.WebControls.Image iSource;
         
         /// <summary>
         /// x3mLabs control.
@@ -121,13 +112,13 @@ namespace LearnByPractice.UI.Web {
         protected global::System.Web.UI.WebControls.Image x3mLabs;
         
         /// <summary>
-        /// iSource control.
+        /// Seavus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image iSource;
+        protected global::System.Web.UI.WebControls.Image Seavus;
         
         /// <summary>
         /// Cosmicdev control.
