@@ -4,7 +4,7 @@
     [Lozinka]              VARBINARY (255) NOT NULL,
     [Ime]                  NVARCHAR (20)   NOT NULL,
     [Prezime]              NVARCHAR (25)   NOT NULL,
-    [Pol]                  NCHAR (1)      NOT NULL,
+    [Pol]                  NCHAR (1)       NOT NULL,
     [Studiska_Programa_ID] INT             NULL,
     [Organizacija_ID]      INT             NOT NULL,
     [Email]                NVARCHAR (255)  NOT NULL,
@@ -18,6 +18,8 @@
     CONSTRAINT [FK_Korisnik_Organizacija] FOREIGN KEY ([Organizacija_ID]) REFERENCES [dbo].[Organizacija] ([ID]),
     CONSTRAINT [FK_Korisnik_Studiska_Programa] FOREIGN KEY ([Studiska_Programa_ID]) REFERENCES [dbo].[Studiska_Programa] ([ID])
 );
+
+
 
 
 
