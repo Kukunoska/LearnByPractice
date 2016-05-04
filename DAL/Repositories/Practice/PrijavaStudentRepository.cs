@@ -20,8 +20,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             foreach (model.Prijava_Korisnik modelObject in query)
             {
                 domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
-                domainObject.IdStudent = modelObject.Korisnik_ID;
-                domainObject.IdPrijava = modelObject.Prijava_ID;
+                domainObject.student.Ime = modelObject.Korisnik.Ime;
+                domainObject.prijava.Id = modelObject.Prijava.ID;
                 result.Add(domainObject);
             }
 
@@ -61,8 +61,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                modelObject.Korisnik_ID = domainObject.IdStudent;
-                modelObject.Prijava_ID = domainObject.IdPrijava;
+                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
@@ -75,10 +75,10 @@ namespace LearnByPractice.DAL.Repositories.Practice
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.IdStudent);
+                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.student.IdKorisnik);
                 model.Prijava_Korisnik modelObject = query.Single();
-                modelObject.Korisnik_ID = domainObject.IdStudent;
-                modelObject.Prijava_ID = domainObject.IdPrijava;
+                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
                 return result;
