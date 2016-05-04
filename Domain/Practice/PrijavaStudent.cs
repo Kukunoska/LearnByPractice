@@ -1,16 +1,17 @@
 ﻿using System;
-using LearnByPractice.Domain.Security;
 
 namespace LearnByPractice.Domain.Practice
 {
     /// <summary>Класа за поврзување на студентот и пријавата.</summary>
     public class PrijavaStudent
     {
-        /// <summary>Објект од класа корисник </summary>
-        public Korisnik student = new Korisnik();
+        /// <summary>Шифра на студентот </summary>
+        /// <value>Ја зема/поставува шифрата на студентот</value>
+        public int IdStudent { get; set; }
 
-        /// <summary>Објект од класа пријава </summary>
-        public Prijava prijava = new Prijava();
+        /// <summary>Шифра на пријавата </summary>
+        /// <value>Ја зема/поставува шифрата на пријавата</value>
+        public int IdPrijava { get; set; }
 
         /// <summary> Конструктор на класата <c>PrijavaStudent</c>, без параметри. </summary>
         public PrijavaStudent() { }

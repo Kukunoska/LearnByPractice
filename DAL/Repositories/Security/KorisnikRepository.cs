@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Security;
 
 
-namespace DAL.Repositories.Security
+namespace LearnByPractice.DAL.Repositories.Security
 {
 
     public class KorisnikRepository : RepositoryBase
@@ -136,7 +136,7 @@ namespace DAL.Repositories.Security
                 modelObject.Prezime = domainObject.Prezime;
                 modelObject.Pol = ToModel(domainObject.Pol);
                 modelObject.Studiska_Programa.Ime = domainObject.studiskaPrograma.Ime;
-                modelObject.Organizacija.Ime = domainObject.organizacija.Ime;
+                modelObject.Organizacija.ID = domainObject.organizacija.Id;
                 modelObject.Email = domainObject.Email;
                 modelObject.Telefonski_Broj = domainObject.Mobilen;
                 context.SubmitChanges();
