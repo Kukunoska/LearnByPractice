@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Organizacija] (
     [ID]                  INT           IDENTITY (1, 1) NOT NULL,
-    [Ime]                 NVARCHAR (255) NOT NULL,
-    [Adresa]              NVARCHAR (255) NOT NULL,
-    [Kontakt_Telefon]     NVARCHAR (16) NULL,
+    [Ime]                 NVARCHAR (50) NOT NULL,
+    [Adresa]              NVARCHAR (50) NOT NULL,
+    [Kontakt_Telefon]     NVARCHAR (13) NULL,
     [Veb_Strana]          NVARCHAR (50) NULL,
     [Vid_Organizacija_ID] INT           NOT NULL,
     CONSTRAINT [PK_Organizacija] PRIMARY KEY CLUSTERED ([ID] ASC),

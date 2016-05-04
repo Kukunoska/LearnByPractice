@@ -18,10 +18,3 @@
     CONSTRAINT [FK_Korisnik_Organizacija] FOREIGN KEY ([Organizacija_ID]) REFERENCES [dbo].[Organizacija] ([ID]),
     CONSTRAINT [FK_Korisnik_Studiska_Programa] FOREIGN KEY ([Studiska_Programa_ID]) REFERENCES [dbo].[Studiska_Programa] ([ID])
 );
-
-
-
-
-
-
-
