@@ -1,4 +1,5 @@
 ﻿using System;
+using LearnByPractice.Domain.Organizational;
 
 namespace LearnByPractice.Domain.Practice
 {
@@ -11,7 +12,7 @@ namespace LearnByPractice.Domain.Practice
 
         /// <summary>Шифра на комапнијата </summary>
         /// <value>Ја зема/поставува шифрата на компанијата</value>
-        public int IdKompanija { get; set; }
+        public Kompanija kompanija = new Kompanija();
 
         /// <summary>Датум на пријавата</summary>
         /// <value>Го зема/поставува датумот на пријавата</value>

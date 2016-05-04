@@ -83,11 +83,20 @@
     <Compile Include="Domain\Security\KorisnikCollectionTest.cs" />
     <Compile Include="Domain\Security\KorisnikTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VidOrganizacijaRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3a036d65-afa8-49c6-a12a-539c1bfa8b6d}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Models\DAL.Models.csproj">
+      <Project>{df2de748-c5a1-46df-8e77-6e29b6bb29c7}</Project>
+      <Name>DAL.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8e419b33-abbc-4fec-982f-888893f0250e}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
@@ -98,6 +107,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
