@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace LearnByPractice.DAL.Models
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -66,7 +66,7 @@ namespace DAL.Models
     #endregion
 		
 		public LearnByPracticeDataContext() : 
-				base(global::DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString1, mappingSource)
+				base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

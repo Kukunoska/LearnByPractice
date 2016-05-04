@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
 
-namespace DAL.Repositories.Practice
+namespace LearnByPractice.DAL.Repositories.Practice
 {
-
     public class PrijavaRepository : RepositoryBase
     {
         public PrijavaRepository()
@@ -19,7 +18,7 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava modelObject in query)
             {
                 domain.Prijava domainObject = new domain.Prijava();
-                domainObject.IdKompanija = modelObject.Organizacija_ID;
+                domainObject.kompanija.Ime = modelObject.Organizacija.Ime;
                 domainObject.Datum = modelObject.Datum_Na_Prijavuvanje;
                 result.Add(domainObject);
             }
@@ -44,7 +43,7 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava modelObject = new model.Prijava();
-                modelObject.Organizacija_ID = domainObject.IdKompanija;
+                modelObject.Organizacija.Ime = domainObject.kompanija.Ime;
                 modelObject.Datum_Na_Prijavuvanje = domainObject.Datum;
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
@@ -59,7 +58,7 @@ namespace DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava> query = context.Prijavas.Where(p => p.ID == domainObject.Id);
                 model.Prijava modelObject = query.Single();
-                modelObject.Organizacija_ID = domainObject.IdKompanija;
+                modelObject.Organizacija.ID = domainObject.kompanija.Id;
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
                 return result;

@@ -7,7 +7,7 @@
     <ProjectGuid>{DF2DE748-C5A1-46DF-8E77-6E29B6BB29C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DAL.Models</RootNamespace>
+    <RootNamespace>LearnByPractice.DAL.Models</RootNamespace>
     <AssemblyName>DAL.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

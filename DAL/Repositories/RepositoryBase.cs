@@ -1,8 +1,8 @@
 ﻿
 
-namespace DAL
+namespace LearnByPractice.DAL.Repositories
 {
-    using DAL.Models;
+    using LearnByPractice.DAL.Models;
 
 
     public abstract class RepositoryBase

@@ -59,7 +59,17 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="BLL\Organizational\VidOrganizacijaManagerTest.cs" />
+    <Compile Include="DAL\Respositories\Education\OcenaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Education\PredmetRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Education\StudiskaProgramaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Organizational\KompanijaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Organizational\VidOrganizacijaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Practice\OblastRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Practice\PrijavaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Practice\PrijavaStudentRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Practice\PrijavaTehnologijaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Practice\TehnologijaRespositoryTests.cs" />
+    <Compile Include="DAL\Respositories\Security\KorisnikRespositoryTests.cs" />
     <Compile Include="Domain\Education\OcenaCollectionTest.cs" />
     <Compile Include="Domain\Education\OcenaTest.cs" />
     <Compile Include="Domain\Education\PredmetCollectionTest.cs" />
@@ -85,9 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{3a036d65-afa8-49c6-a12a-539c1bfa8b6d}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8e419b33-abbc-4fec-982f-888893f0250e}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
@@ -100,6 +110,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

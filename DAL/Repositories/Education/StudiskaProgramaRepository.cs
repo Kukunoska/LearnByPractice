@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Education;
 
-namespace DAL.Repositories.Education
+namespace LearnByPractice.DAL.Repositories.Education
 {
     public class StudiskaProgramaRepository : RepositoryBase
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
 
-namespace DAL.Repositories.Practice
+namespace LearnByPractice.DAL.Repositories.Practice
 {
 
     public class PrijavaTehnologijaRepository : RepositoryBase
@@ -20,8 +20,8 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava_Tehnologija modelObject in query)
             {
                 domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
-                domainObject.IdPrijava = modelObject.Prijava_ID;
-                domainObject.IdTehnologija = modelObject.Tehnologija_ID;
+                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObject.tehnologija.Ime = modelObject.Tehnologija.Ime;
                 result.Add(domainObject);
             }
 
@@ -66,8 +66,8 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Tehnologija modelObject = new model.Prijava_Tehnologija();
-                modelObject.Tehnologija_ID = domainObject.IdTehnologija;
-                modelObject.Prijava_ID = domainObject.IdPrijava;
+                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.Prijava_Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
@@ -81,10 +81,10 @@ namespace DAL.Repositories.Practice
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(p => p.Prijava_ID == domainObject.IdPrijava);
+                IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(p => p.Prijava_ID == domainObject.prijava.Id);
                 model.Prijava_Tehnologija modelObject = query.Single();
-                modelObject.Tehnologija_ID = domainObject.IdTehnologija;
-                modelObject.Prijava_ID = domainObject.IdPrijava;
+                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
                 return result;
