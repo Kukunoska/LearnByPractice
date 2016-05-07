@@ -1,4 +1,5 @@
 ﻿using System;
+using LearnByPractice.Domain.Organizational;
 
 namespace LearnByPractice.Domain.Practice
 {
@@ -9,9 +10,8 @@ namespace LearnByPractice.Domain.Practice
         /// <value>Ја зема/поставува шифрата на пријавата</value>
         public int Id { get; set; }
 
-        /// <summary>Шифра на комапнијата </summary>
-        /// <value>Ја зема/поставува шифрата на компанијата</value>
-        public int IdKompanija { get; set; }
+        /// <summary>Објект од класа <c>Kompanija</c> </summary>
+        public Kompanija kompanija = new Kompanija();
 
         /// <summary>Датум на пријавата</summary>
         /// <value>Го зема/поставува датумот на пријавата</value>
