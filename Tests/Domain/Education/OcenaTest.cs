@@ -12,8 +12,8 @@ namespace LearnByPractice.Tests.Domain.Education
         {
             Ocena o = new Ocena();
             Assert.AreEqual(0, o.Ocenka);
-            Assert.AreEqual(0, o.PredmetId);
-            Assert.AreEqual(0, o.StudentId);
+            Assert.AreEqual(0, o.student.IdKorisnik);
+            Assert.AreEqual(0, o.predmet.Id);
         }
     }
 }
