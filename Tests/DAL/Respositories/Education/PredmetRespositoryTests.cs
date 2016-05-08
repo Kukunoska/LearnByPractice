@@ -17,12 +17,11 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             PredmetRepository respository = new PredmetRepository();
             PredmetCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
-
-            //Assert.IsTrue(zemi.Count >= x);
+            Assert.IsTrue(zemi.Count >= 2);
 
             foreach (Predmet predmet in zemi)
             {
-                Console.WriteLine("предметИД: {0}, Име: {1},", predmet.Id, predmet.Ime);
+                Console.WriteLine("предметИД: {0}, шифраПредмет{1}, Име: {2},", predmet.Id, predmet.ShifraNaPredmet, predmet.Ime);
             }
         }
 
@@ -31,7 +30,9 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
         {
 
             Predmet predmet = new Predmet();
-            predmet.Ime = string.Format("предмет {0}", Guid.NewGuid().ToString());
+            Guid guid = new Guid();
+            predmet.ShifraNaPredmet = string.Format("шифра на предмет {1}", guid.ToString());
+            predmet.Ime = string.Format("предмет {2}", guid.ToString());
 
             PredmetRepository repository = new PredmetRepository();
             Predmet dodadete = repository.Insert(predmet);
@@ -39,7 +40,15 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             Assert.IsNotNull(dodadete);
             Assert.AreEqual(predmet.Ime, dodadete.Ime);
 
-            Console.WriteLine("Додаден е нов предмет: предметИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+            Console.WriteLine("Додаден е нов предмет: предметИД: {0}, шифраПредмет{1}, Име: {2},", dodadete.Id, dodadete.Ime);
+        }
+
+        [Test]
+        public void GetByIdTest()
+        {
+            PredmetRepository repository = new PredmetRepository();
+            Predmet predmet = repository.Get(1);
+            Assert.AreEqual(1, predmet.Id);
         }
     }
 }

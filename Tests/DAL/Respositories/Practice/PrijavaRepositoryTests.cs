@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using LearnByPractice.Domain.Practice;
+using LearnByPractice.Domain.Security;
+using LearnByPractice.Domain.Organizational;
+using LearnByPractice.DAL.Repositories.Organizational;
+using LearnByPractice.DAL.Repositories.Practice;
+using LearnByPractice.DAL.Repositories.Security;
+
+
+namespace LearnByPractice.Tests.DAL.Respositories.Practice
+{
+    public class PrijavaRespositoryTests
+    {
+        [Test]
+        public void GetAllTest()
+        {
+            PrijavaRepository respository = new PrijavaRepository();
+            PrijavaCollection zemi = respository.GetAll();
+            Assert.IsNotNull(zemi);
+            Assert.IsTrue(zemi.Count >= 0);
+
+            foreach (Prijava prijava in zemi)
+            {
+                Console.WriteLine("ПријаваИД: {0}, Компанија: {}, Дата: {1}, ", prijava.Id, prijava.kompanija.Ime, prijava.Datum);
+            }
+        }
+
+        [Test]
+        public void InsertTest()
+        {
+            Random random = new Random(DateTime.Now.Millisecond);
+
+            KompanijaRepository KompRep = new KompanijaRepository();
+            KompanijaCollection siteKompanii = KompRep.GetAll();
+            int KompID = random.Next(0, siteKompanii.Count);
+            Kompanija izbranaKompanija = siteKompanii[KompID];
+
+            Prijava prijava = new Prijava();
+            prijava.kompanija.Id = izbranaKompanija.Id;
+
+            PrijavaRepository repository = new PrijavaRepository();
+            Prijava dodadete = repository.Insert(prijava);
+
+            Assert.IsNotNull(dodadete);
+            Assert.AreEqual(prijava.Id, dodadete.Id);
+            Assert.AreEqual(prijava.kompanija.Id, dodadete.kompanija.Id);
+
+            Console.WriteLine("Пријавена е нова компанија: ПријаваИД: {0}, КомпанијаИД: {1}, Дата{2} ", dodadete.Id, dodadete.kompanija.Id, dodadete.Datum);
+        }
+        [Test]
+        public void GetByIdTest()
+        {
+            PrijavaRepository repository = new PrijavaRepository();
+            Prijava prijava = repository.Get(0);
+            Assert.AreEqual(0, prijava.Id);
+        }
+    }
+}

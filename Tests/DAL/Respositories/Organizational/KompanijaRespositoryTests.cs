@@ -17,8 +17,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Organizational
             KompanijaRepository respository = new KompanijaRepository();
             KompanijaCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
-
-            //Assert.IsTrue(zemi.Count >= x);
+            Assert.IsTrue(zemi.Count >= 2);
 
             foreach (Kompanija kompanija in zemi)
             {
@@ -37,10 +36,11 @@ namespace LearnByPractice.Tests.DAL.Respositories.Organizational
             VidOrganizacija izbranVidOrg = siteVidOrg[VidOrgID];
 
             Kompanija kompanija = new Kompanija();
-            kompanija.Ime = string.Format("Компанија {0}", Guid.NewGuid().ToString());
-            kompanija.Adresa = string.Format("Компанија {0}", Guid.NewGuid().ToString());
-            kompanija.KontaktTelefon= string.Format("Компанија {0}", Guid.NewGuid().ToString());
-            kompanija.VebStrana = string.Format("Компанија {0}", Guid.NewGuid().ToString());
+            Guid guid = new Guid();
+            kompanija.Ime = string.Format("Име: {0}", guid.ToString());
+            kompanija.Adresa = string.Format("Адреса: {1}", guid.ToString());
+            kompanija.KontaktTelefon = string.Format("Контакт телефон: {2}", guid.ToString());
+            kompanija.VebStrana = string.Format("Веб страна: {3}", guid.ToString());
             kompanija.vidOrganizacija.Ime = izbranVidOrg.Ime;
 
             KompanijaRepository repository = new KompanijaRepository();
@@ -54,6 +54,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Organizational
             Assert.AreEqual(kompanija.vidOrganizacija.Ime, dodadete.vidOrganizacija.Ime);
 
             Console.WriteLine("Додаденa е новa Компанија: КомпанијаИД: {0}, Име: {1}, Адреса: {2}, Контакт Телефон: {3}, Веб трана: {4}, Вид Организација: {5}, ", dodadete.Id, dodadete.Ime, dodadete.Adresa, dodadete.KontaktTelefon, dodadete.VebStrana, dodadete.vidOrganizacija.Ime);
+        }
+        [Test]
+        public void GetByIdTest()
+        {
+            KompanijaRepository repository = new KompanijaRepository();
+            Kompanija kompanija = repository.Get(2);
+            Assert.AreEqual(2, kompanija.Id);
         }
     }
 }

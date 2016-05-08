@@ -18,7 +18,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             TehnologijaCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
 
-            //Assert.IsTrue(zemi.Count >= x);
+            Assert.IsTrue(zemi.Count >= 0);
 
             foreach (Tehnologija tehnologija in zemi)
             {
@@ -48,6 +48,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Assert.AreEqual(tehnologija.oblast.Ime, dodadete.oblast.Ime);
 
             Console.WriteLine("Додаденa е новa технологијa: ТехнологијаИД: {0}, Име: {1}, Област: {2}, ", dodadete.Id, dodadete.Ime, dodadete.oblast.Ime);
+        }
+        [Test]
+        public void GetByIdTest()
+        {
+            TehnologijaRepository repository = new TehnologijaRepository();
+            Tehnologija teh = repository.Get(1);
+            Assert.AreEqual(1, teh.Id);
         }
     }
 }
