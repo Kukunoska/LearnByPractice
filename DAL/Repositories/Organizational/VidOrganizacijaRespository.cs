@@ -45,6 +45,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Vid_Organizacija modelObject = new model.Vid_Organizacija();
+                //modelObject.ID = domainObject.Id;
                 modelObject.Ime = domainObject.Ime;
                 context.Vid_Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -61,6 +62,8 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             domainObject.Ime = vid_Organizacija.Ime;
             return domainObject;
         }
+
     }
+
 }
 

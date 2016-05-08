@@ -22,8 +22,8 @@ namespace LearnByPractice.DAL.Repositories.Education
             foreach (model.Ocenka modelObject in query)
             {
                 domain.Ocena domainObject = new domain.Ocena();
-                domainObject.StudentId = modelObject.Korisnik_ID;
-                domainObject.PredmetId = modelObject.Predmet_ID;
+                domainObject.student.Ime = modelObject.Korisnik.Ime;
+                domainObject.predmet.Ime = modelObject.Predmet.Ime;
                 domainObject.Ocenka = modelObject.Ocenka1;
                 result.Add(domainObject);
             }
@@ -35,7 +35,7 @@ namespace LearnByPractice.DAL.Repositories.Education
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Ocenka> query = context.Ocenkas.Where(c => c.Korisnik_ID == StudentId);
+                IQueryable<model.Ocenka> query = context.Ocenkas.Where(c => c.Korisnik.ID == StudentId);
                 domain.OcenaCollection domainObjects = ToDomainObjects(query.ToList());
 
                 return domainObjects;
@@ -55,7 +55,17 @@ namespace LearnByPractice.DAL.Repositories.Education
 
         private domain.OcenaCollection ToDomainObjects(List<model.Ocenka> list)
         {
-            throw new NotImplementedException();
+            domain.OcenaCollection domainObjects = new domain.OcenaCollection();
+            foreach (model.Ocenka modelObject in list)
+            {
+
+                domain.Ocena domainObject = ToDomain(modelObject);
+                domainObject.student.Ime = modelObject.Korisnik.Ime;
+                domainObject.predmet.Ime = modelObject.Predmet.Ime;
+                domainObject.Ocenka = modelObject.Ocenka1;
+                domainObjects.Add(domainObject);
+            }
+            return domainObjects;
         }
 
         public domain.Ocena Insert(domain.Ocena domainObject)
@@ -63,8 +73,8 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Ocenka modelObject = new model.Ocenka();
-                modelObject.Korisnik_ID = domainObject.StudentId;
-                modelObject.Predmet_ID = domainObject.PredmetId;
+                modelObject.Korisnik_ID = domainObject.student.IdKorisnik;
+                modelObject.Predmet_ID = domainObject.predmet.Id;
                 modelObject.Ocenka1 = domainObject.Ocenka;
                 context.Ocenkas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -79,7 +89,7 @@ namespace LearnByPractice.DAL.Repositories.Education
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Ocenka> query = context.Ocenkas.Where(p => p.Korisnik_ID == domainObject.StudentId && p.Predmet_ID == domainObject.PredmetId);
+                IQueryable<model.Ocenka> query = context.Ocenkas.Where(p => p.Korisnik_ID == domainObject.student.IdKorisnik && p.Predmet_ID == domainObject.predmet.Id);
                 model.Ocenka modelObject = query.Single();
                 modelObject.Ocenka1 = domainObject.Ocenka;
                 context.SubmitChanges();
@@ -90,7 +100,11 @@ namespace LearnByPractice.DAL.Repositories.Education
 
         private domain.Ocena ToDomain(model.Ocenka modelObject)
         {
-            throw new NotImplementedException();
+            domain.Ocena domainObject = new domain.Ocena();
+            domainObject.student.IdKorisnik = modelObject.Korisnik.ID;
+            domainObject.predmet.Id = modelObject.Predmet.ID;
+            domainObject.Ocenka = modelObject.Ocenka1;
+            return domainObject;
         }
     }
 }

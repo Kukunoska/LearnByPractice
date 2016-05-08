@@ -41,7 +41,11 @@ namespace LearnByPractice.DAL.Repositories.Practice
 
         private domain.Tehnologija ToDomain(model.Tehnologija tehnologija)
         {
-            throw new NotImplementedException();
+            domain.Tehnologija domainObject = new domain.Tehnologija();
+            domainObject.Id = tehnologija.ID;
+            domainObject.Ime = tehnologija.Ime;
+            domainObject.oblast.Ime = tehnologija.Oblast.Ime;
+            return domainObject;
         }
 
 

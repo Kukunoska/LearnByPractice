@@ -69,11 +69,6 @@ namespace LearnByPractice.DAL.Repositories.Security
             return result;
         }
 
-        private domain.PolEnum ToDomain(string p)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public domain.Korisnik Get(int id)
         {
@@ -100,7 +95,25 @@ namespace LearnByPractice.DAL.Repositories.Security
 
         private domain.KorisnikCollection ToDomainObjects(List<model.Korisnik> list)
         {
-            throw new NotImplementedException();
+            domain.KorisnikCollection domainObjects = new domain.KorisnikCollection();
+            foreach (model.Korisnik modelObject in list)
+            {
+
+                domain.Korisnik domainObject = new domain.Korisnik();
+                domainObject.IdKorisnik = modelObject.ID;
+                domainObject.Username = modelObject.Korisnichko_Ime;
+                //domainObject.Password = modelObject.Lozinka;
+                domainObject.Ime = modelObject.Ime;
+                domainObject.Prezime = modelObject.Prezime;
+                domainObject.Pol = ToDomain(modelObject.Pol);
+                domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
+                domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+                domainObject.Email = modelObject.Email;
+                domainObject.Mobilen = modelObject.Telefonski_Broj;
+
+                domainObjects.Add(domainObject);
+            }
+            return domainObjects;
         }
 
         public domain.Korisnik Insert(domain.Korisnik domainObject)
@@ -146,12 +159,23 @@ namespace LearnByPractice.DAL.Repositories.Security
         }
 
 
-        private domain.Korisnik ToDomain(model.Korisnik korisnik)
+        private domain.Korisnik ToDomain(model.Korisnik modelObject)
         {
-            throw new NotImplementedException();
+            domain.Korisnik domainObject = new domain.Korisnik();
+            domainObject.IdKorisnik = modelObject.ID;
+            domainObject.Username = modelObject.Korisnichko_Ime;
+            //domainObject.Password = modelObject.Lozinka;
+            domainObject.Ime = modelObject.Ime;
+            domainObject.Prezime = modelObject.Prezime;
+            domainObject.Pol = ToDomain(modelObject.Pol);
+            domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
+            domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+            domainObject.Email = modelObject.Email;
+            domainObject.Mobilen = modelObject.Telefonski_Broj;
+
+            return domainObject;
         }
 
 
     }
 }
-

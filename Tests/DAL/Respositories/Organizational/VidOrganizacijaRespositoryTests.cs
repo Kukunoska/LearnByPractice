@@ -27,20 +27,11 @@ namespace LearnByPractice.Tests.DAL.Respositories.Organizational
         }
 
         [Test]
-        public void InsertTest()
+        public void GetByIdTest()
         {
-
-
-            VidOrganizacija vidOrg = new VidOrganizacija();
-            vidOrg.Ime = string.Format("Организација {0}", Guid.NewGuid().ToString());
-
             VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
-            VidOrganizacija dodadete = repository.Insert(vidOrg);
-
-            Assert.IsNotNull(dodadete);
-            Assert.AreEqual(vidOrg.Ime, dodadete.Ime);
-
-            Console.WriteLine("Додаден е нов Вид Организација: ВидОрганизацијаИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+            VidOrganizacija vidOrg = repository.Get(1);
+            Assert.AreEqual(1, vidOrg.Id);
         }
     }
 }
