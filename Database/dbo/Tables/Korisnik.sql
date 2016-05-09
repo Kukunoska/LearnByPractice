@@ -8,7 +8,7 @@
     [Studiska_Programa_ID] INT             NULL,
     [Organizacija_ID]      INT             NOT NULL,
     [Email]                NVARCHAR (255)  NOT NULL,
-    [Telefonski_Broj]      NVARCHAR (13)   NULL,
+    [Telefonski_Broj]      NVARCHAR (16)   NULL,
     [Administrator]        BIT             NOT NULL,
     [Student]              BIT             NOT NULL,
     [Mentor]               BIT             NOT NULL,
