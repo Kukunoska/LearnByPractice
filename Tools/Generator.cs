@@ -28,33 +28,34 @@ namespace Tools
                 //Za Zhenski Iminja
                 string[] zenski_iminja = File.ReadAllLines(path + "\\ZenskiIminja.txt");
                 List<string> zenskiIminjaList = new List<string>();
-                string zenskoIme = zenski_iminja[0];
-                string[] zenskiIminja = zenskoIme.Split(',');
-                zenskiIminjaList.AddRange(zenskiIminja);
-
+                foreach (string s in zenski_iminja)
+                {
+                    zenskiIminjaList.Add(s);
+                }
 
                 //Za Zhenski Preziminja
                 string[] zenski_preziminja = File.ReadAllLines(path + "\\ZenskiPreziminja.txt");
                 List<string> zenskiPreziminjaList = new List<string>();
-                string zenskoPrezime = zenski_preziminja[0];
-                string[] zenskiPreziminja = zenskoPrezime.Split(',');
-                zenskiPreziminjaList.AddRange(zenskiPreziminja);
-
+                foreach (string s in zenski_preziminja)
+                {
+                    zenskiPreziminjaList.Add(s);
+                }
 
                 //Za Mashki Iminja
                 string[] mashki_iminja = File.ReadAllLines(path + "\\MashkiIminja.txt");
                 List<string> mashkiIminjaList = new List<string>();
-                string mashkoIme = mashki_iminja[0];
-                string[] mashkiIminja = mashkoIme.Split(',');
-                mashkiIminjaList.AddRange(mashkiIminja);
-
+                foreach (string s in mashki_iminja)
+                {
+                    mashkiIminjaList.Add(s);
+                }
 
                 //Za Mashki Preziminja
                 string[] mashki_preziminja = File.ReadAllLines(path + "\\MashkiPreziminja.txt");
                 List<string> mashkiPreziminjaList = new List<string>();
-                string mashkoPrezime = mashki_preziminja[0];
-                string[] mashkiPreziminja = mashkoPrezime.Split(',');
-                mashkiPreziminjaList.AddRange(mashkiPreziminja);
+                foreach (string s in mashki_preziminja)
+                {
+                    mashkiPreziminjaList.Add(s);
+                }
 
 
                 Random random = new Random();
