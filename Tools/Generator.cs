@@ -28,35 +28,22 @@ namespace Tools
                 //Za Zhenski Iminja
                 string[] zenski_iminja = File.ReadAllLines(path + "\\ZenskiIminja.txt");
                 List<string> zenskiIminjaList = new List<string>();
-                foreach (string s in zenski_iminja)
-                {
-                    zenskiIminjaList.Add(s);
-                }
+                zenskiIminjaList.AddRange(zenski_iminja);
 
                 //Za Zhenski Preziminja
                 string[] zenski_preziminja = File.ReadAllLines(path + "\\ZenskiPreziminja.txt");
                 List<string> zenskiPreziminjaList = new List<string>();
-                foreach (string s in zenski_preziminja)
-                {
-                    zenskiPreziminjaList.Add(s);
-                }
+                zenskiPreziminjaList.AddRange(zenski_preziminja);
 
                 //Za Mashki Iminja
                 string[] mashki_iminja = File.ReadAllLines(path + "\\MashkiIminja.txt");
                 List<string> mashkiIminjaList = new List<string>();
-                foreach (string s in mashki_iminja)
-                {
-                    mashkiIminjaList.Add(s);
-                }
+                mashkiIminjaList.AddRange(mashki_iminja);
 
                 //Za Mashki Preziminja
                 string[] mashki_preziminja = File.ReadAllLines(path + "\\MashkiPreziminja.txt");
                 List<string> mashkiPreziminjaList = new List<string>();
-                foreach (string s in mashki_preziminja)
-                {
-                    mashkiPreziminjaList.Add(s);
-                }
-
+                mashkiPreziminjaList.AddRange(mashki_preziminja);
 
                 Random random = new Random();
                 List<Korisnik> korisnici = new List<Korisnik>();
