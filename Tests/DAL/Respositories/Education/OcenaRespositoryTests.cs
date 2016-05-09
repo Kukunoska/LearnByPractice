@@ -17,16 +17,14 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
         [Test]
         public void GetAllTest()
         {
- 
+
             OcenaRepository repository = new OcenaRepository();
             OcenaCollection zemi = repository.GetAll();
             Assert.IsNotNull(zemi);
 
-            //Assert.IsTrue(zemi.Count >= 3);
-
-            foreach ( Ocena ocena in zemi)
+            foreach (Ocena ocena in zemi)
             {
-                Console.WriteLine("ИД: {0}, Име: {1}, Вид: {2}", ocena.StudentId, ocena.PredmetId, ocena.Ocenka );
+                Console.WriteLine("ИД: {0}, Име: {1}, Вид: {2}", ocena.student.IdKorisnik, ocena.predmet.Id, ocena.Ocenka);
             }
         }
         protected int randomOcena()
@@ -60,33 +58,59 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
 
         [Test]
         public void InsertTest()
-        {            
+        {
             Random random = new Random(DateTime.Now.Millisecond);
 
             KorisnikRepository korisnikRep = new KorisnikRepository();
             KorisnikCollection siteKorisnici = korisnikRep.GetAll();
             int KorisnikID = random.Next(0, siteKorisnici.Count);
             Korisnik izbranKorisnik = siteKorisnici[KorisnikID];
-          
+
             PredmetRepository predmetRep = new PredmetRepository();
             PredmetCollection sitePredmeti = predmetRep.GetAll();
             int PredmetID = random.Next(0, sitePredmeti.Count);
-            Predmet izbranPredmet = sitePredmeti[PredmetID];  
-            
+            Predmet izbranPredmet = sitePredmeti[PredmetID];
+
             Ocena ocena = new Ocena();
             ocena.Ocenka = randomOcena();
-            ocena.StudentId = izbranKorisnik.IdKorisnik;
-            ocena.PredmetId = izbranPredmet.Id;
+            ocena.student.IdKorisnik = izbranKorisnik.IdKorisnik;
+            ocena.predmet.Id = izbranPredmet.Id;
 
             OcenaRepository repository = new OcenaRepository();
             Ocena dodadete = repository.Insert(ocena);
 
             Assert.IsNotNull(dodadete);
-            Assert.AreEqual(ocena.StudentId, dodadete.StudentId);
-            Assert.AreEqual(ocena.PredmetId, dodadete.PredmetId);
-             Assert.AreEqual(ocena.PredmetId, dodadete.Ocenka);
+            Assert.AreEqual(ocena.student.IdKorisnik, dodadete.student.IdKorisnik);
+            Assert.AreEqual(ocena.predmet.Id, dodadete.predmet.Id);
+            Assert.AreEqual(ocena.Ocenka, dodadete.Ocenka);
 
-            Console.WriteLine("Додадена е нова оцена: СтудентИД: {0}, ПредметИД: {1}, Оцена: {2}", dodadete.StudentId, dodadete.PredmetId, dodadete.Ocenka);
+            Console.WriteLine("Додадена е нова оцена: СтудентИД: {0}, ПредметИД: {1}, Оцена: {2}", dodadete.student.IdKorisnik, dodadete.predmet.Id, dodadete.Ocenka);
+        }
+        [Test]
+        public void GetByPredmetIdTest()
+        {
+            OcenaRepository repository = new OcenaRepository();
+            OcenaCollection oceniPoPredmet = repository.GetByPredmetId(1);
+            Assert.IsNotNull(oceniPoPredmet);
+            Assert.IsTrue(oceniPoPredmet.Count >= 1);
+            Assert.IsTrue(oceniPoPredmet.All(ocena => ocena.predmet.Id == 1));
+            foreach (Ocena ocena in oceniPoPredmet)
+            {
+                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Ime, ocena.predmet.Ime);
+            }
+        }
+        [Test]
+        public void GetByStudentIdTest()
+        {
+            OcenaRepository repository = new OcenaRepository();
+            OcenaCollection oceniPoStudent = repository.GetByStudentId(1);
+            Assert.IsNotNull(oceniPoStudent);
+            Assert.IsTrue(oceniPoStudent.Count >= 1);
+            Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.IdKorisnik == 1));
+            foreach (Ocena ocena in oceniPoStudent)
+            {
+                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Ime, ocena.predmet.Ime);
+            }
         }
 
     }

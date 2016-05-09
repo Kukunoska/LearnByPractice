@@ -18,7 +18,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             StudiskaProgramaCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
 
-            //Assert.IsTrue(zemi.Count >= x);
+            Assert.IsTrue(zemi.Count >= 2);
 
             foreach (StudiskaPrograma oblast in zemi)
             {
@@ -26,21 +26,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             }
         }
 
+        
         [Test]
-        public void InsertTest()
+        public void GetByIdTest()
         {
-
-
-            StudiskaPrograma studProg = new StudiskaPrograma();
-            studProg.Ime = string.Format("СтудискаПрограма {0}", Guid.NewGuid().ToString());
-
             StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
-            StudiskaPrograma dodadete = repository.Insert(studProg);
-
-            Assert.IsNotNull(dodadete);
-            Assert.AreEqual(studProg.Ime, dodadete.Ime);
-
-            Console.WriteLine("Додаденa е новa студиска програма: СтудискаПрограмаИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+            StudiskaPrograma studiskaPrograma = repository.Get(1);
+            Assert.AreEqual(1, studiskaPrograma.Id);
         }
     }
 }

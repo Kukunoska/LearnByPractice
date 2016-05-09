@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
 
-namespace DAL.Repositories.Practice
+namespace LearnByPractice.DAL.Repositories.Practice
 {
 
     public class PrijavaTehnologijaRepository : RepositoryBase
@@ -20,8 +20,8 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava_Tehnologija modelObject in query)
             {
                 domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
-                domainObject.prijava.Id = modelObject.Prijava_ID;
-                domainObject.tehnologija.Id = modelObject.Tehnologija_ID;
+                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObject.tehnologija.Ime = modelObject.Tehnologija.Ime;
                 result.Add(domainObject);
             }
 
@@ -45,19 +45,31 @@ namespace DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(c => c.Tehnologija_ID == TehId);
                 domain.PrijavaTehnologijaCollection domainObjects = ToDomainObjects(query.ToList());
-
                 return domainObjects;
             }
         }
 
         private domain.PrijavaTehnologijaCollection ToDomainObjects(List<model.Prijava_Tehnologija> list)
         {
-            throw new NotImplementedException();
+            domain.PrijavaTehnologijaCollection domainObjects = new domain.PrijavaTehnologijaCollection();
+            foreach (model.Prijava_Tehnologija modelObject in list)
+            {
+
+                domain.PrijavaTehnologija domainObject = ToDomain(modelObject);
+                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObject.tehnologija.Ime = modelObject.Tehnologija.Ime;
+                domainObjects.Add(domainObject);
+            }
+            return domainObjects;
         }
+
 
         private domain.PrijavaTehnologija ToDomain(model.Prijava_Tehnologija prijava_Tehnologija)
         {
-            throw new NotImplementedException();
+            domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
+            domainObject.prijava.Id = prijava_Tehnologija.Prijava.ID;
+            domainObject.tehnologija.Ime = prijava_Tehnologija.Tehnologija.Ime;
+            return domainObject;
         }
 
 
@@ -66,8 +78,8 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Tehnologija modelObject = new model.Prijava_Tehnologija();
-                modelObject.Tehnologija_ID = domainObject.tehnologija.Id;
-                modelObject.Prijava_ID = domainObject.prijava.Id;
+                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.Prijava_Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
@@ -83,8 +95,8 @@ namespace DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(p => p.Prijava_ID == domainObject.prijava.Id);
                 model.Prijava_Tehnologija modelObject = query.Single();
-                modelObject.Tehnologija_ID = domainObject.tehnologija.Id;
-                modelObject.Prijava_ID = domainObject.prijava.Id;
+                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
                 return result;

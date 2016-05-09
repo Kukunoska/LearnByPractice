@@ -69,7 +69,10 @@ namespace LearnByPractice.DAL.Repositories.Practice
 
         private domain.Oblast ToDomain(model.Oblast modelObject)
         {
-            throw new NotImplementedException();
+            domain.Oblast domainObject = new domain.Oblast();
+            domainObject.Id = modelObject.ID;
+            domainObject.Ime = modelObject.Ime;
+            return domainObject;
         }
     }
 }

@@ -6,8 +6,12 @@ namespace LearnByPractice.Domain.Education
     public class Predmet
     {
         /// <summary>Шифра </summary>
-        /// <value>Ја зема/поставува шифрата на предметот</value>
+        /// <value>Го зема/поставува Id-то на предметот</value>
         public int Id { get; set; }
+
+        /// <summary>ШифраНаПредметот </summary>
+        /// <value>Ја зема/поставува шифрата на предметот</value>
+        public String ShifraNaPredmet { get; set; }
 
         /// <summary>Име</summary>
         /// <value>Го зема/поставува името на предметот</value>

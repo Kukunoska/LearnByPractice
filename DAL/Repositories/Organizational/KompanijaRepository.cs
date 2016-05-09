@@ -66,9 +66,15 @@ namespace LearnByPractice.DAL.Repositories.Organizational
 
         private domain.Kompanija ToDomain(model.Organizacija modelObject)
         {
-            throw new NotImplementedException();
+            domain.Kompanija domainObject = new domain.Kompanija();
+            domainObject.Id = modelObject.ID;
+            domainObject.Ime = modelObject.Ime;
+            domainObject.Adresa = modelObject.Adresa;
+            domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
+            domainObject.VebStrana = modelObject.Veb_Strana;
+            domainObject.vidOrganizacija.Ime = modelObject.Vid_Organizacija.Ime;
+            return domainObject;
         }
 
     }
 }
-

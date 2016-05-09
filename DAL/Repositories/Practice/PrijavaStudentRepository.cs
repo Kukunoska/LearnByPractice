@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using model = DAL.Models;
+using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
 
-namespace DAL.Repositories.Practice
+namespace LearnByPractice.DAL.Repositories.Practice
 {
 
     public class PrijavaStudentRepository : RepositoryBase
@@ -20,8 +20,8 @@ namespace DAL.Repositories.Practice
             foreach (model.Prijava_Korisnik modelObject in query)
             {
                 domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
-                domainObject.student.IdKorisnik = modelObject.Korisnik_ID;
-                domainObject.prijava.Id = modelObject.Prijava_ID;
+                domainObject.student.Ime = modelObject.Korisnik.Ime;
+                domainObject.prijava.Id = modelObject.Prijava.ID;
                 result.Add(domainObject);
             }
 
@@ -53,7 +53,18 @@ namespace DAL.Repositories.Practice
 
         private domain.PrijavaStudentCollection ToDomainObjects(List<model.Prijava_Korisnik> list)
         {
-            throw new NotImplementedException();
+         
+            domain.PrijavaStudentCollection domainObjects = new domain.PrijavaStudentCollection();
+            foreach (model.Prijava_Korisnik modelObject in list)
+            {
+
+                domain.PrijavaStudent domainObject = ToDomain(modelObject);
+                domainObject.student.Ime = modelObject.Korisnik.Ime;
+                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObjects.Add(domainObject);
+            }
+            return domainObjects;
+  
         }
 
         public domain.PrijavaStudent Insert(domain.PrijavaStudent domainObject)
@@ -61,8 +72,8 @@ namespace DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                modelObject.Korisnik_ID = domainObject.student.IdKorisnik;
-                modelObject.Prijava_ID = domainObject.prijava.Id;
+                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
@@ -77,8 +88,8 @@ namespace DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.student.IdKorisnik);
                 model.Prijava_Korisnik modelObject = query.Single();
-                modelObject.Korisnik_ID = domainObject.student.IdKorisnik;
-                modelObject.Prijava_ID = domainObject.prijava.Id;
+                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
                 return result;
@@ -87,7 +98,10 @@ namespace DAL.Repositories.Practice
 
         private domain.PrijavaStudent ToDomain(model.Prijava_Korisnik modelObject)
         {
-            throw new NotImplementedException();
+            domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
+            domainObject.student.Ime = modelObject.Korisnik.Ime;
+            domainObject.prijava.Id = modelObject.Prijava.ID;
+            return domainObject;
         }
     }
 

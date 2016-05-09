@@ -18,7 +18,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             OblastCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
 
-            //Assert.IsTrue(zemi.Count >= x);
+            Assert.IsTrue(zemi.Count >= 3);
 
             foreach (Oblast oblast in zemi)
             {
@@ -41,6 +41,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Assert.AreEqual(oblast.Ime, dodadete.Ime);
 
             Console.WriteLine("Додаденa е новa oбласт: ОбластИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+        }
+        [Test]
+        public void GetByIdTest()
+        {
+            OblastRepository repository = new OblastRepository();
+            Oblast oblast = repository.Get(1);
+            Assert.AreEqual(1, oblast.Id);
         }
     }
     }

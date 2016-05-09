@@ -44,6 +44,7 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Studiska_Programa modelObject = new model.Studiska_Programa();
+                modelObject.ID = domainObject.Id;
                 modelObject.Ime = domainObject.Ime;
                 context.Studiska_Programas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -56,7 +57,10 @@ namespace LearnByPractice.DAL.Repositories.Education
 
         private domain.StudiskaPrograma ToDomain(model.Studiska_Programa modelObject)
         {
-            throw new NotImplementedException();
+            domain.StudiskaPrograma domainObject = new domain.StudiskaPrograma();
+            domainObject.Id = modelObject.ID;
+            domainObject.Ime = modelObject.Ime;
+            return domainObject;
         }
     }
 }

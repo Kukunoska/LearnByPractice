@@ -1,17 +1,16 @@
 ﻿using System;
+using LearnByPractice.Domain.Security;
 
 namespace LearnByPractice.Domain.Education
 {
     /// <summary>Класа за оцената на студент по одреден предмет.</summary>
     public class Ocena
     {
-        /// <summary> Шифрата на студентот.</summary>
-        /// <value>Ја зема/поставува вредноста на шифрата на студентот.</value>
-        public int StudentId { get; set; }
+        /// <summary> Објект од класа <c>Korisnik</c>.</summary>
+        public Korisnik student = new Korisnik();
 
-        /// <summary> Шифрата на предметот.</summary>
-        /// <value>Ја зема/поставува вредноста на шифрата на предметот.</value>
-        public int PredmetId { get; set; }
+        /// <summary> Објект од класа <c>Predmet</c>.</summary>
+        public Predmet predmet = new Predmet();
 
         /// <summary>Оцена на студентот со шифра <c>StudentID</c>, по предметот со шифра <c>PredmetID</c>.</summary>
         /// <value>Ја зема/поставува вредноста на оцената. </value>

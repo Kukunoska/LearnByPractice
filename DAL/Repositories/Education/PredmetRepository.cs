@@ -19,6 +19,7 @@ namespace LearnByPractice.DAL.Repositories.Education
             {
                 domain.Predmet domainObject = new domain.Predmet();
                 domainObject.Id = modelObject.ID;
+                domainObject.ShifraNaPredmet = modelObject.Shifra_Na_Predmet;
                 domainObject.Ime = modelObject.Ime;
                 result.Add(domainObject);
             }
@@ -44,6 +45,7 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Predmet modelObject = new model.Predmet();
+                modelObject.Shifra_Na_Predmet = domainObject.ShifraNaPredmet;
                 modelObject.Ime = domainObject.Ime;
                 context.Predmets.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -56,7 +58,11 @@ namespace LearnByPractice.DAL.Repositories.Education
 
         private domain.Predmet ToDomain(model.Predmet modelObject)
         {
-            throw new NotImplementedException();
+            domain.Predmet domainObject = new domain.Predmet();
+            domainObject.Id = modelObject.ID;
+            domainObject.ShifraNaPredmet = modelObject.Shifra_Na_Predmet;
+            domainObject.Ime = modelObject.Ime;
+            return domainObject;
         }
     }
 }
