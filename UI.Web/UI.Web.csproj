@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,6 +162,14 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3a036d65-afa8-49c6-a12a-539c1bfa8b6d}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL.Models\DAL.Models.csproj">
+      <Project>{df2de748-c5a1-46df-8e77-6e29b6bb29c7}</Project>
+      <Name>DAL.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8e419b33-abbc-4fec-982f-888893f0250e}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{99be228a-4813-4b06-bf9b-e1727ed8e430}</Project>
