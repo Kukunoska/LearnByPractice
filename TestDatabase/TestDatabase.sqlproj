@@ -71,7 +71,6 @@
     <None Include="Scripts\Post-Deployment Scripts\dbo.Oblast.Table.sql" />
     <None Include="Scripts\Post-Deployment Scripts\dbo.Predmet.Table.sql" />
     <None Include="Scripts\Post-Deployment Scripts\dbo.Tehnologija.Table.sql" />
-    <None Include="TestDatabase.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deployment Scripts\Script.TestPostDeployment.sql" />
