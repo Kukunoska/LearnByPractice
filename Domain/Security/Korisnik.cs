@@ -18,7 +18,7 @@ namespace LearnByPractice.Domain.Security
     {
         /// <summary>Шифра</summary>
         /// <value>Ја зема/поставува шифрата на корисникот</value>
-        public int IdKorisnik { get; set; }
+        public int Id { get; set; }
 
         /// <summary>Корисничко име</summary>
         /// <value>Го зема/поставува корисничкото име на корисникот</value>
@@ -67,7 +67,8 @@ namespace LearnByPractice.Domain.Security
         public Boolean Student { get; set; }
 
         /// <summary> Конструктор на класата <c>Korisnik</c>, без параметри. </summary>
-        public Korisnik() {
+        public Korisnik() 
+        {
             Pol = PolEnum.Nepoznat;
         }
     }
