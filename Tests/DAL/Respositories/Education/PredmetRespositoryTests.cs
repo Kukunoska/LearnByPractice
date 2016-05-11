@@ -31,16 +31,17 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
 
             Predmet predmet = new Predmet();
             Guid guid = new Guid();
-            predmet.ShifraNaPredmet = string.Format("шифра на предмет {1}", guid.ToString());
-            predmet.Ime = string.Format("предмет {2}", guid.ToString());
+            predmet.ShifraNaPredmet = string.Format("ШП:{0}", guid.ToString());
+            predmet.Ime = string.Format("П:{0}", guid.ToString());
 
             PredmetRepository repository = new PredmetRepository();
             Predmet dodadete = repository.Insert(predmet);
 
             Assert.IsNotNull(dodadete);
             Assert.AreEqual(predmet.Ime, dodadete.Ime);
+            Assert.AreEqual(predmet.ShifraNaPredmet, dodadete.ShifraNaPredmet);
 
-            Console.WriteLine("Додаден е нов предмет: предметИД: {0}, шифраПредмет{1}, Име: {2},", dodadete.Id, dodadete.Ime);
+            Console.WriteLine("Додаден е нов предмет: предметИД: {0}, шифраПредмет{1}, Име: {2},", dodadete.Id, dodadete.ShifraNaPredmet, dodadete.Ime);
         }
 
         [Test]

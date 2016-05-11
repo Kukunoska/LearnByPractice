@@ -73,7 +73,7 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Ocenka modelObject = new model.Ocenka();
-                modelObject.Korisnik_ID = domainObject.student.IdKorisnik;
+                modelObject.Korisnik_ID = domainObject.student.Id;
                 modelObject.Predmet_ID = domainObject.predmet.Id;
                 modelObject.Ocenka1 = domainObject.Ocenka;
                 context.Ocenkas.InsertOnSubmit(modelObject);
@@ -89,7 +89,7 @@ namespace LearnByPractice.DAL.Repositories.Education
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Ocenka> query = context.Ocenkas.Where(p => p.Korisnik_ID == domainObject.student.IdKorisnik && p.Predmet_ID == domainObject.predmet.Id);
+                IQueryable<model.Ocenka> query = context.Ocenkas.Where(p => p.Korisnik_ID == domainObject.student.Id && p.Predmet_ID == domainObject.predmet.Id);
                 model.Ocenka modelObject = query.Single();
                 modelObject.Ocenka1 = domainObject.Ocenka;
                 context.SubmitChanges();
@@ -101,7 +101,7 @@ namespace LearnByPractice.DAL.Repositories.Education
         private domain.Ocena ToDomain(model.Ocenka modelObject)
         {
             domain.Ocena domainObject = new domain.Ocena();
-            domainObject.student.IdKorisnik = modelObject.Korisnik.ID;
+            domainObject.student.Id = modelObject.Korisnik.ID;
             domainObject.predmet.Id = modelObject.Predmet.ID;
             domainObject.Ocenka = modelObject.Ocenka1;
             return domainObject;

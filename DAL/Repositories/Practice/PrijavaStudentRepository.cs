@@ -72,7 +72,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Korisnik.ID = domainObject.student.Id;
                 modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -86,9 +86,9 @@ namespace LearnByPractice.DAL.Repositories.Practice
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.student.IdKorisnik);
+                IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.student.Id);
                 model.Prijava_Korisnik modelObject = query.Single();
-                modelObject.Korisnik.ID = domainObject.student.IdKorisnik;
+                modelObject.Korisnik.ID = domainObject.student.Id;
                 modelObject.Prijava.ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);

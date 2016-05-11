@@ -38,14 +38,14 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Korisnik izbranKorisnik = siteKorisnici[KorID];
 
             PrijavaStudent prijavaStudent = new PrijavaStudent();
-            prijavaStudent.student.IdKorisnik = izbranKorisnik.IdKorisnik;
+            prijavaStudent.student.Id = izbranKorisnik.Id;
 
             PrijavaStudentRepository repository = new PrijavaStudentRepository();
             PrijavaStudent dodadete = repository.Insert(prijavaStudent);
 
             Assert.IsNotNull(dodadete);
             Assert.AreEqual(prijavaStudent.prijava.Id, dodadete.prijava.Id);
-            Assert.AreEqual(prijavaStudent.student.IdKorisnik, dodadete.student.IdKorisnik);
+            Assert.AreEqual(prijavaStudent.student.Id, dodadete.student.Id);
 
             Console.WriteLine("Пријавен е нов студент: ПријаваИД: {0}, Студент: {1}, ", dodadete.prijava.Id, dodadete.student.Ime);
         }
@@ -54,7 +54,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
         {
             PrijavaStudentRepository repository = new PrijavaStudentRepository();
             PrijavaStudent prijavaStudent = repository.Get(1);
-            Assert.AreEqual(1, prijavaStudent.student.IdKorisnik);
+            Assert.AreEqual(1, prijavaStudent.student.Id);
         }
         [Test]
         public void GetByKorisnikID()
@@ -63,7 +63,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             PrijavaStudentCollection student = repository.GetByKorisnikId(1);
             Assert.IsNotNull(student);
             Assert.IsTrue(student.Count >= 0);
-            Assert.IsTrue(student.All(korisnik => korisnik.student.IdKorisnik == 1));
+            Assert.IsTrue(student.All(korisnik => korisnik.student.Id == 1));
             foreach (PrijavaStudent korisnik in student)
             {
                 Console.WriteLine(" ПријаваИД: {0}, Студент: {1}, " , korisnik.prijava.Id, korisnik.student.Ime);

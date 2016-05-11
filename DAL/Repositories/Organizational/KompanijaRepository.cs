@@ -24,7 +24,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 domainObject.Adresa = modelObject.Adresa;
                 domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
                 domainObject.VebStrana = modelObject.Veb_Strana;
-                domainObject.vidOrganizacija.Ime = modelObject.Vid_Organizacija.Ime;
+                domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija.ID;
                 result.Add(domainObject);
             }
 

@@ -24,7 +24,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
 
             foreach (Ocena ocena in zemi)
             {
-                Console.WriteLine("ИД: {0}, Име: {1}, Вид: {2}", ocena.student.IdKorisnik, ocena.predmet.Id, ocena.Ocenka);
+                Console.WriteLine("ИД: {0}, Име: {1}, Вид: {2}", ocena.student.Id, ocena.predmet.Id, ocena.Ocenka);
             }
         }
         protected int randomOcena()
@@ -73,18 +73,18 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
 
             Ocena ocena = new Ocena();
             ocena.Ocenka = randomOcena();
-            ocena.student.IdKorisnik = izbranKorisnik.IdKorisnik;
+            ocena.student.Id = izbranKorisnik.Id;
             ocena.predmet.Id = izbranPredmet.Id;
 
             OcenaRepository repository = new OcenaRepository();
             Ocena dodadete = repository.Insert(ocena);
 
             Assert.IsNotNull(dodadete);
-            Assert.AreEqual(ocena.student.IdKorisnik, dodadete.student.IdKorisnik);
+            Assert.AreEqual(ocena.student.Id, dodadete.student.Id);
             Assert.AreEqual(ocena.predmet.Id, dodadete.predmet.Id);
             Assert.AreEqual(ocena.Ocenka, dodadete.Ocenka);
 
-            Console.WriteLine("Додадена е нова оцена: СтудентИД: {0}, ПредметИД: {1}, Оцена: {2}", dodadete.student.IdKorisnik, dodadete.predmet.Id, dodadete.Ocenka);
+            Console.WriteLine("Додадена е нова оцена: СтудентИД: {0}, ПредметИД: {1}, Оцена: {2}", dodadete.student.Id, dodadete.predmet.Id, dodadete.Ocenka);
         }
         [Test]
         public void GetByPredmetIdTest()
@@ -106,7 +106,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             OcenaCollection oceniPoStudent = repository.GetByStudentId(1);
             Assert.IsNotNull(oceniPoStudent);
             Assert.IsTrue(oceniPoStudent.Count >= 1);
-            Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.IdKorisnik == 1));
+            Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.Id == 1));
             foreach (Ocena ocena in oceniPoStudent)
             {
                 Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Ime, ocena.predmet.Ime);

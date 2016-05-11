@@ -38,9 +38,9 @@ namespace LearnByPractice.Tests.DAL.Respositories.Organizational
             Kompanija kompanija = new Kompanija();
             Guid guid = new Guid();
             kompanija.Ime = string.Format("Име: {0}", guid.ToString());
-            kompanija.Adresa = string.Format("Адреса: {1}", guid.ToString());
-            kompanija.KontaktTelefon = string.Format("Контакт телефон: {2}", guid.ToString());
-            kompanija.VebStrana = string.Format("Веб страна: {3}", guid.ToString());
+            kompanija.Adresa = string.Format("Адреса: {0}", guid.ToString());
+            kompanija.KontaktTelefon = string.Format("Контакт телефон: {0}", guid.ToString());
+            kompanija.VebStrana = string.Format("Веб страна: {0}", guid.ToString());
             kompanija.vidOrganizacija.Ime = izbranVidOrg.Ime;
 
             KompanijaRepository repository = new KompanijaRepository();

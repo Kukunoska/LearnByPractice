@@ -18,11 +18,11 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             TehnologijaCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
 
-            Assert.IsTrue(zemi.Count >= 0);
+            Assert.IsTrue(zemi.Count >= 2);
 
             foreach (Tehnologija tehnologija in zemi)
             {
-                Console.WriteLine("ТехнологијаИД: {0}, Име: {1}, Област: {2}, ", tehnologija.Id, tehnologija.Ime, tehnologija.oblast.Ime);
+                Console.WriteLine("ТехнологијаИД: {0}, Име: {1}, Област: {2}, ", tehnologija.Id, tehnologija.Ime, tehnologija.oblast.Id);
             }
         }
 
@@ -37,17 +37,17 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Oblast izbranaOblast = siteOblasti[OblastID];
 
             Tehnologija tehnologija = new Tehnologija();
-            tehnologija.Ime = string.Format("Технологија {0}", Guid.NewGuid().ToString());
-            tehnologija.oblast.Ime = izbranaOblast.Ime;
+            tehnologija.Ime = string.Format("Име {0}", Guid.NewGuid().ToString());
+            tehnologija.oblast.Id = izbranaOblast.Id;
 
             TehnologijaRepository repository = new TehnologijaRepository();
             Tehnologija dodadete = repository.Insert(tehnologija);
 
             Assert.IsNotNull(dodadete);
             Assert.AreEqual(tehnologija.Ime, dodadete.Ime);
-            Assert.AreEqual(tehnologija.oblast.Ime, dodadete.oblast.Ime);
+            Assert.AreEqual(tehnologija.oblast.Id, dodadete.oblast.Id);
 
-            Console.WriteLine("Додаденa е новa технологијa: ТехнологијаИД: {0}, Име: {1}, Област: {2}, ", dodadete.Id, dodadete.Ime, dodadete.oblast.Ime);
+            Console.WriteLine("Додаденa е новa технологијa: ТехнологијаИД: {0}, Име: {1}, Област: {2}, ", dodadete.Id, dodadete.Ime, dodadete.oblast.Id);
         }
         [Test]
         public void GetByIdTest()

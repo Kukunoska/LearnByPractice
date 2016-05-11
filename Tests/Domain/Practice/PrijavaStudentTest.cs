@@ -12,7 +12,7 @@ namespace LearnByPractice.Tests.Domain.Practice
         {
             PrijavaStudent ps = new PrijavaStudent();
             Assert.AreEqual(0, ps.prijava.Id);
-            Assert.AreEqual(0, ps.student.IdKorisnik);
+            Assert.AreEqual(0, ps.student.Id);
         }
     }
 }

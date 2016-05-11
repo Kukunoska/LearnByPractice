@@ -65,7 +65,6 @@
     <Compile Include="DAL\Respositories\Organizational\KompanijaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Organizational\VidOrganizacijaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Practice\OblastRespositoryTests.cs" />
-    <Compile Include="DAL\Respositories\Practice\PrijavaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Practice\PrijavaStudentRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Practice\PrijavaTehnologijaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Practice\TehnologijaRespositoryTests.cs" />
