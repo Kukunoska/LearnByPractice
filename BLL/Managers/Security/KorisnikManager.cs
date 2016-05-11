@@ -3,7 +3,7 @@
 namespace LearnByPractice.BLL.Managers.Security
 {
     using LearnByPractice.Domain.Security;
-    using DAL.Repositories.Security;
+    using LearnByPractice.DAL.Repositories.Security;
 
     public class KorisnikManager : ManagerBase
     {

@@ -3,7 +3,7 @@
 namespace LearnByPractice.BLL.Managers.Practice
 {
     using LearnByPractice.Domain.Practice;
-    using DAL.Repositories.Practice;
+    using LearnByPractice.DAL.Repositories.Practice;
 
     public class TehnologijaManager : ManagerBase
     {

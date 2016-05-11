@@ -3,7 +3,7 @@
 namespace LearnByPractice.BLL.Managers.Organizational
 {
     using LearnByPractice.Domain.Organizational;
-    using DAL.Repositories.Organizational;
+    using LearnByPractice.DAL.Repositories.Organizational;
 
     public class KompanijaManager : ManagerBase
     {

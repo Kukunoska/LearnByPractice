@@ -59,6 +59,16 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="BLL\Managers\Education\OcenaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Education\PredmetManagerTest.cs" />
+    <Compile Include="BLL\Managers\Education\StudiskaProgramaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Organizational\KompanijaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Organizational\VidOrganizacijaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Practice\OblastManagerTest.cs" />
+    <Compile Include="BLL\Managers\Practice\PrijavaStudentManagerTest.cs" />
+    <Compile Include="BLL\Managers\Practice\PrijavaTehnologijaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Practice\TehnologijaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Security\KorisnikManagerTest.cs" />
     <Compile Include="DAL\Respositories\Education\OcenaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Education\PredmetRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Education\StudiskaProgramaRespositoryTests.cs" />
@@ -94,6 +104,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{3a036d65-afa8-49c6-a12a-539c1bfa8b6d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{8e419b33-abbc-4fec-982f-888893f0250e}</Project>
       <Name>DAL</Name>
@@ -107,6 +121,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
