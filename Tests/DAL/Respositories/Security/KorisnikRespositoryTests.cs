@@ -26,7 +26,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
 
             foreach (Korisnik korisnik in zemi)
             {
-                Console.WriteLine("KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", korisnik.IdKorisnik, korisnik.Ime, korisnik.Prezime, korisnik.Pol, korisnik.studiskaPrograma.Ime, korisnik.organizacija.Ime, korisnik.Email, korisnik.Mobilen);
+                Console.WriteLine("KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", korisnik.Id, korisnik.Ime, korisnik.Prezime, korisnik.Pol, korisnik.studiskaPrograma.Ime, korisnik.organizacija.Ime, korisnik.Email, korisnik.Mobilen);
             }
         }
         protected PolEnum SlucaenIzbor()
@@ -63,13 +63,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
 
             Korisnik korisnik = new Korisnik();
             Guid guid = new Guid();
-            korisnik.Ime = string.Format("Име: {0}", guid.ToString());
-            korisnik.Prezime = string.Format("Презиме: {1}", guid.ToString());
+            korisnik.Ime = string.Format("И:{0}", guid.ToString());
+            korisnik.Prezime = string.Format("П:{0}", guid.ToString());
             korisnik.Pol = SlucaenIzbor();
             korisnik.studiskaPrograma.Ime = izbranaProg.Ime;
             korisnik.organizacija.Ime = izbranaOrg.Ime;
-            korisnik.Email = string.Format("Email: {3}", guid.ToString());
-            korisnik.Mobilen = string.Format("Мобилен: {4}", guid.ToString());
+            korisnik.Email = string.Format("E:{0}", guid.ToString());
+            korisnik.Mobilen = string.Format("М:{0}", guid.ToString());
 
             KorisnikRepository repository = new KorisnikRepository();
             Korisnik dodadete = repository.Insert(korisnik);
@@ -83,14 +83,14 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
             Assert.AreEqual(korisnik.Email, dodadete.Email);
             Assert.AreEqual(korisnik.Mobilen, dodadete.Mobilen);
 
-            Console.WriteLine("Додаден е нов корисник: KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", dodadete.IdKorisnik, dodadete.Ime, dodadete.Prezime, dodadete.Pol, dodadete.studiskaPrograma.Ime, dodadete.organizacija.Ime, dodadete.Email, dodadete.Mobilen);
+            Console.WriteLine("Додаден е нов корисник: KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", dodadete.Id, dodadete.Ime, dodadete.Prezime, dodadete.Pol, dodadete.studiskaPrograma.Ime, dodadete.organizacija.Ime, dodadete.Email, dodadete.Mobilen);
         }
         [Test]
         public void GetByIdTest()
         {
             KorisnikRepository repository = new KorisnikRepository();
             Korisnik user = repository.Get(1);
-            Assert.AreEqual(1, user.IdKorisnik);
+            Assert.AreEqual(1, user.Id);
         }
     
         [Test]
@@ -103,7 +103,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
             Assert.IsTrue(korisniciOdStudiskaP.All(korisnik => korisnik.studiskaPrograma.Id == 1));
             foreach (Korisnik korisnik in korisniciOdStudiskaP)
             {
-                Console.WriteLine(" KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", korisnik.IdKorisnik, korisnik.Ime, korisnik.Prezime,korisnik.Pol, korisnik.studiskaPrograma.Ime, korisnik.organizacija.Ime, korisnik.Email, korisnik.Mobilen);
+                Console.WriteLine(" KорисникИД: {0}, Име: {1}, Презиме: {2}, Пол: {3}, Студиска Програма: {4}, Организација: {5}, Еmail: {6}, Мобилен: {7}, ", korisnik.Id, korisnik.Ime, korisnik.Prezime,korisnik.Pol, korisnik.studiskaPrograma.Ime, korisnik.organizacija.Ime, korisnik.Email, korisnik.Mobilen);
             }
  
         }

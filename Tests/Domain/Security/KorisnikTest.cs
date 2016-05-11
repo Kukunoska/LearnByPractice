@@ -11,7 +11,7 @@ namespace LearnByPractice.Tests.Domain.Security
         public void KorisnikConstructorTest()
         {
             Korisnik k = new Korisnik();
-            Assert.AreEqual(0, k.IdKorisnik);
+            Assert.AreEqual(0, k.Id);
             Assert.IsNull(k.Password);
             Assert.IsNull(k.Username);
             Assert.IsNull(k.Ime);

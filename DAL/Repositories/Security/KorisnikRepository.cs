@@ -52,7 +52,7 @@ namespace LearnByPractice.DAL.Repositories.Security
             foreach (model.Korisnik modelObject in query)
             {
                 domain.Korisnik domainObject = new domain.Korisnik();
-                domainObject.IdKorisnik = modelObject.ID;
+                domainObject.Id = modelObject.ID;
                 domainObject.Username = modelObject.Korisnichko_Ime;
                 //domainObject.Password = modelObject.Lozinka;
                 domainObject.Ime = modelObject.Ime;
@@ -100,7 +100,7 @@ namespace LearnByPractice.DAL.Repositories.Security
             {
 
                 domain.Korisnik domainObject = new domain.Korisnik();
-                domainObject.IdKorisnik = modelObject.ID;
+                domainObject.Id = modelObject.ID;
                 domainObject.Username = modelObject.Korisnichko_Ime;
                 //domainObject.Password = modelObject.Lozinka;
                 domainObject.Ime = modelObject.Ime;
@@ -141,7 +141,7 @@ namespace LearnByPractice.DAL.Repositories.Security
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Korisnik> query = context.Korisniks.Where(p => p.ID == domainObject.IdKorisnik);
+                IQueryable<model.Korisnik> query = context.Korisniks.Where(p => p.ID == domainObject.Id);
                 model.Korisnik modelObject = query.Single();
                 modelObject.Korisnichko_Ime = domainObject.Username;
                 //modelObject.Lozinka = domainObject.Password;
@@ -162,7 +162,7 @@ namespace LearnByPractice.DAL.Repositories.Security
         private domain.Korisnik ToDomain(model.Korisnik modelObject)
         {
             domain.Korisnik domainObject = new domain.Korisnik();
-            domainObject.IdKorisnik = modelObject.ID;
+            domainObject.Id = modelObject.ID;
             domainObject.Username = modelObject.Korisnichko_Ime;
             //domainObject.Password = modelObject.Lozinka;
             domainObject.Ime = modelObject.Ime;

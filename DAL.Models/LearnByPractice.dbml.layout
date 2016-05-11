@@ -2,147 +2,147 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 9.5" name="LearnByPractice">
   <DataContextMoniker Name="/LearnByPracticeDataContext" />
   <nestedChildShapes>
-    <classShape Id="c00ce544-2ac4-4bb4-9587-107c3eef1a3c" absoluteBounds="9.25, 0.75, 2, 3.3093082682291666">
+    <classShape Id="b952ef65-82c6-41b6-a5ae-6a4aed425111" absoluteBounds="9.25, 0.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Korisnik" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9da2be1-ed0b-4d32-9d9f-2db2002c4186" absoluteBounds="9.265, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="24a05e26-53f4-4b67-a33f-8a29fd4e926a" absoluteBounds="9.265, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4a52965c-6c45-4f51-be05-61cae2df5c4d" absoluteBounds="0.75, 4.875, 2, 1.1939925130208344">
+    <classShape Id="c36d12eb-1693-469e-a1c4-12ec164f19ef" absoluteBounds="0.75, 4.875, 2, 1.1939925130208344">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Vid_Organizacija" />
       <nestedChildShapes>
-        <elementListCompartment Id="b3c0fa65-0e44-4bb7-8889-2d879d6483e3" absoluteBounds="0.765, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="92ec0362-5c98-409e-9739-546a097beb4b" absoluteBounds="0.765, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c5c4d0fe-629b-41a2-a72e-cd8adb0ff044" absoluteBounds="3.5, 7.875, 2, 1.1939925130208335">
+    <classShape Id="9ac2068d-5399-43b2-bc47-9969afa8aeac" absoluteBounds="3.5, 7.875, 2, 1.1939925130208335">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Oblast" />
       <nestedChildShapes>
-        <elementListCompartment Id="b6aa9c40-9228-45f5-a930-230523921b6e" absoluteBounds="3.515, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e2cd4767-fc8b-4064-a89d-2f29d9eae159" absoluteBounds="3.515, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="49811062-f6d6-4817-a63b-0d9b30fe1766" absoluteBounds="12, 0.75, 2, 1.3862939453125">
+    <classShape Id="6ee1aaef-f2d5-4a8c-af28-30f0a6237da0" absoluteBounds="12, 0.75, 2, 1.3862939453125">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Ocenka" />
       <nestedChildShapes>
-        <elementListCompartment Id="0faa0bd3-e7a1-47df-9e2e-ee95b1e4130c" absoluteBounds="12.015, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dd8e0a05-7e88-4b8f-84ba-406ef8e3b9b8" absoluteBounds="12.015, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="baf50796-96de-4d0c-b83e-db4fb22bd7ba" absoluteBounds="3.5, 4.5, 2, 1.9631982421875005">
+    <classShape Id="f3f11d8c-6481-4b19-b877-ea7ab60a0ed6" absoluteBounds="3.5, 4.5, 2, 1.9631982421875005">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Organizacija" />
       <nestedChildShapes>
-        <elementListCompartment Id="64990e6d-48b3-49b8-bedd-a28dc8f2b54e" absoluteBounds="3.515, 4.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d654f136-29d7-43c5-ac2b-fa2b0404804a" absoluteBounds="3.515, 4.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a9dfdb58-40fa-4a5e-b363-691c7e431cc7" absoluteBounds="9.25, 7.5, 2, 1.3862939453125005">
+    <classShape Id="9ef715b7-aa19-46f1-9365-3081a97831c9" absoluteBounds="9.25, 7.5, 2, 1.3862939453125005">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Predmet" />
       <nestedChildShapes>
-        <elementListCompartment Id="6bdb01b7-8089-4795-96fd-3bc1234604ab" absoluteBounds="9.265, 7.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5660032c-2acf-4d16-8275-ff27ee3f5d16" absoluteBounds="9.265, 7.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f4a4f191-8ab9-4e9f-a111-e1c456810b9b" absoluteBounds="6.25, 4.75, 2, 1.3862939453125005">
+    <classShape Id="f04c232d-dd5d-4804-9dc0-b432ddf09c53" absoluteBounds="6.25, 4.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Prijava" />
       <nestedChildShapes>
-        <elementListCompartment Id="2f086784-89c0-44f1-94f8-295861259b6c" absoluteBounds="6.265, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2cc7b6d1-ca1b-4998-ba47-9f718b27a196" absoluteBounds="6.265, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="60d9f6a6-8b8c-4746-913e-668e44a18b01" absoluteBounds="12, 2.875, 2, 1.1939925130208335">
+    <classShape Id="c66a12c0-4033-4d13-83a9-1c3346d5e132" absoluteBounds="12, 2.875, 2, 1.1939925130208335">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Prijava_Korisnik" />
       <nestedChildShapes>
-        <elementListCompartment Id="5c6941dd-d42a-41dd-a083-9a799dedb3d3" absoluteBounds="12.015, 3.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3547f19e-4cf6-4ced-a760-22a1960953da" absoluteBounds="12.015, 3.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ed6c99e0-5d5a-4a0f-a5ac-fdb1742fd994" absoluteBounds="9, 4.875, 2, 1.1939925130208344">
+    <classShape Id="e0c45f3d-afab-4ea2-ba11-70016544658e" absoluteBounds="9, 4.875, 2, 1.1939925130208344">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Prijava_Tehnologija" />
       <nestedChildShapes>
-        <elementListCompartment Id="914a7800-5499-4d5c-a5c9-c4121cc93542" absoluteBounds="9.015, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="84636e47-db63-4b7a-bda8-c623f1d0fa36" absoluteBounds="9.015, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9490df85-8e12-456f-8ba0-04a8c8e73d45" absoluteBounds="6.5, 2.375, 2, 1.1939925130208335">
+    <classShape Id="3749187e-259a-450f-8867-d327d0c8f480" absoluteBounds="6.5, 2.375, 2, 1.1939925130208335">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Studiska_Programa" />
       <nestedChildShapes>
-        <elementListCompartment Id="2985f1ae-dc2d-4a14-b6bb-6f466294d607" absoluteBounds="6.515, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e2631f22-9e8e-4f13-bd99-e5ec29f4e07c" absoluteBounds="6.515, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="afaed25f-c9ce-46be-a6a9-ca0f2554abf1" absoluteBounds="6.25, 7.75, 2, 1.3862939453125005">
+    <classShape Id="60d80f83-27ef-4539-b07c-e68fda830e2e" absoluteBounds="6.25, 7.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/LearnByPracticeDataContext/Tehnologija" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e2ef946-24ed-4c1f-a8c9-c28a54dc999a" absoluteBounds="6.265, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6f1b3c3f-94f2-4bb5-bba5-8c32e7748370" absoluteBounds="6.265, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(11.25 : 1.44314697265625); (12 : 1.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Korisnik/Korisnik_Ocenka" />
       <nodes>
-        <classShapeMoniker Id="c00ce544-2ac4-4bb4-9587-107c3eef1a3c" />
-        <classShapeMoniker Id="49811062-f6d6-4817-a63b-0d9b30fe1766" />
+        <classShapeMoniker Id="b952ef65-82c6-41b6-a5ae-6a4aed425111" />
+        <classShapeMoniker Id="6ee1aaef-f2d5-4a8c-af28-30f0a6237da0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 6.33099609375); (9.01041666666667 : 6.33099609375 : JumpStart); (9.17708333333333 : 6.33099609375 : JumpEnd); (11.15625 : 6.33099609375); (11.15625 : 4.05930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Organizacija/Organizacija_Korisnik" />
       <nodes>
-        <classShapeMoniker Id="baf50796-96de-4d0c-b83e-db4fb22bd7ba" />
-        <classShapeMoniker Id="c00ce544-2ac4-4bb4-9587-107c3eef1a3c" />
+        <classShapeMoniker Id="f3f11d8c-6481-4b19-b877-ea7ab60a0ed6" />
+        <classShapeMoniker Id="b952ef65-82c6-41b6-a5ae-6a4aed425111" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.47199625651042); (3.5 : 5.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Vid_Organizacija/Vid_Organizacija_Organizacija" />
       <nodes>
-        <classShapeMoniker Id="4a52965c-6c45-4f51-be05-61cae2df5c4d" />
-        <classShapeMoniker Id="baf50796-96de-4d0c-b83e-db4fb22bd7ba" />
+        <classShapeMoniker Id="c36d12eb-1693-469e-a1c4-12ec164f19ef" />
+        <classShapeMoniker Id="f3f11d8c-6481-4b19-b877-ea7ab60a0ed6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.25 : 7.5); (11.625 : 7.125); (11.625 : 1.82097245898437); (12 : 1.82097245898437)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Predmet/Predmet_Ocenka" />
       <nodes>
-        <classShapeMoniker Id="a9dfdb58-40fa-4a5e-b363-691c7e431cc7" />
-        <classShapeMoniker Id="49811062-f6d6-4817-a63b-0d9b30fe1766" />
+        <classShapeMoniker Id="9ef715b7-aa19-46f1-9365-3081a97831c9" />
+        <classShapeMoniker Id="6ee1aaef-f2d5-4a8c-af28-30f0a6237da0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 5.44314697265625); (6.25 : 5.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Organizacija/Organizacija_Prijava" />
       <nodes>
-        <classShapeMoniker Id="baf50796-96de-4d0c-b83e-db4fb22bd7ba" />
-        <classShapeMoniker Id="f4a4f191-8ab9-4e9f-a111-e1c456810b9b" />
+        <classShapeMoniker Id="f3f11d8c-6481-4b19-b877-ea7ab60a0ed6" />
+        <classShapeMoniker Id="f04c232d-dd5d-4804-9dc0-b432ddf09c53" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.25 : 3.46715413411458); (11.5416666666667 : 3.46715413411458 : JumpStart); (11.7083333333333 : 3.46715413411458 : JumpEnd); (12 : 3.46715413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Korisnik/Korisnik_Prijava_Korisnik" />
       <nodes>
-        <classShapeMoniker Id="c00ce544-2ac4-4bb4-9587-107c3eef1a3c" />
-        <classShapeMoniker Id="60d9f6a6-8b8c-4746-913e-668e44a18b01" />
+        <classShapeMoniker Id="b952ef65-82c6-41b6-a5ae-6a4aed425111" />
+        <classShapeMoniker Id="c66a12c0-4033-4d13-83a9-1c3346d5e132" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 4.78125); (11.0729166666667 : 4.78125 : JumpStart); (11.2395833333333 : 4.78125 : JumpEnd); (11.5416666666667 : 4.78125 : JumpStart); (11.7083333333333 : 4.78125 : JumpEnd); (13 : 4.78125); (13 : 4.06899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Prijava/Prijava_Prijava_Korisnik" />
       <nodes>
-        <classShapeMoniker Id="f4a4f191-8ab9-4e9f-a111-e1c456810b9b" />
-        <classShapeMoniker Id="60d9f6a6-8b8c-4746-913e-668e44a18b01" />
+        <classShapeMoniker Id="f04c232d-dd5d-4804-9dc0-b432ddf09c53" />
+        <classShapeMoniker Id="c66a12c0-4033-4d13-83a9-1c3346d5e132" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 5.47199625651042); (9 : 5.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Prijava/Prijava_Prijava_Tehnologija" />
       <nodes>
-        <classShapeMoniker Id="f4a4f191-8ab9-4e9f-a111-e1c456810b9b" />
-        <classShapeMoniker Id="ed6c99e0-5d5a-4a0f-a5ac-fdb1742fd994" />
+        <classShapeMoniker Id="f04c232d-dd5d-4804-9dc0-b432ddf09c53" />
+        <classShapeMoniker Id="e0c45f3d-afab-4ea2-ba11-70016544658e" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 2.97199625651042); (9.25 : 2.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Studiska_Programa/Studiska_Programa_Korisnik" />
       <nodes>
-        <classShapeMoniker Id="9490df85-8e12-456f-8ba0-04a8c8e73d45" />
-        <classShapeMoniker Id="c00ce544-2ac4-4bb4-9587-107c3eef1a3c" />
+        <classShapeMoniker Id="3749187e-259a-450f-8867-d327d0c8f480" />
+        <classShapeMoniker Id="b952ef65-82c6-41b6-a5ae-6a4aed425111" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 9.0425439453125); (9.09375 : 9.0425439453125); (9.09375 : 6.06899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Tehnologija/Tehnologija_Prijava_Tehnologija" />
       <nodes>
-        <classShapeMoniker Id="afaed25f-c9ce-46be-a6a9-ca0f2554abf1" />
-        <classShapeMoniker Id="ed6c99e0-5d5a-4a0f-a5ac-fdb1742fd994" />
+        <classShapeMoniker Id="60d80f83-27ef-4539-b07c-e68fda830e2e" />
+        <classShapeMoniker Id="e0c45f3d-afab-4ea2-ba11-70016544658e" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 8.47199625651042); (6.25 : 8.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LearnByPracticeDataContext/Oblast/Oblast_Tehnologija" />
       <nodes>
-        <classShapeMoniker Id="c5c4d0fe-629b-41a2-a72e-cd8adb0ff044" />
-        <classShapeMoniker Id="afaed25f-c9ce-46be-a6a9-ca0f2554abf1" />
+        <classShapeMoniker Id="9ac2068d-5399-43b2-bc47-9969afa8aeac" />
+        <classShapeMoniker Id="60d80f83-27ef-4539-b07c-e68fda830e2e" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

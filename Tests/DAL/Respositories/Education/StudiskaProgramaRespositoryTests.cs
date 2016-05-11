@@ -25,7 +25,22 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
                 Console.WriteLine("СтудискаПрограмаИД: {0}, Име: {1},", oblast.Id, oblast.Ime);
             }
         }
+        [Test]
+        public void InsertTest()
+        {
+            StudiskaPrograma studProg = new StudiskaPrograma();
+            Random random = new Random(DateTime.Now.Millisecond);
+            studProg.Id = random.Next(99, 9999);
+            studProg.Ime = string.Format("СП{0}", Guid.NewGuid().ToString());
 
+            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
+            StudiskaPrograma dodadete = repository.Insert(studProg);
+
+            Assert.IsNotNull(dodadete);
+            Assert.AreEqual(studProg.Ime, dodadete.Ime);
+
+            Console.WriteLine("Додаденa е новa студиска програма: СтудискаПрограмаИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+        }
         
         [Test]
         public void GetByIdTest()

@@ -22,7 +22,7 @@ namespace LearnByPractice.DAL.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LearnByPractice")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Database1")]
 	public partial class LearnByPracticeDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -66,7 +66,7 @@ namespace LearnByPractice.DAL.Models
     #endregion
 		
 		public LearnByPracticeDataContext() : 
-				base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString1, mappingSource)
+				base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.Database1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -453,7 +453,7 @@ namespace LearnByPractice.DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefonski_Broj", DbType="NVarChar(13)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefonski_Broj", DbType="NVarChar(16)")]
 		public string Telefonski_Broj
 		{
 			get
@@ -1162,7 +1162,7 @@ namespace LearnByPractice.DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ime", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ime", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
 		public string Ime
 		{
 			get
@@ -1182,7 +1182,7 @@ namespace LearnByPractice.DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adresa", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adresa", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
 		public string Adresa
 		{
 			get
@@ -1202,7 +1202,7 @@ namespace LearnByPractice.DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Kontakt_Telefon", DbType="NVarChar(13)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Kontakt_Telefon", DbType="NVarChar(16)")]
 		public string Kontakt_Telefon
 		{
 			get
@@ -1591,7 +1591,7 @@ namespace LearnByPractice.DAL.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Na_Prijavuvanje", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Na_Prijavuvanje", DbType="DateTime NOT NULL")]
 		public System.DateTime Datum_Na_Prijavuvanje
 		{
 			get
