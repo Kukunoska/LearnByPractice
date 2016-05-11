@@ -3,7 +3,7 @@
 namespace LearnByPractice.BLL.Managers.Education
 {
     using LearnByPractice.Domain.Education;
-    using DAL.Repositories.Education;
+    using LearnByPractice.DAL.Repositories.Education;
 
     public class OcenaManager : ManagerBase
     {
