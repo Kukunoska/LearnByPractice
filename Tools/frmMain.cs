@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearnByPractice;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,12 @@ namespace Tools
         {
             Generator generator = new Generator();
             generator.Show();
+        }
+
+        private void mnuHashingPassword_Click(object sender, EventArgs e)
+        {
+            frmHashing child = new frmHashing();
+            child.Show();
         }
     }
 }
