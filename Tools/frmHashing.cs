@@ -50,7 +50,8 @@ namespace LearnByPractice
         private void GenSaltAndHash_Click(object sender, EventArgs e)
         {
             string salt = CreateSalt(16);
-            string hashedPassword = SHA1(SHA1(textBox1.Text + salt));
+            string password = textBox1.Text;
+            string hashedPassword = SHA1(SHA1(password + salt));
             textBox2.Text = salt;
             textBox3.Text = hashedPassword;
         }
