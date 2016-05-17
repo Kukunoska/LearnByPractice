@@ -59,14 +59,14 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(90, 20);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(572, 20);
+            this.txtPassword.Size = new System.Drawing.Size(557, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // txtHash
             // 
             this.txtHash.Location = new System.Drawing.Point(145, 71);
             this.txtHash.Name = "txtHash";
-            this.txtHash.Size = new System.Drawing.Size(517, 20);
+            this.txtHash.Size = new System.Drawing.Size(590, 20);
             this.txtHash.TabIndex = 3;
             // 
             // lblStatus
@@ -98,11 +98,11 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // PasswordHashing
+            // frmPassHashing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 328);
+            this.ClientSize = new System.Drawing.Size(766, 328);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnHashing);
             this.Controls.Add(this.lblStatus);
@@ -110,7 +110,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "PasswordHashing";
+            this.Name = "frmPassHashing";
             this.Text = "Хаширање на лозинка";
             this.ResumeLayout(false);
             this.PerformLayout();

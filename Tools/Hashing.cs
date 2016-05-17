@@ -7,16 +7,20 @@ using System.Security.Cryptography;
 
 namespace LearnByPractice
 {
+    
     public enum Supported_HASH
     {
         SHA256
     }
+    
     class Hashing
     {
         public static string ComputeHash(string plainText, Supported_HASH hash, byte[] salt)
         {
-            int minSaltLength = 5;
-            int maxSaltLength = 16;
+            
+            //int minSaltLength = 4;
+            //int maxSaltLength = 16;
+            int saltLength = 16;
 
             byte[] saltBytes = null;
 
@@ -26,8 +30,8 @@ namespace LearnByPractice
             }
             else
             {
-                Random r = new Random();
-                int saltLength = r.Next(minSaltLength, maxSaltLength);
+                //Random r = new Random();
+                //int saltLength = r.Next(minSaltLength, maxSaltLength);
                 saltBytes = new byte[saltLength];
                 RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
                 rng.GetNonZeroBytes(saltBytes);
@@ -56,11 +60,24 @@ namespace LearnByPractice
             for (int n = 0; n < saltBytes.Length; n++)
                 result[hashValue.Length + n] = saltBytes[n];
 
-            return Convert.ToBase64String(result);
+            //return Convert.ToBase64String(result);
+
+            //И овај код работи со Confirm методот.
+            //StringBuilder sb = new StringBuilder();
+            //foreach (byte b in result)
+            //{
+            //    sb.Append(b.ToString("x2"));
+            //}
+            //return sb.ToString();
+
+            return BitConverter.ToString(result).Replace("-", "").ToLower();
         }
+
         public static bool Confirm(string plainText, string hashValue, Supported_HASH hash)
         {
-            byte[] hashBytes = Convert.FromBase64String(hashValue);
+            //byte[] hashBytes = Convert.FromBase64String(hashValue);
+
+            byte[] hashBytes = Enumerable.Range(0, hashValue.Length / 2).Select(x => Convert.ToByte(hashValue.Substring(x * 2, 2), 16)).ToArray();
 
             int hashSize = 32;
             byte[] saltBytes = new byte[hashBytes.Length - hashSize];
