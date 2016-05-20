@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.DAL.Repositories.Education;
 using LearnByPractice.Domain.Education;
@@ -30,8 +26,9 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
         {
 
             Predmet predmet = new Predmet();
-            Guid guid = new Guid();
-            predmet.ShifraNaPredmet = string.Format("ШП:{0}", guid.ToString());
+            Guid guid;
+            guid = Guid.NewGuid();
+            predmet.ShifraNaPredmet = string.Format("ШП:{0}", guid.ToString().Substring(1, 5));
             predmet.Ime = string.Format("П:{0}", guid.ToString());
 
             PredmetRepository repository = new PredmetRepository();
@@ -50,6 +47,30 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             PredmetRepository repository = new PredmetRepository();
             Predmet predmet = repository.Get(1);
             Assert.AreEqual(1, predmet.Id);
+        }
+        [Test]
+        public void UpdateTest()
+        {
+            PredmetRepository repository = new PredmetRepository();
+            PredmetCollection sitePredmeti = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int predmetId = random.Next(0, sitePredmeti.Count);
+            Predmet izbranPredmet = sitePredmeti[predmetId];
+
+            Console.WriteLine("Се менуваат податоците за предметот ИД: {0}, Име: {1}", izbranPredmet.Id, izbranPredmet.Ime);
+
+            Guid guid;
+            guid = Guid.NewGuid();
+            izbranPredmet.ShifraNaPredmet = string.Format("ШП:{0}", guid.ToString().Substring(1, 5));
+            izbranPredmet.Ime = string.Format("Изменета {0}", guid.ToString());
+
+            Predmet izmenetPredmet = repository.Update(izbranPredmet);
+
+            Assert.IsNotNull(izmenetPredmet);
+            Assert.AreEqual(izmenetPredmet.Id, izbranPredmet.Id);
+            Assert.AreEqual(izmenetPredmet.Ime, izbranPredmet.Ime);
+
+            Console.WriteLine("Изменетите податоци за предметот: ИД: {0}, Име: {1}", izmenetPredmet.Id, izmenetPredmet.Ime);
         }
     }
 }

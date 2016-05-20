@@ -58,10 +58,13 @@ namespace LearnByPractice.DAL.Repositories.Security
                 domainObject.Ime = modelObject.Ime;
                 domainObject.Prezime = modelObject.Prezime;
                 domainObject.Pol = ToDomain(modelObject.Pol);
-                domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
-                domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+                domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
+                domainObject.organizacija.Id = modelObject.Organizacija_ID;
                 domainObject.Email = modelObject.Email;
                 domainObject.Mobilen = modelObject.Telefonski_Broj;
+                domainObject.Mentor = modelObject.Mentor;
+                domainObject.Student = modelObject.Student;
+                domainObject.Administrator = modelObject.Administrator;
 
                 result.Add(domainObject);
             }
@@ -106,10 +109,13 @@ namespace LearnByPractice.DAL.Repositories.Security
                 domainObject.Ime = modelObject.Ime;
                 domainObject.Prezime = modelObject.Prezime;
                 domainObject.Pol = ToDomain(modelObject.Pol);
-                domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
-                domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+                domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
+                domainObject.organizacija.Id = modelObject.Organizacija_ID;
                 domainObject.Email = modelObject.Email;
                 domainObject.Mobilen = modelObject.Telefonski_Broj;
+                domainObject.Mentor = modelObject.Mentor;
+                domainObject.Student = modelObject.Student;
+                domainObject.Administrator = modelObject.Administrator;
 
                 domainObjects.Add(domainObject);
             }
@@ -126,10 +132,13 @@ namespace LearnByPractice.DAL.Repositories.Security
                 modelObject.Ime = domainObject.Ime;
                 modelObject.Prezime = domainObject.Prezime;
                 modelObject.Pol = ToModel(domainObject.Pol);
-                modelObject.Studiska_Programa.Ime = domainObject.studiskaPrograma.Ime;
-                modelObject.Organizacija.Ime = domainObject.organizacija.Ime;
+                modelObject.Organizacija_ID = domainObject.organizacija.Id;
                 modelObject.Email = domainObject.Email;
                 modelObject.Telefonski_Broj = domainObject.Mobilen;
+                modelObject.Mentor = domainObject.Mentor;
+                modelObject.Student = domainObject.Student;
+                if (modelObject.Student == true) { modelObject.Studiska_Programa_ID = domainObject.studiskaPrograma.Id; } else { modelObject.Studiska_Programa_ID = null; }
+                modelObject.Administrator = domainObject.Administrator;
                 context.Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Korisnik result = ToDomain(modelObject);
@@ -148,10 +157,13 @@ namespace LearnByPractice.DAL.Repositories.Security
                 modelObject.Ime = domainObject.Ime;
                 modelObject.Prezime = domainObject.Prezime;
                 modelObject.Pol = ToModel(domainObject.Pol);
-                modelObject.Studiska_Programa.Ime = domainObject.studiskaPrograma.Ime;
-                modelObject.Organizacija.ID = domainObject.organizacija.Id;
+                modelObject.Organizacija_ID = domainObject.organizacija.Id;
                 modelObject.Email = domainObject.Email;
                 modelObject.Telefonski_Broj = domainObject.Mobilen;
+                modelObject.Mentor = domainObject.Mentor;
+                modelObject.Student = domainObject.Student;
+                if (modelObject.Student == true) { modelObject.Studiska_Programa_ID = domainObject.studiskaPrograma.Id; } else { modelObject.Studiska_Programa_ID = null; }
+                modelObject.Administrator = domainObject.Administrator;
                 context.SubmitChanges();
                 domain.Korisnik result = ToDomain(modelObject);
                 return result;
@@ -168,10 +180,13 @@ namespace LearnByPractice.DAL.Repositories.Security
             domainObject.Ime = modelObject.Ime;
             domainObject.Prezime = modelObject.Prezime;
             domainObject.Pol = ToDomain(modelObject.Pol);
-            domainObject.studiskaPrograma.Ime = modelObject.Studiska_Programa.Ime;
-            domainObject.organizacija.Ime = modelObject.Organizacija.Ime;
+            domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
+            domainObject.organizacija.Id = modelObject.Organizacija_ID;
             domainObject.Email = modelObject.Email;
             domainObject.Mobilen = modelObject.Telefonski_Broj;
+            domainObject.Mentor = modelObject.Mentor;
+            domainObject.Student = modelObject.Student;
+            domainObject.Administrator = modelObject.Administrator;
 
             return domainObject;
         }

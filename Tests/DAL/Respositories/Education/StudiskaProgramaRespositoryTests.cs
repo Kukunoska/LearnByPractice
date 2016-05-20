@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.DAL.Repositories.Education;
 using LearnByPractice.Domain.Education;
@@ -41,13 +37,34 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
 
             Console.WriteLine("Додаденa е новa студиска програма: СтудискаПрограмаИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
         }
-        
+
         [Test]
         public void GetByIdTest()
         {
             StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
             StudiskaPrograma studiskaPrograma = repository.Get(1);
             Assert.AreEqual(1, studiskaPrograma.Id);
+        }
+        [Test]
+        public void UpdateTest()
+        {
+            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
+            StudiskaProgramaCollection siteSP = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int sPId = random.Next(0, siteSP.Count);
+            StudiskaPrograma izbranaSP = siteSP[sPId];
+
+            Console.WriteLine("Се менуваат податоците за студиската програма ИД: {0}, Име: {1}", izbranaSP.Id, izbranaSP.Ime);
+
+            izbranaSP.Ime = string.Format("Изменета {0}", Guid.NewGuid().ToString());
+
+            StudiskaPrograma izmenetaSP = repository.Update(izbranaSP);
+
+            Assert.IsNotNull(izmenetaSP);
+            Assert.AreEqual(izbranaSP.Id, izmenetaSP.Id);
+            Assert.AreEqual(izbranaSP.Ime, izmenetaSP.Ime);
+
+            Console.WriteLine("Изменетите податоци за студиската програма : ИД: {0}, Име: {1}", izmenetaSP.Id, izmenetaSP.Ime);
         }
     }
 }

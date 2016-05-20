@@ -55,6 +55,19 @@ namespace LearnByPractice.DAL.Repositories.Education
 
             }
         }
+        public domain.Predmet Update(domain.Predmet domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Predmet> query = context.Predmets.Where(p => p.ID == domainObject.Id);
+                model.Predmet modelObject = query.Single();
+                modelObject.Shifra_Na_Predmet = domainObject.ShifraNaPredmet;
+                modelObject.Ime = domainObject.Ime;
+                context.SubmitChanges();
+                domain.Predmet result = ToDomain(modelObject);
+                return result;
+            }
+        }
 
         private domain.Predmet ToDomain(model.Predmet modelObject)
         {

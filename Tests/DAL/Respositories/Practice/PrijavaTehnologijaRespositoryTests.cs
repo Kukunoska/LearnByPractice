@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.Domain.Practice;
 using LearnByPractice.DAL.Repositories.Practice;
@@ -20,7 +17,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
 
             foreach (PrijavaTehnologija prijavaTehnologija in zemi)
             {
-                Console.WriteLine("ПријаваИД: {0}, Технологија: {1}, ", prijavaTehnologija.prijava.Id, prijavaTehnologija.tehnologija.Ime);
+                Console.WriteLine("ПријаваИД: {0}, Технологија: {1}, ", prijavaTehnologija.prijava.Id, prijavaTehnologija.tehnologija.Id);
             }
         }
 
@@ -34,7 +31,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             int TehID = random.Next(0, siteTehnologii.Count);
             Tehnologija izbranaTehnologija = siteTehnologii[TehID];
 
+            PrijavaRepository PrijavaRep = new PrijavaRepository();
+            PrijavaCollection sitePrijavi = PrijavaRep.GetAll();
+            int prijava = random.Next(0, sitePrijavi.Count);
+            Prijava izbranaprijava = sitePrijavi[prijava];
+
             PrijavaTehnologija tehnologija = new PrijavaTehnologija();
+            tehnologija.prijava.Id = izbranaprijava.Id;
             tehnologija.tehnologija.Id = izbranaTehnologija.Id;
 
             PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
@@ -44,27 +47,59 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Assert.AreEqual(tehnologija.prijava.Id, dodadete.prijava.Id);
             Assert.AreEqual(tehnologija.tehnologija.Id, dodadete.tehnologija.Id);
 
-            Console.WriteLine("Пријавена е новa технологијa: ПријаваИД: {0}, Технологија: {1}, ", dodadete.prijava.Id, dodadete.tehnologija.Ime);
+            Console.WriteLine("Пријавена е новa технологијa: ПријаваИД: {0}, Технологија: {1}, ", dodadete.prijava.Id, dodadete.tehnologija.Id);
         }
         [Test]
         public void GetByIdTest()
         {
             PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
-            PrijavaTehnologija prijavaTeh = repository.Get(1);
-            Assert.AreEqual(1, prijavaTeh.tehnologija.Id);
+            PrijavaTehnologijaCollection prijavaTeh = repository.Get(8);
+            Assert.IsNotNull(prijavaTeh);
+            Assert.IsTrue(prijavaTeh.Count >= 1);
+            Assert.IsTrue(prijavaTeh.All(tehnologija => tehnologija.prijava.Id == 8));
+            foreach (PrijavaTehnologija prijava in prijavaTeh)
+            {
+                Console.WriteLine(" ПријаваИД: {0}, Технологија: {1}, ", prijava.prijava.Id, prijava.tehnologija.Id);
+            }
         }
         [Test]
         public void GetByTehnologijaID()
         {
             PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
-            PrijavaTehnologijaCollection teh = repository.GetByTehnologijaId(2);
+            PrijavaTehnologijaCollection teh = repository.GetByTehnologijaId(13);
             Assert.IsNotNull(teh);
-            Assert.IsTrue(teh.Count >= 2);
-            Assert.IsTrue(teh.All(tehnologija => tehnologija.tehnologija.Id == 1));
+            Assert.IsTrue(teh.Count >= 1);
+            Assert.IsTrue(teh.All(tehnologija => tehnologija.tehnologija.Id == 13));
             foreach (PrijavaTehnologija prijava in teh)
             {
-                Console.WriteLine(" ПријаваИД: {0}, Технологија: {1}, ", prijava.prijava.Id, prijava.tehnologija.Ime);
+                Console.WriteLine(" ПријаваИД: {0}, Технологија: {1}, ", prijava.prijava.Id, prijava.tehnologija.Id);
             }
+        }
+        [Test]
+        public void UpdateTest()
+        {
+            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
+            PrijavaTehnologijaCollection sitePrijavi = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int prijavaId = random.Next(0, sitePrijavi.Count);
+            PrijavaTehnologija izbranaPrijava = sitePrijavi[prijavaId];
+
+            Console.WriteLine("Се менуваат податоците за пријава ПријаваИД: {0}, Технологија: {1}", izbranaPrijava.prijava.Id, izbranaPrijava.tehnologija.Id);
+
+            PrijavaRepository PRep = new PrijavaRepository();
+            PrijavaCollection siteP = PRep.GetAll();
+            int PID = random.Next(0, siteP.Count);
+            Prijava izbranaP = siteP[PID];
+            PrijavaTehnologija prijava = new PrijavaTehnologija();
+            prijava.prijava.Id = izbranaP.Id;
+
+            PrijavaTehnologija izmenetaPrijava = repository.Update(izbranaPrijava);
+
+            Assert.IsNotNull(izmenetaPrijava);
+            Assert.AreEqual(izbranaPrijava.prijava.Id, izmenetaPrijava.prijava.Id);
+            Assert.AreEqual(izbranaPrijava.tehnologija.Id, izmenetaPrijava.tehnologija.Id);
+
+            Console.WriteLine("Изменетите податоци за пријава: ПријаваИД: {0}, Технологија: {1}", izmenetaPrijava.prijava.Id, izmenetaPrijava.tehnologija.Id);
         }
     }
 }

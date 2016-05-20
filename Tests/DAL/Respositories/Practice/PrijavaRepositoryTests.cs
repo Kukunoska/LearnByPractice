@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.Domain.Practice;
-using LearnByPractice.Domain.Security;
 using LearnByPractice.Domain.Organizational;
-using LearnByPractice.DAL.Repositories.Organizational;
 using LearnByPractice.DAL.Repositories.Practice;
-using LearnByPractice.DAL.Repositories.Security;
-
+using LearnByPractice.DAL.Repositories.Organizational;
 
 namespace LearnByPractice.Tests.DAL.Respositories.Practice
 {
-    public class PrijavaRespositoryTests
+    class PrijavaRepositoryTests
     {
         [Test]
         public void GetAllTest()
@@ -22,11 +15,12 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             PrijavaRepository respository = new PrijavaRepository();
             PrijavaCollection zemi = respository.GetAll();
             Assert.IsNotNull(zemi);
-            Assert.IsTrue(zemi.Count >= 0);
+
+            Assert.IsTrue(zemi.Count >= 2);
 
             foreach (Prijava prijava in zemi)
             {
-                Console.WriteLine("ПријаваИД: {0}, Компанија: {}, Дата: {1}, ", prijava.Id, prijava.kompanija.Ime, prijava.Datum);
+                Console.WriteLine("ПријаваИД: {0}, КомпанијаИД: {1}, Дата: {2}, ", prijava.Id, prijava.kompanija.Id, prijava.Datum);
             }
         }
 
@@ -47,8 +41,8 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             Prijava dodadete = repository.Insert(prijava);
 
             Assert.IsNotNull(dodadete);
-            Assert.AreEqual(prijava.Id, dodadete.Id);
             Assert.AreEqual(prijava.kompanija.Id, dodadete.kompanija.Id);
+            Assert.AreEqual(prijava.Datum, dodadete.Datum);
 
             Console.WriteLine("Пријавена е нова компанија: ПријаваИД: {0}, КомпанијаИД: {1}, Дата{2} ", dodadete.Id, dodadete.kompanija.Id, dodadete.Datum);
         }
@@ -56,8 +50,34 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
         public void GetByIdTest()
         {
             PrijavaRepository repository = new PrijavaRepository();
-            Prijava prijava = repository.Get(0);
-            Assert.AreEqual(0, prijava.Id);
+            Prijava prijava = repository.Get(6);
+            Assert.AreEqual(6, prijava.Id);
+        }
+        [Test]
+        public void UpdateTest()
+        {
+            PrijavaRepository repository = new PrijavaRepository();
+            PrijavaCollection sitePrijavi = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int prijavaId = random.Next(0, sitePrijavi.Count);
+            Prijava izbranaPrijava = sitePrijavi[prijavaId];
+
+            Console.WriteLine("Се менуваат податоците за пријава ИД: {0}, Компанија: {1}", izbranaPrijava.Id, izbranaPrijava.kompanija.Id);
+
+            KompanijaRepository KompRep = new KompanijaRepository();
+            KompanijaCollection siteKompanii = KompRep.GetAll();
+            int KompID = random.Next(0, siteKompanii.Count);
+            Kompanija izbranaKompanija = siteKompanii[KompID];
+            Prijava prijava = new Prijava();
+            prijava.kompanija.Id = izbranaKompanija.Id;
+
+            Prijava izmenetaPrijava = repository.Update(izbranaPrijava);
+
+            Assert.IsNotNull(izmenetaPrijava);
+            Assert.AreEqual(izbranaPrijava.Id, izmenetaPrijava.Id);
+            Assert.AreEqual(izbranaPrijava.kompanija.Id, izmenetaPrijava.kompanija.Id);
+
+            Console.WriteLine("Изменетите податоци за пријава: ИД: {0}, Компанија: {1}", izmenetaPrijava.Id, izmenetaPrijava.kompanija.Id);
         }
     }
 }

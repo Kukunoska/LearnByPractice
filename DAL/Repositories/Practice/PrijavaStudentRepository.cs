@@ -20,22 +20,22 @@ namespace LearnByPractice.DAL.Repositories.Practice
             foreach (model.Prijava_Korisnik modelObject in query)
             {
                 domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
-                domainObject.student.Ime = modelObject.Korisnik.Ime;
-                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObject.student.Id = modelObject.Korisnik_ID;
+                domainObject.prijava.Id = modelObject.Prijava_ID;
                 result.Add(domainObject);
             }
 
             return result;
         }
-        public domain.PrijavaStudent Get(int id)
+        public domain.PrijavaStudentCollection Get(int id)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(c => c.Prijava_ID == id);
 
-                domain.PrijavaStudent domainObject = ToDomain(query.Single());
+                domain.PrijavaStudentCollection domainObjects = ToDomainObjects(query.ToList());
 
-                return domainObject;
+                return domainObjects;
             }
         }
 
@@ -53,18 +53,18 @@ namespace LearnByPractice.DAL.Repositories.Practice
 
         private domain.PrijavaStudentCollection ToDomainObjects(List<model.Prijava_Korisnik> list)
         {
-         
+
             domain.PrijavaStudentCollection domainObjects = new domain.PrijavaStudentCollection();
             foreach (model.Prijava_Korisnik modelObject in list)
             {
 
                 domain.PrijavaStudent domainObject = ToDomain(modelObject);
-                domainObject.student.Ime = modelObject.Korisnik.Ime;
-                domainObject.prijava.Id = modelObject.Prijava.ID;
+                domainObject.student.Id = modelObject.Korisnik_ID;
+                domainObject.prijava.Id = modelObject.Prijava_ID;
                 domainObjects.Add(domainObject);
             }
             return domainObjects;
-  
+
         }
 
         public domain.PrijavaStudent Insert(domain.PrijavaStudent domainObject)
@@ -72,8 +72,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                modelObject.Korisnik.ID = domainObject.student.Id;
-                modelObject.Prijava.ID = domainObject.prijava.Id;
+                modelObject.Prijava_ID = domainObject.student.Id;
+                modelObject.Prijava_ID = domainObject.prijava.Id;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
@@ -88,8 +88,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava_Korisnik> query = context.Prijava_Korisniks.Where(p => p.Korisnik_ID == domainObject.student.Id);
                 model.Prijava_Korisnik modelObject = query.Single();
-                modelObject.Korisnik.ID = domainObject.student.Id;
-                modelObject.Prijava.ID = domainObject.prijava.Id;
+                modelObject.Korisnik_ID = domainObject.student.Id;
+                modelObject.Prijava_ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);
                 return result;
@@ -99,8 +99,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
         private domain.PrijavaStudent ToDomain(model.Prijava_Korisnik modelObject)
         {
             domain.PrijavaStudent domainObject = new domain.PrijavaStudent();
-            domainObject.student.Ime = modelObject.Korisnik.Ime;
-            domainObject.prijava.Id = modelObject.Prijava.ID;
+            domainObject.student.Id = modelObject.Korisnik_ID;
+            domainObject.prijava.Id = modelObject.Prijava_ID;
             return domainObject;
         }
     }
