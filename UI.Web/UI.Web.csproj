@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="User\Administrator\Administrator.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -95,8 +96,15 @@
     <Content Include="Styles\Images\x3mlabs.jpg">
       <BrowseToURL>Styles/Images/x3mlabs.jpg</BrowseToURL>
     </Content>
-    <Content Include="Styles\master.css" />
-    <Content Include="User\Admnistrator.aspx" />
+    <Content Include="Styles\master.css">
+      <BrowseToURL>~/Styles/master.css</BrowseToURL>
+    </Content>
+    <Content Include="Styles\user.css">
+      <BrowseToURL>~/Styles/user.css</BrowseToURL>
+    </Content>
+    <Content Include="User\Administrator\VidOrganizacija.aspx" />
+    <Content Include="User\Administrator\Kompanija.aspx" />
+    <Content Include="User\Administrator\StudiskaPrograma.aspx" />
     <Content Include="User\Mentor.aspx" />
     <Content Include="User\Student.aspx" />
     <Content Include="WebSite.Master" />
@@ -128,12 +136,33 @@
     <Compile Include="PublicPages\Proekti.aspx.designer.cs">
       <DependentUpon>Proekti.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Admnistrator.aspx.cs">
-      <DependentUpon>Admnistrator.aspx</DependentUpon>
+    <Compile Include="User\Administrator\Administrator.master.cs">
+      <DependentUpon>Administrator.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\Admnistrator.aspx.designer.cs">
-      <DependentUpon>Admnistrator.aspx</DependentUpon>
+    <Compile Include="User\Administrator\Administrator.master.designer.cs">
+      <DependentUpon>Administrator.master</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\VidOrganizacija.aspx.cs">
+      <DependentUpon>VidOrganizacija.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\VidOrganizacija.aspx.designer.cs">
+      <DependentUpon>VidOrganizacija.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\Kompanija.aspx.cs">
+      <DependentUpon>Kompanija.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\Kompanija.aspx.designer.cs">
+      <DependentUpon>Kompanija.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\StudiskaPrograma.aspx.cs">
+      <DependentUpon>StudiskaPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\StudiskaPrograma.aspx.designer.cs">
+      <DependentUpon>StudiskaPrograma.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Mentor.aspx.cs">
       <DependentUpon>Mentor.aspx</DependentUpon>

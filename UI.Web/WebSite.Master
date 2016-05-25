@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Learn By Practice</title>
     <link runat="server" id="MasterCssLink" rel="stylesheet" media="all" href="~/Styles/master.css" />
+    <link runat="server" id="AdministratorMasterCssLink" rel="stylesheet" media="all" href="~/Styles/user.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -34,7 +35,7 @@
                         <asp:HyperLink runat="server" ID="Pocetna" NavigateUrl="~/PublicPages/Home.aspx" Text="Почетна" />
                     </li>
                     <li style="width: 23%">
-                        <asp:HyperLink runat="server" ID="Administrator" NavigateUrl="~/User/Admnistrator.aspx" Text="Администратор" />
+                        <asp:HyperLink runat="server" ID="Administrator" NavigateUrl="~/User/Administrator/VidOrganizacija.aspx" Text="Администратор" />
                     </li>
                     <li>
                         <asp:HyperLink runat="server" ID="Mentor" NavigateUrl="~/User/Mentor.aspx" Text="Ментор" />

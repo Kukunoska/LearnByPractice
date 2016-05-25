@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/WebSite.Master" AutoEventWireup="true" CodeBehind="Administrator.master.cs" Inherits="LearnByPractice.UI.Web.User.Administrator.Administrator" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    </asp:Content>
+    
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div id="meniA">
+    <ul class="nav">
+    <li>Едукација
+        <ul>
+            <li class="dropDown" ><asp:HyperLink runat="server" ID="Ocena" NavigateUrl="~/User/Administrator/Ocena.aspx" Text="Оцена" /></li>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Predmet" NavigateUrl="~/User/Administrator/Predmet.aspx" Text="Предмет" /></li>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="StudiskaPrograma" NavigateUrl="~/User/Administrator/StudiskaPrograma.aspx" Text="Студиска програма" /></li>
+        </ul>
+    </li>    
+    <li>Организација
+        <ul>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="VidOrg" NavigateUrl="~/User/Administrator/VidOrganizacija.aspx" Text="Вид на организација" /></li>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Kompanija" NavigateUrl="~/User/Administrator/Kompanija.aspx" Text="Компанија" /></li>
+        </ul>
+    </li> 
+    <li>Пракса
+        <ul>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Oblast" NavigateUrl="~/User/Administrator/Oblast.aspx" Text="Област" /></li>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Prijava" NavigateUrl="~/User/Administrator/Prijava.aspx" Text="Пријава" /></li>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Tehnologija" NavigateUrl="~/User/Administrator/Tehnologija.aspx" Text="Технологија" /></li>
+         </ul>
+    </li> 
+    <li>Корисници
+        <ul>
+            <li class="dropDown"><asp:HyperLink runat="server" ID="Korisnik" NavigateUrl="~/User/Administrator/Korisnik.aspx" Text="Корисници" /></li>
+        </ul>
+    </li> 
+
+</ul>
+</div>
+    <div id="Administrator-main-area">
+              <asp:ContentPlaceHolder ID="AdministratorMainContentPlaceHolder" runat="server">
+               </asp:ContentPlaceHolder>
+      </div>
+</asp:Content>
+
