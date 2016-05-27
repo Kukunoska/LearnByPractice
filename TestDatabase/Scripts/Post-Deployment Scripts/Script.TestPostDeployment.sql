@@ -19,4 +19,7 @@ GO
 :r .\dbo.Tehnologija.Table.sql
 GO
 
+:r .\dbo.Korisnik.Table.sql
+GO
+
 print 'Done deploying data'
