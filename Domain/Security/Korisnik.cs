@@ -28,6 +28,10 @@ namespace LearnByPractice.Domain.Security
         /// <value>Ја зема/поставува лозинката на корисникот</value>
         public String Password { get; set; }
 
+        /// <summary>ЛозинкаОдБаза</summary>
+        /// <value>Ја зема/поставува лозинката на корисникот од база</value>
+        public byte[] PasswordOdNiza { get; set; }
+
         /// <summary>Име</summary>
         /// <value>Го зема/поставува името на корисникот</value>
         public String Ime { get; set; }
