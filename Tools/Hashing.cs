@@ -7,24 +7,26 @@ using System.Security.Cryptography;
 
 namespace LearnByPractice
 {
-    
+
     public enum Supported_HASH
     {
         SHA256
     }
-    
+
     class Hashing
     {
-        public static string ComputeHash(string plainText, Supported_HASH hash, byte[] salt)
+        const int saltLength = 16;
+
+        public static byte[] ComputeHash(string plainText, Supported_HASH hash, byte[] salt)
         {
-            
+
             //int minSaltLength = 4;
             //int maxSaltLength = 16;
-            int saltLength = 16;
+            //int saltLength = 16;
 
             byte[] saltBytes = null;
 
-            if(salt != null)
+            if (salt != null)
             {
                 saltBytes = salt;
             }
@@ -38,20 +40,20 @@ namespace LearnByPractice
                 rng.Dispose();
             }
 
-            byte[] plainData = ASCIIEncoding.UTF8.GetBytes(plainText);
+            byte[] plainData = Encoding.UTF8.GetBytes(plainText);
             byte[] plainDataAndSalt = new byte[plainData.Length + saltBytes.Length];
 
             for (int x = 0; x < plainData.Length; x++)
                 plainDataAndSalt[x] = plainData[x];
 
-            for(int n = 0; n < saltBytes.Length; n++)
+            for (int n = 0; n < saltBytes.Length; n++)
                 plainDataAndSalt[plainData.Length + n] = saltBytes[n];
 
             byte[] hashValue = null;
 
-                SHA256Managed sha = new SHA256Managed();
-                hashValue = sha.ComputeHash(plainDataAndSalt);
-                sha.Dispose();
+            SHA256Managed sha = new SHA256Managed();
+            hashValue = sha.ComputeHash(plainDataAndSalt);
+            sha.Dispose();
 
             byte[] result = new byte[hashValue.Length + saltBytes.Length];
 
@@ -70,24 +72,29 @@ namespace LearnByPractice
             //}
             //return sb.ToString();
 
-            return BitConverter.ToString(result).Replace("-", "").ToLower();
+            return result;
         }
 
-        public static bool Confirm(string plainText, string hashValue, Supported_HASH hash)
+        public static bool Confirm(string plainText, byte[] hashBytes, Supported_HASH hash)
         {
             //byte[] hashBytes = Convert.FromBase64String(hashValue);
-
-            byte[] hashBytes = Enumerable.Range(0, hashValue.Length / 2).Select(x => Convert.ToByte(hashValue.Substring(x * 2, 2), 16)).ToArray();
-
-            int hashSize = 32;
-            byte[] saltBytes = new byte[hashBytes.Length - hashSize];
+            
+            //int hashSize = 32;
+            int saltSize = 32;
+            byte[] saltBytes = new byte[hashBytes.Length - saltSize];
 
             for (int x = 0; x < saltBytes.Length; x++)
-                saltBytes[x] = hashBytes[hashSize + x];
+                saltBytes[x] = hashBytes[saltSize + x];
 
-            string newHash = ComputeHash(plainText, hash, saltBytes);
+            byte[] newHash = ComputeHash(plainText, hash, saltBytes);
 
-            return (hashValue == newHash);
+            if (newHash.Length != hashBytes.Length) return false;
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                if (hashBytes[i] != newHash[i]) return false;
+            }
+
+            return true;
         }
     }
 }

@@ -43,7 +43,9 @@ namespace LearnByPractice
                 hashedPassword = sha1.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
             var sb = new StringBuilder();
-            foreach (byte b in hashedPassword) sb.AppendFormat("{0:x2}", b);
+            foreach (byte b in hashedPassword)
+                sb.AppendFormat("{0:x2}", b);
+                //sb.Append(b.ToString("x2"));
             return sb.ToString();
         }
 
