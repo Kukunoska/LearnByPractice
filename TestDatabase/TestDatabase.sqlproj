@@ -84,4 +84,7 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Post-Deployment Scripts\dbo.Korisnik.Table.sql" />
+  </ItemGroup>
 </Project>
