@@ -12,7 +12,7 @@ namespace LearnByPractice.Domain.Education
         /// <summary> Објект од класа <c>Predmet</c>.</summary>
         public Predmet predmet = new Predmet();
 
-        /// <summary>Оцена на студентот</c>.</summary>
+        /// <summary>Оцена на студентот</summary>
         /// <value>Ја зема/поставува вредноста на оцената. </value>
         public int Ocenka { get; set; }
 
