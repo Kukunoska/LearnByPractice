@@ -22,8 +22,8 @@ namespace LearnByPractice.DAL.Repositories.Education
             foreach (model.Ocenka modelObject in query)
             {
                 domain.Ocena domainObject = new domain.Ocena();
-                domainObject.student.Ime = modelObject.Korisnik.Ime;
-                domainObject.predmet.Ime = modelObject.Predmet.Ime;
+                domainObject.student.Id = modelObject.Korisnik_ID;
+                domainObject.predmet.Id = modelObject.Predmet_ID;
                 domainObject.Ocenka = modelObject.Ocenka1;
                 result.Add(domainObject);
             }
@@ -35,7 +35,7 @@ namespace LearnByPractice.DAL.Repositories.Education
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
-                IQueryable<model.Ocenka> query = context.Ocenkas.Where(c => c.Korisnik.ID == StudentId);
+                IQueryable<model.Ocenka> query = context.Ocenkas.Where(c => c.Korisnik_ID == StudentId);
                 domain.OcenaCollection domainObjects = ToDomainObjects(query.ToList());
 
                 return domainObjects;
@@ -60,8 +60,8 @@ namespace LearnByPractice.DAL.Repositories.Education
             {
 
                 domain.Ocena domainObject = ToDomain(modelObject);
-                domainObject.student.Ime = modelObject.Korisnik.Ime;
-                domainObject.predmet.Ime = modelObject.Predmet.Ime;
+                domainObject.student.Id = modelObject.Korisnik_ID;
+                domainObject.predmet.Id = modelObject.Predmet_ID;
                 domainObject.Ocenka = modelObject.Ocenka1;
                 domainObjects.Add(domainObject);
             }
@@ -101,8 +101,8 @@ namespace LearnByPractice.DAL.Repositories.Education
         private domain.Ocena ToDomain(model.Ocenka modelObject)
         {
             domain.Ocena domainObject = new domain.Ocena();
-            domainObject.student.Id = modelObject.Korisnik.ID;
-            domainObject.predmet.Id = modelObject.Predmet.ID;
+            domainObject.student.Id = modelObject.Korisnik_ID;
+            domainObject.predmet.Id = modelObject.Predmet_ID;
             domainObject.Ocenka = modelObject.Ocenka1;
             return domainObject;
         }

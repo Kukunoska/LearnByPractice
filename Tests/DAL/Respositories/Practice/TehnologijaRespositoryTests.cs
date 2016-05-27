@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.Domain.Practice;
 using LearnByPractice.DAL.Repositories.Practice;
@@ -55,6 +51,27 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             TehnologijaRepository repository = new TehnologijaRepository();
             Tehnologija teh = repository.Get(1);
             Assert.AreEqual(1, teh.Id);
+        }
+        [Test]
+        public void UpdateTest()
+        {
+            TehnologijaRepository repository = new TehnologijaRepository();
+            TehnologijaCollection siteTeh = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int tehId = random.Next(0, siteTeh.Count);
+            Tehnologija izbranaTeh = siteTeh[tehId];
+
+            Console.WriteLine("Се менуваат податоците за технологија ИД: {0}, Име: {1}", izbranaTeh.Id, izbranaTeh.Ime);
+
+            izbranaTeh.Ime = string.Format("Изменета {0}", Guid.NewGuid().ToString());
+
+            Tehnologija izmenetaTeh = repository.Update(izbranaTeh);
+
+            Assert.IsNotNull(izmenetaTeh);
+            Assert.AreEqual(izbranaTeh.Id, izmenetaTeh.Id);
+            Assert.AreEqual(izbranaTeh.Ime, izmenetaTeh.Ime);
+
+            Console.WriteLine("Изменетите податоци за технологија ИД: {0}, Име: {1}", izmenetaTeh.Id, izmenetaTeh);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Organizational;
+using System.Data.Entity;
 
 namespace LearnByPractice.DAL.Repositories.Organizational
 {
@@ -24,7 +25,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 domainObject.Adresa = modelObject.Adresa;
                 domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
                 domainObject.VebStrana = modelObject.Veb_Strana;
-                domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija.ID;
+                domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija_ID;
                 result.Add(domainObject);
             }
 
@@ -53,7 +54,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 modelObject.Adresa = domainObject.Adresa;
                 modelObject.Kontakt_Telefon = domainObject.KontaktTelefon;
                 modelObject.Veb_Strana = domainObject.VebStrana;
-                modelObject.Vid_Organizacija.Ime = domainObject.vidOrganizacija.Ime;
+                modelObject.Vid_Organizacija_ID = domainObject.vidOrganizacija.Id;
                 context.Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Kompanija result = ToDomain(modelObject);
@@ -61,6 +62,22 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 return result;
 
 
+            }
+        }
+        public domain.Kompanija Update(domain.Kompanija domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Organizacija> query = context.Organizacijas.Where(p => p.ID == domainObject.Id);
+                model.Organizacija modelObject = query.Single();
+                modelObject.Ime = domainObject.Ime;
+                modelObject.Adresa = domainObject.Adresa;
+                modelObject.Kontakt_Telefon = domainObject.KontaktTelefon;
+                modelObject.Veb_Strana = domainObject.VebStrana;
+                modelObject.Vid_Organizacija_ID = domainObject.vidOrganizacija.Id;
+                context.SubmitChanges();
+                domain.Kompanija result = ToDomain(modelObject);
+                return result;
             }
         }
 
@@ -72,7 +89,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             domainObject.Adresa = modelObject.Adresa;
             domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
             domainObject.VebStrana = modelObject.Veb_Strana;
-            domainObject.vidOrganizacija.Ime = modelObject.Vid_Organizacija.Ime;
+            domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija_ID;
             return domainObject;
         }
 

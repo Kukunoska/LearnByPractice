@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using LearnByPractice.DAL.Repositories.Education;
 using LearnByPractice.DAL.Repositories.Security;
@@ -96,7 +93,7 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             Assert.IsTrue(oceniPoPredmet.All(ocena => ocena.predmet.Id == 1));
             foreach (Ocena ocena in oceniPoPredmet)
             {
-                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Ime, ocena.predmet.Ime);
+                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Id, ocena.predmet.Id);
             }
         }
         [Test]
@@ -109,8 +106,30 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
             Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.Id == 1));
             foreach (Ocena ocena in oceniPoStudent)
             {
-                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Ime, ocena.predmet.Ime);
+                Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Id, ocena.predmet.Id);
             }
+        }
+
+        [Test]
+        public void UpdateTest()
+        {
+            OcenaRepository repository = new OcenaRepository();
+            OcenaCollection siteOceni = repository.GetAll();
+            Random random = new Random(DateTime.Now.Millisecond);
+            int ocena = random.Next(0, siteOceni.Count);
+            Ocena izbranaocena = siteOceni[ocena];
+
+            Console.WriteLine("Се менуваат податоците за оцена ИДСтудент: {0}, ИДПредмет: {1}, оцена: {1}", izbranaocena.student.Id, izbranaocena.predmet.Id, izbranaocena.Ocenka);
+
+            izbranaocena.Ocenka = randomOcena();
+            Ocena izmenetaOcena = repository.Update(izbranaocena);
+
+            Assert.IsNotNull(izmenetaOcena);
+            Assert.AreEqual(izbranaocena.student.Id, izmenetaOcena.student.Id);
+            Assert.AreEqual(izbranaocena.predmet.Id, izmenetaOcena.predmet.Id);
+            Assert.AreEqual(izbranaocena.Ocenka, izmenetaOcena.Ocenka);
+
+            Console.WriteLine("Изменетите податоци за оцена ИДСтудент: {0}, ИДПредмет: {1}, оцена: {1}", izmenetaOcena.student.Id, izmenetaOcena.predmet.Id, izmenetaOcena.Ocenka);
         }
 
     }

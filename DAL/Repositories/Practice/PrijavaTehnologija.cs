@@ -20,22 +20,22 @@ namespace LearnByPractice.DAL.Repositories.Practice
             foreach (model.Prijava_Tehnologija modelObject in query)
             {
                 domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
-                domainObject.prijava.Id = modelObject.Prijava.ID;
-                domainObject.tehnologija.Ime = modelObject.Tehnologija.Ime;
+                domainObject.prijava.Id = modelObject.Prijava_ID;
+                domainObject.tehnologija.Id = modelObject.Tehnologija_ID;
                 result.Add(domainObject);
             }
 
             return result;
         }
-        public domain.PrijavaTehnologija Get(int id)
+        public domain.PrijavaTehnologijaCollection Get(int id)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(c => c.Prijava_ID == id);
 
-                domain.PrijavaTehnologija domainObject = ToDomain(query.Single());
+                domain.PrijavaTehnologijaCollection domainObjects = ToDomainObjects(query.ToList());
 
-                return domainObject;
+                return domainObjects;
             }
         }
 
@@ -44,7 +44,9 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(c => c.Tehnologija_ID == TehId);
+
                 domain.PrijavaTehnologijaCollection domainObjects = ToDomainObjects(query.ToList());
+
                 return domainObjects;
             }
         }
@@ -56,8 +58,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
 
                 domain.PrijavaTehnologija domainObject = ToDomain(modelObject);
-                domainObject.prijava.Id = modelObject.Prijava.ID;
-                domainObject.tehnologija.Ime = modelObject.Tehnologija.Ime;
+                domainObject.prijava.Id = modelObject.Prijava_ID;
+                domainObject.tehnologija.Id = modelObject.Tehnologija_ID;
                 domainObjects.Add(domainObject);
             }
             return domainObjects;
@@ -67,8 +69,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
         private domain.PrijavaTehnologija ToDomain(model.Prijava_Tehnologija prijava_Tehnologija)
         {
             domain.PrijavaTehnologija domainObject = new domain.PrijavaTehnologija();
-            domainObject.prijava.Id = prijava_Tehnologija.Prijava.ID;
-            domainObject.tehnologija.Ime = prijava_Tehnologija.Tehnologija.Ime;
+            domainObject.prijava.Id = prijava_Tehnologija.Prijava_ID;
+            domainObject.tehnologija.Id = prijava_Tehnologija.Tehnologija_ID;
             return domainObject;
         }
 
@@ -78,8 +80,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Tehnologija modelObject = new model.Prijava_Tehnologija();
-                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
-                modelObject.Prijava.ID = domainObject.prijava.Id;
+                modelObject.Tehnologija_ID = domainObject.tehnologija.Id;
+                modelObject.Prijava_ID = domainObject.prijava.Id;
                 context.Prijava_Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
@@ -95,8 +97,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava_Tehnologija> query = context.Prijava_Tehnologijas.Where(p => p.Prijava_ID == domainObject.prijava.Id);
                 model.Prijava_Tehnologija modelObject = query.Single();
-                modelObject.Tehnologija.ID = domainObject.tehnologija.Id;
-                modelObject.Prijava.ID = domainObject.prijava.Id;
+                modelObject.Tehnologija_ID = domainObject.tehnologija.Id;
+                modelObject.Prijava_ID = domainObject.prijava.Id;
                 context.SubmitChanges();
                 domain.PrijavaTehnologija result = ToDomain(modelObject);
                 return result;

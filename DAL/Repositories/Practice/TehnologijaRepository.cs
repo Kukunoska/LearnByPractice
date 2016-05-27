@@ -20,7 +20,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 domain.Tehnologija domainObject = new domain.Tehnologija();
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
-                domainObject.oblast.Id = modelObject.Oblast.ID;
+                domainObject.oblast.Id = modelObject.Oblast_ID;
                 result.Add(domainObject);
             }
 
@@ -44,7 +44,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
             domain.Tehnologija domainObject = new domain.Tehnologija();
             domainObject.Id = tehnologija.ID;
             domainObject.Ime = tehnologija.Ime;
-            domainObject.oblast.Id = tehnologija.Oblast.ID;
+            domainObject.oblast.Id = tehnologija.Oblast_ID;
             return domainObject;
         }
 
@@ -55,7 +55,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
                 model.Tehnologija modelObject = new model.Tehnologija();
                 modelObject.Ime = domainObject.Ime;
-                modelObject.Oblast.ID = domainObject.oblast.Id;
+                modelObject.Oblast_ID = domainObject.oblast.Id;
                 context.Tehnologijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Tehnologija result = ToDomain(modelObject);
@@ -71,7 +71,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 IQueryable<model.Tehnologija> query = context.Tehnologijas.Where(p => p.ID == domainObject.Id);
                 model.Tehnologija modelObject = query.Single();
                 modelObject.Ime = domainObject.Ime;
-                modelObject.Oblast.ID = domainObject.oblast.Id;
+                modelObject.Oblast_ID = domainObject.oblast.Id;
                 context.SubmitChanges();
                 domain.Tehnologija result = ToDomain(modelObject);
                 return result;

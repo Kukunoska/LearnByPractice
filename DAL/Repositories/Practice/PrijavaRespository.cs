@@ -19,7 +19,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
                 domain.Prijava domainObject = new domain.Prijava();
                 domainObject.Id = modelObject.ID;
-                domainObject.kompanija.Ime = modelObject.Organizacija.Ime;
+                domainObject.kompanija.Id = modelObject.Organizacija_ID;
                 domainObject.Datum = modelObject.Datum_Na_Prijavuvanje;
                 result.Add(domainObject);
             }
@@ -44,8 +44,9 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava modelObject = new model.Prijava();
-                modelObject.Organizacija.ID = domainObject.kompanija.Id;
+                modelObject.Organizacija_ID = domainObject.kompanija.Id;
                 modelObject.Datum_Na_Prijavuvanje = domainObject.Datum;
+                context.Prijavas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
 
@@ -59,7 +60,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
             {
                 IQueryable<model.Prijava> query = context.Prijavas.Where(p => p.ID == domainObject.Id);
                 model.Prijava modelObject = query.Single();
-                modelObject.Organizacija.ID = domainObject.kompanija.Id;
+                modelObject.Organizacija_ID = domainObject.kompanija.Id;
                 context.SubmitChanges();
                 domain.Prijava result = ToDomain(modelObject);
                 return result;
@@ -70,7 +71,7 @@ namespace LearnByPractice.DAL.Repositories.Practice
         {
             domain.Prijava domainObject = new domain.Prijava();
             domainObject.Id = modelObject.ID;
-            domainObject.kompanija.Ime = modelObject.Organizacija.Ime;
+            domainObject.kompanija.Id = modelObject.Organizacija_ID;
             domainObject.Datum = modelObject.Datum_Na_Prijavuvanje;
             return domainObject;
         }
