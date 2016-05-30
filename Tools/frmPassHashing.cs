@@ -25,12 +25,16 @@ namespace LearnByPractice
 
         private void btnHashing_Click(object sender, EventArgs e)
         {
-            txtHash.Text = Hashing.ComputeHash(txtPassword.Text, Supported_HASH.SHA256, null);
+            byte[] hashedPassword = Hashing.ComputeHash(txtPassword.Text, Supported_HASH.SHA256, null);
+            string hashedPasswordString = BitConverter.ToString(hashedPassword).Replace("-", "");
+            txtHash.Text = hashedPasswordString;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            lblStatus.Text = (Hashing.Confirm(txtPassword.Text, txtHash.Text, Supported_HASH.SHA256)) ? "Статус: Точно" : "Статус: Неточно";
+            string hashValue = txtHash.Text;
+            byte[] hashBytes = Enumerable.Range(0, hashValue.Length / 2).Select(x => Convert.ToByte(hashValue.Substring(x * 2, 2), 16)).ToArray();
+            lblStatus.Text = (Hashing.Confirm(txtPassword.Text, hashBytes, Supported_HASH.SHA256)) ? "Статус: Точно" : "Статус: Неточно";
         }
     }
 }
