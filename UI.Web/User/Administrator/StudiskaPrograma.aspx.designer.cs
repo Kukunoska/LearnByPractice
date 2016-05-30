@@ -10,7 +10,7 @@
 namespace LearnByPractice.UI.Web.User.Administrator {
     
     
-    public partial class WebForm1 {
+    public partial class StudiskaPrograma {
         
         /// <summary>
         /// dgStudProg control.

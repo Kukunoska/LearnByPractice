@@ -105,6 +105,9 @@
     <Content Include="User\Administrator\VidOrganizacija.aspx" />
     <Content Include="User\Administrator\Kompanija.aspx" />
     <Content Include="User\Administrator\StudiskaPrograma.aspx" />
+    <Content Include="User\Administrator\Tehnologija.aspx" />
+    <Content Include="User\Administrator\Oblast.aspx" />
+    <Content Include="User\Administrator\Predmet.aspx" />
     <Content Include="User\Mentor.aspx" />
     <Content Include="User\Student.aspx" />
     <Content Include="WebSite.Master" />
@@ -163,6 +166,27 @@
     </Compile>
     <Compile Include="User\Administrator\StudiskaPrograma.aspx.designer.cs">
       <DependentUpon>StudiskaPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\Tehnologija.aspx.cs">
+      <DependentUpon>Tehnologija.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\Tehnologija.aspx.designer.cs">
+      <DependentUpon>Tehnologija.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\Oblast.aspx.cs">
+      <DependentUpon>Oblast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\Oblast.aspx.designer.cs">
+      <DependentUpon>Oblast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Administrator\Predmet.aspx.cs">
+      <DependentUpon>Predmet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Administrator\Predmet.aspx.designer.cs">
+      <DependentUpon>Predmet.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Mentor.aspx.cs">
       <DependentUpon>Mentor.aspx</DependentUpon>

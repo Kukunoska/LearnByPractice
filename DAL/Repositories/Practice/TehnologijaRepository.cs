@@ -2,6 +2,8 @@
 using System.Linq;
 using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Practice;
+using System.Data.Linq;
+using LearnByPractice.Domain.Practice;
 
 namespace LearnByPractice.DAL.Repositories.Practice
 {
@@ -13,6 +15,9 @@ namespace LearnByPractice.DAL.Repositories.Practice
         public domain.TehnologijaCollection GetAll()
         {
             model.LearnByPracticeDataContext context = CreateContext();
+            DataLoadOptions options = new DataLoadOptions();
+            options.LoadWith<model.Tehnologija>(tehnologija => tehnologija.Oblast);
+            context.LoadOptions = options;
             IQueryable<model.Tehnologija> query = context.Tehnologijas;
             domain.TehnologijaCollection result = new domain.TehnologijaCollection();
             foreach (model.Tehnologija modelObject in query)
@@ -21,6 +26,11 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 domainObject.Id = modelObject.ID;
                 domainObject.Ime = modelObject.Ime;
                 domainObject.oblast.Id = modelObject.Oblast_ID;
+                if (modelObject.Oblast != null)
+                {
+                    domainObject.oblast.Id = modelObject.Oblast.ID;
+                    domainObject.oblast.Ime = modelObject.Oblast.Ime;
+                }
                 result.Add(domainObject);
             }
 
@@ -76,6 +86,27 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 domain.Tehnologija result = ToDomain(modelObject);
                 return result;
             }
+        }
+
+        public domain.TehnologijaCollection GetByOblastId(int a)
+        {
+            model.LearnByPracticeDataContext context = CreateContext();
+            DataLoadOptions options = new DataLoadOptions();
+            options.LoadWith<model.Tehnologija>(tehnologija => tehnologija.Oblast);
+            context.LoadOptions = options;
+            var tehnologii = from t in context.Tehnologijas
+                             where t.Oblast_ID == a
+                             select t;
+            domain.TehnologijaCollection result = new domain.TehnologijaCollection();
+            foreach (model.Tehnologija teh in tehnologii)
+            {
+                domain.Tehnologija domainObject = new domain.Tehnologija();
+                domainObject.Id = teh.ID;
+                domainObject.Ime = teh.Ime;
+                domainObject.oblast.Id = teh.Oblast_ID;
+                result.Add(domainObject);
+            }
+            return result;
         }
     }
 }
