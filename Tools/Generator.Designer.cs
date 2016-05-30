@@ -151,7 +151,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Generator";
-            this.Text = "Generator";
+            this.Text = "Генератор";
             ((System.ComponentModel.ISupportInitialize)(this.numZenski)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVkupno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMashki)).EndInit();
