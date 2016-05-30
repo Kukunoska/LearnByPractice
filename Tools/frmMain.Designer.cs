@@ -33,6 +33,7 @@
             this.mnuGenerira = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHashingPassword = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDrugKodZaHash = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             // 
             this.изборToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuGenerira,
-            this.mnuHashingPassword});
+            this.mnuHashingPassword,
+            this.mnuDrugKodZaHash});
             this.изборToolStripMenuItem.Name = "изборToolStripMenuItem";
             this.изборToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.изборToolStripMenuItem.Text = "Избор";
@@ -77,6 +79,13 @@
             this.mnuExit.Text = "Излез";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
+            // mnuDrugKodZaHash
+            // 
+            this.mnuDrugKodZaHash.Name = "mnuDrugKodZaHash";
+            this.mnuDrugKodZaHash.Size = new System.Drawing.Size(258, 22);
+            this.mnuDrugKodZaHash.Text = "Друг код за хаширање";
+            this.mnuDrugKodZaHash.Click += new System.EventHandler(this.mnuDrugKodZaHash_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuGenerira;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ToolStripMenuItem mnuHashingPassword;
+        private System.Windows.Forms.ToolStripMenuItem mnuDrugKodZaHash;
     }
 }
 

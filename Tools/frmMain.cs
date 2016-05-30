@@ -34,5 +34,11 @@ namespace Tools
             frmHashing child = new frmHashing();
             child.Show();
         }
+
+        private void mnuDrugKodZaHash_Click(object sender, EventArgs e)
+        {
+            frmPassHashing child = new frmPassHashing();
+            child.Show();
+        }
     }
 }
