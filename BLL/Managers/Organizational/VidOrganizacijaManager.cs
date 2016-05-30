@@ -14,26 +14,20 @@ namespace LearnByPractice.BLL.Managers.Organizational
 
         public VidOrganizacijaCollection GetAll()
         {
-            VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
-            VidOrganizacijaCollection siteVidOrganizacii = repository.GetAll();
+            VidOrganizacijaRespository manager = new VidOrganizacijaRespository();
+            VidOrganizacijaCollection siteVidOrganizacii = manager.GetAll();
 
             return siteVidOrganizacii;
         }
 
         public VidOrganizacija Insert(Domain.Organizational.VidOrganizacija domainObject)
         {
-            VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
-            VidOrganizacija siteVidOrganizacii = repository.Insert(domainObject);
+            VidOrganizacijaRespository manager = new VidOrganizacijaRespository();
+            VidOrganizacija siteVidOrganizacii = manager.Insert(domainObject);
 
             return siteVidOrganizacii;
         }
 
-        /* public VidOrganizacijaCollection Update() 
-     {
-        VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
-          VidOrganizacijaCollection siteVidOrganizacii = repository.Update();
-
-          return siteVidOrganizacii;
-     }*/
+    
     }
 }

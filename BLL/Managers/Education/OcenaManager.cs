@@ -14,8 +14,8 @@ namespace LearnByPractice.BLL.Managers.Education
 
         public OcenaCollection GetAll()
         {
-            OcenaRepository repository = new OcenaRepository();
-            OcenaCollection siteOceni = repository.GetAll();
+            OcenaRepository manager = new OcenaRepository();
+            OcenaCollection siteOceni = manager.GetAll();
 
             return siteOceni;
         }
@@ -23,15 +23,15 @@ namespace LearnByPractice.BLL.Managers.Education
         public Ocena Insert(Domain.Education.Ocena domainObject)
         {
 
-            OcenaRepository repository = new OcenaRepository();
-            Ocena siteOceni = repository.Insert(domainObject);
+            OcenaRepository manager = new OcenaRepository();
+            Ocena siteOceni = manager.Insert(domainObject);
             return siteOceni;
 
         }
          public Ocena Update( Domain.Education.Ocena domainObject)
          {
-             OcenaRepository repository = new OcenaRepository();
-             Ocena siteOceni = repository.Update(domainObject);
+             OcenaRepository manager = new OcenaRepository();
+             Ocena siteOceni = manager.Update(domainObject);
 
              return siteOceni;
          }

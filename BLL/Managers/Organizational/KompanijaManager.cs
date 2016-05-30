@@ -14,26 +14,26 @@ namespace LearnByPractice.BLL.Managers.Organizational
 
         public KompanijaCollection GetAll()
         {
-            KompanijaRepository repository = new KompanijaRepository();
-            KompanijaCollection siteKompanii = repository.GetAll();
+            KompanijaRepository manager = new KompanijaRepository();
+            KompanijaCollection siteKompanii = manager.GetAll();
 
             return siteKompanii;
         }
 
         public Kompanija Insert(Domain.Organizational.Kompanija domainObject)
         {
-            KompanijaRepository repository = new KompanijaRepository();
-            Kompanija siteKompanii = repository.Insert(domainObject);
+            KompanijaRepository manager = new KompanijaRepository();
+            Kompanija siteKompanii = manager.Insert(domainObject);
 
             return siteKompanii;
         }
 
-        /* public KompanijaCollection Update() 
-     {
-        KompanijaRepository repository = new KompanijaRepository();
-          KompanijaCollection siteKompanii = repository.Update();
+        public Kompanija Update(Domain.Organizational.Kompanija domainObject)
+        {
+            KompanijaRepository manager = new KompanijaRepository();
+            Kompanija siteKompanii = manager.Update(domainObject);
 
-          return siteKompanii;
-     }*/
+            return siteKompanii;
+        }
     }
 }

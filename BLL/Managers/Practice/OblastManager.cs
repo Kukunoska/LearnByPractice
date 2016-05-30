@@ -14,24 +14,24 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public OblastCollection GetAll()
         {
-            OblastRepository repository = new OblastRepository();
-            OblastCollection siteOblasti = repository.GetAll();
+            OblastRepository manager = new OblastRepository();
+            OblastCollection siteOblasti = manager.GetAll();
 
             return siteOblasti;
         }
 
         public Oblast Insert(Domain.Practice.Oblast domainObject)
         {
-            OblastRepository repository = new OblastRepository();
-            Oblast siteOblasti = repository.Insert(domainObject);
+            OblastRepository manager = new OblastRepository();
+            Oblast siteOblasti = manager.Insert(domainObject);
 
             return siteOblasti;
         }
 
          public Oblast Update(Domain.Practice.Oblast domainObject) 
      {
-          OblastRepository repository = new OblastRepository();
-          Oblast siteOblasti = repository.Update(domainObject);
+          OblastRepository manager = new OblastRepository();
+          Oblast siteOblasti = manager.Update(domainObject);
 
           return siteOblasti;
     }
