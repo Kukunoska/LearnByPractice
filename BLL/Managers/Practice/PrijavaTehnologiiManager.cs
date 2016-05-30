@@ -14,24 +14,24 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public PrijavaTehnologijaCollection GetAll()
         {
-            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
-            PrijavaTehnologijaCollection sitePrijavaTehnologii = repository.GetAll();
+            PrijavaTehnologijaRepository manager = new PrijavaTehnologijaRepository();
+            PrijavaTehnologijaCollection sitePrijavaTehnologii = manager.GetAll();
 
             return sitePrijavaTehnologii;
         }
 
         public PrijavaTehnologija Insert(Domain.Practice.PrijavaTehnologija domainObject)
         {
-            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
-            PrijavaTehnologija sitePrijavaTehnologii = repository.Insert(domainObject);
+            PrijavaTehnologijaRepository manager = new PrijavaTehnologijaRepository();
+            PrijavaTehnologija sitePrijavaTehnologii = manager.Insert(domainObject);
 
             return sitePrijavaTehnologii;
         }
 
         public PrijavaTehnologija Update(Domain.Practice.PrijavaTehnologija domainObject)
         {
-            PrijavaTehnologijaRepository repository = new PrijavaTehnologijaRepository();
-            PrijavaTehnologija sitePrijavaTehnologii = repository.Update(domainObject);
+            PrijavaTehnologijaRepository manager = new PrijavaTehnologijaRepository();
+            PrijavaTehnologija sitePrijavaTehnologii = manager.Update(domainObject);
 
             return sitePrijavaTehnologii;
         }

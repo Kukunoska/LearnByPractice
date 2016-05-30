@@ -14,26 +14,28 @@ namespace LearnByPractice.BLL.Managers.Education
 
         public StudiskaProgramaCollection GetAll()
         {
-            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
-            StudiskaProgramaCollection siteStudiskiProgrami = repository.GetAll();
+            StudiskaProgramaRepository manager = new StudiskaProgramaRepository();
+            StudiskaProgramaCollection siteStudiskiProgrami = manager.GetAll();
 
             return siteStudiskiProgrami;
         }
 
         public StudiskaPrograma Insert(Domain.Education.StudiskaPrograma domainObject)
         {
-            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
-            StudiskaPrograma siteStudiskiProgrami = repository.Insert(domainObject);
+            StudiskaProgramaRepository manager = new StudiskaProgramaRepository();
+            StudiskaPrograma siteStudiskiProgrami = manager.Insert(domainObject);
 
             return siteStudiskiProgrami;
         }
 
-        /* public StudiskaProgramaCollection Update() 
-     {
-         StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
-          StudiskaProgramaCollection siteStudiskiProgrami = repository.Update();
+        public StudiskaPrograma Update(Domain.Education.StudiskaPrograma domainObject)
+        {
+            StudiskaProgramaRepository manager = new StudiskaProgramaRepository();
+            StudiskaPrograma siteStudiskiProgrami = manager.Update(domainObject);
 
-          return siteStudiskiProgrami;
-    }*/
+            return siteStudiskiProgrami;
+        }
+
+        
     }
 }

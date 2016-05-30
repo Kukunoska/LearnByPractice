@@ -14,24 +14,24 @@ namespace LearnByPractice.BLL.Managers.Security
 
         public KorisnikCollection GetAll()
         {
-            KorisnikRepository repository = new KorisnikRepository();
-            KorisnikCollection siteKorisnici = repository.GetAll();
+            KorisnikRepository manager = new KorisnikRepository();
+            KorisnikCollection siteKorisnici = manager.GetAll();
 
             return siteKorisnici;
         }
 
         public Korisnik Insert(Domain.Security.Korisnik domainObject)
         {
-            KorisnikRepository repository = new KorisnikRepository();
-            Korisnik siteKorisnici = repository.Insert(domainObject);
+            KorisnikRepository manager = new KorisnikRepository();
+            Korisnik siteKorisnici = manager.Insert(domainObject);
 
             return siteKorisnici;
         }
 
         public Korisnik Update(Domain.Security.Korisnik domainObject)
         {
-            KorisnikRepository repository = new KorisnikRepository();
-            Korisnik siteKorisnici = repository.Update(domainObject);
+            KorisnikRepository manager = new KorisnikRepository();
+            Korisnik siteKorisnici = manager.Update(domainObject);
 
             return siteKorisnici;
         }

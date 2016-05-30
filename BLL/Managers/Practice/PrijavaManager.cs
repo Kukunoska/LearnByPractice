@@ -14,24 +14,24 @@ namespace LearnByPractice.BLL.Managers.Practice
 
         public PrijavaCollection GetAll()
         {
-            PrijavaRepository repository = new PrijavaRepository();
-            PrijavaCollection sitePrijavi = repository.GetAll();
+            PrijavaRepository manager = new PrijavaRepository();
+            PrijavaCollection sitePrijavi = manager.GetAll();
 
             return sitePrijavi;
         }
 
         public Prijava Insert(Domain.Practice.Prijava domainObject)
         {
-            PrijavaRepository repository = new PrijavaRepository();
-            Prijava sitePrijavi = repository.Insert(domainObject);
+            PrijavaRepository manager = new PrijavaRepository();
+            Prijava sitePrijavi = manager.Insert(domainObject);
 
             return sitePrijavi;
         }
 
          public Prijava Update(Domain.Practice.Prijava domainObject) 
      {
-          PrijavaRepository repository = new PrijavaRepository();
-          Prijava sitePrijavi = repository.Update(domainObject);
+          PrijavaRepository manager = new PrijavaRepository();
+          Prijava sitePrijavi = manager.Update(domainObject);
 
           return sitePrijavi; 
       }

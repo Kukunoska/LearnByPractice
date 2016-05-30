@@ -26,5 +26,24 @@ namespace LearnByPractice.Tests.BLL.Managers.Organizational
             }
 
         }
+
+       
+        [Test]
+        public void InsertTest()
+        {
+
+            Random random = new Random();
+            VidOrganizacija vidOrg = new VidOrganizacija();
+            vidOrg.Id = random.Next(55, 999);
+            vidOrg.Ime = string.Format("Име{0}", Guid.NewGuid().ToString());
+            VidOrganizacijaManager manager = new VidOrganizacijaManager();
+            VidOrganizacija dodadete = manager.Insert(vidOrg);
+
+            Assert.IsNotNull(dodadete);
+            Assert.AreEqual(vidOrg.Ime, dodadete.Ime);
+
+            Console.WriteLine("Додаден е нов Вид Организација: ВидОрганизацијаИД: {0}, Име: {1}, ", dodadete.Id, dodadete.Ime);
+        }
+
     }
 }
