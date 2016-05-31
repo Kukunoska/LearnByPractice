@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/Administrator/Administrator.master" AutoEventWireup="true" CodeBehind="Tehnologija.aspx.cs" Inherits="LearnByPractice.UI.Web.User.Administrator.Tehnologija" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdministratorMainContentPlaceHolder" runat="server">
-    <asp:DropDownList ID="ddlTehnologija" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTehnologija_SelectedIndexChanged" >
+    <asp:DropDownList ID="ddlTehnologija" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTehnologija_SelectedIndexChanged" AppendDataBoundItems="true" >
         <asp:ListItem Value="0">Сите</asp:ListItem>
     </asp:DropDownList>
     <br/>

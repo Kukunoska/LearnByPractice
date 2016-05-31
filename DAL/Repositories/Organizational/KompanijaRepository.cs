@@ -106,7 +106,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
         {
             model.LearnByPracticeDataContext context = CreateContext();
             DataLoadOptions options = new DataLoadOptions();
-            options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija_ID);
+            options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija);
             context.LoadOptions = options;
             var organizacii = from vO in context.Organizacijas
                              where vO.Vid_Organizacija_ID == a
@@ -117,7 +117,17 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 domain.Kompanija domainObject = new domain.Kompanija();
                 domainObject.Id = vidOrg.ID;
                 domainObject.Ime = vidOrg.Ime;
+                domainObject.KontaktTelefon = vidOrg.Kontakt_Telefon;
+                domainObject.VebStrana = vidOrg.Veb_Strana;
+                domainObject.Adresa = vidOrg.Adresa;
                 domainObject.vidOrganizacija.Id = vidOrg.Vid_Organizacija_ID;
+
+                if (vidOrg.Vid_Organizacija != null)
+                {
+                    domainObject.vidOrganizacija.Id = vidOrg.Vid_Organizacija.ID;
+                    domainObject.vidOrganizacija.Ime = vidOrg.Vid_Organizacija.Ime;
+
+                }
                 result.Add(domainObject);
             }
             return result;

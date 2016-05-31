@@ -16,9 +16,6 @@ GO
 :r .\dbo.Predmet.Table.sql
 GO
 
-:r .\dbo.Tehnologija.Table.sql
-GO
-
 :r .\dbo.Korisnik.Table.sql
 GO
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/Administrator/Administrator.master" AutoEventWireup="true" CodeBehind="Kompanija.aspx.cs" Inherits="LearnByPractice.UI.Web.User.Administrator.Kompanija" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdministratorMainContentPlaceHolder" runat="server">
-    <asp:DropDownList ID="ddlKompanija" runat="server" AutoPostBack="True"  OnSelectedIndexChanged="ddlKompanija_SelectedIndexChanged">
+    <asp:DropDownList ID="ddlKompanija" runat="server" AutoPostBack="True"  OnSelectedIndexChanged="ddlKompanija_SelectedIndexChanged" AppendDataBoundItems="true">
         <asp:ListItem Value="0">Сите</asp:ListItem>
     </asp:DropDownList>
 <asp:GridView ID="dgKompanija" runat="server" CellPadding="4" GridLines="None" Width="480px" AutoGenerateColumns="False" style="margin-left: 60px" ForeColor="#333333">

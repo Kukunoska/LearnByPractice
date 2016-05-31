@@ -8,16 +8,18 @@ namespace LearnByPractice.UI.Web.User.Administrator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                KompanijaManager v = new KompanijaManager();
+                dgKompanija.DataSource = v.GetAll();
+                dgKompanija.DataBind();
 
-            KompanijaManager v = new KompanijaManager();
-            dgKompanija.DataSource = v.GetAll();
-            dgKompanija.DataBind();
-
-            KompanijaManager k = new KompanijaManager();
-            ddlKompanija.DataSource = k.GetAll();
-            ddlKompanija.DataTextField = "Ime";
-            ddlKompanija.DataValueField = "Id";
-            ddlKompanija.DataBind();
+                VidOrganizacijaManager k = new VidOrganizacijaManager();
+                ddlKompanija.DataSource = k.GetAll();
+                ddlKompanija.DataTextField = "Ime";
+                ddlKompanija.DataValueField = "Id";
+                ddlKompanija.DataBind();
+            }
         }
 
         protected void ddlKompanija_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,14 +28,14 @@ namespace LearnByPractice.UI.Web.User.Administrator
             KompanijaRepository kr = new KompanijaRepository();
             if (ddlKompanija.SelectedValue == 0.ToString())
             {
-                ddlKompanija.DataSource = k.GetAll();
-                ddlKompanija.DataBind();
+                dgKompanija.DataSource = k.GetAll();
+                dgKompanija.DataBind();
             }
 
             else
             {
-                ddlKompanija.DataSource = kr.GetByVidOrganizacijaId(int.Parse(ddlKompanija.SelectedValue));
-                ddlKompanija.DataBind();
+                dgKompanija.DataSource = kr.GetByVidOrganizacijaId(int.Parse(ddlKompanija.SelectedValue));
+                dgKompanija.DataBind();
             }
         }
     }

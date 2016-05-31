@@ -104,6 +104,11 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 domainObject.Id = teh.ID;
                 domainObject.Ime = teh.Ime;
                 domainObject.oblast.Id = teh.Oblast_ID;
+                if (teh.Oblast != null)
+                {
+                    domainObject.oblast.Id = teh.Oblast.ID;
+                    domainObject.oblast.Ime = teh.Oblast.Ime;
+                }
                 result.Add(domainObject);
             }
             return result;
