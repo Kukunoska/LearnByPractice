@@ -43,4 +43,7 @@ GO
 :r .\dbo.Prijava_Tehnologija.Table.sql
 GO
 
+:r .\dbUser.sql
+GO
+
 print 'Done deploying data'
