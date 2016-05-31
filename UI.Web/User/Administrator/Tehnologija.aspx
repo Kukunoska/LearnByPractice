@@ -10,7 +10,7 @@
         <Columns>
         <asp:BoundField DataField="Id" HeaderText="Шифра" />
         <asp:BoundField DataField="Ime" HeaderText="Технологија" />
-        <asp:BoundField DataField=Ime HeaderText="Област" />
+        <asp:BoundField DataField="oblastIme" HeaderText="Област" />
         </Columns>
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

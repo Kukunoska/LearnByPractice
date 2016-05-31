@@ -9,15 +9,18 @@ namespace LearnByPractice.UI.Web.User.Administrator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TehnologijaManager t = new TehnologijaManager();
-            dgTehnologija.DataSource = t.GetAll();
-            dgTehnologija.DataBind();
-            
-            OblastManager o = new OblastManager();
-            ddlTehnologija.DataSource = o.GetAll();
-            ddlTehnologija.DataTextField = "Ime";
-            ddlTehnologija.DataValueField = "Id";
-            ddlTehnologija.DataBind();
+            if (!IsPostBack)
+            {
+                TehnologijaManager t = new TehnologijaManager();
+                dgTehnologija.DataSource = t.GetAll();
+                dgTehnologija.DataBind();
+
+                OblastManager o = new OblastManager();
+                ddlTehnologija.DataSource = o.GetAll();
+                ddlTehnologija.DataTextField = "Ime";
+                ddlTehnologija.DataValueField = "Id";
+                ddlTehnologija.DataBind();
+            }
         }
 
         protected void ddlTehnologija_SelectedIndexChanged(object sender, EventArgs e)
