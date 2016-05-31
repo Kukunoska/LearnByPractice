@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/Administrator/Administrator.master" AutoEventWireup="true" CodeBehind="StudiskaPrograma.aspx.cs" Inherits="LearnByPractice.UI.Web.User.Administrator.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/Administrator/Administrator.master" AutoEventWireup="true" CodeBehind="StudiskaPrograma.aspx.cs" Inherits="LearnByPractice.UI.Web.User.Administrator.StudiskaPrograma" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="AdministratorMainContentPlaceHolder" runat="server">
     <asp:GridView ID="dgStudProg" runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" Width="480px" 
          style="margin-left: 60px" ForeColor="#333333">

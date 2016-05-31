@@ -3,6 +3,7 @@ using System.Linq;
 using model = LearnByPractice.DAL.Models;
 using domain = LearnByPractice.Domain.Organizational;
 using System.Data.Entity;
+using System.Data.Linq;
 
 namespace LearnByPractice.DAL.Repositories.Organizational
 {
@@ -15,6 +16,9 @@ namespace LearnByPractice.DAL.Repositories.Organizational
         public domain.KompanijaCollection GetAll()
         {
             model.LearnByPracticeDataContext context = CreateContext();
+            DataLoadOptions options = new DataLoadOptions();
+            options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija);
+            context.LoadOptions = options;
             IQueryable<model.Organizacija> query = context.Organizacijas;
             domain.KompanijaCollection result = new domain.KompanijaCollection();
             foreach (model.Organizacija modelObject in query)
@@ -26,6 +30,11 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 domainObject.KontaktTelefon = modelObject.Kontakt_Telefon;
                 domainObject.VebStrana = modelObject.Veb_Strana;
                 domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija_ID;
+                if (modelObject.Vid_Organizacija != null)
+                {
+                    domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija.ID;
+                    domainObject.vidOrganizacija.Ime = modelObject.Vid_Organizacija.Ime;
+                }
                 result.Add(domainObject);
             }
 
@@ -91,6 +100,27 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             domainObject.VebStrana = modelObject.Veb_Strana;
             domainObject.vidOrganizacija.Id = modelObject.Vid_Organizacija_ID;
             return domainObject;
+        }
+
+        public domain.KompanijaCollection GetByVidOrganizacijaId(int a)
+        {
+            model.LearnByPracticeDataContext context = CreateContext();
+            DataLoadOptions options = new DataLoadOptions();
+            options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija_ID);
+            context.LoadOptions = options;
+            var organizacii = from vO in context.Organizacijas
+                             where vO.Vid_Organizacija_ID == a
+                             select vO;
+            domain.KompanijaCollection result = new domain.KompanijaCollection();
+            foreach (model.Organizacija vidOrg in organizacii)
+            {
+                domain.Kompanija domainObject = new domain.Kompanija();
+                domainObject.Id = vidOrg.ID;
+                domainObject.Ime = vidOrg.Ime;
+                domainObject.vidOrganizacija.Id = vidOrg.Vid_Organizacija_ID;
+                result.Add(domainObject);
+            }
+            return result;
         }
 
     }

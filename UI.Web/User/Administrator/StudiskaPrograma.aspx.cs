@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using LearnByPractice.BLL.Managers.Education;
 
 namespace LearnByPractice.UI.Web.User.Administrator
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class StudiskaPrograma : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             StudiskaProgramaManager sp = new StudiskaProgramaManager();
             dgStudProg.DataSource=sp.GetAll();
             dgStudProg.DataBind();
-
         }
     }
 }

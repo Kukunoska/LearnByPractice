@@ -26,7 +26,12 @@ namespace LearnByPractice.Domain.Organizational
         public String VebStrana { get; set; }
 
         /// <summary>Објект од класата <c>VidOrganizacija</c></summary>
-        public VidOrganizacija vidOrganizacija = new VidOrganizacija();
+        public VidOrganizacija vidOrganizacija { get { return _vidOrganizacija; } }
+
+        private VidOrganizacija _vidOrganizacija = new VidOrganizacija();
+        
+        /// <summary> Вид организација</summary>
+        public String vidOrganizacijaIme { get { return _vidOrganizacija.Ime; } }
 
         /// <summary> Конструктор на класата <c>Kompanija</c>, без параметри. </summary>
         public Kompanija() { }

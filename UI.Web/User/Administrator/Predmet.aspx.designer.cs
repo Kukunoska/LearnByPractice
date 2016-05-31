@@ -10,24 +10,15 @@
 namespace LearnByPractice.UI.Web.User.Administrator {
     
     
-    public partial class Kompanija {
+    public partial class Predmet {
         
         /// <summary>
-        /// ddlKompanija control.
+        /// dgPredmet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlKompanija;
-        
-        /// <summary>
-        /// dgKompanija control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgKompanija;
+        protected global::System.Web.UI.WebControls.GridView dgPredmet;
     }
 }
