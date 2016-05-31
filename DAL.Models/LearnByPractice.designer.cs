@@ -66,7 +66,7 @@ namespace LearnByPractice.DAL.Models
     #endregion
 		
 		public LearnByPracticeDataContext() : 
-				base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.Database1ConnectionString, mappingSource)
+				base(global::LearnByPractice.DAL.Models.Properties.Settings.Default.LearnByPracticeConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

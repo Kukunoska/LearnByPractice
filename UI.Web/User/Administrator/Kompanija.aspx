@@ -11,7 +11,7 @@
             <asp:BoundField DataField="Adresa" HeaderText="Адреса" />
             <asp:BoundField DataField="KontaktTelefon" HeaderText="Контакт Тел." />
             <asp:BoundField DataField="VebStrana" HeaderText="Веб страна" />
-            <asp:BoundField DataField="vidOrganizacija.Ime" HeaderText="Вид организација" />
+            <asp:BoundField DataField="vidOrganizacijaIme" HeaderText="Вид организација" />
         </Columns>
          <EditRowStyle BackColor="#7C6F57" />
          <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />

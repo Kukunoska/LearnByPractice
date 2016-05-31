@@ -8,7 +8,8 @@ namespace LearnByPractice.UI.Web.User.Administrator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            VidOrganizacijaManager v = new VidOrganizacijaManager();
+
+            KompanijaManager v = new KompanijaManager();
             dgKompanija.DataSource = v.GetAll();
             dgKompanija.DataBind();
 
