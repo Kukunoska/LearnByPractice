@@ -87,10 +87,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
         public void GetByPredmetIdTest()
         {
             OcenaRepository repository = new OcenaRepository();
-            OcenaCollection oceniPoPredmet = repository.GetByPredmetId(1);
+            OcenaCollection oceniPoPredmet = repository.GetByPredmetId(1041);
             Assert.IsNotNull(oceniPoPredmet);
             Assert.IsTrue(oceniPoPredmet.Count >= 1);
-            Assert.IsTrue(oceniPoPredmet.All(ocena => ocena.predmet.Id == 1));
+            Assert.IsTrue(oceniPoPredmet.All(ocena => ocena.predmet.Id == 1041));
             foreach (Ocena ocena in oceniPoPredmet)
             {
                 Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Id, ocena.predmet.Id);
@@ -100,10 +100,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Education
         public void GetByStudentIdTest()
         {
             OcenaRepository repository = new OcenaRepository();
-            OcenaCollection oceniPoStudent = repository.GetByStudentId(1);
+            OcenaCollection oceniPoStudent = repository.GetByStudentId(2034);
             Assert.IsNotNull(oceniPoStudent);
-            Assert.IsTrue(oceniPoStudent.Count >= 1);
-            Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.Id == 1));
+            Assert.IsTrue(oceniPoStudent.Count >= 2);
+            Assert.IsTrue(oceniPoStudent.All(ocena => ocena.student.Id == 2034));
             foreach (Ocena ocena in oceniPoStudent)
             {
                 Console.WriteLine("Оцена: {0}, Студент: {1}, Предмет: {2}", ocena.Ocenka, ocena.student.Id, ocena.predmet.Id);

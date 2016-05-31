@@ -14,7 +14,7 @@ namespace LearnByPractice.Domain.Practice
         public String Ime { get; set; }
 
         /// <summary>Објект од класата <c>Oblast</c></summary>
-        public Object oblast { get { return _oblast; } }
+        public Oblast oblast { get { return _oblast; } }
 
         private Oblast _oblast = new Oblast();
 

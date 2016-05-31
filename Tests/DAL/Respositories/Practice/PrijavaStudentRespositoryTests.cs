@@ -34,7 +34,13 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
             int KorID = random.Next(0, siteKorisnici.Count);
             Korisnik izbranKorisnik = siteKorisnici[KorID];
 
+            PrijavaRepository PrijavaRep = new PrijavaRepository();
+            PrijavaCollection sitePrijavi = PrijavaRep.GetAll();
+            int prijava = random.Next(0, sitePrijavi.Count);
+            Prijava izbranaprijava = sitePrijavi[prijava];
+
             PrijavaStudent prijavaStudent = new PrijavaStudent();
+            prijavaStudent.prijava.Id = izbranaprijava.Id;
             prijavaStudent.student.Id = izbranKorisnik.Id;
 
             PrijavaStudentRepository repository = new PrijavaStudentRepository();
@@ -50,10 +56,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
         public void GetByIdTest()
         {
             PrijavaStudentRepository repository = new PrijavaStudentRepository();
-            PrijavaStudentCollection prijavaK = repository.Get(2);
+            PrijavaStudentCollection prijavaK = repository.Get(18);
             Assert.IsNotNull(prijavaK);
             Assert.IsTrue(prijavaK.Count >= 1);
-            Assert.IsTrue(prijavaK.All(student => student.prijava.Id == 2));
+            Assert.IsTrue(prijavaK.All(student => student.prijava.Id == 18));
             foreach (PrijavaStudent prijava in prijavaK)
             {
                 Console.WriteLine(" ПријаваИД: {0}, Технологија: {1}, ", prijava.prijava.Id, prijava.student.Id);
@@ -63,10 +69,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Practice
         public void GetByKorisnikID()
         {
             PrijavaStudentRepository repository = new PrijavaStudentRepository();
-            PrijavaStudentCollection student = repository.GetByKorisnikId(1);
+            PrijavaStudentCollection student = repository.GetByKorisnikId(3032);
             Assert.IsNotNull(student);
             Assert.IsTrue(student.Count >= 1);
-            Assert.IsTrue(student.All(korisnik => korisnik.student.Id == 1));
+            Assert.IsTrue(student.All(korisnik => korisnik.student.Id == 3032));
             foreach (PrijavaStudent korisnik in student)
             {
                 Console.WriteLine(" ПријаваИД: {0}, Студент: {1}, ", korisnik.prijava.Id, korisnik.student.Id);
