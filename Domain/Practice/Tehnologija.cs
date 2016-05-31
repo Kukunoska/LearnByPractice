@@ -13,8 +13,13 @@ namespace LearnByPractice.Domain.Practice
         /// <value>Го зема/поставува името на технологијата.</value>
         public String Ime { get; set; }
 
-        /// <summary>Објект од класата <c>Oblast</c>.</summary>
-        public Oblast oblast = new Oblast();
+        /// <summary>Објект од класата <c>Oblast</c></summary>
+        public Object oblast { get { return _oblast; } }
+
+        private Oblast _oblast = new Oblast();
+
+        /// <summary> Област</summary>
+        public String oblastIme { get { return _oblast.Ime; } }
 
         /// <summary> Конструктор на класата <c>Tehnologija</c>, без параметри.</summary>
         public Tehnologija() { }
