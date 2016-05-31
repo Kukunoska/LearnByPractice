@@ -4,7 +4,7 @@
         <asp:ListItem Value="0">Сите</asp:ListItem>
     </asp:DropDownList>
     <br/>
-    <br>/
+    <br/>
     <asp:GridView ID="dgTehnologija" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
