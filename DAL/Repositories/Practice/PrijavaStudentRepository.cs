@@ -72,8 +72,8 @@ namespace LearnByPractice.DAL.Repositories.Practice
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Prijava_Korisnik modelObject = new model.Prijava_Korisnik();
-                modelObject.Prijava_ID = domainObject.student.Id;
                 modelObject.Prijava_ID = domainObject.prijava.Id;
+                modelObject.Korisnik_ID = domainObject.student.Id;
                 context.Prijava_Korisniks.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.PrijavaStudent result = ToDomain(modelObject);

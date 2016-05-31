@@ -44,6 +44,7 @@ namespace LearnByPractice.DAL.Repositories.Security
                     throw new ArgumentOutOfRangeException("Pol", "Обид за запишување на неочекувана вредноста на Pol во базата на податоци.");
             }
         }
+
         public domain.KorisnikCollection GetAll()
         {
             model.LearnByPracticeDataContext context = CreateContext();
@@ -54,8 +55,7 @@ namespace LearnByPractice.DAL.Repositories.Security
                 domain.Korisnik domainObject = new domain.Korisnik();
                 domainObject.Id = modelObject.ID;
                 domainObject.Username = modelObject.Korisnichko_Ime;
-                //domainObject.Password = modelObject.Lozinka;
-                domainObject.Ime = modelObject.Ime;
+                domainObject.PasswordOdNiza = modelObject.Lozinka.ToArray();
                 domainObject.Prezime = modelObject.Prezime;
                 domainObject.Pol = ToDomain(modelObject.Pol);
                 domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
@@ -105,7 +105,7 @@ namespace LearnByPractice.DAL.Repositories.Security
                 domain.Korisnik domainObject = new domain.Korisnik();
                 domainObject.Id = modelObject.ID;
                 domainObject.Username = modelObject.Korisnichko_Ime;
-                //domainObject.Password = modelObject.Lozinka;
+                domainObject.PasswordOdNiza = modelObject.Lozinka.ToArray();
                 domainObject.Ime = modelObject.Ime;
                 domainObject.Prezime = modelObject.Prezime;
                 domainObject.Pol = ToDomain(modelObject.Pol);
@@ -128,7 +128,7 @@ namespace LearnByPractice.DAL.Repositories.Security
             {
                 model.Korisnik modelObject = new model.Korisnik();
                 modelObject.Korisnichko_Ime = domainObject.Username;
-                //modelObject.Lozinka = domainObject.Password;
+                modelObject.Lozinka = domainObject.PasswordOdNiza;
                 modelObject.Ime = domainObject.Ime;
                 modelObject.Prezime = domainObject.Prezime;
                 modelObject.Pol = ToModel(domainObject.Pol);
@@ -153,7 +153,7 @@ namespace LearnByPractice.DAL.Repositories.Security
                 IQueryable<model.Korisnik> query = context.Korisniks.Where(p => p.ID == domainObject.Id);
                 model.Korisnik modelObject = query.Single();
                 modelObject.Korisnichko_Ime = domainObject.Username;
-                //modelObject.Lozinka = domainObject.Password;
+                modelObject.Lozinka = domainObject.PasswordOdNiza;
                 modelObject.Ime = domainObject.Ime;
                 modelObject.Prezime = domainObject.Prezime;
                 modelObject.Pol = ToModel(domainObject.Pol);
@@ -176,7 +176,7 @@ namespace LearnByPractice.DAL.Repositories.Security
             domain.Korisnik domainObject = new domain.Korisnik();
             domainObject.Id = modelObject.ID;
             domainObject.Username = modelObject.Korisnichko_Ime;
-            //domainObject.Password = modelObject.Lozinka;
+            domainObject.PasswordOdNiza = modelObject.Lozinka.ToArray();
             domainObject.Ime = modelObject.Ime;
             domainObject.Prezime = modelObject.Prezime;
             domainObject.Pol = ToDomain(modelObject.Pol);

@@ -64,6 +64,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
             int koris = random.Next(0, 10);
             korisnik.Ime = string.Format("И:{0}", guid.ToString().Substring(1, 16));
             korisnik.Username = string.Format("KИ:{0}", guid.ToString().Substring(1, 16));
+            int pass = random.Next(0, 8);
+            string binaren = Convert.ToString(pass, 2);
+            byte[] bin = binaren.Split().Select(s => Convert.ToByte(s, 2)).ToArray();
+            korisnik.PasswordOdNiza = bin;
             korisnik.Prezime = string.Format("П:{0}", guid.ToString().Substring(1, 16));
             korisnik.Pol = SlucaenIzbor();
             korisnik.organizacija.Id = izbranaOrg.Id;
@@ -94,9 +98,9 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
             Assert.IsNotNull(dodadete);
             Assert.AreEqual(korisnik.Ime, dodadete.Ime);
             Assert.AreEqual(korisnik.Username, dodadete.Username);
+            Assert.AreEqual(korisnik.PasswordOdNiza, dodadete.PasswordOdNiza);
             Assert.AreEqual(korisnik.Prezime, dodadete.Prezime);
             Assert.AreEqual(korisnik.Pol, dodadete.Pol);
-            Assert.AreEqual(korisnik.studiskaPrograma.Id, dodadete.studiskaPrograma.Id);
             Assert.AreEqual(korisnik.organizacija.Id, dodadete.organizacija.Id);
             Assert.AreEqual(korisnik.Email, dodadete.Email);
             Assert.AreEqual(korisnik.Mobilen, dodadete.Mobilen);
@@ -109,18 +113,17 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
         public void GetByIdTest()
         {
             KorisnikRepository repository = new KorisnikRepository();
-            Korisnik user = repository.Get(1);
-            Assert.AreEqual(1, user.Id);
+            Korisnik user = repository.Get(2027);
+            Assert.AreEqual(2027, user.Id);
         }
 
         [Test]
         public void GetByStudiskaProgramaID()
         {
             KorisnikRepository repository = new KorisnikRepository();
-            KorisnikCollection korisniciOdStudiskaP = repository.GetByStudiskaProgramaId(2);
+            KorisnikCollection korisniciOdStudiskaP = repository.GetByStudiskaProgramaId(1023);
             Assert.IsNotNull(korisniciOdStudiskaP);
-            Assert.IsTrue(korisniciOdStudiskaP.Count >= 2);
-            Assert.IsTrue(korisniciOdStudiskaP.All(korisnik => korisnik.studiskaPrograma.Id == 1));
+            Assert.IsTrue(korisniciOdStudiskaP.All(korisnik => korisnik.studiskaPrograma.Id == 1023));
             foreach (Korisnik korisnik in korisniciOdStudiskaP)
             {
                 Console.WriteLine("KорисникИД: {0}, Име: {1}, Корисничко име: {2}, Презиме: {3}, Пол: {4}, Студиска Програма: {5}, Организација: {6}, Еmail: {7}, Мобилен: {8}, ", korisnik.Id, korisnik.Ime, korisnik.Username, korisnik.Prezime, korisnik.Pol, korisnik.studiskaPrograma.Id, korisnik.organizacija.Id, korisnik.Email, korisnik.Mobilen);
@@ -185,8 +188,6 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
             Assert.AreEqual(izbranKorisnik.Username, izmenetKorisnik.Username);
             Assert.AreEqual(izbranKorisnik.Prezime, izmenetKorisnik.Prezime);
             Assert.AreEqual(izbranKorisnik.Pol, izmenetKorisnik.Pol);
-            Assert.AreEqual(izbranKorisnik.studiskaPrograma.Id, izmenetKorisnik.studiskaPrograma.Id);
-            Assert.AreEqual(izbranKorisnik.organizacija.Id, izmenetKorisnik.organizacija.Id);
             Assert.AreEqual(izbranKorisnik.Email, izmenetKorisnik.Email);
             Assert.AreEqual(izbranKorisnik.Mobilen, izmenetKorisnik.Mobilen);
 
