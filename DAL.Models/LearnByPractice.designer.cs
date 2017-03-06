@@ -22,7 +22,7 @@ namespace LearnByPractice.DAL.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Database1")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LearnByPractice")]
 	public partial class LearnByPracticeDataContext : System.Data.Linq.DataContext
 	{
 		

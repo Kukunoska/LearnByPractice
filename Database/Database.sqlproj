@@ -171,6 +171,6 @@
     <PostDeploy Include="Scripts\Post-Deployment\Script.MainPostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database.publish.xml" />
+    <None Include="localhost.publish.xml" />
   </ItemGroup>
 </Project>

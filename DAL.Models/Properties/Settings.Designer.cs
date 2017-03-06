@@ -26,8 +26,7 @@ namespace LearnByPractice.DAL.Models.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LENCE-PC\\SQLEXPRESS;Initial Catalog=LearnByPractice;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=LearnByPractice;Integrated Security=True")]
         public string LearnByPracticeConnectionString {
             get {
                 return ((string)(this["LearnByPracticeConnectionString"]));

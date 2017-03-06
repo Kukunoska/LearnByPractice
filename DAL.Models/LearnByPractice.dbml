@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="LearnByPracticeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LENCE-PC\SQLEXPRESS;AttachDbFilename=&quot;C:\Program Files (x86)\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\LearnByPractice.mdf&quot;;Integrated Security=True" SettingsObjectName="LearnByPractice.DAL.Models.Properties.Settings" SettingsPropertyName="LearnByPracticeConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LearnByPractice" Class="LearnByPracticeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=LearnByPractice;Integrated Security=True" SettingsObjectName="LearnByPractice.DAL.Models.Properties.Settings" SettingsPropertyName="LearnByPracticeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Korisnik" Member="Korisniks">
     <Type Name="Korisnik">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
