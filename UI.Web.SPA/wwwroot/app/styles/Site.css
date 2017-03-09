@@ -1,0 +1,13 @@
+﻿body {
+    padding-bottom: 20px;
+    background-color: #00b59d;
+}
+
+.animacija.ng-enter {
+    transition: 1s;
+    opacity: 0;
+}
+
+.animacija.ng-enter-active {
+    opacity: 1;
+}

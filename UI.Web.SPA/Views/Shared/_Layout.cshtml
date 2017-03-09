@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn by Practice</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/app")
+</head>
+<body id="app" data-ng-app="app" class="app">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#glavnoMeni">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Learn by Practice</a>
+            </div>
+            <div class="collapse navbar-collapse" id="glavnoMeni">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Студент<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a><i class="fa fa-fw fa-lg"></i> Мои оценки</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Мои пријави</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Ментор<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a><i class="fa fa-fw fa-lg"></i> Мои технологии</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-gears"></i> Администрација<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a><i class="fa fa-fw fa-lg"></i> Видови на организации</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Организации</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Студиски програми</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Предмети</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Области</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Технологии</a></li>
+                            <li><a><i class="fa fa-fw fa-lg"></i> Корисници</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:;" title="Корисник"><i class="fa fa-lg fa-user"></i> Корисник</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <section data-ui-view class="animacija">
+            @RenderBody()
+        </section>
+        <hr />
+        <footer class="text-center">
+            <p>&copy; 2017 - ФИКТ</p>
+        </footer>
+    </div>
+</body>
+</html>
