@@ -1,20 +1,10 @@
-﻿module app {
+var app;
+(function (app) {
     "use strict";
-
-    class Config {
-
-        static $inject = [
-            "$stateProvider",
-            "$urlRouterProvider",
-        ];
-
-        constructor(
-            $stateProvider: ng.ui.IStateProvider,
-            $urlRouteProvider: ng.ui.IUrlRouterProvider) {
-
+    var Config = (function () {
+        function Config($stateProvider, $urlRouteProvider) {
             var baseUrl = $("base").first().attr("href");
-
-            let pochetnaConfig: ng.ui.IState = {
+            var pochetnaConfig = {
                 name: "pochetna",
                 url: "/",
                 views: {
@@ -26,15 +16,13 @@
                 }
             };
             $stateProvider.state("pochetna", pochetnaConfig);
-
-            let adminConfig: ng.ui.IState = {
+            var adminConfig = {
                 name: "admin",
                 url: "/admin",
                 abstract: true
             };
             $stateProvider.state("admin", adminConfig);
-
-            let predmetiConfig: ng.ui.IState = {
+            var predmetiConfig = {
                 name: "admin.predmeti",
                 url: "/predmeti",
                 views: {
@@ -47,9 +35,14 @@
             };
             $stateProvider.state("admin.predmeti", predmetiConfig);
         }
-    }
-
+        Config.$inject = [
+            "$stateProvider",
+            "$urlRouterProvider",
+        ];
+        return Config;
+    }());
     angular
         .module("app")
         .config(Config);
-}
+})(app || (app = {}));
+//# sourceMappingURL=app.js.map

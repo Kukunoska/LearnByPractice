@@ -1,26 +1,27 @@
 {
-    "name": "learnbypractice",
-    "description": "Апликација за пријавување за практична работа",
-    "main": "",
-    "authors": [
-        "LearnByPractice работна група <learnbypractice@fikt.edu.mk>"
-    ],
-    "license": "MIT",
-    "homepage": "https://github.com/lbpfikt/LearnByPractice",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "wwwroot/lib",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "bootstrap": "^3.3.7",
-        "jquery": "^3.1.1",
-        "angular": "1.6.3",
-        "angular-bootstrap": "2.5.0",
-        "angular-ui-router": "0.4.2",
-        "Font-Awesome": "4.7.0"
-    }
+  "name": "learnbypractice",
+  "description": "Апликација за пријавување за практична работа",
+  "main": "",
+  "authors": [
+    "LearnByPractice работна група <learnbypractice@fikt.edu.mk>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lbpfikt/LearnByPractice",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "wwwroot/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "angular": "1.6.3",
+    "angular-bootstrap": "2.5.0",
+    "angular-ui-router": "0.4.2",
+    "Font-Awesome": "4.7.0",
+    "angular-animate": "1.6.3"
+  }
 }

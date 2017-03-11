@@ -16,6 +16,12 @@ namespace LearnByPractice.UI.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BundleTable.EnableOptimizations = false;
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings = new Newtonsoft.Json.JsonSerializerSettings()
+            {
+                ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver(),
+                DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local
+            };
         }
     }
 }

@@ -28,12 +28,35 @@ namespace LearnByPractice.UI.Web
                 LibFile("angular/angular.js"),
                 LibFile("angular-bootstrap/ui-bootstrap.js"),
                 LibFile("angular-bootstrap/ui-bootstrap-tpls.js"),
-                LibFile("angular-ui-router/release/angular-ui-router.js")
+                LibFile("angular-ui-router/release/angular-ui-router.js"),
+                LibFile("angular-animate/angular-animate.js")
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 AppFile("app.module.js"),
-                AppFile("app.js")
+                AppFile("injectionids.js"),
+                AppFile("app.js"),
+
+                // Model
+                ModelFile("model.module.js"),
+                ModelFile("education/predmet.js"),
+
+                // Services
+                ServiceFile("services.module.js"),
+                ServiceFile("base/servicebase.js"),
+
+                ServiceFile("education/ipredmetiservice.js"),
+                ServiceFile("education/predmetiservice.js"),
+
+                // Controllers
+                AppFile("base/base.module.js"),
+                AppFile("base/controllerbase.js"),
+
+                AppFile("index.controller.js"),
+
+                AppFile("admin/admin.module.js"),
+
+                AppFile("admin/predmeti/index.controller.js")
                 ));
         }
 
@@ -45,6 +68,16 @@ namespace LearnByPractice.UI.Web
         private static string AppFile(string filePath)
         {
             return string.Concat("~/wwwroot/app/", filePath);
+        }
+
+        private static string ModelFile(string filePath)
+        {
+            return AppFile(string.Concat("model/", filePath));
+        }
+
+        private static string ServiceFile(string filePath)
+        {
+            return AppFile(string.Concat("services/", filePath));
         }
     }
 }
