@@ -10,7 +10,7 @@
     @Scripts.Render("~/bundles/scripts")
     @Scripts.Render("~/bundles/app")
 </head>
-<body id="app" data-ng-app="app" class="app">
+<body id="app" data-ng-app="app" class="app" data-ng-controller="app.shellController as shell">
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -23,20 +23,20 @@
             </div>
             <div class="collapse navbar-collapse" id="glavnoMeni">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
+                    <li class="dropdown" ng-if="shell.korisnik.student">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Студент<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои оценки</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои пријави</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" ng-if="shell.korisnik.mentor">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Ментор<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои технологии</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" ng-if="shell.korisnik.administrator">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-gears"></i> Администрација<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a><i class="fa fa-fw fa-lg"></i> Видови на организации</a></li>
@@ -50,7 +50,12 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="javascript:;" title="Корисник"><i class="fa fa-lg fa-user"></i> Корисник</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" title="{{shell.korisnik.username}} ({{shell.korisnik.email}})"><i class="fa fa-lg fa-user"></i> {{shell.korisnik.ime}} {{shell.korisnik.prezime}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Logout.aspx">Одјави се</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

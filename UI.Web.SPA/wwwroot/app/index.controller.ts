@@ -4,7 +4,7 @@
     export class IndexController extends base.ControllerBase {
 
         constructor() {
-            super()
+            super();
         }
     }
 

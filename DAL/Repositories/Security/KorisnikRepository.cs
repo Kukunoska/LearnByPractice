@@ -49,25 +49,7 @@ namespace LearnByPractice.DAL.Repositories.Security
         {
             model.LearnByPracticeDataContext context = CreateContext();
             IQueryable<model.Korisnik> query = context.Korisniks;
-            domain.KorisnikCollection result = new domain.KorisnikCollection();
-            foreach (model.Korisnik modelObject in query)
-            {
-                domain.Korisnik domainObject = new domain.Korisnik();
-                domainObject.Id = modelObject.ID;
-                domainObject.Username = modelObject.Korisnichko_Ime;
-                domainObject.PasswordOdNiza = modelObject.Lozinka.ToArray();
-                domainObject.Prezime = modelObject.Prezime;
-                domainObject.Pol = ToDomain(modelObject.Pol);
-                domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
-                domainObject.organizacija.Id = modelObject.Organizacija_ID;
-                domainObject.Email = modelObject.Email;
-                domainObject.Mobilen = modelObject.Telefonski_Broj;
-                domainObject.Mentor = modelObject.Mentor;
-                domainObject.Student = modelObject.Student;
-                domainObject.Administrator = modelObject.Administrator;
-
-                result.Add(domainObject);
-            }
+            domain.KorisnikCollection result = ToDomainObjects(query);
 
             return result;
         }
@@ -96,27 +78,27 @@ namespace LearnByPractice.DAL.Repositories.Security
             }
         }
 
-        private domain.KorisnikCollection ToDomainObjects(List<model.Korisnik> list)
+        public domain.Korisnik TryGetByKorisnichkoIme(string korisnichkoIme)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Korisniks.FirstOrDefault(korisnik => korisnik.Korisnichko_Ime == korisnichkoIme);
+                domain.Korisnik result = null;
+                if (modelObject != null)
+                {
+                    result = ToDomain(modelObject);
+                }
+
+                return result;
+            }
+        }
+
+        private domain.KorisnikCollection ToDomainObjects(IEnumerable<model.Korisnik> list)
         {
             domain.KorisnikCollection domainObjects = new domain.KorisnikCollection();
             foreach (model.Korisnik modelObject in list)
             {
-
-                domain.Korisnik domainObject = new domain.Korisnik();
-                domainObject.Id = modelObject.ID;
-                domainObject.Username = modelObject.Korisnichko_Ime;
-                domainObject.PasswordOdNiza = modelObject.Lozinka.ToArray();
-                domainObject.Ime = modelObject.Ime;
-                domainObject.Prezime = modelObject.Prezime;
-                domainObject.Pol = ToDomain(modelObject.Pol);
-                domainObject.studiskaPrograma.Id = modelObject.Studiska_Programa_ID.GetValueOrDefault();
-                domainObject.organizacija.Id = modelObject.Organizacija_ID;
-                domainObject.Email = modelObject.Email;
-                domainObject.Mobilen = modelObject.Telefonski_Broj;
-                domainObject.Mentor = modelObject.Mentor;
-                domainObject.Student = modelObject.Student;
-                domainObject.Administrator = modelObject.Administrator;
-
+                domain.Korisnik domainObject = ToDomain(modelObject);
                 domainObjects.Add(domainObject);
             }
             return domainObjects;

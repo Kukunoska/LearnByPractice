@@ -6,8 +6,16 @@
             return "app.services.predmetiService";
         }
 
+        public static get korisniciService(): string {
+            return "app.services.korisniciService";
+        }
+
         public static get indexController(): string {
             return "app.indexController";
+        }
+
+        public static get shellController(): string {
+            return "app.shellController";
         }
 
         public static get admin_predmeti_indexController(): string {

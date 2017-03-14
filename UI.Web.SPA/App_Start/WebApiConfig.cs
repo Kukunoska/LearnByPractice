@@ -19,6 +19,8 @@ namespace LearnByPractice.UI.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Filters.Add(new AuthorizeAttribute());
         }
     }
 }

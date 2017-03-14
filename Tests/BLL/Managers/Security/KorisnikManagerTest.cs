@@ -30,6 +30,24 @@ namespace LearnByPractice.Tests.BLL.Managers.Security
                 Console.WriteLine("KорисникИД: {0}, Име: {1}, Корисничко име: {2}, Презиме: {3}, Пол: {4}, Студиска Програма: {5}, Организација: {6}, Еmail: {7}, Мобилен: {8}, ", korisnik.Id, korisnik.Ime, korisnik.Username, korisnik.Prezime, korisnik.Pol, korisnik.studiskaPrograma.Ime, korisnik.organizacija.Ime, korisnik.Email, korisnik.Mobilen);
             }
         }
+
+        protected PolEnum SlucaenIzbor()
+        {
+            Random random = new Random(DateTime.Now.Millisecond);
+            int randomInt = random.Next(1, 3);
+            switch (randomInt)
+            {
+                case 1:
+                    return PolEnum.Mashki;
+
+                case 2:
+                    return PolEnum.Zhenski;
+
+                default:
+                    throw new InvalidOperationException("Добиена е случајна вредност надвор од дадените граници.");
+            }
+        }
+
         [Test]
         public void InsertTest()
         {
@@ -52,7 +70,7 @@ namespace LearnByPractice.Tests.BLL.Managers.Security
             korisnik.Ime = string.Format("И:{0}", guid.ToString().Substring(1, 16));
             korisnik.Username = string.Format("KИ:{0}", guid.ToString().Substring(1, 16));
             korisnik.Prezime = string.Format("П:{0}", guid.ToString().Substring(1, 16));
-           // korisnik.Pol = SlucaenIzbor();
+            korisnik.Pol = SlucaenIzbor();
             korisnik.organizacija.Id = izbranaOrg.Id;
             korisnik.Email = string.Format("E:{0}", guid.ToString());
             korisnik.Mobilen = string.Format("М:{0}", guid.ToString().Substring(1, 12));

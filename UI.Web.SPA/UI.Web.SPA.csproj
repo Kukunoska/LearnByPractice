@@ -127,8 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\index.html" />
     <Content Include="wwwroot\app\styles\Site.css" />
@@ -315,8 +319,23 @@
     <Compile Include="Controllers\Administrator\PredmetiController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KorisniciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -533,10 +552,14 @@
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\security\korisnik.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\base\servicebase.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\ipredmetiservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\predmetiservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\security\ikorisniciservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\security\korisniciservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\shell.controller.ts" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

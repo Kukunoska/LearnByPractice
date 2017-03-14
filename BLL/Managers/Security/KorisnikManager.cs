@@ -35,5 +35,12 @@ namespace LearnByPractice.BLL.Managers.Security
 
             return siteKorisnici;
         }
+
+        public Korisnik TryGetByKorisnichkoIme(string korisnichkoIme)
+        {
+            var repository = new KorisnikRepository();
+            var result = repository.TryGetByKorisnichkoIme(korisnichkoIme);
+            return result;
+        }
     }
 }

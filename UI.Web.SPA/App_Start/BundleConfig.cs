@@ -40,6 +40,7 @@ namespace LearnByPractice.UI.Web
                 // Model
                 ModelFile("model.module.js"),
                 ModelFile("education/predmet.js"),
+                ModelFile("security/korisnik.js"),
 
                 // Services
                 ServiceFile("services.module.js"),
@@ -48,10 +49,17 @@ namespace LearnByPractice.UI.Web
                 ServiceFile("education/ipredmetiservice.js"),
                 ServiceFile("education/predmetiservice.js"),
 
-                // Controllers
+                ServiceFile("security/ikorisniciservice.js"),
+                ServiceFile("security/korisniciservice.js"),
+
+                // Base
                 AppFile("base/base.module.js"),
                 AppFile("base/controllerbase.js"),
 
+                // Shell
+                AppFile("shell.controller.js"),
+
+                // Controllers
                 AppFile("index.controller.js"),
 
                 AppFile("admin/admin.module.js"),
