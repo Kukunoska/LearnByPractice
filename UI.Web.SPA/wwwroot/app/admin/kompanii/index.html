@@ -1,0 +1,61 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Компании</h2>
+            </div>
+            <div class="panel-body">
+                <a ui-sref="admin.kompanii.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нова компанија</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                ИД
+                            </th>
+                            <th>
+                                Име
+                            </th>
+                            <th>
+                                Адреса
+                            </th>
+                            <th>
+                                Контакт телефон
+                            </th>
+                            <th>
+                                Интернет страна
+                            </th>
+                            <th>
+                                Вид
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="kompanija in vm.siteKompanii track by kompanija.id">
+                            <td>
+                                {{kompanija.id}}
+                            </td>
+                            <td>
+                                <a ui-sref="admin.kompanii.vnesuvanje({id: kompanija.id})" title="Измени податоци">{{kompanija.ime}}</a>
+                            </td>
+                            <td>
+                                {{kompanija.adresa}}
+                            </td>
+                            <td>
+                                {{kompanija.kontaktTelefon}}
+                            </td>
+                            <td>
+                                <a ng-href="{{kompanija.vebStrana}}" target="_blank">{{kompanija.vebStrana}}</a>
+                                
+                            </td>
+                            <td>
+                                {{kompanija.vidOrganizacija.ime}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+            </div>
+        </div>
+    </div>
+</div>

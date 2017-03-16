@@ -2,7 +2,7 @@
     "use strict";
 
     export namespace security {
-        export interface IKorisniciService {
+        export interface IKorisnikService {
             tekoven(): ng.IPromise<app.model.security.Korisnik>;
         }
     }

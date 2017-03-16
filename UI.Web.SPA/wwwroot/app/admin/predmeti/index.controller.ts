@@ -7,14 +7,14 @@
             public sitePredmeti: app.model.education.Predmet[] = [];
 
             static $inject = [
-                app.InjectionIds.predmetiService,
+                app.InjectionIds.predmetService,
                 "$scope"
             ];
 
-            constructor(private predmetiService: app.services.education.IPredmetiService, $scope: ng.IScope) {
+            constructor(private predmetService: app.services.education.IPredmetService, $scope: ng.IScope) {
                 super();
 
-                this.predmetiService.site()
+                this.predmetService.site()
                     .then((result: app.model.education.Predmet[]): void => {
                         this.sitePredmeti = result;
                         $scope.$apply();

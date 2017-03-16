@@ -30,9 +30,6 @@ namespace LearnByPractice.Domain.Organizational
 
         private VidOrganizacija _vidOrganizacija = new VidOrganizacija();
         
-        /// <summary> Вид организација</summary>
-        public String vidOrganizacijaIme { get { return _vidOrganizacija.Ime; } }
-
         /// <summary> Конструктор на класата <c>Kompanija</c>, без параметри. </summary>
         public Kompanija() { }
     }

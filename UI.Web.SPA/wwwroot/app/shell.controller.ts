@@ -6,14 +6,14 @@
         public korisnik: app.model.security.Korisnik = new app.model.security.Korisnik();
 
         static $inject = [
-            app.InjectionIds.korisniciService,
+            app.InjectionIds.korisnikService,
             "$scope"
         ];
-        constructor(private korisniciService: app.services.security.IKorisniciService,
+        constructor(private korisnikService: app.services.security.IKorisnikService,
         private $scope: ng.IScope) {
             super();
 
-            this.korisniciService.tekoven()
+            this.korisnikService.tekoven()
                 .then((result: app.model.security.Korisnik): void => {
                     this.korisnik = result;
                     this.$scope.$apply();

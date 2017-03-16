@@ -2,7 +2,7 @@
     "use strict";
 
     export namespace education {
-        export interface IPredmetiService {
+        export interface IPredmetService {
             site(): ng.IPromise<app.model.education.Predmet[]>;
         }
     }

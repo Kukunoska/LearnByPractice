@@ -12,8 +12,6 @@
             $stateProvider: ng.ui.IStateProvider,
             $urlRouteProvider: ng.ui.IUrlRouterProvider) {
 
-            var baseUrl = $("base").first().attr("href");
-
             let pochetnaConfig: ng.ui.IState = {
                 name: "pochetna",
                 url: "/",
@@ -46,6 +44,32 @@
                 }
             };
             $stateProvider.state("admin.predmeti", predmetiConfig);
+
+            let kompaniiConfig: ng.ui.IState = {
+                name: "admin.kompanii",
+                url: "/kompanii",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/kompanii/index.html",
+                        controller: app.InjectionIds.admin_kompanii_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.kompanii", kompaniiConfig);
+
+            let vnesiKompanijaConfig: ng.ui.IState = {
+                name: "admin.kompanii.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/kompanii/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_kompanii_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.kompanii.vnesuvanje", vnesiKompanijaConfig);
         }
     }
 

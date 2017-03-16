@@ -20,6 +20,13 @@ namespace LearnByPractice.BLL.Managers.Organizational
             return siteKompanii;
         }
 
+        public Kompanija Get(int id)
+        {
+            var repository = new KompanijaRepository();
+            var result = repository.Get(id);
+            return result;
+        }
+
         public Kompanija Insert(Domain.Organizational.Kompanija domainObject)
         {
             KompanijaRepository manager = new KompanijaRepository();

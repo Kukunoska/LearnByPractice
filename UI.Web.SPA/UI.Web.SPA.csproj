@@ -133,6 +133,8 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="wwwroot\app\admin\kompanii\index.html" />
+    <Content Include="wwwroot\app\admin\kompanii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\index.html" />
     <Content Include="wwwroot\app\styles\Site.css" />
@@ -316,10 +318,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Administrator\PredmetiController.cs" />
+    <Compile Include="Controllers\Education\PredmetiController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KorisniciController.cs" />
+    <Compile Include="Controllers\Organizational\KompanijaController.cs" />
+    <Compile Include="Controllers\Security\KorisniciController.cs" />
+    <Compile Include="Controllers\Organizational\VidOrganizacijaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -543,6 +547,8 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\kompanii\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\kompanii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.ts" />
@@ -552,12 +558,18 @@
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\organizational\kompanija.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\security\korisnik.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\base\servicebase.ts" />
-    <TypeScriptCompile Include="wwwroot\app\services\education\ipredmetiservice.ts" />
-    <TypeScriptCompile Include="wwwroot\app\services\education\predmetiservice.ts" />
-    <TypeScriptCompile Include="wwwroot\app\services\security\ikorisniciservice.ts" />
-    <TypeScriptCompile Include="wwwroot\app\services\security\korisniciservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\ipredmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\predmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\organizational\ikompanijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\organizational\ividorganizacijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\organizational\kompanijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\organizational\vidorganizacijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\security\ikorisnikservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\security\korisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\shell.controller.ts" />
   </ItemGroup>
