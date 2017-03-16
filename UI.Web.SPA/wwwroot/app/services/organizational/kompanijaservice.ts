@@ -45,6 +45,15 @@
                         return response.data;
                     });
             }
+
+            public izbrishi(kompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija> {
+                let config: ng.IRequestShortcutConfig = super.requestConfig();
+
+                return this.$http.post("api/organizational/kompanija/izbrishi", kompanija, config)
+                    .then((response: ng.IHttpPromiseCallbackArg<app.model.organizational.Kompanija>): app.model.organizational.Kompanija => {
+                        return response.data;
+                    });
+            }
         }
 
         angular

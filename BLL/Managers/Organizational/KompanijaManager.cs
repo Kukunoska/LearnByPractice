@@ -27,20 +27,27 @@ namespace LearnByPractice.BLL.Managers.Organizational
             return result;
         }
 
-        public Kompanija Insert(Domain.Organizational.Kompanija domainObject)
+        public Kompanija Insert(Kompanija domainObject)
         {
-            KompanijaRepository manager = new KompanijaRepository();
-            Kompanija siteKompanii = manager.Insert(domainObject);
+            KompanijaRepository repository = new KompanijaRepository();
+            Kompanija kompanija = repository.Insert(domainObject);
 
-            return siteKompanii;
+            return kompanija;
         }
 
-        public Kompanija Update(Domain.Organizational.Kompanija domainObject)
+        public Kompanija Update(Kompanija domainObject)
         {
-            KompanijaRepository manager = new KompanijaRepository();
-            Kompanija siteKompanii = manager.Update(domainObject);
+            KompanijaRepository repository = new KompanijaRepository();
+            Kompanija kompanija = repository.Update(domainObject);
 
-            return siteKompanii;
+            return kompanija;
+        }
+
+        public Kompanija Delete(Kompanija domainObject)
+        {
+            var repository = new KompanijaRepository();
+            var izbrishanaKompanija = repository.Delete(domainObject);
+            return izbrishanaKompanija;
         }
     }
 }

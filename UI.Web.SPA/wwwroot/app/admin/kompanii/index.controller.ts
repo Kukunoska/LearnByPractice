@@ -11,13 +11,26 @@
                 "$scope"
             ];
 
-            constructor(private kompanijaService: app.services.organizational.IKompanijaService, $scope: ng.IScope) {
+            constructor(private kompanijaService: app.services.organizational.IKompanijaService, private $scope: ng.IScope) {
                 super();
 
+                this.vchitajKompanii();
+            }
+
+            public izbrishi(kompanija: app.model.organizational.Kompanija) {
+                if (confirm("Бришење на компанијата '" + kompanija.ime + "' ?")) {
+                    this.kompanijaService.izbrishi(kompanija)
+                        .then((result: app.model.organizational.Kompanija): void => {
+                            this.vchitajKompanii();
+                        });
+                }
+            }
+
+            private vchitajKompanii(): void {
                 this.kompanijaService.site()
                     .then((result: app.model.organizational.Kompanija[]): void => {
                         this.siteKompanii = result;
-                        $scope.$apply();
+                        this.$scope.$apply();
                     });
             }
         }

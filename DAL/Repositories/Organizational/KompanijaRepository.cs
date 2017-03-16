@@ -46,7 +46,6 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             }
         }
 
-
         public domain.Kompanija Insert(domain.Kompanija domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
@@ -62,10 +61,9 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 domain.Kompanija result = ToDomain(modelObject);
 
                 return result;
-
-
             }
         }
+
         public domain.Kompanija Update(domain.Kompanija domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
@@ -80,6 +78,18 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 context.SubmitChanges();
                 domain.Kompanija result = ToDomain(modelObject);
                 return result;
+            }
+        }
+
+        public domain.Kompanija Delete(domain.Kompanija domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Organizacijas.Single(org => org.ID == domainObject.Id);
+                context.Organizacijas.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
             }
         }
 
@@ -111,8 +121,8 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija);
             context.LoadOptions = options;
             var organizacii = from vO in context.Organizacijas
-                             where vO.Vid_Organizacija_ID == a
-                             select vO;
+                              where vO.Vid_Organizacija_ID == a
+                              select vO;
             domain.KompanijaCollection result = new domain.KompanijaCollection();
             foreach (model.Organizacija vidOrg in organizacii)
             {
@@ -132,6 +142,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 }
                 result.Add(domainObject);
             }
+
             return result;
         }
 

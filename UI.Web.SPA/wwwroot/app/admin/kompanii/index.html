@@ -27,6 +27,9 @@
                             <th>
                                 Вид
                             </th>
+                            <th>
+                                Акција
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +52,9 @@
                             </td>
                             <td>
                                 {{kompanija.vidOrganizacija.ime}}
+                            </td>
+                            <td class="text-center">
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(kompanija)"><i class="fa fa-lg fa-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>

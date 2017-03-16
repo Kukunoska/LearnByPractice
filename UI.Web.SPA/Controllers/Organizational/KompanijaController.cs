@@ -55,5 +55,16 @@ namespace LearnByPractice.UI.Web.Controllers.Organizational
             var result = kompanijaManager.Update(kompanija);
             return result;
         }
+
+        [Route("api/organizational/kompanija/izbrishi")]
+        [HttpPost]
+        public domain::Organizational.Kompanija Izbrishi(domain::Organizational.Kompanija kompanija)
+        {
+            ProveriDaliImaKorisnik();
+
+            var kompanijaManager = new managers::Organizational.KompanijaManager();
+            var result = kompanijaManager.Delete(kompanija);
+            return result;
+        }
     }
 }
