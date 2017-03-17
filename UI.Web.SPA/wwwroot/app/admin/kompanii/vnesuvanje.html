@@ -9,24 +9,24 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <form name="kompanijaForm">
                             <div class="form-group">
-                                <label>Име</label>
-                                <input ng-model="vm.kompanija.ime" maxlength="255" required class="form-control" />
+                                <label for="ime">Име</label>
+                                <input ng-model="vm.kompanija.ime" id="ime" maxlength="255" required class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>Адреса</label>
-                                <input ng-model="vm.kompanija.adresa" maxlength="255" required class="form-control" />
+                                <label for="adresa">Адреса</label>
+                                <input ng-model="vm.kompanija.adresa" id="adresa" maxlength="255" required class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>Контакт телефон</label>
-                                <input ng-model="vm.kompanija.kontaktTelefon" maxlength="16" class="form-control" />
+                                <label for="kontaktTelefon">Контакт телефон</label>
+                                <input ng-model="vm.kompanija.kontaktTelefon" id="kontaktTelefon" maxlength="16" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>Интернет адреса</label>
-                                <input ng-model="vm.kompanija.vebStrana" maxlength="50" type="url" class="form-control" />
+                                <label for="vebAdresa">Интернет адреса</label>
+                                <input ng-model="vm.kompanija.vebStrana" maxlength="50" id="vebAdresa" type="url" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>Вид</label>
-                                <select class="form-control" ng-model="vm.kompanija.vidOrganizacija.id" required
+                                <label for="vidOrganizacija">Вид</label>
+                                <select class="form-control" ng-model="vm.kompanija.vidOrganizacija.id" required id="vidOrganizacija"
                                         ng-options="option.id as option.ime for option in vm.siteVidoviOrganizacii"></select>
                             </div>
                             <button class="btn btn-success" ng-click="vm.zapishi()" ng-disabled="kompanijaForm.$invalid">Запиши</button><button class="btn btn-danger pull-right" ng-click="vm.otkazhiSe()">Откажи се</button>
