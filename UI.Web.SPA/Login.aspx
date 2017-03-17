@@ -30,7 +30,7 @@
                                     <div class="col-lg-8">
                                         <div class="form-group">
                                             <asp:Label runat="server" ID="KorisnichkoImeLabel" AssociatedControlID="KorisnichkoImeTextBox" Text="Корисничко име:" />
-                                            <asp:TextBox runat="server" ID="KorisnichkoImeTextBox" CssClass="form-control" MaxLength="20" placeholder="Корисник" ValidationGroup="Najava" required />
+                                            <asp:TextBox runat="server" ID="KorisnichkoImeTextBox" CssClass="form-control" MaxLength="20" placeholder="Корисничко име" ValidationGroup="Najava" required />
                                         </div>
                                         <div class="form-group">
                                             <asp:Label runat="server" ID="LozinkaLabel" AssociatedControlID="LozinkaTextBox" Text="Лозинка:" />
