@@ -45,6 +45,19 @@
             };
             $stateProvider.state("admin.predmeti", predmetiConfig);
 
+            let vnesiPredmetConfig: ng.ui.IState = {
+                name: "admin.predmeti.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/predmeti/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_predmeti_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.predmeti.vnesuvanje", vnesiPredmetConfig);
+
             let kompaniiConfig: ng.ui.IState = {
                 name: "admin.kompanii",
                 url: "/kompanii",

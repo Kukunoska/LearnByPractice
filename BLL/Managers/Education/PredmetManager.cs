@@ -20,21 +20,35 @@ namespace LearnByPractice.BLL.Managers.Education
             return sitePredmeti;
         }
 
+        public Predmet Get(int id)
+        {
+            PredmetRepository repository = new PredmetRepository();
+            var result = repository.Get(id);
+            return result;
+        }
+
         public Predmet Insert(Domain.Education.Predmet domainObject)
         {
             PredmetRepository manager = new PredmetRepository();
-            Predmet sitePredmeti = manager.Insert(domainObject);
+            Predmet predmet = manager.Insert(domainObject);
 
-            return sitePredmeti;
+            return predmet;
         }
 
        public Predmet Update(Domain.Education.Predmet domainObject)
         {
             PredmetRepository repository = new PredmetRepository();
-            Predmet siteOceni = repository.Update(domainObject);
+            Predmet predmet = repository.Update(domainObject);
 
-            return siteOceni;
+            return predmet;
+        }
+
+        public Predmet Delete(Domain.Education.Predmet domainObject)
+        {
+            PredmetRepository repository = new PredmetRepository();
+            Predmet izbrishanPredmet = repository.Delete(domainObject);
+
+            return izbrishanPredmet;
         }
     }
 }
-

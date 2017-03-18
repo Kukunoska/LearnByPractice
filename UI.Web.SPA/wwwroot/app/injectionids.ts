@@ -33,6 +33,10 @@
             return "app.admin.predmeti.indexController";
         }
 
+        public static get admin_predmeti_vnesuvanjeController(): string {
+            return "app.admin.predmeti.vnesuvanjeController";
+        }
+
         public static get admin_kompanii_indexController(): string {
             return "app.admin.kompanii.indexController";
         }

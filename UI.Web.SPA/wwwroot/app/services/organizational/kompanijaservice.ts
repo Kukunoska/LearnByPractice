@@ -28,10 +28,10 @@
                     });
             }
 
-            public nova(novaKompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija> {
+            public nova(kompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija> {
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
-                return this.$http.post("api/organizational/kompanija/nova", novaKompanija, config)
+                return this.$http.post("api/organizational/kompanija/nova", kompanija, config)
                     .then((response: ng.IHttpPromiseCallbackArg<app.model.organizational.Kompanija>): app.model.organizational.Kompanija => {
                         return response.data;
                     });

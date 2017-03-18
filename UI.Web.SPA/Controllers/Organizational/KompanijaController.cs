@@ -36,12 +36,12 @@ namespace LearnByPractice.UI.Web.Controllers.Organizational
 
         [Route("api/organizational/kompanija/nova")]
         [HttpPost]
-        public domain::Organizational.Kompanija Nova(domain::Organizational.Kompanija novaKompanija)
+        public domain::Organizational.Kompanija Nova(domain::Organizational.Kompanija kompanija)
         {
             ProveriDaliImaKorisnik();
 
             var kompanijaManager = new managers::Organizational.KompanijaManager();
-            var result = kompanijaManager.Insert(novaKompanija);
+            var result = kompanijaManager.Insert(kompanija);
             return result;
         }
 

@@ -37,7 +37,6 @@
                                 vm.kompanijaService.zemi(kompanijaId)
                                     .then((result: app.model.organizational.Kompanija): void => {
                                         vm.kompanija = result;
-                                        console.log(vm.kompanija);
                                         $scope.$apply();
                                     });
                             }

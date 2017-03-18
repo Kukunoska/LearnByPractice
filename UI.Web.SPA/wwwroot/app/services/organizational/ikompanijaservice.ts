@@ -5,7 +5,7 @@
         export interface IKompanijaService {
             site(): ng.IPromise<app.model.organizational.Kompanija[]>;
             zemi(id: number): ng.IPromise<app.model.organizational.Kompanija>;
-            nova(novaKompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija>;
+            nova(kompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija>;
             izmeni(kompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija>;
             izbrishi(kompanija: app.model.organizational.Kompanija): ng.IPromise<app.model.organizational.Kompanija>;
         }

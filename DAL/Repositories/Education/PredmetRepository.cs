@@ -52,9 +52,9 @@ namespace LearnByPractice.DAL.Repositories.Education
                 domain.Predmet result = ToDomain(modelObject);
 
                 return result;
-
             }
         }
+
         public domain.Predmet Update(domain.Predmet domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
@@ -66,6 +66,18 @@ namespace LearnByPractice.DAL.Repositories.Education
                 context.SubmitChanges();
                 domain.Predmet result = ToDomain(modelObject);
                 return result;
+            }
+        }
+
+        public domain.Predmet Delete(domain.Predmet domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Predmets.Single(predmet => predmet.ID == domainObject.Id);
+                context.Predmets.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
             }
         }
 

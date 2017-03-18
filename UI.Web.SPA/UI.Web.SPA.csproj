@@ -136,6 +136,7 @@
     <Content Include="wwwroot\app\admin\kompanii\index.html" />
     <Content Include="wwwroot\app\admin\kompanii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
+    <Content Include="wwwroot\app\admin\predmeti\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
     <Content Include="wwwroot\app\styles\Site.css" />
     <Content Include="wwwroot\lib\angular-animate\angular-animate.js" />
@@ -572,6 +573,7 @@
     <TypeScriptCompile Include="wwwroot\app\admin\kompanii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\kompanii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\predmeti\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.ts" />
     <TypeScriptCompile Include="wwwroot\app\base\base.module.ts" />
