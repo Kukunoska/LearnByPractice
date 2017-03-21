@@ -15,8 +15,8 @@
             return "app.services.vidOrganizacijaService";
         }
 
-        public static get kompanijaService(): string {
-            return "app.services.kompanijaService";
+        public static get organizacijaService(): string {
+            return "app.services.organizacijaService";
         }
 
         // контролери (root)
@@ -28,6 +28,15 @@
             return "app.shellController";
         }
 
+        // контролери (user)
+        public static get user_editProfileController(): string {
+            return "app.user.editProfileController";
+        }
+
+        public static get user_changePasswordController(): string {
+            return "app.user.changePasswordController";
+        }
+
         // контролери (администратор)
         public static get admin_predmeti_indexController(): string {
             return "app.admin.predmeti.indexController";
@@ -37,12 +46,12 @@
             return "app.admin.predmeti.vnesuvanjeController";
         }
 
-        public static get admin_kompanii_indexController(): string {
-            return "app.admin.kompanii.indexController";
+        public static get admin_organizacii_indexController(): string {
+            return "app.admin.organizacii.indexController";
         }
 
-        public static get admin_kompanii_vnesuvanjeController(): string {
-            return "app.admin.kompanii.vnesuvanjeController";
+        public static get admin_organizacii_vnesuvanjeController(): string {
+            return "app.admin.organizacii.vnesuvanjeController";
         }
     }
 }

@@ -43,8 +43,8 @@
     <Compile Include="Education\PredmetCollection.cs" />
     <Compile Include="Education\StudiskaPrograma.cs" />
     <Compile Include="Education\StudiskaProgramaCollection.cs" />
-    <Compile Include="Organizational\Kompanija.cs" />
-    <Compile Include="Organizational\KompanijaCollection.cs" />
+    <Compile Include="Organizational\Organizacija.cs" />
+    <Compile Include="Organizational\OrganizacijaCollection.cs" />
     <Compile Include="Organizational\VidOrganizacija.cs" />
     <Compile Include="Organizational\VidOrganizacijaCollection.cs" />
     <Compile Include="Practice\Oblast.cs" />

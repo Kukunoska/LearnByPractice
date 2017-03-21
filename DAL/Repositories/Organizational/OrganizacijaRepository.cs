@@ -8,29 +8,29 @@ using System.Data.Linq;
 namespace LearnByPractice.DAL.Repositories.Organizational
 {
 
-    public class KompanijaRepository : RepositoryBase
+    public class OrganizacijaRepository : RepositoryBase
     {
-        public KompanijaRepository()
+        public OrganizacijaRepository()
         {
         }
-        public domain.KompanijaCollection GetAll()
+        public domain.OrganizacijaCollection GetAll()
         {
             model.LearnByPracticeDataContext context = CreateContext();
             DataLoadOptions options = new DataLoadOptions();
             options.LoadWith<model.Organizacija>(organizacija => organizacija.Vid_Organizacija);
             context.LoadOptions = options;
             IQueryable<model.Organizacija> query = context.Organizacijas.OrderBy(org => org.Ime);
-            domain.KompanijaCollection result = new domain.KompanijaCollection();
+            domain.OrganizacijaCollection result = new domain.OrganizacijaCollection();
             foreach (model.Organizacija modelObject in query)
             {
-                domain.Kompanija domainObject = ToDomain(modelObject);
+                domain.Organizacija domainObject = ToDomain(modelObject);
                 result.Add(domainObject);
             }
 
             return result;
         }
 
-        public domain.Kompanija Get(int id)
+        public domain.Organizacija Get(int id)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
@@ -40,13 +40,13 @@ namespace LearnByPractice.DAL.Repositories.Organizational
 
                 IQueryable<model.Organizacija> query = context.Organizacijas.Where(c => c.ID == id);
 
-                domain.Kompanija domainObject = ToDomain(query.Single());
+                domain.Organizacija domainObject = ToDomain(query.Single());
 
                 return domainObject;
             }
         }
 
-        public domain.Kompanija Insert(domain.Kompanija domainObject)
+        public domain.Organizacija Insert(domain.Organizacija domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
@@ -58,13 +58,13 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 modelObject.Vid_Organizacija_ID = domainObject.vidOrganizacija.Id;
                 context.Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
-                domain.Kompanija result = ToDomain(modelObject);
+                domain.Organizacija result = ToDomain(modelObject);
 
                 return result;
             }
         }
 
-        public domain.Kompanija Update(domain.Kompanija domainObject)
+        public domain.Organizacija Update(domain.Organizacija domainObject)
         {
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
@@ -76,12 +76,12 @@ namespace LearnByPractice.DAL.Repositories.Organizational
                 modelObject.Veb_Strana = domainObject.VebStrana;
                 modelObject.Vid_Organizacija_ID = domainObject.vidOrganizacija.Id;
                 context.SubmitChanges();
-                domain.Kompanija result = ToDomain(modelObject);
+                domain.Organizacija result = ToDomain(modelObject);
                 return result;
             }
         }
 
-        public domain.Kompanija Delete(domain.Kompanija domainObject)
+        public domain.Organizacija Delete(domain.Organizacija domainObject)
         {
             using (var context = CreateContext())
             {
@@ -93,9 +93,9 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             }
         }
 
-        private domain.Kompanija ToDomain(model.Organizacija modelObject)
+        private domain.Organizacija ToDomain(model.Organizacija modelObject)
         {
-            domain.Kompanija domainObject = new domain.Kompanija();
+            domain.Organizacija domainObject = new domain.Organizacija();
             domainObject.Id = modelObject.ID;
             domainObject.Ime = modelObject.Ime;
             domainObject.Adresa = modelObject.Adresa;
@@ -114,7 +114,7 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             return domainObject;
         }
 
-        public domain.KompanijaCollection GetByVidOrganizacijaId(int a)
+        public domain.OrganizacijaCollection GetByVidOrganizacijaId(int a)
         {
             model.LearnByPracticeDataContext context = CreateContext();
             DataLoadOptions options = new DataLoadOptions();
@@ -123,10 +123,10 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             var organizacii = from vO in context.Organizacijas
                               where vO.Vid_Organizacija_ID == a
                               select vO;
-            domain.KompanijaCollection result = new domain.KompanijaCollection();
+            domain.OrganizacijaCollection result = new domain.OrganizacijaCollection();
             foreach (model.Organizacija vidOrg in organizacii)
             {
-                domain.Kompanija domainObject = new domain.Kompanija();
+                domain.Organizacija domainObject = new domain.Organizacija();
                 domainObject.Id = vidOrg.ID;
                 domainObject.Ime = vidOrg.Ime;
                 domainObject.KontaktTelefon = vidOrg.Kontakt_Telefon;

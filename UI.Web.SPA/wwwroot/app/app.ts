@@ -25,6 +25,33 @@
             };
             $stateProvider.state("pochetna", pochetnaConfig);
 
+            let editProfileConfig: ng.ui.IState = {
+                name: "editprofile",
+                url: "/editprofile",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/user/editprofile.html",
+                        controller: app.InjectionIds.user_editProfileController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("editprofile", editProfileConfig);
+
+            let changePasswordConfig: ng.ui.IState = {
+                name: "changepassword",
+                url: "/changepassword",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/user/changepassword.html",
+                        controller: app.InjectionIds.user_changePasswordController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("changepassword", changePasswordConfig);
+
+
             let adminConfig: ng.ui.IState = {
                 name: "admin",
                 url: "/admin",
@@ -58,31 +85,31 @@
             };
             $stateProvider.state("admin.predmeti.vnesuvanje", vnesiPredmetConfig);
 
-            let kompaniiConfig: ng.ui.IState = {
-                name: "admin.kompanii",
-                url: "/kompanii",
+            let organizaciiConfig: ng.ui.IState = {
+                name: "admin.organizacii",
+                url: "/organizacii",
                 views: {
                     "@": {
-                        templateUrl: "/wwwroot/app/admin/kompanii/index.html",
-                        controller: app.InjectionIds.admin_kompanii_indexController,
+                        templateUrl: "/wwwroot/app/admin/organizacii/index.html",
+                        controller: app.InjectionIds.admin_organizacii_indexController,
                         controllerAs: "vm"
                     }
                 }
             };
-            $stateProvider.state("admin.kompanii", kompaniiConfig);
+            $stateProvider.state("admin.organizacii", organizaciiConfig);
 
-            let vnesiKompanijaConfig: ng.ui.IState = {
-                name: "admin.kompanii.vnesuvanje",
+            let vnesiOrganizacijaConfig: ng.ui.IState = {
+                name: "admin.organizacii.vnesuvanje",
                 url: "/vnesuvanje/{id:int}",
                 views: {
                     "@": {
-                        templateUrl: "/wwwroot/app/admin/kompanii/vnesuvanje.html",
-                        controller: app.InjectionIds.admin_kompanii_vnesuvanjeController,
+                        templateUrl: "/wwwroot/app/admin/organizacii/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_organizacii_vnesuvanjeController,
                         controllerAs: "vm"
                     }
                 }
             };
-            $stateProvider.state("admin.kompanii.vnesuvanje", vnesiKompanijaConfig);
+            $stateProvider.state("admin.organizacii.vnesuvanje", vnesiOrganizacijaConfig);
         }
     }
 

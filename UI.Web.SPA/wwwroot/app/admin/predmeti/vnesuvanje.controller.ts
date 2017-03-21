@@ -59,6 +59,6 @@
     }
 
     angular.module("app.admin")
-        .controller(app.InjectionIds.admin_kompanii_vnesuvanjeController, VnesuvanjeController);
+        .controller(app.InjectionIds.admin_organizacii_vnesuvanjeController, VnesuvanjeController);
 }
 }

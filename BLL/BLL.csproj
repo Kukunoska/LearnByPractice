@@ -43,7 +43,7 @@
     <Compile Include="Managers\Education\PredmetManager.cs" />
     <Compile Include="Managers\Education\StudiskaProgramaManager.cs" />
     <Compile Include="Managers\ManagerBase.cs" />
-    <Compile Include="Managers\Organizational\KompanijaManager.cs" />
+    <Compile Include="Managers\Organizational\OrganizacijaManager.cs" />
     <Compile Include="Managers\Organizational\VidOrganizacijaManager.cs" />
     <Compile Include="Managers\Practice\OblastManager.cs" />
     <Compile Include="Managers\Practice\PrijavaManager.cs" />

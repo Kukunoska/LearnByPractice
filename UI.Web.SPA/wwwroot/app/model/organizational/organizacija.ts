@@ -2,7 +2,7 @@
     "use strict";
 
     export namespace organizational {
-        export class Kompanija {
+        export class Organizacija {
 
             public id: number;
             public ime: string;

@@ -10,7 +10,7 @@ namespace LearnByPractice.UI.Web.User.Administrator
         {
             if (!IsPostBack)
             {
-                KompanijaManager v = new KompanijaManager();
+                OrganizacijaManager v = new OrganizacijaManager();
                 dgKompanija.DataSource = v.GetAll();
                 dgKompanija.DataBind();
 
@@ -24,8 +24,8 @@ namespace LearnByPractice.UI.Web.User.Administrator
 
         protected void ddlKompanija_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KompanijaManager k = new KompanijaManager();
-            KompanijaRepository kr = new KompanijaRepository();
+            OrganizacijaManager k = new OrganizacijaManager();
+            OrganizacijaRepository kr = new OrganizacijaRepository();
             if (ddlKompanija.SelectedValue == 0.ToString())
             {
                 dgKompanija.DataSource = k.GetAll();

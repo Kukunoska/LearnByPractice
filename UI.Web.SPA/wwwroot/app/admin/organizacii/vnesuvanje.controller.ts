@@ -1,23 +1,23 @@
 ﻿module app.admin {
     "use strict";
 
-    export namespace kompanii {
+    export namespace organizacii {
 
         export class VnesuvanjeController extends base.ControllerBase {
-            public kompanija: app.model.organizational.Kompanija = new app.model.organizational.Kompanija();
+            public organizacija: app.model.organizational.Organizacija = new app.model.organizational.Organizacija();
             public siteVidoviOrganizacii: app.model.organizational.VidOrganizacija[] = [];
             public novZapis: boolean;
             public izmena: boolean;
 
             static $inject = [
-                app.InjectionIds.kompanijaService,
+                app.InjectionIds.organizacijaService,
                 app.InjectionIds.vidOrganizacijaService,
                 "$scope",
                 "$state",
                 "$stateParams"
             ];
 
-            constructor(private kompanijaService: app.services.organizational.IKompanijaService,
+            constructor(private organizacijaService: app.services.organizational.IOrganizacijaService,
                 vidOrganizacijaService: app.services.organizational.IVidOrganizacijaService,
                 $scope: ng.IScope,
                 private $state: ng.ui.IStateService,
@@ -30,23 +30,23 @@
                     .then((result: app.model.organizational.VidOrganizacija[]): void => {
                         vm.siteVidoviOrganizacii = result;
 
-                        let kompanijaId: number = 0;
+                        let organizacijaId: number = 0;
                         if (vm.$stateParams["id"] != null) {
-                            kompanijaId = parseInt(this.$stateParams["id"], 10);
-                            if (kompanijaId !== 0) {
-                                vm.kompanijaService.zemi(kompanijaId)
-                                    .then((result: app.model.organizational.Kompanija): void => {
-                                        vm.kompanija = result;
+                            organizacijaId = parseInt(this.$stateParams["id"], 10);
+                            if (organizacijaId !== 0) {
+                                vm.organizacijaService.zemi(organizacijaId)
+                                    .then((result: app.model.organizational.Organizacija): void => {
+                                        vm.organizacija = result;
                                         $scope.$apply();
                                     });
                             }
                         }
 
-                        if ((kompanijaId === 0) && (vm.siteVidoviOrganizacii.length > 0)) {
-                            vm.kompanija.vidOrganizacija.id = vm.siteVidoviOrganizacii[0].id;
+                        if ((organizacijaId === 0) && (vm.siteVidoviOrganizacii.length > 0)) {
+                            vm.organizacija.vidOrganizacija.id = vm.siteVidoviOrganizacii[0].id;
                         }
 
-                        vm.novZapis = kompanijaId === 0;
+                        vm.novZapis = organizacijaId === 0;
                         vm.izmena = !vm.novZapis;
 
                         $scope.$apply();
@@ -55,24 +55,24 @@
 
             public zapishi(): void {
                 if (this.novZapis) {
-                    this.kompanijaService.nova(this.kompanija)
-                        .then((result: app.model.organizational.Kompanija): void => {
-                            this.$state.go("admin.kompanii");
+                    this.organizacijaService.nova(this.organizacija)
+                        .then((result: app.model.organizational.Organizacija): void => {
+                            this.$state.go("admin.organizacii");
                         });
                 } else {
-                    this.kompanijaService.izmeni(this.kompanija)
-                        .then((result: app.model.organizational.Kompanija): void => {
-                            this.$state.go("admin.kompanii");
+                    this.organizacijaService.izmeni(this.organizacija)
+                        .then((result: app.model.organizational.Organizacija): void => {
+                            this.$state.go("admin.organizacii");
                         });
                 }
             }
 
             public otkazhiSe(): void {
-                this.$state.go("admin.kompanii");
+                this.$state.go("admin.organizacii");
             }
         }
 
         angular.module("app.admin")
-            .controller(app.InjectionIds.admin_kompanii_vnesuvanjeController, VnesuvanjeController);
+            .controller(app.InjectionIds.admin_organizacii_vnesuvanjeController, VnesuvanjeController);
     }
 }

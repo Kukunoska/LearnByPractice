@@ -40,7 +40,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-gears"></i> Администрација<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a><i class="fa fa-fw fa-lg"></i> Видови на организации</a></li>
-                            <li><a ui-sref="admin.kompanii"><i class="fa fa-fw fa-lg"></i> Компании</a></li>
+                            <li><a ui-sref="admin.organizacii"><i class="fa fa-fw fa-lg"></i> Организации</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Студиски програми</a></li>
                             <li><a ui-sref="admin.predmeti"><i class="fa fa-fw fa-lg fa-book"></i> Предмети</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Области</a></li>
@@ -53,7 +53,9 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" title="{{shell.korisnik.username}} ({{shell.korisnik.email}})"><i class="fa fa-lg fa-user"></i> {{shell.korisnik.ime}} {{shell.korisnik.prezime}}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Logout.aspx">Одјави се</a></li>
+                            <li><a ui-sref="editprofile">Мој профил</a></li>
+                            <li><a ui-sref="changepassword">Промени лозинка</a></li>
+                            <li><a href="/Logout.aspx">Одјави ме</a></li>
                         </ul>
                     </li>
                 </ul>

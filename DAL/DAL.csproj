@@ -46,7 +46,7 @@
     <Compile Include="Repositories\Education\OcenaRepository.cs" />
     <Compile Include="Repositories\Education\PredmetRepository.cs" />
     <Compile Include="Repositories\Education\StudiskaProgramaRepository.cs" />
-    <Compile Include="Repositories\Organizational\KompanijaRepository.cs" />
+    <Compile Include="Repositories\Organizational\OrganizacijaRepository.cs" />
     <Compile Include="Repositories\Organizational\VidOrganizacijaRespository.cs" />
     <Compile Include="Repositories\Practice\OblastRepository.cs" />
     <Compile Include="Repositories\Practice\PrijavaRespository.cs" />

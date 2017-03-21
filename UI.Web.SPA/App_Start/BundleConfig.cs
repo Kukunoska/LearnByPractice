@@ -42,7 +42,7 @@ namespace LearnByPractice.UI.Web
                 ModelFile("education/predmet.js"),
                 ModelFile("security/korisnik.js"),
                 ModelFile("organizational/vidorganizacija.js"),
-                ModelFile("organizational/kompanija.js"),
+                ModelFile("organizational/organizacija.js"),
 
                 // Services
                 ServiceFile("services.module.js"),
@@ -54,8 +54,8 @@ namespace LearnByPractice.UI.Web
                 ServiceFile("organizational/ividorganizacijaservice.js"),
                 ServiceFile("organizational/vidorganizacijaservice.js"),
 
-                ServiceFile("organizational/ikompanijaservice.js"),
-                ServiceFile("organizational/kompanijaservice.js"),
+                ServiceFile("organizational/iorganizacijaservice.js"),
+                ServiceFile("organizational/organizacijaservice.js"),
 
                 ServiceFile("security/ikorisnikservice.js"),
                 ServiceFile("security/korisnikservice.js"),
@@ -70,12 +70,16 @@ namespace LearnByPractice.UI.Web
                 // Controllers
                 AppFile("index.controller.js"),
 
+                AppFile("user/user.module.js"),
+                AppFile("user/changepassword.controller.js"),
+                AppFile("user/editprofile.controller.js"),
+
                 AppFile("admin/admin.module.js"),
 
                 AppFile("admin/predmeti/index.controller.js"),
 
-                AppFile("admin/kompanii/index.controller.js"),
-                AppFile("admin/kompanii/vnesuvanje.controller.js")
+                AppFile("admin/organizacii/index.controller.js"),
+                AppFile("admin/organizacii/vnesuvanje.controller.js")
                 ));
         }
 

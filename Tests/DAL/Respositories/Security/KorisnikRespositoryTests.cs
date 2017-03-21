@@ -48,10 +48,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
         {
             Random random = new Random(DateTime.Now.Millisecond);
 
-            KompanijaRepository orgRep = new KompanijaRepository();
-            KompanijaCollection siteOrg = orgRep.GetAll();
+            OrganizacijaRepository orgRep = new OrganizacijaRepository();
+            OrganizacijaCollection siteOrg = orgRep.GetAll();
             int Org = random.Next(0, siteOrg.Count);
-            Kompanija izbranaOrg = siteOrg[Org];
+            Organizacija izbranaOrg = siteOrg[Org];
 
             StudiskaProgramaRepository studiskaProgRep = new StudiskaProgramaRepository();
             StudiskaProgramaCollection siteStudiskiProg = studiskaProgRep.GetAll();
@@ -141,10 +141,10 @@ namespace LearnByPractice.Tests.DAL.Respositories.Security
 
             Console.WriteLine("Се менуваат податоците за  корисник:KорисникИД: {0}, Име: {1}, Корисничко име: {2}, Презиме: {3}, Пол: {4}, Студиска Програма: {5}, Организација: {6}, Еmail: {7}, Мобилен: {8}, ", izbranKorisnik.Id, izbranKorisnik.Ime, izbranKorisnik.Username, izbranKorisnik.Prezime, izbranKorisnik.Pol, izbranKorisnik.studiskaPrograma.Id, izbranKorisnik.organizacija.Id, izbranKorisnik.Email, izbranKorisnik.Mobilen);
 
-            KompanijaRepository orgRep = new KompanijaRepository();
-            KompanijaCollection siteOrg = orgRep.GetAll();
+            OrganizacijaRepository orgRep = new OrganizacijaRepository();
+            OrganizacijaCollection siteOrg = orgRep.GetAll();
             int Org = random.Next(0, siteOrg.Count);
-            Kompanija izbranaOrg = siteOrg[Org];
+            Organizacija izbranaOrg = siteOrg[Org];
 
             StudiskaProgramaRepository studiskaProgRep = new StudiskaProgramaRepository();
             StudiskaProgramaCollection siteStudiskiProg = studiskaProgRep.GetAll();

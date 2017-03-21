@@ -2,34 +2,34 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>{{ vm.novZapis ? "Внесување на нова компанија" : "Менување на податоци за компанија" }}</h2>
+                <h2>{{ vm.novZapis ? "Внесување на нова организација" : "Менување на податоци за организација" }}</h2>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <form name="kompanijaForm">
+                        <form name="organizacijaForm">
                             <div class="form-group">
                                 <label for="ime">Име</label>
-                                <input ng-model="vm.kompanija.ime" id="ime" maxlength="255" required class="form-control" />
+                                <input ng-model="vm.organizacija.ime" id="ime" maxlength="255" required class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="adresa">Адреса</label>
-                                <input ng-model="vm.kompanija.adresa" id="adresa" maxlength="255" required class="form-control" />
+                                <input ng-model="vm.organizacija.adresa" id="adresa" maxlength="255" required class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="kontaktTelefon">Контакт телефон</label>
-                                <input ng-model="vm.kompanija.kontaktTelefon" id="kontaktTelefon" maxlength="16" class="form-control" />
+                                <input ng-model="vm.organizacija.kontaktTelefon" id="kontaktTelefon" maxlength="16" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="vebAdresa">Интернет адреса</label>
-                                <input ng-model="vm.kompanija.vebStrana" maxlength="50" id="vebAdresa" type="url" class="form-control" />
+                                <input ng-model="vm.organizacija.vebStrana" maxlength="50" id="vebAdresa" type="url" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="vidOrganizacija">Вид</label>
-                                <select class="form-control" ng-model="vm.kompanija.vidOrganizacija.id" required id="vidOrganizacija"
+                                <select class="form-control" ng-model="vm.organizacija.vidOrganizacija.id" required id="vidOrganizacija"
                                         ng-options="option.id as option.ime for option in vm.siteVidoviOrganizacii"></select>
                             </div>
-                            <button class="btn btn-success" ng-click="vm.zapishi()" ng-disabled="kompanijaForm.$invalid">Запиши</button><button class="btn btn-danger pull-right" ng-click="vm.otkazhiSe()">Откажи се</button>
+                            <button class="btn btn-success" ng-click="vm.zapishi()" ng-disabled="organizacijaForm.$invalid">Запиши</button><button class="btn btn-danger pull-right" ng-click="vm.otkazhiSe()">Откажи се</button>
                         </form>
                     </div>
                 </div>

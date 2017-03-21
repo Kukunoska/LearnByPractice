@@ -46,9 +46,9 @@ namespace LearnByPractice.Domain.Security
 
         /// <summary>Објект од класа <c>StudiskaPrograma</c></summary>
         public StudiskaPrograma studiskaPrograma = new StudiskaPrograma();
-        
-        /// <summary>Објект од класа <c>Kompanija</c></summary>
-        public Kompanija organizacija = new Kompanija();
+
+        /// <summary>Објект од класа <c>Organizacija</c></summary>
+        public Organizacija organizacija = new Organizacija();
 
         /// <summary>Електронска пошта</summary>
         /// <value>Ја зема/поставува електронската пошта на корисникот</value>

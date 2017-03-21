@@ -10,6 +10,7 @@
         "app.model",
         "app.services",
         "app.base",
+        "app.user",
         "app.admin"
     ]);
 })();

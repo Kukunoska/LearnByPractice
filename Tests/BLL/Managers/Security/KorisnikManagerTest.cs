@@ -53,10 +53,10 @@ namespace LearnByPractice.Tests.BLL.Managers.Security
         {
             Random random = new Random(DateTime.Now.Millisecond);
 
-            KompanijaManager orgMan = new KompanijaManager();
-            KompanijaCollection siteOrg = orgMan.GetAll();
+            OrganizacijaManager orgMan = new OrganizacijaManager();
+            OrganizacijaCollection siteOrg = orgMan.GetAll();
             int Org = random.Next(0, siteOrg.Count);
-            Kompanija izbranaOrg = siteOrg[Org];
+            Organizacija izbranaOrg = siteOrg[Org];
 
             StudiskaProgramaManager studiskaProgMan = new StudiskaProgramaManager();
             StudiskaProgramaCollection siteStudiskiProg = studiskaProgMan.GetAll();
@@ -123,10 +123,10 @@ namespace LearnByPractice.Tests.BLL.Managers.Security
 
             Console.WriteLine("Се менуваат податоците за  корисник:KорисникИД: {0}, Име: {1}, Корисничко име: {2}, Презиме: {3}, Пол: {4}, Студиска Програма: {5}, Организација: {6}, Еmail: {7}, Мобилен: {8}, ", izbranKorisnik.Id, izbranKorisnik.Ime, izbranKorisnik.Username, izbranKorisnik.Prezime, izbranKorisnik.Pol, izbranKorisnik.studiskaPrograma.Id, izbranKorisnik.organizacija.Id, izbranKorisnik.Email, izbranKorisnik.Mobilen);
 
-            KompanijaManager orgMan = new KompanijaManager();
-            KompanijaCollection siteOrg = orgMan.GetAll();
+            OrganizacijaManager orgMan = new OrganizacijaManager();
+            OrganizacijaCollection siteOrg = orgMan.GetAll();
             int Org = random.Next(0, siteOrg.Count);
-            Kompanija izbranaOrg = siteOrg[Org];
+            Organizacija izbranaOrg = siteOrg[Org];
 
             StudiskaProgramaManager studiskaProgMan = new StudiskaProgramaManager();
             StudiskaProgramaCollection siteStudiskiProg = studiskaProgMan.GetAll();

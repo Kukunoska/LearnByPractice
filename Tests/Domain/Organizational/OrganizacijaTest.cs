@@ -3,14 +3,14 @@ using LearnByPractice.Domain.Organizational;
 
 namespace LearnByPractice.Tests.Domain.Organizational
 {
-    /// <summary>Тестови за класата <c>Kompanija</c></summary>
+    /// <summary>Тестови за класата <c>Organizacija</c></summary>
     [TestFixture]
-    public class KompanijaTest
+    public class OrganizacijaTest
     {
         [Test]
-        public void KompanijaConstructorTest()
+        public void OrganizacijaConstructorTest()
         {
-            Kompanija k = new Kompanija();
+            Organizacija k = new Organizacija();
             Assert.AreEqual(0, k.Id);
             Assert.IsNull(k.Ime);
             Assert.IsNull(k.Adresa);
