@@ -77,6 +77,9 @@ namespace LearnByPractice.UI.Web
                 AppFile("admin/admin.module.js"),
 
                 AppFile("admin/predmeti/index.controller.js"),
+                
+                AppFile("admin/vidoviorganizacii/index.controller.js"),
+                AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
 
                 AppFile("admin/organizacii/index.controller.js"),
                 AppFile("admin/organizacii/vnesuvanje.controller.js")

@@ -38,6 +38,14 @@
         }
 
         // контролери (администратор)
+        public static get admin_vidoviOrganizacii_indexController(): string {
+            return "app.admin.vidoviOrganizacii.indexController";
+        }
+
+        public static get admin_vidoviOrganizacii_vnesuvanjeController(): string {
+            return "app.admin.vidoviOrganizacii.vnesuvanjeController";
+        }
+
         public static get admin_predmeti_indexController(): string {
             return "app.admin.predmeti.indexController";
         }

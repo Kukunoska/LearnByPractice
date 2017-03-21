@@ -85,6 +85,32 @@
             };
             $stateProvider.state("admin.predmeti.vnesuvanje", vnesiPredmetConfig);
 
+            let vidoviOrganizaciiConfig: ng.ui.IState = {
+                name: "admin.vidoviorganizacii",
+                url: "/vidoviorganizacii",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/vidoviorganizacii/index.html",
+                        controller: app.InjectionIds.admin_vidoviOrganizacii_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.vidoviorganizacii", vidoviOrganizaciiConfig);
+
+            let vnesiVidOrganizacijaConfig: ng.ui.IState = {
+                name: "admin.vidoviorganizacii.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/vidoviorganizacii/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_vidoviOrganizacii_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.vidoviorganizacii.vnesuvanje", vnesiVidOrganizacijaConfig);
+
             let organizaciiConfig: ng.ui.IState = {
                 name: "admin.organizacii",
                 url: "/organizacii",
