@@ -172,5 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="localhost.publish.xml" />
+    <None Include="localhost.sqlexpress.publish.xml" />
   </ItemGroup>
 </Project>
