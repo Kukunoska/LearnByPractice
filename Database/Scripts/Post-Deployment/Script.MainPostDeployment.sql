@@ -10,6 +10,12 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+:r .\dbo.Vid_Organizacija.Table.sql
+GO
+
+:r .\dbo.Organizacija.Table.sql
+GO
+
 :r .\dbo.Studiska_Programa.Table.sql
 GO
 
@@ -26,12 +32,6 @@ GO
 GO
 
 :r .\dbo.Tehnologija.Table.sql
-GO
-
-:r .\dbo.Vid_Organizacija.Table.sql
-GO
-
-:r .\dbo.Organizacija.Table.sql
 GO
 
 :r .\dbo.Prijava.Table.sql
