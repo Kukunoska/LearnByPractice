@@ -325,6 +325,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Education\PredmetiController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\Education\StudiskaProgramaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
@@ -587,13 +588,16 @@
     <TypeScriptCompile Include="wwwroot\app\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\educataion\studiskaprograma.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\security\korisnik.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\base\servicebase.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\ipredmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\istudiskaprogramaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\predmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\studiskaprogramaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\iorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\ividorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\organizacijaservice.ts" />
