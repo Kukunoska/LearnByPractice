@@ -13,7 +13,7 @@ namespace LearnByPractice.UI.Web
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                 LibFile("bootstrap/dist/css/bootstrap.css"),
                 LibFile("bootstrap/dist/css/bootstrap-theme.css"),
-                LibFile("Font-Awesome/css/font-awesome.css"),
+                "~/Content/font-awesome.css",
 
                 AppFile("styles/Site.css")
             ));
