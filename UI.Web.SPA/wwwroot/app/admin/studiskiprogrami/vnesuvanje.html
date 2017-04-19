@@ -1,0 +1,25 @@
+﻿<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>{{ vm.novZapis ? "Внесување на нова студиска програма" : "Менување на податоци за студиска програма" }}</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <form name="studiskaProgramaForm">
+                            <div class="form-group">
+                                <label for="ime">Име</label>
+                                <input ng-model="vm.studiskaprorama.ime" id="ime" maxlength="255" required class="form-control" />
+                            </div>
+                            <button class="btn btn-success" ng-click="vm.zapishi()" ng-disabled="studiskaProgramaForm.$invalid">Запиши</button><button class="btn btn-danger pull-right" ng-click="vm.otkazhiSe()">Откажи се</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+
+            </div>
+        </div>
+    </div>
+</div>

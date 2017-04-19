@@ -18,28 +18,46 @@
                     });
             }
 
-            public nova(novaStudiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
+            public zemi(id: number): ng.IPromise<app.model.education.StudiskaPrograma> {
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
+                config.params.id = id;
 
-                return this.$http.post("api/education/studiskaprograma/nova", novaStudiskaPrograma, config)
+                return this.$http.get("api/education/studiskaprograma/zemi", config)
                     .then((response: ng.IHttpPromiseCallbackArg<app.model.education.StudiskaPrograma>): app.model.education.StudiskaPrograma => {
                         return response.data;
                     });
             }
 
-            public izmeni(studiskaprograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
+            public nova(studiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
-                return this.$http.post("api/education/studiskaprograma/izmeni", studiskaprograma, config)
+                return this.$http.post("api/education/studiskaprograma/nova", studiskaPrograma, config)
                     .then((response: ng.IHttpPromiseCallbackArg<app.model.education.StudiskaPrograma>): app.model.education.StudiskaPrograma => {
                         return response.data;
                     });
             }
 
+            public izmeni(studiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
+                let config: ng.IRequestShortcutConfig = super.requestConfig();
+
+                return this.$http.post("api/education/studiskaprograma/izmeni", studiskaPrograma, config)
+                    .then((response: ng.IHttpPromiseCallbackArg<app.model.education.StudiskaPrograma>): app.model.education.StudiskaPrograma => {
+                        return response.data;
+                    });
+            }
+
+            public izbrishi(studiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
+                let config: ng.IRequestShortcutConfig = super.requestConfig();
+
+                return this.$http.post("api/education/studiskaprograma/izbrishi", studiskaPrograma, config)
+                    .then((response: ng.IHttpPromiseCallbackArg<app.model.education.StudiskaPrograma>): app.model.education.StudiskaPrograma => {
+                        return response.data;
+                    });
+            }
         }
 
         angular
             .module("app.services")
-            .service(app.InjectionIds.studiskaprogramaService, StudiskaProgramaService);
+            .service(app.InjectionIds.studiskaProgramaService, StudiskaProgramaService);
     }
 }

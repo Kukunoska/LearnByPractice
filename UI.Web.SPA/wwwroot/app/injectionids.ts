@@ -18,6 +18,10 @@
         public static get organizacijaService(): string {
             return "app.services.organizacijaService";
         }
+        public static get studiskaProgramaService(): string {
+            return "app.services.studiskaProgramaService";
+        }
+
 
         // контролери (root)
         public static get indexController(): string {
@@ -60,6 +64,13 @@
 
         public static get admin_organizacii_vnesuvanjeController(): string {
             return "app.admin.organizacii.vnesuvanjeController";
+        }
+        public static get admin_studiskaPrograma_indexController(): string {
+            return "app.admin.studiskaPrograma.indexController";
+        }
+
+        public static get admin_studiskaPrograma_vnesuvanjeController(): string {
+            return "app.admin.studiskaPrograma.vnesuvanjeController";
         }
     }
 }

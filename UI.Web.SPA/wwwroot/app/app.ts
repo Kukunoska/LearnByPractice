@@ -136,7 +136,35 @@
                 }
             };
             $stateProvider.state("admin.organizacii.vnesuvanje", vnesiOrganizacijaConfig);
-        }
+       
+    //
+            let studiskaProgramaConfig: ng.ui.IState = {
+                name: "admin.studiskiprogrami",
+                url: "/studiskiprogrami",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/studiskiprogrami/index.html",
+                        controller: app.InjectionIds.admin_studiskaPrograma_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.studiskiprogrami", studiskaProgramaConfig);
+
+            let vnesiStudiskaProgramaConfig: ng.ui.IState = {
+                name: "admin.studiskiprogrami.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/studiskiprogrami/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_studiskaPrograma_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.studiskiprogrami.vnesuvanje", vnesiStudiskaProgramaConfig);
+
+}
     }
 
     angular

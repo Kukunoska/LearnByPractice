@@ -35,7 +35,5 @@ namespace LearnByPractice.BLL.Managers.Education
 
             return siteStudiskiProgrami;
         }
-
-        
     }
 }

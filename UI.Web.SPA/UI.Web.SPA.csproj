@@ -137,6 +137,8 @@
     <Content Include="wwwroot\app\admin\organizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\admin\predmeti\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\index.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\index.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
@@ -579,6 +581,8 @@
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
