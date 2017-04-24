@@ -11,6 +11,8 @@
         "app.services",
         "app.base",
         "app.user",
-        "app.admin"
+        "app.admin",
+        "app.mentor",
+        "app.student"
     ]);
 })();

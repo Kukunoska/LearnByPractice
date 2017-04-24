@@ -12,6 +12,7 @@
             $stateProvider: ng.ui.IStateProvider,
             $urlRouteProvider: ng.ui.IUrlRouterProvider) {
 
+            // општо за сите видови корисници
             let pochetnaConfig: ng.ui.IState = {
                 name: "pochetna",
                 url: "/",
@@ -51,13 +52,19 @@
             };
             $stateProvider.state("changepassword", changePasswordConfig);
 
-
-            let adminConfig: ng.ui.IState = {
+            // администратор
+            let adminHomeConfig: ng.ui.IState = {
                 name: "admin",
                 url: "/admin",
-                abstract: true
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/home/home.html",
+                        controller: app.InjectionIds.admin_homeController,
+                        controllerAs: "vm"
+                    }
+                }
             };
-            $stateProvider.state("admin", adminConfig);
+            $stateProvider.state("admin", adminHomeConfig);
 
             let predmetiConfig: ng.ui.IState = {
                 name: "admin.predmeti",
@@ -136,6 +143,34 @@
                 }
             };
             $stateProvider.state("admin.organizacii.vnesuvanje", vnesiOrganizacijaConfig);
+
+            // ментор
+            let mentorHomeConfig: ng.ui.IState = {
+                name: "mentor",
+                url: "/mentor",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/mentor/home/home.html",
+                        controller: app.InjectionIds.mentor_homeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("mentor", mentorHomeConfig);
+
+            // студент
+            let studentHomeConfig: ng.ui.IState = {
+                name: "student",
+                url: "/student",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/student/home/home.html",
+                        controller: app.InjectionIds.student_homeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("student", studentHomeConfig);
         }
     }
 

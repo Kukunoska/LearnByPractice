@@ -76,13 +76,21 @@ namespace LearnByPractice.UI.Web
 
                 AppFile("admin/admin.module.js"),
 
+                AppFile("admin/home/home.controller.js"),
+
                 AppFile("admin/predmeti/index.controller.js"),
                 
                 AppFile("admin/vidoviorganizacii/index.controller.js"),
                 AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
 
                 AppFile("admin/organizacii/index.controller.js"),
-                AppFile("admin/organizacii/vnesuvanje.controller.js")
+                AppFile("admin/organizacii/vnesuvanje.controller.js"),
+
+                AppFile("mentor/mentor.module.js"),
+                AppFile("mentor/home/home.controller.js"),
+
+                AppFile("student/student.module.js"),
+                AppFile("student/home/home.controller.js")
                 ));
         }
 

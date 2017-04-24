@@ -26,6 +26,7 @@
                     <li class="dropdown" ng-if="shell.korisnik.student">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Студент<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a ui-sref="student"><i class="fa fa-fw fa-home"></i> Почетна страна</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои оценки</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои пријави</a></li>
                         </ul>
@@ -33,12 +34,14 @@
                     <li class="dropdown" ng-if="shell.korisnik.mentor">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-user"></i> Ментор<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a ui-sref="mentor"><i class="fa fa-fw fa-home"></i> Почетна страна</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Мои технологии</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" ng-if="shell.korisnik.administrator">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"><i class="fa fa-lg fa-gears"></i> Администрација<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a ui-sref="admin"><i class="fa fa-fw fa-home"></i> Почетна страна</a></li>
                             <li><a ui-sref="admin.vidoviorganizacii"><i class="fa fa-fw fa-lg"></i> Видови на организации</a></li>
                             <li><a ui-sref="admin.organizacii"><i class="fa fa-fw fa-lg"></i> Организации</a></li>
                             <li><a><i class="fa fa-fw fa-lg"></i> Студиски програми</a></li>

@@ -38,6 +38,10 @@
         }
 
         // контролери (администратор)
+        public static get admin_homeController(): string {
+            return "app.admin.homeController";
+        }
+
         public static get admin_vidoviOrganizacii_indexController(): string {
             return "app.admin.vidoviOrganizacii.indexController";
         }
@@ -60,6 +64,16 @@
 
         public static get admin_organizacii_vnesuvanjeController(): string {
             return "app.admin.organizacii.vnesuvanjeController";
+        }
+
+        // контролери (ментор)
+        public static get mentor_homeController(): string {
+            return "app.mentor.homeController";
+        }
+
+        // контролери (студент)
+        public static get student_homeController(): string {
+            return "app.strudent.homeController";
         }
     }
 }

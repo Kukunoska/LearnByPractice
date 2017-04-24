@@ -136,6 +136,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="wwwroot\app\admin\home\home.html" />
     <Content Include="wwwroot\app\admin\organizacii\index.html" />
     <Content Include="wwwroot\app\admin\organizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
@@ -143,6 +144,8 @@
     <Content Include="wwwroot\app\admin\vidoviorganizacii\index.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
+    <Content Include="wwwroot\app\mentor\home\home.html" />
+    <Content Include="wwwroot\app\student\home\home.html" />
     <Content Include="wwwroot\app\styles\Site.css" />
     <Content Include="wwwroot\app\user\changepassword.html" />
     <Content Include="wwwroot\app\user\editprofile.html" />
@@ -540,6 +543,7 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\home\home.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
@@ -552,6 +556,8 @@
     <TypeScriptCompile Include="wwwroot\app\base\controllerbase.ts" />
     <TypeScriptCompile Include="wwwroot\app\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
+    <TypeScriptCompile Include="wwwroot\app\mentor\home\home.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\mentor\mentor.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
@@ -568,6 +574,8 @@
     <TypeScriptCompile Include="wwwroot\app\services\security\korisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\shell.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\student\home\home.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\student\student.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\user\changepassword.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\user\editprofile.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\user\user.module.ts" />
