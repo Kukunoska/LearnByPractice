@@ -7,16 +7,25 @@
 
         static $inject = [
             app.InjectionIds.korisnikService,
-            "$scope"
+            "$scope",
+            "$state"
         ];
         constructor(private korisnikService: app.services.security.IKorisnikService,
-        private $scope: ng.IScope) {
+            private $scope: ng.IScope, $state: ng.ui.IStateService) {
             super();
 
             this.korisnikService.tekoven()
                 .then((result: app.model.security.Korisnik): void => {
                     this.korisnik = result;
                     this.$scope.$apply();
+                    if (this.korisnik.administrator) {
+                        $state.go("admin");
+                    }
+                    else if (this.korisnik.mentor) {
+                        $state.go("mentor");
+                    } else if (this.korisnik.student) {
+                        $state.go("student");
+                    }
                 });
         }
     }
