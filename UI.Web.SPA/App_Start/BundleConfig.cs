@@ -39,7 +39,9 @@ namespace LearnByPractice.UI.Web
 
                 // Model
                 ModelFile("model.module.js"),
+                ModelFile("education/ocena.js"),
                 ModelFile("education/predmet.js"),
+                ModelFile("education/studiskaPrograma.js"),
                 ModelFile("security/korisnik.js"),
                 ModelFile("organizational/vidorganizacija.js"),
                 ModelFile("organizational/organizacija.js"),
