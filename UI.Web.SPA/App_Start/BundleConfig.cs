@@ -52,6 +52,10 @@ namespace LearnByPractice.UI.Web
 
                 ServiceFile("education/ipredmetservice.js"),
                 ServiceFile("education/predmetservice.js"),
+                ServiceFile("education/iocenaservice.js"),
+                ServiceFile("education/ocenaservice.js"),
+                ServiceFile("education/istudiskaprogramaservice.js"),
+                ServiceFile("education/studiskaprogramaservice.js"),
 
                 ServiceFile("organizational/ividorganizacijaservice.js"),
                 ServiceFile("organizational/vidorganizacijaservice.js"),
