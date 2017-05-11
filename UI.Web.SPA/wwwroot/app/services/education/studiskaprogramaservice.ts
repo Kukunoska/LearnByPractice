@@ -59,6 +59,7 @@
                     });
             }
         }
+
         angular
             .module("app.service")
             .service(app.InjectionIds.studiskaProgramaService, StudiskaProgramaService);

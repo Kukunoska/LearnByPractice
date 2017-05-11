@@ -3,7 +3,6 @@
 
     export namespace education {
         export class StudiskaPrograma {
-
             public id: number;
             public ime: string;
         }

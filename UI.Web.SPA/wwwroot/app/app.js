@@ -1,19 +1,10 @@
-﻿module app {
+var app;
+(function (app) {
     "use strict";
-
-    class Config {
-
-        static $inject = [
-            "$stateProvider",
-            "$urlRouterProvider",
-        ];
-
-        constructor(
-            $stateProvider: ng.ui.IStateProvider,
-            $urlRouteProvider: ng.ui.IUrlRouterProvider) {
-
+    var Config = (function () {
+        function Config($stateProvider, $urlRouteProvider) {
             // општо за сите видови корисници
-            let pochetnaConfig: ng.ui.IState = {
+            var pochetnaConfig = {
                 name: "pochetna",
                 url: "/",
                 views: {
@@ -25,8 +16,7 @@
                 }
             };
             $stateProvider.state("pochetna", pochetnaConfig);
-
-            let editProfileConfig: ng.ui.IState = {
+            var editProfileConfig = {
                 name: "editprofile",
                 url: "/editprofile",
                 views: {
@@ -38,8 +28,7 @@
                 }
             };
             $stateProvider.state("editprofile", editProfileConfig);
-
-            let changePasswordConfig: ng.ui.IState = {
+            var changePasswordConfig = {
                 name: "changepassword",
                 url: "/changepassword",
                 views: {
@@ -51,9 +40,8 @@
                 }
             };
             $stateProvider.state("changepassword", changePasswordConfig);
-
             // администратор
-            let adminHomeConfig: ng.ui.IState = {
+            var adminHomeConfig = {
                 name: "admin",
                 url: "/admin",
                 views: {
@@ -65,8 +53,7 @@
                 }
             };
             $stateProvider.state("admin", adminHomeConfig);
-
-            let predmetiConfig: ng.ui.IState = {
+            var predmetiConfig = {
                 name: "admin.predmeti",
                 url: "/predmeti",
                 views: {
@@ -78,8 +65,7 @@
                 }
             };
             $stateProvider.state("admin.predmeti", predmetiConfig);
-
-            let vnesiPredmetConfig: ng.ui.IState = {
+            var vnesiPredmetConfig = {
                 name: "admin.predmeti.vnesuvanje",
                 url: "/vnesuvanje/{id:int}",
                 views: {
@@ -91,8 +77,7 @@
                 }
             };
             $stateProvider.state("admin.predmeti.vnesuvanje", vnesiPredmetConfig);
-
-            let vidoviOrganizaciiConfig: ng.ui.IState = {
+            var vidoviOrganizaciiConfig = {
                 name: "admin.vidoviorganizacii",
                 url: "/vidoviorganizacii",
                 views: {
@@ -104,8 +89,7 @@
                 }
             };
             $stateProvider.state("admin.vidoviorganizacii", vidoviOrganizaciiConfig);
-
-            let vnesiVidOrganizacijaConfig: ng.ui.IState = {
+            var vnesiVidOrganizacijaConfig = {
                 name: "admin.vidoviorganizacii.vnesuvanje",
                 url: "/vnesuvanje/{id:int}",
                 views: {
@@ -117,8 +101,7 @@
                 }
             };
             $stateProvider.state("admin.vidoviorganizacii.vnesuvanje", vnesiVidOrganizacijaConfig);
-
-            let organizaciiConfig: ng.ui.IState = {
+            var organizaciiConfig = {
                 name: "admin.organizacii",
                 url: "/organizacii",
                 views: {
@@ -130,8 +113,7 @@
                 }
             };
             $stateProvider.state("admin.organizacii", organizaciiConfig);
-
-            let vnesiOrganizacijaConfig: ng.ui.IState = {
+            var vnesiOrganizacijaConfig = {
                 name: "admin.organizacii.vnesuvanje",
                 url: "/vnesuvanje/{id:int}",
                 views: {
@@ -143,68 +125,63 @@
                 }
             };
             $stateProvider.state("admin.organizacii.vnesuvanje", vnesiOrganizacijaConfig);
-
-
             // ментор
-            let mentorHomeConfig: ng.ui.IState = {
+            var mentorHomeConfig = {
                 name: "mentor",
                 url: "/mentor",
                 views: {
                     "@": {
                         templateUrl: "/wwwroot/app/mentor/home/home.html",
                         controller: app.InjectionIds.mentor_homeController,
-
-       
                         //
-             let studiskaProgramaConfig: ng.ui.IState = {
-                name: "admin.studiskiprogrami",
-                url: "/studiskiprogrami",
-                views: {
-                    "@": {
-                        templateUrl: "/wwwroot/app/admin/studiskiprogrami/index.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_indexController,
-
-                        controllerAs: "vm"
+                        let: studiskaProgramaConfig, ng: .ui.IState = {
+                            name: "admin.studiskiprogrami",
+                            url: "/studiskiprogrami",
+                            views: {
+                                "@": {
+                                    templateUrl: "/wwwroot/app/admin/studiskiprogrami/index.html",
+                                    controller: app.InjectionIds.admin_studiskaPrograma_indexController,
+                                    controllerAs: "vm"
+                                }
+                            }
+                        },
+                        $stateProvider: .state("mentor", mentorHomeConfig),
+                        // студент
+                        let: studentHomeConfig, ng: .ui.IState = {
+                            name: "student",
+                            url: "/student",
+                            views: {
+                                "@": {
+                                    templateUrl: "/wwwroot/app/student/home/home.html",
+                                    controller: app.InjectionIds.student_homeController,
+                                    $stateProvider: .state("admin.studiskiprogrami", studiskaProgramaConfig),
+                                    let: vnesiStudiskaProgramaConfig, ng: .ui.IState = {
+                                        name: "admin.studiskiprogrami.vnesuvanje",
+                                        url: "/vnesuvanje/{id:int}",
+                                        views: {
+                                            "@": {
+                                                templateUrl: "/wwwroot/app/admin/studiskiprogrami/vnesuvanje.html",
+                                                controller: app.InjectionIds.admin_studiskaPrograma_vnesuvanjeController,
+                                                controllerAs: "vm"
+                                            }
+                                        }
+                                    },
+                                    $stateProvider: .state("student", studentHomeConfig)
+                                },
+                                $stateProvider: .state("admin.studiskiprogrami.vnesuvanje", vnesiStudiskaProgramaConfig)
+                            }
+                        },
+                        angular: 
+                            .module("app")
+                            .config(Config)
                     }
                 }
             };
-
-            $stateProvider.state("mentor", mentorHomeConfig);
-
-            // студент
-            let studentHomeConfig: ng.ui.IState = {
-                name: "student",
-                url: "/student",
-                views: {
-                    "@": {
-                        templateUrl: "/wwwroot/app/student/home/home.html",
-                        controller: app.InjectionIds.student_homeController,
-
-            $stateProvider.state("admin.studiskiprogrami", studiskaProgramaConfig);
-
-            let vnesiStudiskaProgramaConfig: ng.ui.IState = {
-                name: "admin.studiskiprogrami.vnesuvanje",
-                url: "/vnesuvanje/{id:int}",
-                views: {
-                    "@": {
-                        templateUrl: "/wwwroot/app/admin/studiskiprogrami/vnesuvanje.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_vnesuvanjeController,
-
-                        controllerAs: "vm"
-                    }
-                }
-            };
-
-            $stateProvider.state("student", studentHomeConfig);
         }
-
-            $stateProvider.state("admin.studiskiprogrami.vnesuvanje", vnesiStudiskaProgramaConfig);
-
-}
-
-    }
-
-    angular
-        .module("app")
-        .config(Config);
-}
+        return Config;
+    }());
+    Config.$inject = [
+        "$stateProvider",
+        "$urlRouterProvider",
+    ];
+})(app || (app = {}));

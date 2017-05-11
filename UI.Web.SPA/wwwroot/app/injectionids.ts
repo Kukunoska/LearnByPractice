@@ -26,6 +26,10 @@
         public static get organizacijaService(): string {
             return "app.services.organizacijaService";
         }
+        public static get studiskaProgramaService(): string {
+            return "app.services.studiskaProgramaService";
+        }
+
 
         // контролери (root)
         public static get indexController(): string {
@@ -74,6 +78,7 @@
             return "app.admin.organizacii.vnesuvanjeController";
         }
 
+
         // контролери (ментор)
         public static get mentor_homeController(): string {
             return "app.mentor.homeController";
@@ -82,6 +87,14 @@
         // контролери (студент)
         public static get student_homeController(): string {
             return "app.strudent.homeController";
+
+        public static get admin_studiskaPrograma_indexController(): string {
+            return "app.admin.studiskaPrograma.indexController";
+        }
+
+        public static get admin_studiskaPrograma_vnesuvanjeController(): string {
+            return "app.admin.studiskaPrograma.vnesuvanjeController";
+
         }
     }
 }
