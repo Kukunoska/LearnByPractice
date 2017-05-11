@@ -9,7 +9,6 @@
             }
 
             public site(): ng.IPromise<app.model.education.Ocena[]> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
                 return this.$http.get("app/education/ocena/site", config)

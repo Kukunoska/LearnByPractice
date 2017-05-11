@@ -9,7 +9,6 @@
             }
 
             public site(): ng.IPromise<app.model.education.StudiskaPrograma[]> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
                 return this.$http.get("api/education/studiskaPrograma/site", config)
@@ -19,7 +18,6 @@
             }
 
             public zemi(id: number): ng.IPromise<app.model.education.StudiskaPrograma> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
                 config.params.id = id;
 
@@ -30,7 +28,6 @@
             }
 
             public nov(novaStudiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
                 return this.$http.post("app/educaton/studiskaPrograma/nov", novaStudiskaPrograma, config)
@@ -40,7 +37,6 @@
             }
 
             public izmeni(studiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
                 return this.$http.post("api/education/studiskaPrograma/izmeni", studiskaPrograma, config)
@@ -50,7 +46,6 @@
             }
 
             public izbrishi(studiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
-
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
                 return this.$http.post("api/education/studiskaPrograma/izbrishi", studiskaPrograma, config)
