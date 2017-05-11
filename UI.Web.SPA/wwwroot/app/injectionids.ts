@@ -7,6 +7,14 @@
             return "app.services.predmetService";
         }
 
+        public static get ocenaService(): string {
+            return "app.services.ocenaService";
+        }
+
+        public static get studiskaProgramaService(): string {
+            return "app.services.studiskaProgramaService";
+        }
+
         public static get korisnikService(): string {
             return "app.services.korisnikService";
         }
