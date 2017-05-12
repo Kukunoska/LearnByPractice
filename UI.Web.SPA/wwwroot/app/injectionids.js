@@ -127,6 +127,20 @@ var app;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_indexController", {
+            get: function () {
+                return "app.admin.studiskaPrograma.indexController";
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_vnesuvanjeController", {
+            get: function () {
+                return "app.admin.studiskaPrograma.vnesuvanjeController";
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(InjectionIds, "mentor_homeController", {
             // контролери (ментор)
             get: function () {
@@ -139,20 +153,6 @@ var app;
             // контролери (студент)
             get: function () {
                 return "app.strudent.homeController";
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_indexController", {
-            get: function () {
-                return "app.admin.studiskaPrograma.indexController";
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_vnesuvanjeController", {
-            get: function () {
-                return "app.admin.studiskaPrograma.vnesuvanjeController";
             },
             enumerable: true,
             configurable: true
