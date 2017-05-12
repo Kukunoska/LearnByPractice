@@ -56,7 +56,7 @@
         }
 
         angular
-            .module("app.service")
+            .module("app.services")
             .service(app.InjectionIds.studiskaProgramaService, StudiskaProgramaService);
     }
 }

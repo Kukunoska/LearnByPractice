@@ -60,7 +60,7 @@ var app;
             }(services.base.ServiceBase));
             education.StudiskaProgramaService = StudiskaProgramaService;
             angular
-                .module("app.service")
+                .module("app.services")
                 .service(app.InjectionIds.studiskaProgramaService, StudiskaProgramaService);
         })(education = services.education || (services.education = {}));
     })(services = app.services || (app.services = {}));
