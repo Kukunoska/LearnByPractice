@@ -150,7 +150,7 @@
                 views: {
                     "@": {
                         templateUrl: "/wwwroot/app/admin/studiskiprogrami/index.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_indexController,
+                        controller: app.InjectionIds.admin_studiskiProgrami_indexController,
                         controllerAs: "vm"
                     }
                 }
@@ -163,7 +163,7 @@
                 views: {
                     "@": {
                         templateUrl: "/wwwroot/app/admin/studiskiprogrami/vnesuvanje.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_vnesuvanjeController,
+                        controller: app.InjectionIds.admin_studiskiProgrami_vnesuvanjeController,
                         controllerAs: "vm"
                     }
                 }

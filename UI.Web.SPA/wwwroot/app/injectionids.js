@@ -127,16 +127,16 @@ var app;
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_indexController", {
+        Object.defineProperty(InjectionIds, "admin_studiskiProgrami_indexController", {
             get: function () {
-                return "app.admin.studiskaPrograma.indexController";
+                return "app.admin.studiskiProgrami.indexController";
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(InjectionIds, "admin_studiskaPrograma_vnesuvanjeController", {
+        Object.defineProperty(InjectionIds, "admin_studiskiProgrami_vnesuvanjeController", {
             get: function () {
-                return "app.admin.studiskaPrograma.vnesuvanjeController";
+                return "app.admin.studiskiProgrami.vnesuvanjeController";
             },
             enumerable: true,
             configurable: true
@@ -161,3 +161,4 @@ var app;
     }());
     app.InjectionIds = InjectionIds;
 })(app || (app = {}));
+//# sourceMappingURL=injectionids.js.map
