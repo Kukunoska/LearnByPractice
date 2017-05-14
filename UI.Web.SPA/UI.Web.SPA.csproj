@@ -141,6 +141,8 @@
     <Content Include="wwwroot\app\admin\organizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\admin\predmeti\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\index.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\index.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
@@ -325,8 +327,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Education\OceniController.cs" />
     <Compile Include="Controllers\Education\PredmetiController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\Education\StudiskiProgramiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
@@ -548,6 +552,8 @@
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
@@ -564,10 +570,16 @@
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\practice\oblast.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\practice\tehnologija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\security\korisnik.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\base\servicebase.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\iocenaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\ipredmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\istudiskaprogramaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\ocenaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\predmetservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\education\studiskaprogramaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\iorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\ividorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\organizacijaservice.ts" />
@@ -664,7 +676,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59354</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

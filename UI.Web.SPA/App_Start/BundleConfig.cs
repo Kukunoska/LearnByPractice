@@ -42,9 +42,11 @@ namespace LearnByPractice.UI.Web
                 ModelFile("education/ocena.js"),
                 ModelFile("education/predmet.js"),
                 ModelFile("education/studiskaPrograma.js"),
-                ModelFile("security/korisnik.js"),
                 ModelFile("organizational/vidorganizacija.js"),
                 ModelFile("organizational/organizacija.js"),
+                ModelFile("practice/oblast.js"),
+                ModelFile("practice/tehnologija.js"),
+                ModelFile("security/korisnik.js"),
 
                 // Services
                 ServiceFile("services.module.js"),
@@ -52,8 +54,10 @@ namespace LearnByPractice.UI.Web
 
                 ServiceFile("education/ipredmetservice.js"),
                 ServiceFile("education/predmetservice.js"),
+
                 ServiceFile("education/iocenaservice.js"),
                 ServiceFile("education/ocenaservice.js"),
+
                 ServiceFile("education/istudiskaprogramaservice.js"),
                 ServiceFile("education/studiskaprogramaservice.js"),
 
@@ -63,8 +67,14 @@ namespace LearnByPractice.UI.Web
                 ServiceFile("organizational/iorganizacijaservice.js"),
                 ServiceFile("organizational/organizacijaservice.js"),
 
+                ServiceFile("practice/ioblastservice.js"),
+                ServiceFile("practice/oblastservice.js"),
+                ServiceFile("practice/itehnologijaservice.js"),
+                ServiceFile("practice/tehnologijaservice.js"),
+
                 ServiceFile("security/ikorisnikservice.js"),
                 ServiceFile("security/korisnikservice.js"),
+                
 
                 // Base
                 AppFile("base/base.module.js"),
@@ -85,18 +95,30 @@ namespace LearnByPractice.UI.Web
                 AppFile("admin/home/home.controller.js"),
 
                 AppFile("admin/predmeti/index.controller.js"),
-                
-                AppFile("admin/vidoviorganizacii/index.controller.js"),
-                AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
+                AppFile("admin/predmeti/vnesuvanje.controller.js"),
+
+                AppFile("admin/studiskiprogrami/index.controller.js"),
+                AppFile("admin/studiskiprogrami/vnesuvanje.controller.js"),
 
                 AppFile("admin/organizacii/index.controller.js"),
                 AppFile("admin/organizacii/vnesuvanje.controller.js"),
+
+                AppFile("admin/vidoviorganizacii/index.controller.js"),
+                AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
+
+                AppFile("admin/oblasti/index.controller.js"),
+                AppFile("admin/oblasti/vnesuvanje.controller.js"),
+
+                AppFile("admin/tehnologii/index.controller.js"),
+                AppFile("admin/tehnologii/vnesuvanje.controller.js"),
+
 
                 AppFile("mentor/mentor.module.js"),
                 AppFile("mentor/home/home.controller.js"),
 
                 AppFile("student/student.module.js"),
                 AppFile("student/home/home.controller.js")
+
                 ));
         }
 
