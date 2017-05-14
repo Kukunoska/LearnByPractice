@@ -576,6 +576,7 @@
     <TypeScriptCompile Include="wwwroot\app\services\organizational\ividorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\organizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\vidorganizacijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\ioblastservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\ikorisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\korisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />
