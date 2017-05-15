@@ -333,6 +333,7 @@
     <Compile Include="Controllers\Education\StudiskiProgramiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
+    <Compile Include="Controllers\Practice\OblastiController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
     <Compile Include="Controllers\Organizational\VidOrganizacijaController.cs" />
     <Compile Include="Global.asax.cs">
