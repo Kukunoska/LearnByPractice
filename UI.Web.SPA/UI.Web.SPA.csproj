@@ -334,6 +334,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
     <Compile Include="Controllers\Practice\OblastiController.cs" />
+    <Compile Include="Controllers\Practice\TehnologiiController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
     <Compile Include="Controllers\Organizational\VidOrganizacijaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -535,6 +536,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\index\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\index.d.ts" />
@@ -549,6 +551,7 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\home\home.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
