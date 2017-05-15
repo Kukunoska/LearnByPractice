@@ -137,10 +137,16 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="wwwroot\app\admin\home\home.html" />
+    <Content Include="wwwroot\app\admin\oblasti\index.html" />
+    <Content Include="wwwroot\app\admin\oblasti\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\organizacii\index.html" />
     <Content Include="wwwroot\app\admin\organizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\admin\predmeti\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\index.html" />
+    <Content Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\tehnologii\index.html" />
+    <Content Include="wwwroot\app\admin\tehnologii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\index.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
@@ -325,10 +331,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Education\OceniController.cs" />
     <Compile Include="Controllers\Education\PredmetiController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\Education\StudiskiProgramiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
+    <Compile Include="Controllers\Practice\OblastiController.cs" />
+    <Compile Include="Controllers\Practice\TehnologiiController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
     <Compile Include="Controllers\Organizational\VidOrganizacijaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -544,10 +554,16 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\home\home.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\tehnologii\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\tehnologii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />

@@ -27,6 +27,13 @@
             return "app.services.organizacijaService";
         }
 
+        public static get oblastService(): string {
+            return "app.services.oblastService";
+        }
+        public static get tehnologijaService(): string {
+            return "app.services.tehnologijaService";
+        }
+
 
         // контролери (root)
         public static get indexController(): string {
@@ -75,12 +82,28 @@
             return "app.admin.organizacii.vnesuvanjeController";
         }
 
-        public static get admin_studiskaPrograma_indexController(): string {
-            return "app.admin.studiskaPrograma.indexController";
+        public static get admin_studiskiProgrami_indexController(): string {
+            return "app.admin.studiskiProgrami.indexController";
         }
 
-        public static get admin_studiskaPrograma_vnesuvanjeController(): string {
-            return "app.admin.studiskaPrograma.vnesuvanjeController";
+        public static get admin_studiskiProgrami_vnesuvanjeController(): string {
+            return "app.admin.studiskiProgrami.vnesuvanjeController";
+        }
+
+        public static get admin_oblasti_indexController(): string {
+            return "app.admin.oblasti.indexController";
+        }
+
+        public static get admin_oblasti_vnesuvanjeController(): string {
+            return "app.admin.oblasti.vnesuvanjeController";
+        }
+
+        public static get admin_tehnologii_indexController(): string {
+            return "app.admin.tehnologii.indexController";
+        }
+
+        public static get admin_tehnologii_vnesuvanjeController(): string {
+            return "app.admin.tehnologii.vnesuvanjeController";
         }
 
 
@@ -93,7 +116,5 @@
         public static get student_homeController(): string {
             return "app.strudent.homeController";
         }
-
-        
     }
 }

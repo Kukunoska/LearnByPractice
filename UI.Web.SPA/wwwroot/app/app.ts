@@ -150,7 +150,7 @@
                 views: {
                     "@": {
                         templateUrl: "/wwwroot/app/admin/studiskiprogrami/index.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_indexController,
+                        controller: app.InjectionIds.admin_studiskiProgrami_indexController,
                         controllerAs: "vm"
                     }
                 }
@@ -163,12 +163,64 @@
                 views: {
                     "@": {
                         templateUrl: "/wwwroot/app/admin/studiskiprogrami/vnesuvanje.html",
-                        controller: app.InjectionIds.admin_studiskaPrograma_vnesuvanjeController,
+                        controller: app.InjectionIds.admin_studiskiProgrami_vnesuvanjeController,
                         controllerAs: "vm"
                     }
                 }
             };
             $stateProvider.state("admin.studiskiprogrami.vnesuvanje", vnesiStudiskaProgramaConfig);
+
+            let oblastConfig: ng.ui.IState = {
+                name: "admin.oblasti",
+                url: "/oblasti",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/oblasti/index.html",
+                        controller: app.InjectionIds.admin_oblasti_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.oblasti", oblastConfig);
+
+            let vnesiOblastConfig: ng.ui.IState = {
+                name: "admin.oblast.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/oblast/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_oblasti_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.oblasti.vnesuvanje", vnesiOblastConfig);
+
+            let tehnologijaConfig: ng.ui.IState = {
+                name: "admin.tehnologii",
+                url: "/tehnologii",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/tehnologii/index.html",
+                        controller: app.InjectionIds.admin_tehnologii_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.tehnologii", tehnologijaConfig);
+
+            let vnesiTehnologijaConfig: ng.ui.IState = {
+                name: "admin.tehnologii.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/tehnologii/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_tehnologii_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.tehnologii.vnesuvanje", vnesiTehnologijaConfig);
 
 
             // ментор
@@ -179,7 +231,6 @@
                     "@": {
                         templateUrl: "/wwwroot/app/mentor/home/home.html",
                         controller: app.InjectionIds.mentor_homeController,
-
                     }
                 }
             };
@@ -194,14 +245,11 @@
                     "@": {
                         templateUrl: "/wwwroot/app/student/home/home.html",
                         controller: app.InjectionIds.student_homeController,
-
                     }
                 }
             };
             $stateProvider.state("student", studentHomeConfig);
-
-
-        }       
+        }     
     }
     angular
         .module("app")
