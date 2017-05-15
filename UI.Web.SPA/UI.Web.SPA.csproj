@@ -564,6 +564,8 @@
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\practice\oblast.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\practice\tehnologija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\security\korisnik.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\base\servicebase.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\education\iocenaservice.ts" />
@@ -577,6 +579,9 @@
     <TypeScriptCompile Include="wwwroot\app\services\organizational\organizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\vidorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\practice\ioblastservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\itehnologijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\oblastservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\tehnologijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\ikorisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\korisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />

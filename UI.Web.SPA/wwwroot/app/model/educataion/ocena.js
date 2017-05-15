@@ -8,7 +8,7 @@ var app;
             var Ocena = (function () {
                 function Ocena() {
                     this.student = new model.security.Korisnik();
-                    this.predmet = new education.Predmet;
+                    this.predmet = new education.Predmet();
                 }
                 return Ocena;
             }());
