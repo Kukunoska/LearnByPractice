@@ -551,7 +551,6 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\home\home.controller.ts" />
-    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
