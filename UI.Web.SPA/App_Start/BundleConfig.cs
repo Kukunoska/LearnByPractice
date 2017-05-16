@@ -64,7 +64,10 @@ namespace LearnByPractice.UI.Web
                 ServiceFile("organizational/iorganizacijaservice.js"),
                 ServiceFile("organizational/organizacijaservice.js"),
 
+                ServiceFile("practice/ioblastservice.js"),
                 ServiceFile("practice/oblastservice.js"),
+
+                ServiceFile("practice/itehnologijaservice.js"),
                 ServiceFile("practice/tehnologijaservice.js"),
 
                 ServiceFile("security/ikorisnikservice.js"),

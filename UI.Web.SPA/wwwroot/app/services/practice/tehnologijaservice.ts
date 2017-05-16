@@ -1,5 +1,5 @@
 ﻿module app.services {
-    "use strict"
+    "use strict";
 
     export namespace practice {
         export class TehnologijaService extends base.ServiceBase implements ITehnologijaService {
@@ -54,5 +54,8 @@
                     });
             }
         }
+        angular
+            .module("app.services")
+            .service(app.InjectionIds.tehnologijaService, TehnologijaService);
     }
 }

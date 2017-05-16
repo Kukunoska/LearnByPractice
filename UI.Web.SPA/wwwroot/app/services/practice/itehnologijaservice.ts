@@ -1,5 +1,5 @@
 ﻿module app.services {
-    "use strict"
+    "use strict";
 
     export namespace practice {
         export interface ITehnologijaService {
