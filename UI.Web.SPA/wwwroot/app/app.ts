@@ -222,6 +222,32 @@
             };
             $stateProvider.state("admin.tehnologii.vnesuvanje", vnesiTehnologijaConfig);
 
+            let korisnikConfig: ng.ui.IState = {
+                name: "admin.korisnici",
+                url: "/korisnici",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/korisnici/index.html",
+                        controller: app.InjectionIds.admin_korisnici_indexController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.korisnici", korisnikConfig);
+
+            let vnesiKorisnikConfig: ng.ui.IState = {
+                name: "admin.korisnici.vnesuvanje",
+                url: "/vnesuvanje/{id:int}",
+                views: {
+                    "@": {
+                        templateUrl: "/wwwroot/app/admin/korisnici/vnesuvanje.html",
+                        controller: app.InjectionIds.admin_korisnici_vnesuvanjeController,
+                        controllerAs: "vm"
+                    }
+                }
+            };
+            $stateProvider.state("admin.korisnici.vnesuvanje", vnesiKorisnikConfig);
+
 
             // ментор
             let mentorHomeConfig: ng.ui.IState = {

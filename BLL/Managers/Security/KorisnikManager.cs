@@ -20,6 +20,13 @@ namespace LearnByPractice.BLL.Managers.Security
             return siteKorisnici;
         }
 
+        public Korisnik Get(int id)
+        {
+            KorisnikRepository manager = new KorisnikRepository();
+            var result = manager.Get(id);
+            return result;
+        }
+
         public Korisnik Insert(Domain.Security.Korisnik domainObject)
         {
             KorisnikRepository manager = new KorisnikRepository();
@@ -34,6 +41,14 @@ namespace LearnByPractice.BLL.Managers.Security
             Korisnik siteKorisnici = manager.Update(domainObject);
 
             return siteKorisnici;
+        }
+        
+        public Korisnik Delete(Domain.Security.Korisnik domainObject)
+        {
+            var repository = new KorisnikRepository();
+            var izbrishanKorisnik = repository.Delete(domainObject);
+
+            return izbrishanKorisnik;
         }
 
         public Korisnik TryGetByKorisnichkoIme(string korisnichkoIme)

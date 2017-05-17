@@ -11,13 +11,27 @@
                 "$scope"
             ];
 
-            constructor(private tehnologijaService: app.services.practice.ITehnologijaService, $scope: ng.IScope) {
+            constructor(private tehnologijaService: app.services.practice.ITehnologijaService, private $scope: ng.IScope) {
                 super();
 
+                this.vcitajTehnologija();
+                
+            }
+
+            public izbrishi(tehnologija: app.model.practice.Tehnologija) {
+                if (confirm("Бришење на технологија '" + tehnologija.ime + "' ?")) {
+                    this.tehnologijaService.izbrishi(tehnologija)
+                        .then((result: app.model.practice.Tehnologija): void => {
+                            this.vcitajTehnologija();
+                        });
+                }
+            }
+
+            private vcitajTehnologija(): void {
                 this.tehnologijaService.site()
                     .then((result: app.model.practice.Tehnologija[]): void => {
                         this.siteTehnologii = result;
-                        $scope.$apply();
+                        this.$scope.$apply();
                     });
             }
         }

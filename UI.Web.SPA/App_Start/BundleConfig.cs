@@ -111,6 +111,9 @@ namespace LearnByPractice.UI.Web
                 AppFile("admin/tehnologii/index.controller.js"),
                 AppFile("admin/tehnologii/vnesuvanje.controller.js"),
 
+                AppFile("admin/korisnici/index.controller.js"),
+                AppFile("admin/korisnici/vnesuvanje.controller.js"),
+
 
                 AppFile("mentor/mentor.module.js"),
                 AppFile("mentor/home/home.controller.js"),

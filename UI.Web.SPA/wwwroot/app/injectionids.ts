@@ -106,6 +106,14 @@
             return "app.admin.tehnologii.vnesuvanjeController";
         }
 
+        public static get admin_korisnici_indexController(): string {
+            return "app.admin.korisnici.indexController";
+        }
+
+        public static get admin_korisnici_vnesuvanjeController(): string {
+            return "app.admin.korisnici.vnesuvanjeController";
+        }
+
 
         // контролери (ментор)
         public static get mentor_homeController(): string {
