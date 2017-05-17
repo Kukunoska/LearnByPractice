@@ -16,7 +16,7 @@
             ];
 
             constructor(private vidOrganizacijaService: app.services.organizational.IVidOrganizacijaService,
-               private $scope: ng.IScope,
+                $scope: ng.IScope,
                 private $state: ng.ui.IStateService,
                 private $stateParams: ng.ui.IStateParamsService) {
 
