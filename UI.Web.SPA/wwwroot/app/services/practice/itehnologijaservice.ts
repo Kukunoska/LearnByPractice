@@ -6,9 +6,9 @@
 
             site(): ng.IPromise<app.model.practice.Tehnologija[]>;
             zemi(id: number): ng.IPromise<app.model.practice.Tehnologija>;
-            nov(oblast: app.model.practice.Oblast): ng.IPromise<app.model.practice.Tehnologija>;
-            izmeni(oblast: app.model.practice.Oblast): ng.IPromise<app.model.practice.Tehnologija>;
-            izbrishi(oblast: app.model.practice.Oblast): ng.IPromise<app.model.practice.Tehnologija>;
+            nov(tehnologija: app.model.practice.Tehnologija): ng.IPromise<app.model.practice.Tehnologija>;
+            izmeni(tehnologija: app.model.practice.Tehnologija): ng.IPromise<app.model.practice.Tehnologija>;
+            izbrishi(tehnologija: app.model.practice.Tehnologija): ng.IPromise<app.model.practice.Tehnologija>;
         }
     }
 }

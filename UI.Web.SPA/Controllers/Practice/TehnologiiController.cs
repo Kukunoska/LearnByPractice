@@ -19,18 +19,8 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
             return result;
         }
 
-        [Route("api/practice/tehnologija/nov")]
-        [HttpPost]
-        public domain::Practice.Tehnologija nov(domain::Practice.Tehnologija tehnologija)
-        {
-            ProveriDaliImaKorisnik();
-
-            var tehnologiiManager = new managers.Practice.TehnologijaManager();
-            var result = tehnologiiManager.Insert(tehnologija);
-            return result;
-        }
         [Route("api/practice/tehnologija/zemi")]
-        [HttpPost]
+        [HttpGet]
         public domain::Practice.Tehnologija Zemi(int id)
         {
             ProveriDaliImaKorisnik();
@@ -39,14 +29,15 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
             var result = tehnologiiManager.Get(id);
             return result;
         }
-        [Route("api/practice/tehnologija/izbrishi")]
+
+        [Route("api/practice/tehnologija/nov")]
         [HttpPost]
-        public domain::Practice.Tehnologija izbrishi(domain::Practice.Tehnologija tehnologija)
+        public domain::Practice.Tehnologija nov(domain::Practice.Tehnologija tehnologija)
         {
             ProveriDaliImaKorisnik();
 
             var tehnologiiManager = new managers.Practice.TehnologijaManager();
-            var result = tehnologiiManager.Delete(tehnologija);
+            var result = tehnologiiManager.Insert(tehnologija);
             return result;
         }
 
@@ -58,6 +49,17 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
 
             var tehnologiiManager = new managers.Practice.TehnologijaManager();
             var result = tehnologiiManager.Update(tehnologija);
+            return result;
+        }
+
+        [Route("api/practice/tehnologija/izbrishi")]
+        [HttpPost]
+        public domain::Practice.Tehnologija izbrishi(domain::Practice.Tehnologija tehnologija)
+        {
+            ProveriDaliImaKorisnik();
+
+            var tehnologiiManager = new managers.Practice.TehnologijaManager();
+            var result = tehnologiiManager.Delete(tehnologija);
             return result;
         }
     }
