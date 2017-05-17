@@ -184,11 +184,11 @@
             $stateProvider.state("admin.oblasti", oblastConfig);
 
             let vnesiOblastConfig: ng.ui.IState = {
-                name: "admin.oblast.vnesuvanje",
+                name: "admin.oblasti.vnesuvanje",
                 url: "/vnesuvanje/{id:int}",
                 views: {
                     "@": {
-                        templateUrl: "/wwwroot/app/admin/oblast/vnesuvanje.html",
+                        templateUrl: "/wwwroot/app/admin/oblasti/vnesuvanje.html",
                         controller: app.InjectionIds.admin_oblasti_vnesuvanjeController,
                         controllerAs: "vm"
                     }

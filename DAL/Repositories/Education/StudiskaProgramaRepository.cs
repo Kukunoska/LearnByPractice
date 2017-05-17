@@ -66,6 +66,17 @@ namespace LearnByPractice.DAL.Repositories.Education
                 return result;
             }
         }
+        public domain.StudiskaPrograma Delete(domain.StudiskaPrograma domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Studiska_Programas.Single(org => org.ID == domainObject.Id);
+                context.Studiska_Programas.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
+            }
+        }
 
         private domain.StudiskaPrograma ToDomain(model.Studiska_Programa modelObject)
         {

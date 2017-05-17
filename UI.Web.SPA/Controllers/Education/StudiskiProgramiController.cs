@@ -18,6 +18,16 @@ namespace LearnByPractice.UI.Web.Controllers.Education
             var result = studiskiProgramiManager.GetAll();
             return result;
         }
+        [Route("api/education/studiskaPrograma/zemi")]
+        [HttpGet]
+        public domain::Education.StudiskaPrograma Zemi(int id)
+        {
+            ProveriDaliImaKorisnik();
+
+            var studiskaProgramaManager = new managers::Education.StudiskaProgramaManager();
+            var result = studiskaProgramaManager.Get(id);
+            return result;
+        }
 
         [Route("api/education/studiskaPrograma/nov")]
         [HttpPost]
@@ -38,6 +48,16 @@ namespace LearnByPractice.UI.Web.Controllers.Education
 
             var studiskaProgramaManager = new managers.Education.StudiskaProgramaManager();
             var result = studiskaProgramaManager.Update(studiskaPrograma);
+            return result;
+        }
+        [Route("api/education/studiskaPrograma/izbrishi")]
+        [HttpPost]
+        public domain::Education.StudiskaPrograma Izbrishi(domain::Education.StudiskaPrograma studiskaPrograma)
+        {
+            ProveriDaliImaKorisnik();
+
+            var studiskaProgramaManager = new managers::Education.StudiskaProgramaManager();
+            var result = studiskaProgramaManager.Delete(studiskaPrograma);
             return result;
         }
     }

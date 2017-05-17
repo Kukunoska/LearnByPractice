@@ -30,6 +30,16 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
             var result = oblastiManager.Insert(oblast);
             return result;
         }
+        [Route("api/practice/oblast/zemi")]
+        [HttpGet]
+        public domain::Practice.Oblast Zemi(int id)
+        {
+            ProveriDaliImaKorisnik();
+
+            var oblastiManager = new managers.Practice.OblastManager();
+            var result = oblastiManager.Get(id);
+            return result;
+        }
 
         [Route("api/practice/oblast/izmeni")]
         [HttpPost]
@@ -39,6 +49,16 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
 
             var oblastiManager = new managers.Practice.OblastManager();
             var result = oblastiManager.Update(oblast);
+            return result;
+        }
+        [Route("api/practice/oblast/izbrishi")]
+        [HttpPost]
+        public domain::Practice.Oblast izbrishi(domain::Practice.Oblast oblast)
+        {
+            ProveriDaliImaKorisnik();
+
+            var oblastiManager = new managers.Practice.OblastManager();
+            var result = oblastiManager.Delete(oblast);
             return result;
         }
     }

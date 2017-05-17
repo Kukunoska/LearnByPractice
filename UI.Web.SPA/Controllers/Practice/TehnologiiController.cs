@@ -29,6 +29,26 @@ namespace LearnByPractice.UI.Web.Controllers.Practice
             var result = tehnologiiManager.Insert(tehnologija);
             return result;
         }
+        [Route("api/practice/tehnologija/zemi")]
+        [HttpPost]
+        public domain::Practice.Tehnologija Zemi(int id)
+        {
+            ProveriDaliImaKorisnik();
+
+            var tehnologiiManager = new managers.Practice.TehnologijaManager();
+            var result = tehnologiiManager.Get(id);
+            return result;
+        }
+        [Route("api/practice/tehnologija/izbrishi")]
+        [HttpPost]
+        public domain::Practice.Tehnologija izbrishi(domain::Practice.Tehnologija tehnologija)
+        {
+            ProveriDaliImaKorisnik();
+
+            var tehnologiiManager = new managers.Practice.TehnologijaManager();
+            var result = tehnologiiManager.Delete(tehnologija);
+            return result;
+        }
 
         [Route("api/practice/tehnologija/Izmeni")]
         [HttpPost]

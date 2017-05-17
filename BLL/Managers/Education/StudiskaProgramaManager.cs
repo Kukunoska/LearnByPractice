@@ -19,7 +19,12 @@ namespace LearnByPractice.BLL.Managers.Education
 
             return siteStudiskiProgrami;
         }
-
+        public StudiskaPrograma Get(int id)
+        {
+            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
+            var result = repository.Get(id);
+            return result;
+        }
         public StudiskaPrograma Insert(Domain.Education.StudiskaPrograma domainObject)
         {
             StudiskaProgramaRepository manager = new StudiskaProgramaRepository();
@@ -34,6 +39,14 @@ namespace LearnByPractice.BLL.Managers.Education
             StudiskaPrograma siteStudiskiProgrami = manager.Update(domainObject);
 
             return siteStudiskiProgrami;
+        }
+
+        public StudiskaPrograma Delete(Domain.Education.StudiskaPrograma domainObject)
+        {
+            StudiskaProgramaRepository repository = new StudiskaProgramaRepository();
+            StudiskaPrograma izbrishanaStudiska = repository.Delete(domainObject);
+
+            return izbrishanaStudiska;
         }
     }
 }

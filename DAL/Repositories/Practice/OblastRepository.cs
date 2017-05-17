@@ -66,6 +66,17 @@ namespace LearnByPractice.DAL.Repositories.Practice
                 return result;
             }
         }
+        public domain.Oblast Delete(domain.Oblast domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Oblasts.Single(org => org.ID == domainObject.Id);
+                context.Oblasts.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
+            }
+        }
 
         private domain.Oblast ToDomain(model.Oblast modelObject)
         {
