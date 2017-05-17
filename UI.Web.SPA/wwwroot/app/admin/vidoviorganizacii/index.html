@@ -1,10 +1,39 @@
 ﻿<div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2>Видови на организации</h2>
             </div>
             <div class="panel-body">
+                <a ui-sref="admin.vidoviorganizacii.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нов вид на организација</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                ИД
+                            </th>
+                            <th>
+                                Име
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="vidorganizacija in vm.siteVidoviOrganizacii track by vidorganizacija.id">
+                            <td>
+                                {{vidorganizacija.id}}
+                            </td>
+                            <td>
+                                <a ui-sref="admin.vidoviorganizacii.vnesuvanje({id: vidorganizacija.id})" title="Измени податоци">{{vidorganizacija.ime}}</a>
+                            </td>
+                            <td>
+                                {{vidorganizacija.ime}}
+                            </td>
+                            <td class="text-center">
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(vidorganizacija)"><i class="fa fa-lg fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="panel-footer">
             </div>
