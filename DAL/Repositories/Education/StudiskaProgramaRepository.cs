@@ -44,7 +44,6 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Studiska_Programa modelObject = new model.Studiska_Programa();
-                modelObject.ID = domainObject.Id;
                 modelObject.Ime = domainObject.Ime;
                 context.Studiska_Programas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
