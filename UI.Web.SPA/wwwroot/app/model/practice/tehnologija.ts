@@ -5,7 +5,7 @@
         export class Tehnologija {
             public id: number;
             public ime: string;
-            public oblastId: Oblast = new Oblast();
+            public oblast: Oblast = new Oblast();
         }
     }
 }

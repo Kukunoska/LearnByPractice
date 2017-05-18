@@ -42,18 +42,18 @@
                 if (this.novZapis) {
                     this.studiskaProgramaService.nov(this.studiskaprograma)
                         .then((result: app.model.education.StudiskaPrograma): void => {
-                            this.$state.go("admin.studiskiProgrami");
+                            this.$state.go("admin.studiskiprogrami");
                         });
                 } else {
                     this.studiskaProgramaService.izmeni(this.studiskaprograma)
                         .then((result: app.model.education.StudiskaPrograma): void => {
-                            this.$state.go("admin.studiskiProgrami");
+                            this.$state.go("admin.studiskiprogrami");
                         });
                 }
             }
 
             public otkazhiSe(): void {
-                this.$state.go("admin.studiskiProgrami");
+                this.$state.go("admin.studiskiprogrami");
             }
         }
         angular.module("app.admin")

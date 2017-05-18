@@ -4,23 +4,31 @@
     export namespace tehnologii {
         export class VnesuvanjeController extends base.ControllerBase {
 
+            public siteOblasti: app.model.practice.Oblast[] = [];
             public tehnologija: app.model.practice.Tehnologija = new app.model.practice.Tehnologija();
             public novZapis: boolean;
             public izmena: boolean;
 
             static $inject = [
                 app.InjectionIds.tehnologijaService,
+                app.InjectionIds.oblastService,
                 "$scope",
                 "$state",
                 "$stateParams"
             ];
 
             constructor(private tehnologijaService: app.services.practice.ITehnologijaService,
+                oblastService: app.services.practice.IOblastService,
                 $scope: ng.IScope,
                 private $state: ng.ui.IStateService,
                 private $stateParams: ng.ui.IStateParamsService) {
 
                 super();
+
+                oblastService.site()
+                    .then((result: app.model.practice.Oblast[]): void => {
+                        this.siteOblasti = result;
+                    }); 
 
                 let vm: VnesuvanjeController = this;
                 let tehnologijaId: number = 0;

@@ -34,6 +34,7 @@ namespace LearnByPractice.UI.Web.Controllers.Education
         public domain::Education.StudiskaPrograma Nov(domain::Education.StudiskaPrograma studiskaPrograma)
         {
             ProveriDaliImaKorisnik();
+            //ProveriDalieEAdministrator();
 
             var studiskaProgramaManager = new managers.Education.StudiskaProgramaManager();
             var result = studiskaProgramaManager.Insert(studiskaPrograma);

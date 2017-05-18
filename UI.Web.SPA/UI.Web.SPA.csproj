@@ -578,9 +578,9 @@
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
     <TypeScriptCompile Include="wwwroot\app\mentor\home\home.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\mentor\mentor.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\ocena.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\studiskaPrograma.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\ocena.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\predmet.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\studiskaPrograma.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
