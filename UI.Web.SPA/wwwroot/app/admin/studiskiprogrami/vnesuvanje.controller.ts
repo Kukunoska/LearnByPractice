@@ -2,8 +2,8 @@
     "use strict";
 
     export namespace studiskiprogrami {
-
         export class VnesuvanjeController extends base.ControllerBase {
+
             public studiskaprograma: app.model.education.StudiskaPrograma = new app.model.education.StudiskaPrograma();
             public novZapis: boolean;
             public izmena: boolean;
@@ -34,32 +34,29 @@
                             });
                     }
                 }
-
                 vm.novZapis = studiskaprogramaid === 0;
                 vm.izmena = !vm.novZapis;
-                $scope.$apply();
             }
 
             public zapishi(): void {
                 if (this.novZapis) {
-                    this.studiskaProgramaService.nova(this.studiskaprograma)
+                    this.studiskaProgramaService.nov(this.studiskaprograma)
                         .then((result: app.model.education.StudiskaPrograma): void => {
-                            this.$state.go("admin.studiskaPrograma");
+                            this.$state.go("admin.studiskiProgrami");
                         });
                 } else {
                     this.studiskaProgramaService.izmeni(this.studiskaprograma)
                         .then((result: app.model.education.StudiskaPrograma): void => {
-                            this.$state.go("admin.studiskaPrograma");
+                            this.$state.go("admin.studiskiProgrami");
                         });
                 }
             }
 
             public otkazhiSe(): void {
-                this.$state.go("admin.studiskaPrograma");
+                this.$state.go("admin.studiskiProgrami");
             }
         }
-
         angular.module("app.admin")
-            .controller(app.InjectionIds.admin_organizacii_vnesuvanjeController, VnesuvanjeController);
+            .controller(app.InjectionIds.admin_studiskiProgrami_vnesuvanjeController, VnesuvanjeController);
     }
 }

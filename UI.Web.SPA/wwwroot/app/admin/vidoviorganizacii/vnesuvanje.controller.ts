@@ -2,8 +2,8 @@
     "use strict";
 
     export namespace vidoviorganizacii {
-
         export class VnesuvanjeController extends base.ControllerBase {
+
             public vidOrganizacija: app.model.organizational.VidOrganizacija = new app.model.organizational.VidOrganizacija();
             public novZapis: boolean;
             public izmena: boolean;
@@ -23,22 +23,19 @@
                 super();
 
                 let vm: VnesuvanjeController = this;
-                let vidOrganizacijaId: number = 0;
+                let vidOrganizacijaid: number = 0;
                 if (vm.$stateParams["id"] != null) {
-                    vidOrganizacijaId = parseInt(this.$stateParams["id"], 10);
-                    if (vidOrganizacijaId !== 0) {
-                        vm.vidOrganizacijaService.zemi(vidOrganizacijaId)
+                    vidOrganizacijaid = parseInt(this.$stateParams["id"], 10);
+                    if (vidOrganizacijaid !== 0) {
+                        vm.vidOrganizacijaService.zemi(vidOrganizacijaid)
                             .then((result: app.model.organizational.VidOrganizacija): void => {
                                 vm.vidOrganizacija = result;
                                 $scope.$apply();
                             });
                     }
                 }
-
-                vm.novZapis = vidOrganizacijaId === 0;
+                vm.novZapis = vidOrganizacijaid === 0;
                 vm.izmena = !vm.novZapis;
-
-                $scope.$apply();
             }
 
             public zapishi(): void {
@@ -54,12 +51,10 @@
                         });
                 }
             }
-
             public otkazhiSe(): void {
                 this.$state.go("admin.vidoviorganizacii");
             }
         }
-
         angular.module("app.admin")
             .controller(app.InjectionIds.admin_vidoviOrganizacii_vnesuvanjeController, VnesuvanjeController);
     }

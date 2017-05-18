@@ -2,8 +2,8 @@
     "use strict";
 
     export namespace vidoviorganizacii {
-
         export class IndexController extends base.ControllerBase {
+
             public siteVidoviOrganizacii: app.model.organizational.VidOrganizacija[] = [];
 
             static $inject = [
@@ -12,21 +12,22 @@
             ];
 
             constructor(private vidOrganizacijaService: app.services.organizational.IVidOrganizacijaService, private $scope: ng.IScope) {
+
                 super();
 
-                this.vchitajVidoviOrganizacii();
+                this.vcitajVidOrganizacija();
             }
 
             public izbrishi(vidOrganizacija: app.model.organizational.VidOrganizacija) {
-                if (confirm("Бришење на видот на организација '" + vidOrganizacija.ime + "' ?")) {
+                if (confirm("Бришење вид на организација '" + vidOrganizacija.ime + "' ?")) {
                     this.vidOrganizacijaService.izbrishi(vidOrganizacija)
                         .then((result: app.model.organizational.VidOrganizacija): void => {
-                            this.vchitajVidoviOrganizacii();
+                            this.vcitajVidOrganizacija();
                         });
                 }
             }
 
-            private vchitajVidoviOrganizacii(): void {
+            private vcitajVidOrganizacija(): void {
                 this.vidOrganizacijaService.site()
                     .then((result: app.model.organizational.VidOrganizacija[]): void => {
                         this.siteVidoviOrganizacii = result;

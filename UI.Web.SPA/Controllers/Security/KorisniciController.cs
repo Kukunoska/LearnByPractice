@@ -20,5 +20,60 @@ namespace LearnByPractice.UI.Web.Controllers.Security
         {
             return TekovenKorisnik();
         }
+
+        [Route("api/security/korisnik/site")]
+        [HttpGet]
+        public IEnumerable<domain::Security.Korisnik> site()
+        {
+            ProveriDaliImaKorisnik();
+
+            var korisniciManager = new managers.Security.KorisnikManager();
+            var result = korisniciManager.GetAll();
+            return result;
+        }
+
+        [Route("api/security/korisnik/zemi")]
+        [HttpGet]
+        public domain::Security.Korisnik Zemi(int id)
+        {
+            ProveriDaliImaKorisnik();
+
+            var korisniciManager = new managers.Security.KorisnikManager();
+            var result = korisniciManager.Get(id);
+            return result;
+        }
+
+        [Route("api/security/korisnik/nov")]
+        [HttpPost]
+        public domain::Security.Korisnik nov(domain::Security.Korisnik korisnik)
+        {
+            ProveriDaliImaKorisnik();
+
+            var korisniciManager = new managers.Security.KorisnikManager();
+            var result = korisniciManager.Insert(korisnik);
+            return result;
+        }
+
+        [Route("api/security/korisnik/Izmeni")]
+        [HttpPost]
+        public domain::Security.Korisnik izmeni(domain::Security.Korisnik korisnik)
+        {
+            ProveriDaliImaKorisnik();
+
+            var korisniciManager = new managers.Security.KorisnikManager();
+            var result = korisniciManager.Update(korisnik);
+            return result;
+        }
+
+        [Route("api/security/korisnik/izbrishi")]
+        [HttpPost]
+        public domain::Security.Korisnik izbrishi(domain::Security.Korisnik korisnik)
+        {
+            ProveriDaliImaKorisnik();
+
+            var korisniciManager = new managers.Security.KorisnikManager();
+            var result = korisniciManager.Delete(korisnik);
+            return result;
+        }
     }
 }

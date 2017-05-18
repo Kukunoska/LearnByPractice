@@ -30,7 +30,7 @@
             public nov(novaStudiskaPrograma: app.model.education.StudiskaPrograma): ng.IPromise<app.model.education.StudiskaPrograma> {
                 let config: ng.IRequestShortcutConfig = super.requestConfig();
 
-                return this.$http.post("app/educaton/studiskaPrograma/nov", novaStudiskaPrograma, config)
+                return this.$http.post("api/educaton/studiskaPrograma/nov", novaStudiskaPrograma, config)
                     .then((response: ng.IHttpPromiseCallbackArg<app.model.education.StudiskaPrograma>): app.model.education.StudiskaPrograma => {
                         return response.data;
                     });

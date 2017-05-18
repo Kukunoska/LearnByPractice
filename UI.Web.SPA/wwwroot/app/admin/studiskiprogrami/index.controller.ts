@@ -36,6 +36,6 @@
         }
 
         angular.module("app.admin")
-            .controller(app.InjectionIds.admin_studiskaPrograma_indexController, IndexController);
+            .controller(app.InjectionIds.admin_studiskiProgrami_indexController, IndexController);
     }
 }

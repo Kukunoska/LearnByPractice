@@ -20,6 +20,13 @@ namespace LearnByPractice.BLL.Managers.Practice
             return siteOblasti;
         }
 
+        public Oblast Get(int id)
+        {
+            OblastRepository manager = new OblastRepository();
+            var result = manager.Get(id);
+            return result;
+        }
+
         public Oblast Insert(Domain.Practice.Oblast domainObject)
         {
             OblastRepository manager = new OblastRepository();
@@ -35,5 +42,12 @@ namespace LearnByPractice.BLL.Managers.Practice
 
           return siteOblasti;
     }
+        public Oblast Delete(Domain.Practice.Oblast domainObject)
+        {
+            OblastRepository manager = new OblastRepository();
+            Oblast siteOblasti = manager.Delete(domainObject);
+
+            return siteOblasti;
+        }
     }
 }

@@ -2,10 +2,10 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Видови на организации</h2>
+                <h2>Технологии</h2>
             </div>
             <div class="panel-body">
-                <a ui-sref="admin.vidoviorganizacii.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нов вид на организација</a>
+                <a ui-sref="admin.tehnologii.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нова технологија</a>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -15,21 +15,27 @@
                             <th>
                                 Име
                             </th>
+                            <th>
+                                Област
+                            </th>
+                            <th>
+                                Акција
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="vidorganizacija in vm.siteVidoviOrganizacii track by vidorganizacija.id">
+                        <tr ng-repeat="tehnologija in vm.siteTehnologii track by tehnologija.id">
                             <td>
-                                {{vidorganizacija.id}}
+                                {{tehnologija.id}}
                             </td>
                             <td>
-                                <a ui-sref="admin.vidoviorganizacii.vnesuvanje({id: vidorganizacija.id})" title="Измени податоци">{{vidorganizacija.ime}}</a>
+                                <a ui-sref="admin.tehnologii.vnesuvanje({id: tehnologija.id})" title="Измени податоци">{{tehnologija.ime}}</a>
                             </td>
                             <td>
-                                {{vidorganizacija.ime}}
+                                {{oblast.ime}}
                             </td>
                             <td class="text-center">
-                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(vidorganizacija)"><i class="fa fa-lg fa-trash"></i></a>
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(tehnologija)"><i class="fa fa-lg fa-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>
