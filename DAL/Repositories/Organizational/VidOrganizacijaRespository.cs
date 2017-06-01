@@ -45,13 +45,35 @@ namespace LearnByPractice.DAL.Repositories.Organizational
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Vid_Organizacija modelObject = new model.Vid_Organizacija();
-                modelObject.ID = domainObject.Id;
                 modelObject.Ime = domainObject.Ime;
                 context.Vid_Organizacijas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
                 domain.VidOrganizacija result = ToDomain(modelObject);
                 return result;
 
+            }
+        }
+        public domain.VidOrganizacija Update(domain.VidOrganizacija domainObject)
+        {
+            using (model.LearnByPracticeDataContext context = CreateContext())
+            {
+                IQueryable<model.Vid_Organizacija> query = context.Vid_Organizacijas.Where(p => p.ID == domainObject.Id);
+                model.Vid_Organizacija modelObject = query.Single();
+                modelObject.Ime = domainObject.Ime;
+                context.SubmitChanges();
+                domain.VidOrganizacija result = ToDomain(modelObject);
+                return result;
+            }
+        }
+        public domain.VidOrganizacija Delete(domain.VidOrganizacija domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Vid_Organizacijas.Single(org => org.ID == domainObject.Id);
+                context.Vid_Organizacijas.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
             }
         }
 

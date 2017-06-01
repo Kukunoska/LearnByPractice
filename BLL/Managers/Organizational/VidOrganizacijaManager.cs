@@ -27,7 +27,27 @@ namespace LearnByPractice.BLL.Managers.Organizational
 
             return siteVidOrganizacii;
         }
+        public VidOrganizacija Get(int id)
+        {
+            var repository = new VidOrganizacijaRespository();
+            var result = repository.Get(id);
+            return result;
+        }
 
-    
+        public VidOrganizacija Update(VidOrganizacija domainObject)
+        {
+            VidOrganizacijaRespository repository = new VidOrganizacijaRespository();
+            VidOrganizacija siteVidoviOrganizacii = repository.Update(domainObject);
+
+            return siteVidoviOrganizacii;
+        }
+
+        public VidOrganizacija Delete(VidOrganizacija domainObject)
+        {
+            var repository = new VidOrganizacijaRespository();
+            var izbrishanVidOrganizacija = repository.Delete(domainObject);
+            return izbrishanVidOrganizacija;
+        }
     }
 }
+

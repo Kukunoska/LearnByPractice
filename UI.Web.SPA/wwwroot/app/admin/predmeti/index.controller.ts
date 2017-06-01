@@ -11,13 +11,26 @@
                 "$scope"
             ];
 
-            constructor(private predmetService: app.services.education.IPredmetService, $scope: ng.IScope) {
+            constructor(private predmetService: app.services.education.IPredmetService, private $scope: ng.IScope) {
                 super();
 
+                this.vcitajPredmeti();
+            }
+
+            public izbrishi(predmet: app.model.education.Predmet): void {
+                if (confirm("Бришење на предмет '" + predmet.ime + "' ?")) {
+                    this.predmetService.izbrishi(predmet)
+                        .then((result: app.model.education.Predmet): void => {
+                            this.vcitajPredmeti();
+                        });
+                }
+            }
+
+            private vcitajPredmeti(): void {
                 this.predmetService.site()
                     .then((result: app.model.education.Predmet[]): void => {
                         this.sitePredmeti = result;
-                        $scope.$apply();
+                        this.$scope.$apply();
                     });
             }
         }

@@ -152,6 +152,17 @@ namespace LearnByPractice.DAL.Repositories.Security
             }
         }
 
+        public domain.Korisnik Delete(domain.Korisnik domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Korisniks.Single(org => org.ID == domainObject.Id);
+                context.Korisniks.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
+            }
+        }
 
         private domain.Korisnik ToDomain(model.Korisnik modelObject)
         {

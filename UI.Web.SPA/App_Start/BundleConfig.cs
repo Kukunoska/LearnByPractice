@@ -58,6 +58,7 @@ namespace LearnByPractice.UI.Web
                 ServiceFile("education/iocenaservice.js"),
                 ServiceFile("education/ocenaservice.js"),
 
+
                 ServiceFile("education/istudiskaprogramaservice.js"),
                 ServiceFile("education/studiskaprogramaservice.js"),
 
@@ -69,11 +70,15 @@ namespace LearnByPractice.UI.Web
 
                 ServiceFile("practice/ioblastservice.js"),
                 ServiceFile("practice/oblastservice.js"),
+
+
                 ServiceFile("practice/itehnologijaservice.js"),
                 ServiceFile("practice/tehnologijaservice.js"),
 
                 ServiceFile("security/ikorisnikservice.js"),
                 ServiceFile("security/korisnikservice.js"),
+                
+
                 
 
                 // Base
@@ -100,11 +105,17 @@ namespace LearnByPractice.UI.Web
                 AppFile("admin/studiskiprogrami/index.controller.js"),
                 AppFile("admin/studiskiprogrami/vnesuvanje.controller.js"),
 
+                AppFile("admin/vidoviorganizacii/index.controller.js"),
+                AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
+
                 AppFile("admin/organizacii/index.controller.js"),
                 AppFile("admin/organizacii/vnesuvanje.controller.js"),
 
                 AppFile("admin/vidoviorganizacii/index.controller.js"),
                 AppFile("admin/vidoviorganizacii/vnesuvanje.controller.js"),
+
+                AppFile("admin/studiskiprogrami/index.controller.js"),
+                AppFile("admin/studiskiprogrami/vnesuvanje.controller.js"),
 
                 AppFile("admin/oblasti/index.controller.js"),
                 AppFile("admin/oblasti/vnesuvanje.controller.js"),
@@ -112,6 +123,8 @@ namespace LearnByPractice.UI.Web
                 AppFile("admin/tehnologii/index.controller.js"),
                 AppFile("admin/tehnologii/vnesuvanje.controller.js"),
 
+                AppFile("admin/korisnici/index.controller.js"),
+                AppFile("admin/korisnici/vnesuvanje.controller.js"),
 
                 AppFile("mentor/mentor.module.js"),
                 AppFile("mentor/home/home.controller.js"),

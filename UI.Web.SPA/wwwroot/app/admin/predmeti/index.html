@@ -5,6 +5,7 @@
                 <h2>Предмети</h2>
             </div>
             <div class="panel-body">
+                <a ui-sref="admin.predmeti.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нов предмет</a>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -17,6 +18,9 @@
                             <th>
                                 Име
                             </th>
+                            <th>
+                                Акција
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +32,10 @@
                                 {{predmet.shifraNaPredmet}}
                             </td>
                             <td>
-                                {{predmet.ime}}
+                                <a ui-sref="admin.predmeti.vnesuvanje({id: predmet.id})" title="Измени податоци">{{predmet.ime}}</a>
+                            </td>
+                            <td class="text-center">
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(predmet)"><i class="fa fa-lg fa-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>

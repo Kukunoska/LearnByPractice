@@ -1,12 +1,12 @@
 ﻿module app.model {
-    "use strict"
+    "use strict";
 
     export namespace practice {
         export class Tehnologija {
 
             public id: number;
             public ime: string;
-            public oblastId: Tehnologija = new Tehnologija();
+            public oblast: Oblast = new Oblast();
 
         }
     }

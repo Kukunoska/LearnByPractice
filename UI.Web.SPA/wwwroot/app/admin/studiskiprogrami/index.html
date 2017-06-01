@@ -1,0 +1,42 @@
+﻿<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Студиски програми</h2>
+            </div>
+            <div class="panel-body">
+                <a ui-sref="admin.studiskiprogrami.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нова студиска програма</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                ИД
+                            </th>
+                            <th>
+                                Име
+                            </th>
+                            <th>
+                                Акција
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="studiskaprograma in vm.siteStudiskiProgrami track by studiskaprograma.id">
+                            <td>
+                                {{studiskaprograma.id}}
+                            </td>
+                            <td>
+                                <a ui-sref="admin.studiskiprogrami.vnesuvanje({id: studiskaprograma.id})" title="Измени податоци">{{studiskaprograma.ime}}</a>
+                            </td>
+                            <td class="text-center">
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(studiskaprograma)"><i class="fa fa-lg fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+            </div>
+        </div>
+    </div>
+</div>

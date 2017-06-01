@@ -137,12 +137,18 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="wwwroot\app\admin\home\home.html" />
+    <Content Include="wwwroot\app\admin\korisnici\index.html" />
+    <Content Include="wwwroot\app\admin\korisnici\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\oblasti\index.html" />
+    <Content Include="wwwroot\app\admin\oblasti\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\organizacii\index.html" />
     <Content Include="wwwroot\app\admin\organizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\predmeti\index.html" />
     <Content Include="wwwroot\app\admin\predmeti\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\studiskiprogrami\index.html" />
     <Content Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.html" />
+    <Content Include="wwwroot\app\admin\tehnologii\index.html" />
+    <Content Include="wwwroot\app\admin\tehnologii\vnesuvanje.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\index.html" />
     <Content Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.html" />
     <Content Include="wwwroot\app\index.html" />
@@ -333,6 +339,8 @@
     <Compile Include="Controllers\Education\StudiskiProgramiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Organizational\OrganizacijaController.cs" />
+    <Compile Include="Controllers\Practice\OblastiController.cs" />
+    <Compile Include="Controllers\Practice\TehnologiiController.cs" />
     <Compile Include="Controllers\Security\KorisniciController.cs" />
     <Compile Include="Controllers\Organizational\VidOrganizacijaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -548,12 +556,18 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\admin.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\home\home.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\korisnici\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\korisnici\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\oblasti\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\organizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\predmeti\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\studiskiprogrami\vnesuvanje.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\tehnologii\index.controller.ts" />
+    <TypeScriptCompile Include="wwwroot\app\admin\tehnologii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\index.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\admin\vidoviorganizacii\vnesuvanje.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
@@ -564,9 +578,9 @@
     <TypeScriptCompile Include="wwwroot\app\injectionids.ts" />
     <TypeScriptCompile Include="wwwroot\app\mentor\home\home.controller.ts" />
     <TypeScriptCompile Include="wwwroot\app\mentor\mentor.module.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\ocena.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\predmet.ts" />
-    <TypeScriptCompile Include="wwwroot\app\model\educataion\studiskaPrograma.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\ocena.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\predmet.ts" />
+    <TypeScriptCompile Include="wwwroot\app\model\education\studiskaPrograma.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\model.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\organizacija.ts" />
     <TypeScriptCompile Include="wwwroot\app\model\organizational\vidorganizacija.ts" />
@@ -584,6 +598,10 @@
     <TypeScriptCompile Include="wwwroot\app\services\organizational\ividorganizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\organizacijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\organizational\vidorganizacijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\ioblastservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\itehnologijaservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\oblastservice.ts" />
+    <TypeScriptCompile Include="wwwroot\app\services\practice\tehnologijaservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\ikorisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\security\korisnikservice.ts" />
     <TypeScriptCompile Include="wwwroot\app\services\services.module.ts" />

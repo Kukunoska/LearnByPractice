@@ -113,6 +113,17 @@ namespace LearnByPractice.DAL.Repositories.Practice
             }
             return result;
         }
+        public domain.Tehnologija Delete(domain.Tehnologija domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Tehnologijas.Single(org => org.ID == domainObject.Id);
+                context.Tehnologijas.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
+            }
+        }
     }
 }
 

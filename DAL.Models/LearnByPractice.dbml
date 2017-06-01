@@ -23,7 +23,7 @@
   </Table>
   <Table Name="dbo.Vid_Organizacija" Member="Vid_Organizacijas">
     <Type Name="Vid_Organizacija">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Vid_Organizacija_Organizacija" Member="Organizacijas" ThisKey="ID" OtherKey="Vid_Organizacija_ID" Type="Organizacija" />
     </Type>
@@ -93,7 +93,7 @@
   </Table>
   <Table Name="dbo.Studiska_Programa" Member="Studiska_Programas">
     <Type Name="Studiska_Programa">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Studiska_Programa_Korisnik" Member="Korisniks" ThisKey="ID" OtherKey="Studiska_Programa_ID" Type="Korisnik" />
     </Type>

@@ -44,7 +44,6 @@ namespace LearnByPractice.DAL.Repositories.Education
             using (model.LearnByPracticeDataContext context = CreateContext())
             {
                 model.Studiska_Programa modelObject = new model.Studiska_Programa();
-                modelObject.ID = domainObject.Id;
                 modelObject.Ime = domainObject.Ime;
                 context.Studiska_Programas.InsertOnSubmit(modelObject);
                 context.SubmitChanges();
@@ -64,6 +63,17 @@ namespace LearnByPractice.DAL.Repositories.Education
                 context.SubmitChanges();
                 domain.StudiskaPrograma result = ToDomain(modelObject);
                 return result;
+            }
+        }
+        public domain.StudiskaPrograma Delete(domain.StudiskaPrograma domainObject)
+        {
+            using (var context = CreateContext())
+            {
+                var modelObject = context.Studiska_Programas.Single(org => org.ID == domainObject.Id);
+                context.Studiska_Programas.DeleteOnSubmit(modelObject);
+                context.SubmitChanges();
+                var deletedObject = ToDomain(modelObject);
+                return deletedObject;
             }
         }
 

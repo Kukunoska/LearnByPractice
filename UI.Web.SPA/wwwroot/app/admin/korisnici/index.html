@@ -1,0 +1,78 @@
+﻿<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Корисници</h2>
+            </div>
+            <div class="panel-body">
+                <a ui-sref="admin.korisnici.vnesuvanje({id: 0})"><i class="fa fa-plus"></i>&nbsp;Додај нов корисник</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                ИД
+                            </th>
+                            <th>
+                                Корисничко име
+                            </th>
+                            <th>
+                                Име
+                            </th>
+                            <th>
+                                Презиме
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Администратор
+                            </th>
+                            <th>
+                                Ментор
+                            </th>
+                            <th>
+                                Студент
+                            </th>
+                            <th>
+                                Акција
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="korisnik in vm.siteKorisnici track by korisnik.id">
+                            <td>
+                                {{korisnik.id}}
+                            </td>
+                            <td>
+                                <a ui-sref="admin.korisnici.vnesuvanje({id: korisnik.id})" title="Измени податоци">{{korisnik.username}}</a>
+                            </td>
+                            <td>
+                                {{korisnik.ime}}
+                            </td>
+                            <td>
+                                {{korisnik.prezime}}
+                            </td>
+                            <td>
+                                {{korisnik.email}}
+                            </td>
+                            <td>
+                                {{korisnik.administrator}}
+                            </td>
+                            <td>
+                                {{korisnik.mentor}}
+                            </td>
+                            <td>
+                                {{korisnik.student}}
+                            </td>
+                            <td class="text-center">
+                                <a title="Избриши" href="javascript:;" ng-click="vm.izbrishi(korisnik)"><i class="fa fa-lg fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+            </div>
+        </div>
+    </div>
+</div>
