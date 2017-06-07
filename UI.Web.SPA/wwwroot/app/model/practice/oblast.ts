@@ -1,5 +1,5 @@
 ﻿module app.model {
-    "use strict"
+    "use strict";
 
     export namespace practice {
         export class Oblast {
