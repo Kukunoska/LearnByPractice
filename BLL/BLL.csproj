@@ -7,7 +7,7 @@
     <ProjectGuid>{3A036D65-AFA8-49C6-A12A-539C1BFA8B6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
+    <RootNamespace>LearnByPractice.BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,6 +50,7 @@
     <Compile Include="Managers\Practice\PrijavaStudentManager.cs" />
     <Compile Include="Managers\Practice\PrijavaTehnologiiManager.cs" />
     <Compile Include="Managers\Practice\TehnologijaManager.cs" />
+    <Compile Include="Managers\Security\Hashing.cs" />
     <Compile Include="Managers\Security\KorisnikManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

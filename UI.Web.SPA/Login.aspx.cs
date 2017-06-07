@@ -34,9 +34,14 @@ namespace LearnByPractice.UI.Web
                     NajavaPorakaZaGreshkaLabel.Text = "Непостоечки корисник.";
                     NajavaPorakaZaGreshkaLabel.Visible = true;
                 }
-                else
+                else if (BLL.Managers.Security.Hashing.HashesEqual(LozinkaTextBox.Text, najdenKorisnik.PasswordOdNiza))
                 {
                     FormsAuthentication.RedirectFromLoginPage(najdenKorisnik.Username, ZapomniMeCheckBox.Checked);
+                }
+                else
+                {
+                    NajavaPorakaZaGreshkaLabel.Text = "Погрешна лозинка.";
+                    NajavaPorakaZaGreshkaLabel.Visible = true;
                 }
             }
             catch(Exception)

@@ -70,6 +70,7 @@
     <Compile Include="BLL\Managers\Practice\PrijavaStudentManagerTest.cs" />
     <Compile Include="BLL\Managers\Practice\PrijavaTehnologijaManagerTest.cs" />
     <Compile Include="BLL\Managers\Practice\TehnologijaManagerTest.cs" />
+    <Compile Include="BLL\Managers\Security\HashingTest.cs" />
     <Compile Include="BLL\Managers\Security\KorisnikManagerTest.cs" />
     <Compile Include="DAL\Respositories\Education\OcenaRespositoryTests.cs" />
     <Compile Include="DAL\Respositories\Education\PredmetRespositoryTests.cs" />
