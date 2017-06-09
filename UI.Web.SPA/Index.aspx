@@ -395,7 +395,7 @@
                                             <asp:Label runat="server" ID="potvrdiLozinkaLabel">Потврди лозинка</asp:Label>
                                             <asp:TextBox runat="server" type="password" class="form-control" placeholder="Лозинка" ID="potvrdiLozinkaTextBox" ValidationGroup="Registracija" />
                                             <asp:RequiredFieldValidator runat="server" ID="potvrdiLozinkaRequired" ControlToValidate="potvrdiLozinkaTextBox" ErrorMessage="Ве молиме потврдете ја вашата лозинка." Display="Dynamic" ValidationGroup="Registracija" />
-                                            <asp:CompareValidator runat="server" ID="lozinkaCompare" ControlToValidate="potvrdiLozinkaTextBox" ControlToCompare="lozinkaTextBox" ErrorMessage="Внесовте различна лозинка" ValidationGroup="Registracija" />
+                                            <asp:CompareValidator runat="server" ID="lozinkaCompare" ControlToValidate="potvrdiLozinkaTextBox" ControlToCompare="lozinkaTxtBox" ErrorMessage="Внесовте различна лозинка" ValidationGroup="Registracija" />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
