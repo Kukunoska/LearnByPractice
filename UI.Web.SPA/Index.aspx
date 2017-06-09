@@ -23,13 +23,13 @@
     <title>Learn By Practice!</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="wwwroot/app/styles/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Theme CSS -->
-    <link href="css/lbp.min.css" rel="stylesheet" />
+    <link href="wwwroot/app/styles/lbp.min.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="wwwrot/app/styles/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 
@@ -52,7 +52,7 @@
                     <span class="sr-only">Toggle navigation</span> Мени <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand-fixed-top" href="#page-top">
-                    <img src="img/l225.png" height="70" width="100" /></a>
+                    <img src="wwwroot/app/images/logoa/l225.png" height="70" width="100" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,7 +85,7 @@
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/fikt.png" height="100" width="200" alt="" />
+                    <img class="img-responsive" src="wwwroot/app/images/logoa/fikt.png" height="100" width="200" alt="" />
                     <div class="intro-text">
                         <h1 class="name">Learn By Practice</h1>
                         <br />
@@ -148,7 +148,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/seavus.png" class="img-thumbnail" width="500" height="236" alt="Seavus" />
+                        <img src="wwwroot/app/images/kompanii/seavus.png" class="img-thumbnail" width="500" height="236" alt="Seavus" />
                     </a>
                 </div>
 
@@ -170,7 +170,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/isource1.png" class="img-thumbnail" width="500" height="236" alt="isource" />
+                        <img src="wwwroot/app/images/kompanii/isource1.png" class="img-thumbnail" width="500" height="236" alt="isource" />
                     </a>
                 </div>
 
@@ -191,7 +191,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/x3m1.png" class="img-thumbnail" width="500" height="236" alt="x3mlabs" />
+                        <img src="wwwroot/app/images/kompanii/x3m1.png" class="img-thumbnail" width="500" height="236" alt="x3mlabs" />
                     </a>
                 </div>
 
@@ -213,7 +213,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cosmic1.png" class="img-thumbnail" width="500" height="236" alt="Cosmic Development" />
+                        <img src="wwwroot/app/images/kompanii/cosmic1.png" class="img-thumbnail" width="500" height="236" alt="Cosmic Development" />
                     </a>
                 </div>
                 <!--  <div class="col-sm-4 portfolio-item">
@@ -233,7 +233,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/endava1.png" class="img-thumbnail" width="500" height="236" alt="Endava" />
+                        <img src="wwwroot/app/images/kompanii/endava1.png" class="img-thumbnail" width="500" height="236" alt="Endava" />
                     </a>
                 </div>
                 <!--<div class="col-sm-4 portfolio-item">
@@ -457,27 +457,27 @@
                         <ul class="list-inline">
                             <li>
                                 <a href="http://www.seavus.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <img src="img/portfolio/seavus.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Seavus" />
+                                    <img src="wwwroot/app/images/kompanii/seavus.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Seavus" />
                                 </a>
                             </li>
                             <li>
                                 <a href="http://isource.com.mk/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <img src="img/portfolio/isource1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="isource" />
+                                    <img src="wwwroot/app/images/kompanii/isource1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="isource" />
                                 </a>
                             </li>
                             <li>
                                 <a href="http://www.extreme-labs.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <img src="img/portfolio/x3m1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="x3mlabs" />
+                                    <img src="wwwroot/app/images/kompanii/x3m1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="x3mlabs" />
                                 </a>
                             </li>
                             <li>
                                 <a href="http://www.cosmicdevelopment.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <img src="img/portfolio/cosmic1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Cosmic Development" />
+                                    <img src="wwwroot/app/images/kompanii/cosmic1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Cosmic Development" />
                                 </a>
                             </li>
                             <li>
                                 <a href="http://www.endava.com/" target="_blank" class="portfolio-link" data-toggle="modal">
-                                    <img src="img/portfolio/endava1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Endava" />
+                                    <img src="wwwroot/app/images/kompanii/endava1.png" class="img-circle" width="50" height="50" style="border: 1px solid black" alt="Endava" />
                                 </a>
                             </li>
                         </ul>
