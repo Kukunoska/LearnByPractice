@@ -16,7 +16,7 @@
 	 text-transform:uppercase;
 	 font-weight:700 }
  
- /*hr.star-light,hr.star-primary{
+ hr.star-light,hr.star-primary{
 	 padding:0;
 	 border:none;
 	 border-top:solid 5px;
@@ -45,7 +45,7 @@
 	 
  .img-centered{
 	 margin:0 auto }
-	 */
+	 
  header{
 	 text-align:center;
 	 background:lightgray;
@@ -212,7 +212,13 @@
 	 position:relative;
 	 margin-bottom:0;
 	 padding-bottom:.5em;
-	 border-bottom:1px solid #eee }
+	 border-bottom:1px solid #eee;
+     height:58px;
+		margin:5px 35px 5px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font: 18px Arial, sans-serif;
+ }
 	 
  .floating-label-form-group input,.floating-label-form-group textarea{
 	 z-index:1;
@@ -221,13 +227,13 @@
 	 padding-left:0;
 	 border:none;
 	 border-radius:0;
-	 font-size:1.5em;
+	 font-size:15px;
 	 background:0 0;
 	 box-shadow:none
 	 !important;resize:none }
 	 
  .floating-label-form-group label{
-	 display:block;
+	 display:inline;
 	 z-index:0;
 	 position:relative;
 	 top:2em;
@@ -240,7 +246,9 @@
 	 -webkit-transition:top .3s ease,opacity .3s ease;
 	 -moz-transition:top .3s ease,opacity .3s ease;
 	 -ms-transition:top .3s ease,opacity .3s ease;
-	 transition:top .3s ease,opacity .3s ease }
+	 transition:top .3s ease,opacity .3s ease;
+     
+ }
 	
  .floating-label-form-group:not(:first-child){
 	 padding-left:14px;
@@ -254,7 +262,8 @@
 	 color:#18BC9C }
 	 
  form .row:first-child .floating-label-form-group{
-	 border-top:1px solid #eee }
+	 border-top:1px solid #eee
+     }
 	 
  footer{
 	 color:#fff }
@@ -517,7 +526,7 @@ p {
 }
 .parallax
 {background-image:url("../images/parallax/body.jpg");
-height:350px;
+height:400px;
 background-attachment:fixed;
 background-position:center;
 background-repeat:no-repeat;
@@ -525,7 +534,8 @@ background-size:cover;
 
 }
 #registriranjeParallax{
-	height:650px;
+	height:780px;
+    
 }
 
 
@@ -546,7 +556,7 @@ background-size:cover;
 /*novi izmeni da se dodadat! */
 #textZaLBP{
         padding: 20px;
-		margin:15px 35px 10px;
+		margin:54px 35px 10px;
         background: rgba(0, 0, 0, 0.2);
         color: #fff;
         font: 18px Arial, sans-serif;*/

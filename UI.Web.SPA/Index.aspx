@@ -23,13 +23,13 @@
     <title>Learn By Practice!</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="wwwroot/app/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Theme CSS -->
     <link href="wwwroot/app/styles/lbp.min.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link href="wwwrot/app/styles/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 
@@ -65,7 +65,7 @@
                         <a href="#about">За LBP</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Организации</a>
+                        <a href="#portfolio">Компании</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#signin">Најави се</a>
@@ -431,7 +431,7 @@
                         </p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Организации</h3>
+                        <h3>Компании</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="http://www.seavus.com/" target="_blank" class="portfolio-link" data-toggle="modal">
@@ -712,7 +712,6 @@
         </div>
     </div>-->
 
-    <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
