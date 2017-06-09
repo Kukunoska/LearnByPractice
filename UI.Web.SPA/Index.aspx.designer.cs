@@ -247,6 +247,15 @@ namespace LearnByPractice.UI.Web.wwwroot {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
+        /// emailRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailRequired;
+        
+        /// <summary>
         /// telefonLabel control.
         /// </summary>
         /// <remarks>
