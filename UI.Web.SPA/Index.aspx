@@ -267,7 +267,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2"> -->
 
-            <form name="sentMessage" id="contactForm" runat="server" role="form">
+            <form id="loginForm" runat="server" role="form">
                 <section>
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
