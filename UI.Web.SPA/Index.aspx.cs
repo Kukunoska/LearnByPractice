@@ -91,5 +91,10 @@ namespace LearnByPractice.UI.Web.wwwroot
                 RegistracijaPorakaZaGreshkaLabel.Text = "Неочекувана грешка.";
             }
         }
+
+        protected void polCustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
+        }
     }
 }

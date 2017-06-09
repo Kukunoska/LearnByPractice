@@ -91,12 +91,13 @@
                         <br />
                         <br />
                         <span class="opis">-работни групи-</span>
-
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- About Section -->
     <section class="success" id="about">
         <div class="parallax">
             <div class="row">
@@ -251,8 +252,6 @@
 
     </section>
 
-    <!-- About Section -->
-
     <!-- Signin Section -->
     <section id="signin">
         <div class="container">
@@ -262,177 +261,156 @@
                     <br />
                 </div>
             </div>
-            <!--   <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <!--  <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="email">Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="message">Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-            <div class="container body-content">
-                <br />
-                <form id="LoginForm" runat="server" role="form">
-                    <section>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        Најави се                           
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="form-group">
-                                                    <asp:Label runat="server" ID="KorisnichkoImeLabel" AssociatedControlID="KorisnichkoImeTextBox" Text="Корисничко име:" />
-                                                    <asp:TextBox runat="server" ID="KorisnichkoImeTextBox" CssClass="form-control" MaxLength="20" placeholder="Корисничко име" ValidationGroup="Najava" required="true" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <asp:Label runat="server" ID="LozinkaLabel" AssociatedControlID="LozinkaTextBox" Text="Лозинка:" />
-                                                    <asp:TextBox runat="server" ID="LozinkaTextBox" CssClass="form-control" MaxLength="20" placeholder="Лозинка" TextMode="Password" ValidationGroup="Najava" required="true" />
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <asp:CheckBox runat="server" ID="ZapomniMeCheckBox" Text="Запомни ме" /></label>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <asp:Button runat="server" ID="NajaviSeButton" CssClass="btn btn-success" Text="Најави се" OnClick="NajaviSeButton_Click" ValidationGroup="Najava" />
-                                                </div>
-                                                <div>
-                                                    <asp:Label runat="server" ID="NajavaPorakaZaGreshkaLabel" CssClass="alert-danger" Visible="false" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                    </div>
+            <!-- <div class="container"> -->
+
+            <!--
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2"> -->
+
+            <form name="sentMessage" id="contactForm" runat="server" role="form">
+                <section>
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <asp:Label runat="server" ID="KorisnichkoImeLabel" AssociatedControlID="KorisnichkoImeTextBox" Text="Корисничко име:" />
+                                    <asp:TextBox runat="server" ID="KorisnichkoImeTextBox" CssClass="form-control" MaxLength="20" placeholder="Корисничко име" ValidationGroup="Najava" required="true" />
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    <!-- Signup Section -->
-                    <section id="signup">
-                        <div id="registriranjeParallax" class="parallax">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <h3 style="color: #3C3C3C"><b>Регистрирај се!</b></h3>
-                                    <br />
-                                    <br />
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <asp:Label runat="server" ID="LozinkaLabel" AssociatedControlID="LozinkaTextBox" Text="Лозинка:" />
+                                    <asp:TextBox runat="server" ID="LozinkaTextBox" CssClass="form-control" MaxLength="20" placeholder="Лозинка" TextMode="Password" ValidationGroup="Najava" required="true" />
                                 </div>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <asp:CheckBox runat="server" ID="ZapomniMeCheckBox" Text="Запомни ме" /></label>
                             </div>
                             <div class="row">
-                                <div class="col-lg-8 col-lg-offset-2">
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="imeLabel">Име</asp:Label>
-                                            <asp:TextBox runat="server" type="text" class="form-control" placeholder="Име" ID="imeTextBox" ValidationGroup="Registracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="imeRequired" ControlToValidate="imeTextBox" ErrorMessage="Ве молиме внесете го вашето име" ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                <div class="btn-group col-xs-12">
+                                    <asp:Button runat="server" ID="NajaviSeButton" class="btn btn-success btn-lg" Text="Најави се" OnClick="NajaviSeButton_Click" ValidationGroup="Najava" />
+                                </div>
+                            </div>
+                            <div>
+                                <asp:Label runat="server" ID="NajavaPorakaZaGreshkaLabel" CssClass="alert-danger" Visible="false" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Signup Section -->
+                <section id="signup">
+                    <div id="registriranjeParallax" class="parallax">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h3 style="color: #3C3C3C"><b>Регистрирај се!</b></h3>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="korisnichkoImeLbl">Корисничко име</asp:Label>
+                                        <asp:TextBox runat="server" type="text" class="form-control" placeholder="Корисничко име" ID="korisnichkoImeTxtBox" ValidationGroup="Registracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="korisnichkoImeRequired" ControlToValidate="korisnichkoImeTxtBox" ErrorMessage="Ве молиме внесете го вашето корисничко име." ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="prezimeLabel">Презиме</asp:Label>
-                                            <asp:TextBox runat="server" type="text" class="form-control" placeholder="Презиме" ID="prezimeTextBox" ValidationGroup="Recistracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="prezimeRequired" ControlToValidate="prezimeTextBox" ErrorMessage="Ве молиме внесете го вашето презиме." ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="lozinkaLbl">Лозинка</asp:Label>
+                                        <asp:TextBox runat="server" type="password" class="form-control" MaxLength="20" placeholder="Лозинка" ID="lozinkaTxtBox" ValidationGroup="Registracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="lozinkaRequired" ControlToValidate="lozinkaTxtBox" ErrorMessage="Ве молиме внесете ја вашата лозинка." ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="korisnichkoImeLbl">Корисничко име</asp:Label>
-                                            <asp:TextBox runat="server" type="text" class="form-control" placeholder="Корисничко име" ID="korisnichkoImeTxtBox" ValidationGroup="Registracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="korisnichkoImeRequired" ControlToValidate="korisnichkoImeTxtBox" ErrorMessage="Ве молиме внесете го вашето корисничко име." ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="potvrdiLozinkaLabel">Потврди лозинка</asp:Label>
+                                        <asp:TextBox runat="server" type="password" class="form-control" placeholder="Лозинка" ID="potvrdiLozinkaTextBox" ValidationGroup="Registracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="potvrdiLozinkaRequired" ControlToValidate="potvrdiLozinkaTextBox" ErrorMessage="Ве молиме потврдете ја вашата лозинка." Display="Dynamic" ValidationGroup="Registracija" />
+                                        <asp:CompareValidator runat="server" ID="lozinkaCompare" ControlToValidate="potvrdiLozinkaTextBox" ControlToCompare="lozinkaTxtBox" ErrorMessage="Внесовте различна лозинка" ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="lozinkaLbl">Лозинка</asp:Label>
-                                            <asp:TextBox runat="server" type="password" class="form-control" MaxLength="20" placeholder="Лозинка" ID="lozinkaTxtBox" ValidationGroup="Registracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="lozinkaRequired" ControlToValidate="lozinkaTxtBox" ErrorMessage="Ве молиме внесете ја вашата лозинка." ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="imeLabel">Име</asp:Label>
+                                        <asp:TextBox runat="server" type="text" class="form-control" placeholder="Име" ID="imeTextBox" ValidationGroup="Registracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="imeRequired" ControlToValidate="imeTextBox" ErrorMessage="Ве молиме внесете го вашето име" ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="potvrdiLozinkaLabel">Потврди лозинка</asp:Label>
-                                            <asp:TextBox runat="server" type="password" class="form-control" placeholder="Лозинка" ID="potvrdiLozinkaTextBox" ValidationGroup="Registracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="potvrdiLozinkaRequired" ControlToValidate="potvrdiLozinkaTextBox" ErrorMessage="Ве молиме потврдете ја вашата лозинка." Display="Dynamic" ValidationGroup="Registracija" />
-                                            <asp:CompareValidator runat="server" ID="lozinkaCompare" ControlToValidate="potvrdiLozinkaTextBox" ControlToCompare="lozinkaTxtBox" ErrorMessage="Внесовте различна лозинка" ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="prezimeLabel">Презиме</asp:Label>
+                                        <asp:TextBox runat="server" type="text" class="form-control" placeholder="Презиме" ID="prezimeTextBox" ValidationGroup="Recistracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="prezimeRequired" ControlToValidate="prezimeTextBox" ErrorMessage="Ве молиме внесете го вашето презиме." ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="emailLabel">Е-пошта</asp:Label>
-                                            <asp:TextBox runat="server" type="email" class="form-control" placeholder="E-пошта" ID="emailTextBox" ValidationGroup="Registracija" />
-                                            <asp:RequiredFieldValidator runat="server" ID="emailRequired" ControlToValidate="emailTextBox" ErrorMessage="Ве молиме внесете го вашето" ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="polLabel">Пол</asp:Label>
+                                        <br />
+                                        <asp:Label runat="server" ID="polZhenskiLabel">Женски</asp:Label>
+                                        <asp:RadioButton runat="server" Text="Женски" TextAlign="Right" ID="polZhenskiRadioButton" Checked="false" GroupName="Pol" ValidationGroup="Registracija" />
+                                        <asp:Label runat="server" ID="polMashkiLabel">Машки</asp:Label>
+                                        <asp:RadioButton runat="server" Text="Машки" TextAlign="Right" ID="polMashkiRadioButton" Checked="false" GroupName="Pol" ValidationGroup="Registracija" />
+                                        <asp:CustomValidator runat="server" ID="polCustomValidator" Display="Dynamic" ErrorMessage="Ве молиме одберете пол" ValidationGroup="Registracija" />
                                     </div>
-                                    <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                                            <asp:Label runat="server" ID="telefonLabel">Телефонски број</asp:Label>
-                                            <asp:TextBox runat="server" type="tel" class="form-control" placeholder="Телефонски број" ID="telefonTextBox" ValidationGroup="Registracija" />
-                                            <p class="help-block text-danger"></p>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="emailLabel">Е-пошта</asp:Label>
+                                        <asp:TextBox runat="server" type="email" class="form-control" placeholder="E-пошта" ID="emailTextBox" ValidationGroup="Registracija" />
+                                        <asp:RequiredFieldValidator runat="server" ID="emailRequired" ControlToValidate="emailTextBox" ErrorMessage="Ве молиме внесете ја вашата е-пошта." ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <br />
-                                    <div id="success"></div>
-                                    <div class="row">
-                                        <div class="form-group col-xs-12">
-                                            <asp:Button runat="server" ID="RegistrirajSeButton" type="submit" Text="Регистрирај се" class="btn btn-success btn-lg" OnClick="RegistrirajSeButton_Click" ValidationGroup="Registracija"></asp:Button>
-                                        </div>
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="telefonLabel">Телефонски број</asp:Label>
+                                        <asp:TextBox runat="server" type="tel" class="form-control" placeholder="Телефонски број" ID="telefonTextBox" ValidationGroup="Registracija" />
+                                        <p class="help-block text-danger"></p>
                                     </div>
-                                    <div>
-                                        <asp:Label runat="server" ID="RegistracijaPorakaZaGreshkaLabel" CssClass="alert-danger" Visible="false" />
+                                </div>
+                                <div class="row control-group">
+                                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                                        <asp:Label runat="server" ID="ulogaLabel">Улога</asp:Label>
+                                        <br />
+                                        <asp:Label runat="server" ID="studentRBlabel">Студент</asp:Label>
+                                        <asp:RadioButton runat="server" Text="Студент" TextAlign="Right" ID="studentRadioButton" Checked="false" GroupName="Uloga" ValidationGroup="Registracija" />
+                                        <asp:Label runat="server" ID="mentorRBlabel">Ментор</asp:Label>
+                                        <asp:RadioButton runat="server" Text="Ментор" TextAlign="Right" ID="mentorRadioButton" Checked="false" GroupName="Uloga" ValidationGroup="Registracija" />
+                                        <asp:CustomValidator runat="server" ID="CustomValidator1" Display="Dynamic" ErrorMessage="Ве молиме одберете улога." ValidationGroup="Registracija" />
                                     </div>
+                                </div>
+                                <br />
+                                <div id="success"></div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12">
+                                        <asp:Button runat="server" ID="RegistrirajSeButton" type="submit" Text="Регистрирај се" class="btn btn-success btn-lg" OnClick="RegistrirajSeButton_Click" ValidationGroup="Registracija"></asp:Button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <asp:Label runat="server" ID="RegistracijaPorakaZaGreshkaLabel" CssClass="alert-danger" Visible="false" />
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </form>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <!--
             </div>
         </div>
+        -->
     </section>
-
 
 
     <!-- Footer -->
@@ -749,6 +727,5 @@
 
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
-
 </body>
 </html>
