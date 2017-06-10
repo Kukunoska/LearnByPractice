@@ -540,7 +540,7 @@ background-size:cover;
 
 
 /* For smartphones */
-    @media (max-width: 480px) {
+/*    @media (max-width: 480px) {
       .container {
         width: auto;
 		margin-top: 51px;
@@ -552,7 +552,7 @@ background-size:cover;
 	  .footer{
 		  font-size: 6px;
 	  }
-    }
+    } */
 /*novi izmeni da se dodadat! */
 #textZaLBP{
         padding: 20px;
